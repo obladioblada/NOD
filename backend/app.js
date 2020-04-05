@@ -12,7 +12,7 @@ const spotifyWebApi = new SpotifyWebApi({
 });
 
 const scopes = 'user-read-private user-read-email user-follow-read streaming app-remote-control user-modify-playback-state playlist-read-collaborative user-read-playback-state user-modify-playback-state';
-spotifyWebApi.redirectUrl = "http://localhost:3000/callback";
+spotifyWebApi.redirectUrl = "http://localhost:4200/callback";
 
 
 //handling CORS
@@ -23,44 +23,34 @@ app.use((req, res, next) => {
     next();
 });
 
-// middle to check if auth
-app.use((req, res, next) => {
-    console.log("dentro middle");
-    console.log("authCode :" + req.query.code);
-    console.log("spotity.authCode : " + spotifyWebApi.authCode);
-    console.log("spotify.refrshCode : " + spotifyWebApi.refreshToken);
+app.get('/updateToken', function (req, res) {
+    console.log("no access token or token is exprired, rinnovo");
+    spotifyWebApi.authCode = req.query.code || null;
+    console.log("ricevuto code "+req.query.code)
+    spotifyWebApi.updateToken()
+        .then((val) => {
+            console.log("rinnovo successful - next");
+            console.log(val);
+            res.send(val);
+        })
+        .catch(() => {
+            console.log("rinnovo NOT successful - redirect to login");
+            res.send({status: 500});
+        });
+});
 
-    if (req.query.code  === undefined && spotifyWebApi.authCode === undefined) {
-        console.log("prima call");
-        console.log("redirect to "+ process.env.REDIRECT_URL);
-        res.redirect('https://accounts.spotify.com/authorize' +
+app.get('/login', function (req, res) {
+    console.log("CALLBACK to LOGIN");
+    console.log("prima call");
+    console.log("sending to "+ process.env.REDIRECT_URL);
+        res.send({
+            redirectUrl:'https://accounts.spotify.com/authorize' +
             '?response_type=code' +
             '&client_id=' + spotifyWebApi.clientId +
             (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
-            '&redirect_uri=' + encodeURIComponent(spotifyWebApi.redirectUrl));
-    } else if (req.query.code  !== undefined && spotifyWebApi.authCode === undefined || spotifyWebApi.isTokenExpried()) {
-        console.log("no access token or token is exprired, rinnovo");
-        spotifyWebApi.authCode = req.query.code || null;
-        spotifyWebApi.updateToken()
-            .then(() => {
-                console.log("rinnovo successful - next");
-                next();
-            })
-            .catch(() => {
-                console.log("rinnovo NOT successful - redirect to login");
-                res.send(res);
-            });
-    } else {
-        console.log("neeeext");
-        next();
-    }
+            '&redirect_uri=' + encodeURIComponent(spotifyWebApi.redirectUrl)
+        });
 });
-
-app.get('/callback', function (req, res) {
-    console.log("CALLBACK to ME");
-    res.redirect("/me");
-});
-
 
 app.get('/me', function (req, res) {
     spotifyWebApi.me()

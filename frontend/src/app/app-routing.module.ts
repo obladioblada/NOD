@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate : [AuthGuardService]  },
   { path: 'login', component: LoginComponent},
+  { path: 'callback', component: LoginComponent},
 ];
 
 @NgModule({

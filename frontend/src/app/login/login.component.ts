@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { AuthService } from 'src/auth/auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import {pluck} from 'rxjs/operators';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -13,29 +15,33 @@ export class LoginComponent implements OnInit {
   username:string;
   password:string;
   retUrl:string="home";
-
-  constructor(private authService: AuthService,
+  code: string;
+  constructor(@Inject(DOCUMENT) private document: Document,
+              private authService: AuthService,
               private router: Router,
               private activatedRoute:ActivatedRoute) {
+
   }
 
   ngOnInit() {
-      this.activatedRoute.queryParamMap
-              .subscribe(params => {
-          this.retUrl = params.get('retUrl');
-          console.log( 'LoginComponent/ngOnInit '+ this.retUrl);
-      });
+    this.code = this.document.location.href.split('=')[1]
+
   }
 
   login() {
-     this.authService.login().subscribe(data => {
-         console.log( 'return to '+ this.retUrl);
-         if (this.retUrl!=null) {
-              this.router.navigate( [this.retUrl]);
-         } else {
-              this.router.navigate( ['']);
-         }
-     });
+    if(this.code){
+     this.authService.login(this.code);
+    } else {
+      this.authService.getAuthCode();
+    }
+    // .subscribe(data => {
+    //     console.log( 'return to '+ this.retUrl);
+    //     if (this.retUrl!=null) {
+    //          this.router.navigate( [this.retUrl]);
+    //     } else {
+    //          this.router.navigate( ['']);
+    //     }
+    // });
   }
 
 }

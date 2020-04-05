@@ -8,7 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { MainButtonComponent } from './main-button/main-button.component';
 import { AuthGuardService } from 'src/auth/auth-guard.service';
 import { AuthService } from 'src/auth/auth.service';
-import { HttpClientModule } from '@angular/common/http/http';
+import { HttpClientModule } from '@angular/common/http';
+import { MainButtonService } from './main-button/main-button.service';
 
 @NgModule({
   declarations: [
@@ -18,11 +19,11 @@ import { HttpClientModule } from '@angular/common/http/http';
     MainButtonComponent
   ],
   imports: [
-    HttpClientModule,
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
-  providers: [AuthGuardService, AuthService],
+  providers: [AuthGuardService, AuthService,MainButtonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

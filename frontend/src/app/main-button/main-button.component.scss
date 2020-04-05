@@ -1,65 +1,121 @@
-body {
-  background: #0f0f0f;
-}
 
-*, *:before {
-  transition: all .2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
+@mixin styling($buttonSize) {
+  .main-button {
+    background: #1ed760;
+    position: fixed;
+    width: $buttonSize;
+    height: $buttonSize;
+    border-radius: 50%;
+    box-shadow: 0 4px 19px 6px rgba(94, 219, 141, 0.2);
+    &:before, &:after {
+      pointer-events: none;
+    }
+  }
 
-.spotify{
-  background: #1ed760;
-  width: 25vh;
-  height: 25vh;
-  left: calc(50vw - 25vh/2);
-  top: calc(50vh - 25vh/2);
-  position: absolute;
-  border-radius: 50%;
-  box-shadow: 0 4px 19px 6px rgba(94, 219, 141, 0.2);
-}
-.spotify:hover {
+  .main-button.squeezeV {
+    transition-duration: 150;
+    transition-delay: 75;
+    transform: scaleX(0.8) scaleY(1.2);
+  }
+
+  .main-button.squeezeH {
+    transition-duration: 150;
+    transition-delay: 75;
+    transform: scaleY(0.8) scaleX(1.2);
+  }
+
+  .main-button.center {
+    left: calc(50vw - #{$buttonSize} / 2);
+    top: calc(50vh - #{$buttonSize} / 2);
+  }
+
+  .main-button.bottom {
+    top: calc(100vh - #{$buttonSize} / 2);
+    left: calc(50vw - #{$buttonSize} / 2);
+  }
+
+  .main-button.error {
+    box-shadow: 0 4px 19px 6px rgba(244, 67, 54, 0.45);
+    background: #d71e3c;
+    animation: shake .2s ease-in-out 1;
+    &:before {
+      box-shadow: inset 0 4px 19px 6px rgba(244, 67, 54, 0.33)
+    }
+    &:after {
+      font-size:9vw;
+      opacity: 0;
+    }
+  }
+
+  .main-button:hover {
     cursor: pointer;
     box-shadow: 0 4px 19px 6px rgba(94, 219, 141, 0.28);
-    transform: scale(1.05)
-}
+    transform: scale(1.05);
+  }
 
-.spotify:active {
-  transform: scale(.95) translateY(10%);
-  box-shadow: 0px 7px 19px 3px rgba(94, 219, 141, 0.25);
-}
+  .main-button:active {
+    transform: scale(0.95) translateY(10%);
+    box-shadow: 0px 7px 19px 3px rgba(94, 219, 141, 0.25);
+  }
 
-.spotify:before {
-    content: ' ';
+  .main-button:after {
+    content: "N D";
+    position: absolute;
+    letter-spacing: #{$buttonSize / 2};
+    color: rgba(90, 227, 142, 0);
+    width: #{$buttonSize * 3.04};
+    height: #{$buttonSize};
+    font-size: 0;
+    left: -#{$buttonSize * 4/5};
+    top: #{$buttonSize / 5};
+    text-align: center;
+    text-shadow: 0px 0px 16px rgba(94, 219, 141, 0);
+  }
+
+  .main-button:before {
+    content: " ";
     position: absolute;
     background: #0f0f0f;
-    width:30%;
-    height:30%;
+    width: 30%;
+    height: 30%;
     border-radius: 50%;
     left: 35%;
     top: 35%;
     transform-origin: center;
-    font-size: 9vw;
     box-shadow: inset 0 4px 19px 6px rgba(94, 219, 141, 0.2);
-
-}
-.spotify:hover:before {
+  }
+  .main-button:hover:before {
     box-shadow: inset 0 4px 19px 6px rgba(94, 219, 141, 0.28);
-  transform: scale(1.9);
-}
-.spotify:active:before {
-  transform: scale(2.7);
-  box-shadow: inset 0 4px 7px 1px rgba(94, 219, 141, 0.25);
+    transform: scale(1.9);
+  }
+  .main-button.loop:after {
+    color: rgba(90, 227, 142, 1);
+    text-shadow: 0px 0px 16px rgba(94, 219, 141, 1);
+    font-size: #{$buttonSize/2};
+  }
+  .main-button:active:before {
+    transform: scale(2.7);
+    box-shadow: inset 0 4px 7px 1px rgba(94, 219, 141, 0.25);
+  }
+
+  .loop.main-button:before {
+    animation: 4s load-loop ease-in-out infinite;
+  }
+
+  @keyframes load-loop {
+    0%,
+    100% {
+      transform: scale(3);
+    }
+    50% {
+      transform: scale(0);
+    }
+  }
 }
 
-.loop.spotify:before {
-  animation: 4s load-loop ease-in-out infinite;
+@media screen and (max-width: 600px) {
+  @include styling($buttonSize: 25vw);
 }
-
-
-@keyframes load-loop {
-   0%, 100% {
-     transform: scale(0);
-   }
-   50% {
-     transform: scale(3);
-   }
- }
+@media screen and (min-width: 601px) {
+  @include styling($buttonSize: 25vh);
+}

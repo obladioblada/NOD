@@ -105,13 +105,14 @@ module.exports = class SpotifyWebApi {
     authenticate(authOptions) {
         return new Promise((resolve, reject) => {
             request.post(authOptions, (error, response, body) => {
-                console.log("from Post for tolen");
+                console.log("from Post for token");
                 console.log(response.statusCode);
                 if (!error && response.statusCode === 200) {
-                    if (body.access_token !== undefined) {
-                        console.log("setto access token");
+                    console.log(body)
+                    if (body.access_token) {
+                        console.log("setto access token col cazzo de valore "+body.access_token);
                         this.accessToken = body.access_token;
-                        console.log("this.accessTokenn  " + this.accessToken.access_token);
+                        console.log("this.accessToken  " + this.accessToken);
                     }
                     console.log("refresh token :  " + body.refresh_token);
 
@@ -123,9 +124,17 @@ module.exports = class SpotifyWebApi {
                         console.log(body.expires_in);
                         this.expirationTime = body.expires_in;
                     }
-                    resolve(body);
+                    resolve({
+                        access_token: this.accessToken,
+                        refresh_token: this.refreshToken,
+                        expiration_time: this.expirationTime
+                    });
                 } else {
-                    reject(body)
+                    reject({
+                        access_token: this.accessToken,
+                        refresh_token: this.refreshToken,
+                        expiration_time: this.expirationTime
+                    })
                 }
             });
 

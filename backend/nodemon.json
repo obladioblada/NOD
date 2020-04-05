@@ -1,7 +1,7 @@
 {
   "env": {
-    "SPOTIFY_CLIENT_ID": "96fe4e48bf574813b79e950039420607",
-    "SPOTIFY_CLIENT_SECRET": "93e5134f7f344bf2871b3166ba332cf6",
+    "SPOTIFY_CLIENT_ID": "9dc9612b49ac4e9bba44e1ecc936b188",
+    "SPOTIFY_CLIENT_SECRET": "ff2c9b01d6c941819d4ec3a1af126e82",
     "REDIRECT_URL": "http://localhost:3000/callback"
   }
 }

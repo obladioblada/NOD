@@ -1,3 +1,9 @@
-<div class="loop spotify">
+<div
+  class="main-button"
+  [class.center]="position === ButtonPosition.CENTER"
+  [class.bottom]="position === ButtonPosition.BOTTOM"
+  [class.loop]="state === ButtonState.LOADING"
+  [class.error]="state === ButtonState.ERROR"
+  [ngClass]="{'squeezeV': verticalTransition, 'squeezeH': horizontalTransition}">
 
 </div>

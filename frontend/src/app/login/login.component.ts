@@ -18,30 +18,29 @@ export class LoginComponent implements OnInit {
   code: string;
   constructor(@Inject(DOCUMENT) private document: Document,
               private authService: AuthService,
-              private router: Router,
+
               private activatedRoute:ActivatedRoute) {
 
   }
 
   ngOnInit() {
-    this.code = this.document.location.href.split('=')[1]
+    this.activatedRoute.queryParamMap
+    .subscribe(params => {
+    this.retUrl = params.get('retUrl');
+    console.log( 'LoginComponent/ngOnInit '+ this.retUrl);
+    });
 
+    if(this.document.location.href.search("code") !== -1){
+    this.code = this.document.location.href.split('=')[1]
+  }
+    if(this.code){this.authService.login(this.code, this.retUrl);}
   }
 
   login() {
-    if(this.code){
-     this.authService.login(this.code);
-    } else {
+    if(!this.code){
       this.authService.getAuthCode();
     }
-    // .subscribe(data => {
-    //     console.log( 'return to '+ this.retUrl);
-    //     if (this.retUrl!=null) {
-    //          this.router.navigate( [this.retUrl]);
-    //     } else {
-    //          this.router.navigate( ['']);
-    //     }
-    // });
+
   }
 
 }

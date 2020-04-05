@@ -51,12 +51,12 @@ module.exports = class SpotifyWebApi {
         return this._redirectUrl;
     }
 
-    set expirationTime(expirationTime) {
-        this._expirationTime = new Date().getTime() + expirationTime;
+    set expirationDate(expirationTime) {
+        this._expirationDate = new Date().getTime() + expirationTime;
     }
 
-    get expirationTime() {
-        return this._expirationTime
+    get expirationDate() {
+        return this._expirationDate
     }
 
     set authCode(authCode) {
@@ -74,7 +74,7 @@ module.exports = class SpotifyWebApi {
      */
     updateToken() {
         let authOptions;
-        if ((!this.accessToken && !this.refreshToken && !this.expirationTime)) {
+        if ((!this.accessToken && !this.refreshToken && !this.expirationDate)) {
             console.log("setting login options");
             authOptions = {
                 url: 'https://accounts.spotify.com/api/token',
@@ -122,18 +122,20 @@ module.exports = class SpotifyWebApi {
                     }
                     if (body.expires_in !== undefined) {
                         console.log(body.expires_in);
-                        this.expirationTime = body.expires_in;
+                        this.expirationDate = body.expires_in;
                     }
                     resolve({
+                        status: response.statusCode,
                         access_token: this.accessToken,
                         refresh_token: this.refreshToken,
-                        expiration_time: this.expirationTime
+                        expiration_date: this.expirationDate
                     });
                 } else {
                     reject({
+                        status: response.statusCode,
                         access_token: this.accessToken,
                         refresh_token: this.refreshToken,
-                        expiration_time: this.expirationTime
+                        expiration_date: this.expirationDate
                     })
                 }
             });
@@ -141,19 +143,9 @@ module.exports = class SpotifyWebApi {
         });
     }
 
-    authorize(scopes) {
-        return new Promise((resolve, reject) => {
-            request.get('https://accounts.spotify.com/authorize' +
-            '?response_type=code' +
-            '&client_id=' + this.clientId +
-            (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
-            '&redirect_uri=' + encodeURIComponent(this.redirectUrl));
-        });
-    }
-
     isTokenExpried() {
-        console.log("is token expired: " + new Date().getTime() > this.expirationTime);
-        return new Date().getTime() > this.expirationTime
+        console.log("is token expired: " + new Date().getTime() > this.expirationDate);
+        return new Date().getTime() > this.expirationDate
     };
 
     me() {

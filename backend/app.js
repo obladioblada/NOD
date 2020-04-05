@@ -5,6 +5,9 @@ const app = express();
 const request = require('request');
 const querystring = require('querystring');
 
+const DB = require("./db.js");
+const db = new DB();
+
 const SpotifyWebApi = require('./SpotifyWebApi');
 const spotifyWebApi = new SpotifyWebApi({
     secretClientId: process.env.SPOTIFY_CLIENT_SECRET,
@@ -31,7 +34,17 @@ app.get('/updateToken', function (req, res) {
         .then((val) => {
             console.log("rinnovo successful - next");
             console.log(val);
-            res.send(val);
+            spotifyWebApi.me()
+            .then((response) => {
+                // porco dio, mi salvo/aggiorno un utente come utente logggato in una mappa cpon il suo id
+                db.addUser({val,...response});
+                res.send({val,...response});
+            })
+            .catch((error) => {
+                console.log(error);
+                res.send(error);
+            })
+        
         })
         .catch(() => {
             console.log("rinnovo NOT successful - redirect to login");

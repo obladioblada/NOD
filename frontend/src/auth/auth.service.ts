@@ -3,6 +3,7 @@ import { Injectable, Inject } from '@angular/core';
 import { of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Location, DOCUMENT } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,27 +13,42 @@ export class AuthService {
   // TODO: use env var here
     private apiEndpoint = "http://localhost:3000";
     private isloggedIn: boolean;
+    private accessToken: string;
+    private expirationDate: string;
     private refreshToken: string;
     private userName:string;
 
-    constructor(@Inject(DOCUMENT) private document: Document, private http: HttpClient) {
+    constructor(@Inject(DOCUMENT) private document: Document, private http: HttpClient,  private router: Router) {
         this.isloggedIn=false;
     }
 
     getAuthCode() {
-      //this.isloggedIn=true;
       return of(this.http.get<{redirectUrl:string}>(Location.joinWithSlash(this.apiEndpoint,"login")).subscribe((data) => {
           console.log(data.redirectUrl);
         this.document.location.href = data.redirectUrl;
-//          window.open(data.urlRedirect);
       }));
   }
-  login(code:string) {
+  login(code:string, redirectUrl: string) {
       //this.isloggedIn=true;
-      return of(this.http.get(Location.joinWithSlash(this.apiEndpoint,"updateToken/?code="+code)).subscribe((data) => {
-          console.log(data);
-//          window.open(data.urlRedirect);
-      }));
+      this.http.get(Location.joinWithSlash(this.apiEndpoint,"updateToken/?code="+code)).subscribe((data) => {
+        console.log(data);
+        if(data["status"] !== 500){
+            this.expirationDate = data["expiration_date"];
+            this.refreshToken = data["refresh_token"];
+            this.accessToken = data["access_token"];
+            this.isloggedIn=true;
+            if (redirectUrl) {
+                  this.router.navigate( [redirectUrl]);
+             } else {
+                  this.router.navigate( ['']);
+             }
+          }
+      });
+
+      // .subscribe(data => {
+    //     console.log( 'return to '+ this.retUrl);
+    //
+    // });
   }
 
     isUserLoggedIn(): boolean {

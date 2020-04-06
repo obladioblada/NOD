@@ -1,7 +1,17 @@
 {
+  "restartable": "rs",
+  "ignore": [".git", "node_modules/**/node_modules"],
+  "verbose": true,
+  "execMap": {
+    "ts": "node --require ts-node/register"
+  },
+  "watch": ["src/"],
   "env": {
     "SPOTIFY_CLIENT_ID": "9dc9612b49ac4e9bba44e1ecc936b188",
     "SPOTIFY_CLIENT_SECRET": "ff2c9b01d6c941819d4ec3a1af126e82",
-    "REDIRECT_URL": "http://localhost:3000/callback"
-  }
+    "REDIRECT_URL": "http://localhost:3000/callback",
+    "NODE_ENV": "development"
+  },
+  "ext": "js,json,ts"
 }
+

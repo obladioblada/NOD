@@ -8,6 +8,7 @@
   },
   "private": true,
   "dependencies": {
+    "log4js": "^6.1.2",
     "request": "^2.88.0"
   },
   "devDependencies": {

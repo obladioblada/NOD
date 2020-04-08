@@ -170,17 +170,70 @@ export class SpotifyService {
         });
     }
 
-    play() {
+    CurrentlyPlaying() {
         return new Promise((resolve, reject) => {
             const options = {
-                url: 'https://api.spotify.com/v1/me/player/play',
+                url: 'https://api.spotify.com/v1/me/player/currently-playing',
                 headers: {'Authorization': 'Bearer ' + this._accessToken},
                 json: true
             };
             // use the access token to access the Spotify Web API
+            request.get(options, (error, response, body) => {
+                if (error) {
+                    reject(error);
+                }
+                console.log(body.item.name);
+                resolve({
+                    "id": body.item.id,
+                    "name": body.item.name,
+                    "progress_ms": body.progress_ms,
+                    "uri": body.uri
+                })
+            });
         });
     }
 
+    play() {
+        return new Promise((resolve, reject) => {
+            const options = {
+                url: 'https://api.spotify.com/v1/me/player/play',
+                method: 'PUT',
+                headers: {'Authorization': 'Bearer ' + this._accessToken},
+                json: true
+            };
+
+            // use the access token to access the Spotify Web API
+            request(options,(error, response, body) => {
+                if (error) {
+                    reject(error);
+                }
+                resolve(body)
+            });
+        });
+    }
+
+    playSame(accessToken: string, uri: string, progressMs: string) {
+        return new Promise((resolve, reject) => {
+            const options = {
+                url: 'https://api.spotify.com/v1/me/player/play',
+                method: 'PUT',
+                headers: {'Authorization': 'Bearer ' + accessToken},
+                json: true,
+                body: {
+                    uris: [uri],
+                    position_ms: progressMs
+                }
+            };
+
+            // use the access token to access the Spotify Web API
+            request(options,(error, response, body) => {
+                if (error) {
+                    reject(error);
+                }
+                resolve(body)
+            });
+        });
+    }
 
     player() {
         return new Promise((resolve, reject) => {
@@ -214,6 +267,33 @@ export class SpotifyService {
                     reject(error);
                 }
                 resolve(body)
+            });
+
+        });
+    }
+
+    activeDevices() {
+        return new Promise((resolve, reject) => {
+            const options = {
+                url: 'https://api.spotify.com/v1/me/player/devices',
+                headers: {'Authorization': 'Bearer ' + this._accessToken},
+                json: true
+            };
+            // use the access token to access the Spotify Web API
+            request.get(options, function (error, response, body) {
+                if (error) {
+                    reject(error);
+                }
+                let devices = body["devices"];
+                for(let i = 0; i < devices.length; i++) {
+                    let device = devices[i];
+                    if(device.is_active) {
+                        console.log("active devices is " + device.id)
+                        resolve(device.id);
+                    }
+                }
+                // TODO
+                resolve("")
             });
 
         });

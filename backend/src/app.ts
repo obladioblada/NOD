@@ -38,17 +38,35 @@ app.use((_req, res, next) => {
 const scopes = 'user-read-private user-read-email user-follow-read streaming app-remote-control user-modify-playback-state playlist-read-collaborative user-read-playback-state user-modify-playback-state';
 spotifyService.redirectUrl = "http://localhost:4200/callback";
 
+app.get('/authenticate', (req, res) => {
+    const authCode = req.query.code || null;    
+    spotifyService.authenticate(authCode)
+    .then((authResponse: any) => {
+        if (db.addUser(new User(authResponse["access_token"], authResponse.id, authResponse.name, authResponse["refresh_token"]))){
+            res.send(authResponse);
+        } else {
+            res.send({error: 'sorry User already exist or something went wrong!'});
+        }
+
+        
+    })
+    .catch((error) => {
+        logger.error(error);
+        res.send(error);
+    });
+})
+
 
 app.get('/updateToken', (_req, res) => {
     logger.info("no access token or token is exprired, rinnovo");
     logger.info("ricevuto code " + _req.query.code);
-    const _user = db.getUser(Number(_req.params.accessToken));
-    const authCode = _req.query.code || null;
+    let _user = db.getUser(+_req.params.id);
+    if(!_user){ _user = db.getUserByAccessToken(_req.params.accessToken); }
 
-    spotifyService.updateToken(_req.params.accessToken, _user && _user.refreshToken, _user && _user.expirationDate,authCode)
+    spotifyService.updateToken(_req.params.accessToken)
         .then((val) => {
-            logger.info("rinnovo successful - next");
-            logger.info(val);
+            _user.accessToken = val["access_token"];
+            db.updateUser(_user);
             res.send({accesst_token: val["access_token"]});
         })
         .catch((error) => {
@@ -64,12 +82,14 @@ app.get('', (_req, res) => {
 
 app.get('/login', (_req, res) => {
     logger.info("CALLBACK to LOGIN");
+    //creo sessione anonima aka addSessions() => entry = uuid, ''
     res.send({
         redirectUrl: 'https://accounts.spotify.com/authorize' +
             '?response_type=code' +
             '&client_id=' + spotifyService.clientId +
             (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
-            '&redirect_uri=' + encodeURIComponent(spotifyService.redirectUrl)
+            '&redirect_uri=' + encodeURIComponent(spotifyService.redirectUrl),
+        //sessionId: uuid
     });
 });
 

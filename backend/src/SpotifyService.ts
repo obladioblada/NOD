@@ -1,6 +1,7 @@
-import{ Observable } from "rxjs";
-
 const request = require('request');
+import { configure, getLogger } from 'log4js';
+const logger = getLogger("server");
+logger.level = 'info';
 
 export class SpotifyService {
 
@@ -34,70 +35,86 @@ export class SpotifyService {
      *  chiamata principale per login e update refresh token.
      *
      */
-    updateToken(_accessToken?: string, _refreshToken?: string, _expirationDate?: number,_authCode?:string) {
+    updateToken(_refreshToken?: string) {
         let authOptions;
-        if ((!_accessToken && !_refreshToken && !_expirationDate)) {
-            console.log("setting login options");
-            authOptions = {
-                url: 'https://accounts.spotify.com/api/token',
-                form: {
-                    code: _authCode,
-                    redirect_uri: this.redirectUrl,
-                    grant_type: 'authorization_code'
-                },
-                headers: {
-                    'Authorization': 'Basic ' + (Buffer.from(this._clientId + ':' + this._secretClient).toString('base64'))
-                },
-                json: true
-            };
-        } else if ((_refreshToken) && (this.isTokenExpried(_expirationDate))) {
-            authOptions = {
-                url: 'https://accounts.spotify.com/api/token',
-                headers: {'Authorization': 'Basic ' + ( Buffer.from(this._clientId + ':' + this._secretClient).toString('base64'))},
-                form: {
-                    grant_type: 'refresh_token',
-                    refresh_token: _refreshToken
-                },
-                json: true
-            };
-        }
-        return this.authenticate(authOptions,_accessToken,_refreshToken,_expirationDate);
+        authOptions = {
+            url: 'https://accounts.spotify.com/api/token',
+            headers: {'Authorization': 'Basic ' + ( Buffer.from(this._clientId + ':' + this._secretClient).toString('base64'))},
+            form: {
+                grant_type: 'refresh_token',
+                refresh_token: _refreshToken
+            },
+            json: true
+        };
+        return new Promise((resolve, reject) => {
+                request.post(authOptions, (error, response, body) => {
+                    logger.info("from Post for token");
+                    logger.info(response.statusCode);
+                    if (!error && response.statusCode === 200) {
+                            this.me(body.access_token).then((meResponse) => {
+                                logger.info(body)
+                                if (body.access_token) {
+                                    logger.info("setto access token col cazzo de valore "+ body.access_token);
+                                    body.accessToken = body.access_token;
+                                    logger.info("this.accessToken  " + body.accessToken);
+                                };
+                                resolve({
+                                    access_token: body.accessToken,
+                                });
+                            })                    
+                    } else {
+                        reject({
+                        error: body.error
+                    })
+                }
+            });
+    
+        });
+      
     }
 
-    authenticate(authOptions: any, _accessToken: string, _refreshToken: string,_expirationDate: number) {
+    authenticate(_authCode: string) {
+        let authOptions;
+        logger.info(_authCode);
+        authOptions = {
+            url: 'https://accounts.spotify.com/api/token',
+            form: {
+                code: _authCode,
+                redirect_uri: this.redirectUrl,
+                grant_type: 'authorization_code'
+            },
+            headers: {
+                'Authorization': 'Basic ' + (Buffer.from(this._clientId + ':' + this._secretClient).toString('base64'))
+            },
+            json: true
+        }
         return new Promise((resolve, reject) => {
             request.post(authOptions, (error, response, body) => {
-                console.log("from Post for token");
-                console.log(response.statusCode);
+                logger.info("from Post for token");
+                logger.info(response.statusCode);
                 if (!error && response.statusCode === 200) {
-                    console.log(body)
-                    if (body.access_token) {
-                        console.log("setto access token col cazzo de valore "+body.access_token);
-                        _accessToken = body.access_token;
-                        console.log("this.accessToken  " + _accessToken);
-                    }
-                    console.log("refresh token :  " + body.refresh_token);
-
-                    if (body.refresh_token !== undefined) {
-                        _refreshToken = body.refresh_token;
-                        console.log("settaggio refresh : " + _refreshToken)
-                    }
-                    if (body.expires_in !== undefined) {
-                        console.log(body.expires_in);
-                        _expirationDate = body.expires_in;
-                    }
-                    resolve({
-                        status: response.statusCode,
-                        access_token: _accessToken,
-                        refresh_token: _refreshToken,
-                        expiration_date: _expirationDate
-                    });
+                        this.me(body.access_token)
+                        .then((val: any) => {
+                            logger.info(body)
+                            if (body.access_token) {
+                                logger.info("setto access token col cazzo de valore "+ body.access_token);
+                                body.accessToken = body.access_token;
+                                logger.info("this.accessToken  " + body.accessToken);
+                            };
+                            resolve({
+                                id: response.id,
+                                status: response.statusCode,
+                                access_token: body.accessToken,
+                                refresh_token: body.refreshToken,
+                                expiration_date: body.expirationDate
+                            });
+                        })                    
                 } else {
                     reject({
                         status: response.statusCode,
-                        access_token: _accessToken,
-                        refresh_token: _refreshToken,
-                        expiration_date: _expirationDate
+                        access_token: body.accessToken,
+                        refresh_token: body.refreshToken,
+                        expiration_date: body.expirationDate,
                     })
                 }
             });
@@ -120,6 +137,8 @@ export class SpotifyService {
             };
             // use the access token to access the Spotify Web API
             request.get(options, function (error, response, body) {
+                console.log('body: ');
+                console.log(body);
                 resolve(body)
             }, (error) => {
 

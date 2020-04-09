@@ -1,0 +1,51 @@
+[2020-04-09T19:52:35.125] [INFO] server - Server is listening on 3000
+[2020-04-09T21:27:42.577] [INFO] server - CALLBACK to LOGIN
+[2020-04-09T21:28:07.155] [INFO] server - CALLBACK to LOGIN
+[2020-04-09T21:30:03.202] [INFO] server - CALLBACK to LOGIN
+[2020-04-09T21:35:30.769] [INFO] server - CALLBACK to LOGIN
+[2020-04-09T21:35:42.696] [INFO] server - CALLBACK to LOGIN
+[2020-04-09T21:36:07.780] [INFO] server - CALLBACK to LOGIN
+[2020-04-09T21:37:21.380] [INFO] server - Server is listening on 3000
+[2020-04-09T21:37:30.639] [INFO] server - CALLBACK to LOGIN
+[2020-04-09T21:37:30.640] [INFO] server - undefined
+[2020-04-09T21:38:29.212] [INFO] server - Server is listening on 3000
+[2020-04-09T21:38:31.767] [INFO] server - CALLBACK to LOGIN
+[2020-04-09T21:38:31.769] [INFO] server - 9dc9612b49ac4e9bba44e1ecc936b188
+[2020-04-09T21:38:32.159] [INFO] server - CALLBACK to LOGIN
+[2020-04-09T21:38:32.160] [INFO] server - 9dc9612b49ac4e9bba44e1ecc936b188
+[2020-04-09T21:38:32.251] [INFO] server - no access token or token is exprired, rinnovo
+[2020-04-09T21:38:32.252] [INFO] server - ricevuto code AQA5rlVbujLtHe055kNJCZKScfpBSKMEDUNRSR-j65zQuH10jAeqiaguiXeuvPnjpZkeNFEIRZCrt60DBglGh_PPT_3Om75UkUioS3wb-SzLBMB5E8StLxJ_dwEZksdgGSLJIoEEhWDW13YCFUNWZ3U7ZizEQXl_OYJC4xU5ro0cQJqFKNSt3mzNJHim2acyB8LLNL8p9iJlg58t4I5_AMNHeH2pAjkDRD_GUIaClkqFdLgBQWL-tQrDYJDn4xpv4Jiuh2VPeZUKgOY3mJzBfsReGU0RDwDvrFJsm4m4ZWL45pAba4U5S9NOZDr6BbkLHd2lOFOa5cjakn-2Xv0D7r1Jkjhl-CtHEZhRqO1fjMqWb8ZjNWFNRx_QQ0hH9mH0Kgco7OHJKls2WQKjGkVA8J_9eWXbMDgIi8bpsQ
+[2020-04-09T21:38:32.375] [INFO] server - { error: 'invalid_request' }
+[2020-04-09T21:38:32.376] [INFO] server - rinnovo NOT successful - redirect to login
+[2020-04-09T21:38:33.441] [INFO] server - no access token or token is exprired, rinnovo
+[2020-04-09T21:38:33.444] [INFO] server - ricevuto code AQB8cZGX0juase_QgSCPxMX028XyAYlrmBJTMFWUFCcHQM3c_Ggra41rzXo9QAYbVN5dPI7HQx2cBPfnr5YTlcyv0ixWaUtkf6ehWeLGNTEiP3ZA0gnl5C37-XqVSiVINZx5T-zawkK2RWwtzjcnrmuUbbbV04pXKJN1y2nBCCWsXosqGlGjCADfOtvnOHQ9Mt2_NikrsFUjbgVmjz-NKhwS8RORV1A9Bza2acsS2TAMaUsxjsWcG5D56iehKqQJ7HrETvcoY7fxke5Kr1JByBJVpTN4dWSA1zumIghaD1Tc_5j9PGWi81e-oZVsNdhKO8iFsifLLSl2ekf9OhmCEMqstp4T_aaiWG6SV9iKE0SzmI-Cb9FBPtRTKF3Fmc_LDisremN9buVtoIQocM0cByVWXByl8AVYfdvt4w
+[2020-04-09T21:38:33.555] [INFO] server - { error: 'invalid_request' }
+[2020-04-09T21:38:33.556] [INFO] server - rinnovo NOT successful - redirect to login
+[2020-04-09T21:39:57.767] [INFO] server - no access token or token is exprired, rinnovo
+[2020-04-09T21:39:57.769] [INFO] server - ricevuto code AQB8cZGX0juase_QgSCPxMX028XyAYlrmBJTMFWUFCcHQM3c_Ggra41rzXo9QAYbVN5dPI7HQx2cBPfnr5YTlcyv0ixWaUtkf6ehWeLGNTEiP3ZA0gnl5C37-XqVSiVINZx5T-zawkK2RWwtzjcnrmuUbbbV04pXKJN1y2nBCCWsXosqGlGjCADfOtvnOHQ9Mt2_NikrsFUjbgVmjz-NKhwS8RORV1A9Bza2acsS2TAMaUsxjsWcG5D56iehKqQJ7HrETvcoY7fxke5Kr1JByBJVpTN4dWSA1zumIghaD1Tc_5j9PGWi81e-oZVsNdhKO8iFsifLLSl2ekf9OhmCEMqstp4T_aaiWG6SV9iKE0SzmI-Cb9FBPtRTKF3Fmc_LDisremN9buVtoIQocM0cByVWXByl8AVYfdvt4w
+[2020-04-09T21:39:57.888] [INFO] server - { error: 'invalid_request' }
+[2020-04-09T21:39:57.890] [INFO] server - rinnovo NOT successful - redirect to login
+[2020-04-09T21:40:11.234] [INFO] server - CALLBACK to LOGIN
+[2020-04-09T21:40:11.237] [INFO] server - 9dc9612b49ac4e9bba44e1ecc936b188
+[2020-04-09T21:40:17.859] [INFO] server - no access token or token is exprired, rinnovo
+[2020-04-09T21:40:17.862] [INFO] server - ricevuto code AQASt0X9wB63ZRio4sLici1_iQzaSLo4BnuC57KDdFodA8KQMgAfKErEFvV5pUn1aiQFEAvWH89i9RkPfgq277NbLyTXUgMul7FjHzn5_N9-DbMgIMgL2He0ytmwwhWilIWYYprbAdCnIsaWzlpOTkkYAUyK27YRVqPwpinwnGjnRc5-K5-82EdxJ-kjfIjkxMkGvvMyb-C8hWmXJfdsclE1f9ybRuYSBlEZ9k53gpRVvwCxYxoi7yEj3TQcgyLuHUS4QAwyOWE-9NK4VctL1zRsz3vfCihR8-pKTKPHz2Zs7_dX0S67xL6gpHNPwWkEvXNqEH4nDVMXEhr_7gqRWmuw8zw0xzsXbky5mIKko62jz6OpK0eVjRSM123FzobC7PKE3QxO-aYnrD1ucQnaLQ9wLkRMNXjhj3jKuQ
+[2020-04-09T21:40:17.976] [INFO] server - { error: 'invalid_request' }
+[2020-04-09T21:40:17.977] [INFO] server - rinnovo NOT successful - redirect to login
+[2020-04-09T21:43:31.193] [INFO] server - no access token or token is exprired, rinnovo
+[2020-04-09T21:43:31.195] [INFO] server - ricevuto code AQA5rlVbujLtHe055kNJCZKScfpBSKMEDUNRSR-j65zQuH10jAeqiaguiXeuvPnjpZkeNFEIRZCrt60DBglGh_PPT_3Om75UkUioS3wb-SzLBMB5E8StLxJ_dwEZksdgGSLJIoEEhWDW13YCFUNWZ3U7ZizEQXl_OYJC4xU5ro0cQJqFKNSt3mzNJHim2acyB8LLNL8p9iJlg58t4I5_AMNHeH2pAjkDRD_GUIaClkqFdLgBQWL-tQrDYJDn4xpv4Jiuh2VPeZUKgOY3mJzBfsReGU0RDwDvrFJsm4m4ZWL45pAba4U5S9NOZDr6BbkLHd2lOFOa5cjakn-2Xv0D7r1Jkjhl-CtHEZhRqO1fjMqWb8ZjNWFNRx_QQ0hH9mH0Kgco7OHJKls2WQKjGkVA8J_9eWXbMDgIi8bpsQ
+[2020-04-09T21:43:31.316] [INFO] server - { error: 'invalid_request' }
+[2020-04-09T21:43:31.316] [INFO] server - rinnovo NOT successful - redirect to login
+[2020-04-09T21:44:06.931] [INFO] server - Server is listening on 3000
+[2020-04-09T21:44:40.431] [ERROR] server - TypeError: Cannot read property 'id' of undefined
+    at C:\Users\samir\workspace\NOD\backend\src\app.ts:45:83
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+[2020-04-09T21:45:55.442] [INFO] server - Server is listening on 3000
+[2020-04-09T21:46:00.086] [INFO] server - CALLBACK to LOGIN
+[2020-04-09T21:47:35.414] [INFO] server - Server is listening on 3000
+[2020-04-09T21:47:38.185] [INFO] server - CALLBACK to LOGIN
+[2020-04-09T21:47:53.444] [INFO] server - CALLBACK to LOGIN
+[2020-04-09T21:47:53.749] [INFO] server - no access token or token is exprired, rinnovo
+[2020-04-09T21:47:53.752] [INFO] server - ricevuto code AQDwOgKspky-EreEerxqoeU9a-wTNXVIxQEUp3FXJklW7Qke3vVh8Ky5__b139g45iEOPegMk49mzd3ml-gIvja13rqO-riqNn-IKrb75KucVklp6-SVVAOZXJe1e23JqT0RqDTXd0nQ7XHYdQIp71KziKnu_2gVntt8nVJmPnm_PCzNCPbbGki7niuf_VSIMWfEqSQvMS29S1r-f9eSv_lPxF9K7Upa8us-jl6U_NxjB0yHVWN4ggFK6BJd7ugoOxcBZosK47JquyGABcpQJ_3BJ0SBPMpw7BXGy5ygqmZGE-3UamJmFTz2A5o9x1CvpjNTJy82K9Dt70687t4m8736D5J0W0LmoN68AfNgWraejvi_9FbneoiN4lFO8ylaI--pKabiMVwV8HNBTMzLA7N_smS3e92I9SoEEw
+[2020-04-09T21:47:53.839] [INFO] server - { error: 'invalid_request' }
+[2020-04-09T21:47:53.850] [INFO] server - rinnovo NOT successful - redirect to login
+[2020-04-09T21:54:16.897] [INFO] server - Server is listening on 3000

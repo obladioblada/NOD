@@ -30,7 +30,7 @@ export class AuthService {
   }
   login(code:string, redirectUrl: string) {
       //this.isloggedIn=true;
-      this.http.get(Location.joinWithSlash(this.apiEndpoint,"updateToken/?code="+code)).subscribe((data) => {
+      this.http.get(Location.joinWithSlash(this.apiEndpoint,"authenticate/?code="+code)).subscribe((data) => {
         console.log(data);
         if(data["status"] !== 500){
             this.expirationDate = data["expiration_date"];

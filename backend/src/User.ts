@@ -6,10 +6,11 @@ export class User {
     refreshToken: string;
     expirationDate: number;
     
-    constructor(accessToken: string, id: number, name: string) {
+    constructor(accessToken: string, id: number, name: string, refreshToken: string) {
         this.accessToken = accessToken;
         this.id = id;
         this.name = name;
+        this.refreshToken = refreshToken;
     }
 
 

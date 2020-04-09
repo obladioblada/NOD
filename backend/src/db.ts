@@ -7,7 +7,18 @@ export class DB {
     constructor() {
     }
 
-
+    getUser(id: number): User{
+        return this.USER.get(id);
+    }
+    
+    getUserByAccessToken(accessToken: string): User{
+        for (let [id, user] of this.USER) {
+            if (user.accessToken === accessToken){
+                return user;
+            }
+        }
+        return null;
+    }
 
     addUser(user: User){
         console.log("adding " + user.name);

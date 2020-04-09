@@ -51,6 +51,10 @@ export class AuthService {
     // });
   }
 
+   me() {
+    return this.http.get(Location.joinWithSlash(this.apiEndpoint,"me?access_token="+this.accessToken));
+   }
+
     isUserLoggedIn(): boolean {
         return this.isloggedIn;
     }

@@ -1,3 +1,4 @@
+import{ Observable } from "rxjs";
 
 const request = require('request');
 
@@ -5,11 +6,7 @@ export class SpotifyService {
 
     private _clientId: string;
     private _secretClient: string;
-    private _accessToken: string;
-    private _refreshToken: string;
-    private _redirectUrl: string;
-    private _expirationDate: number;
-    private _authCode: string;
+    redirectUrl: string;
 
     constructor(clientId: string, secretClientId: string ) {
         this._clientId = clientId;
@@ -32,59 +29,20 @@ export class SpotifyService {
         this._secretClient = value;
     }
 
-    get accessToken(): string {
-        return this._accessToken;
-    }
-
-    set accessToken(value: string) {
-        this._accessToken = value;
-    }
-
-    get refreshToken(): string {
-        return this._refreshToken;
-    }
-
-    set refreshToken(value: string) {
-        this._refreshToken = value;
-    }
-
-    get redirectUrl(): string {
-        return this._redirectUrl;
-    }
-
-    set redirectUrl(value: string) {
-        this._redirectUrl = value;
-    }
-
-    get expirationDate(): number {
-        return this._expirationDate;
-    }
-
-    set expirationDate(value: number) {
-        this._expirationDate = value;
-    }
-
-    get authCode(): string {
-        return this._authCode;
-    }
-
-    set authCode(value: string) {
-        this._authCode = value;
-    }
 
     /**
      *  chiamata principale per login e update refresh token.
      *
      */
-    updateToken() {
+    updateToken(_accessToken?: string, _refreshToken?: string, _expirationDate?: number,_authCode?:string) {
         let authOptions;
-        if ((!this._accessToken && !this._refreshToken && !this._expirationDate)) {
+        if ((!_accessToken && !_refreshToken && !_expirationDate)) {
             console.log("setting login options");
             authOptions = {
                 url: 'https://accounts.spotify.com/api/token',
                 form: {
-                    code: this._authCode,
-                    redirect_uri: this._redirectUrl,
+                    code: _authCode,
+                    redirect_uri: this.redirectUrl,
                     grant_type: 'authorization_code'
                 },
                 headers: {
@@ -92,21 +50,21 @@ export class SpotifyService {
                 },
                 json: true
             };
-        } else if ((this._refreshToken) && (this.isTokenExpried())) {
+        } else if ((_refreshToken) && (this.isTokenExpried(_expirationDate))) {
             authOptions = {
                 url: 'https://accounts.spotify.com/api/token',
                 headers: {'Authorization': 'Basic ' + ( Buffer.from(this._clientId + ':' + this._secretClient).toString('base64'))},
                 form: {
                     grant_type: 'refresh_token',
-                    refresh_token: this._refreshToken
+                    refresh_token: _refreshToken
                 },
                 json: true
             };
         }
-        return this.authenticate(authOptions);
+        return this.authenticate(authOptions,_accessToken,_refreshToken,_expirationDate);
     }
 
-    authenticate(authOptions: any) {
+    authenticate(authOptions: any, _accessToken: string, _refreshToken: string,_expirationDate: number) {
         return new Promise((resolve, reject) => {
             request.post(authOptions, (error, response, body) => {
                 console.log("from Post for token");
@@ -115,31 +73,31 @@ export class SpotifyService {
                     console.log(body)
                     if (body.access_token) {
                         console.log("setto access token col cazzo de valore "+body.access_token);
-                        this._accessToken = body.access_token;
-                        console.log("this.accessToken  " + this._accessToken);
+                        _accessToken = body.access_token;
+                        console.log("this.accessToken  " + _accessToken);
                     }
                     console.log("refresh token :  " + body.refresh_token);
 
                     if (body.refresh_token !== undefined) {
-                        this._refreshToken = body.refresh_token;
-                        console.log("settaggio refresh : " + this._refreshToken)
+                        _refreshToken = body.refresh_token;
+                        console.log("settaggio refresh : " + _refreshToken)
                     }
                     if (body.expires_in !== undefined) {
                         console.log(body.expires_in);
-                        this._expirationDate = body.expires_in;
+                        _expirationDate = body.expires_in;
                     }
                     resolve({
                         status: response.statusCode,
-                        access_token: this._accessToken,
-                        refresh_token: this._refreshToken,
-                        expiration_date: this._expirationDate
+                        access_token: _accessToken,
+                        refresh_token: _refreshToken,
+                        expiration_date: _expirationDate
                     });
                 } else {
                     reject({
                         status: response.statusCode,
-                        access_token: this._accessToken,
-                        refresh_token: this._refreshToken,
-                        expiration_date: this._expirationDate
+                        access_token: _accessToken,
+                        refresh_token: _refreshToken,
+                        expiration_date: _expirationDate
                     })
                 }
             });
@@ -147,34 +105,36 @@ export class SpotifyService {
         });
     }
 
-    isTokenExpried() {
-        console.log("is token expired: " + (new Date().getTime() > this._expirationDate));
-        return new Date().getTime() > this._expirationDate
+    isTokenExpried(_expirationDate: number) {
+        console.log("is token expired: " + (new Date().getTime() > _expirationDate));
+        return new Date().getTime() > _expirationDate
     };
 
-    me() {
+    me(_accessToken:string) {
+        console.log(_accessToken);
         return new Promise((resolve, reject) => {
             const options = {
                 url: 'https://api.spotify.com/v1/me',
-                headers: {'Authorization': 'Bearer ' + this._accessToken},
+                headers: {'Authorization': 'Bearer ' + _accessToken},
                 json: true
             };
             // use the access token to access the Spotify Web API
             request.get(options, function (error, response, body) {
-                if (error) {
-                    reject(error);
-                }
                 resolve(body)
+            }, (error) => {
+
+                console.log(error)
+                reject(error);
             });
 
         });
     }
 
-    CurrentlyPlaying() {
+    CurrentlyPlaying(_accessToken:string) {
         return new Promise((resolve, reject) => {
             const options = {
                 url: 'https://api.spotify.com/v1/me/player/currently-playing',
-                headers: {'Authorization': 'Bearer ' + this._accessToken},
+                headers: {'Authorization': 'Bearer ' + _accessToken},
                 json: true
             };
             // use the access token to access the Spotify Web API
@@ -193,12 +153,12 @@ export class SpotifyService {
         });
     }
 
-    play() {
+    play(_accessToken:string) {
         return new Promise((resolve, reject) => {
             const options = {
                 url: 'https://api.spotify.com/v1/me/player/play',
                 method: 'PUT',
-                headers: {'Authorization': 'Bearer ' + this._accessToken},
+                headers: {'Authorization': 'Bearer ' + _accessToken},
                 json: true
             };
 
@@ -235,11 +195,11 @@ export class SpotifyService {
         });
     }
 
-    player() {
+    player(_accessToken: string) {
         return new Promise((resolve, reject) => {
             const options = {
                 url: 'https://api.spotify.com/v1/me/player',
-                headers: {'Authorization': 'Bearer ' + this._accessToken},
+                headers: {'Authorization': 'Bearer ' + _accessToken},
                 json: true
             };
             // use the access token to access the Spotify Web API
@@ -254,11 +214,11 @@ export class SpotifyService {
     }
 
 
-    devices() {
+    devices(_accessToken:string) {
         return new Promise((resolve, reject) => {
             const options = {
                 url: 'https://api.spotify.com/v1/me/player/devices',
-                headers: {'Authorization': 'Bearer ' + this._accessToken},
+                headers: {'Authorization': 'Bearer ' + _accessToken},
                 json: true
             };
             // use the access token to access the Spotify Web API
@@ -272,11 +232,11 @@ export class SpotifyService {
         });
     }
 
-    activeDevices() {
+    activeDevices(_accessToken:string) {
         return new Promise((resolve, reject) => {
             const options = {
                 url: 'https://api.spotify.com/v1/me/player/devices',
-                headers: {'Authorization': 'Bearer ' + this._accessToken},
+                headers: {'Authorization': 'Bearer ' + _accessToken},
                 json: true
             };
             // use the access token to access the Spotify Web API

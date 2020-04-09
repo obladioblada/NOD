@@ -33,7 +33,9 @@ export class LoginComponent implements OnInit {
     if(this.document.location.href.search("code") !== -1){
     this.code = this.document.location.href.split('=')[1]
   }
-    if(this.code){this.authService.login(this.code, this.retUrl);}
+    if(this.code){
+      this.authService.login(this.code, this.retUrl);
+    }
   }
 
   login() {

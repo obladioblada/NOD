@@ -24,28 +24,21 @@ const scopes = 'user-read-private user-read-email user-follow-read streaming app
 spotifyService.redirectUrl = "http://localhost:4200/callback";
 
 
-app.get('/updateToken', (req, res) => {
+
+app.get('/updateToken', (_req, res) => {
     console.log("no access token or token is exprired, rinnovo");
-    spotifyService.authCode = req.query.code || null;
-    console.log("ricevuto code " + req.query.code);
-    spotifyService.updateToken()
+    console.log("ricevuto code " + _req.query.code);
+    const _user = db.getUser(Number(_req.params.accessToken));
+    const authCode = _req.query.code || null;
+
+    spotifyService.updateToken(_req.params.accessToken, _user && _user.refreshToken, _user && _user.expirationDate,authCode)
         .then((val) => {
             console.log("rinnovo successful - next");
             console.log(val);
-            spotifyService.me()
-                .then((me) => {
-                    let user = new User(val["access_token"], +me["id"], me["display_name"]);
-                    db.addUser(user);
-                    let id = user.id;
-                    res.send({id, me});
-                })
-                .catch((error) => {
-                    console.log(error);
-                    res.send(error);
-                })
-
+            res.send({accesst_token: val["access_token"]});
         })
-        .catch(() => {
+        .catch((error) => {
+            console.log(error)
             console.log("rinnovo NOT successful - redirect to login");
             res.send({status: 500});
         });
@@ -69,7 +62,7 @@ app.get('/login', (_req, res) => {
 });
 
 app.get('/me', (_req, res) => {
-    spotifyService.me()
+    spotifyService.me(_req.params.accessToken)
         .then((response) => {
             res.send(response);
         })
@@ -94,7 +87,7 @@ async function join() {
     for (let [id, user] of db.USER) {
         if (i == 0) {
             await function () {
-                spotifyService.CurrentlyPlaying()
+                spotifyService.CurrentlyPlaying(user.accessToken)
                     .then((song: any) => {
                         uriSong = song.uri;
                         progressMs = song.progress_ms;
@@ -119,7 +112,7 @@ async function join() {
 
 
 app.get('/currently-playing', (_req, res) => {
-    spotifyService.CurrentlyPlaying()
+    spotifyService.CurrentlyPlaying(_req.params.accessToken)
         .then((response) => {
             res.send(response);
         })
@@ -131,7 +124,7 @@ app.get('/currently-playing', (_req, res) => {
 
 
 app.get('/play', (_req, res) => {
-    spotifyService.play()
+    spotifyService.play(_req.params.accessToken)
         .then((response) => {
             res.send(response);
         })
@@ -142,7 +135,7 @@ app.get('/play', (_req, res) => {
 });
 
 app.get('/player', (_req, res) => {
-    spotifyService.player()
+    spotifyService.player(_req.params.accessToken)
         .then((response) => {
             res.send(response);
         })
@@ -153,7 +146,7 @@ app.get('/player', (_req, res) => {
 });
 
 app.get('/player/devices', (_req, res) => {
-    spotifyService.devices()
+    spotifyService.devices(_req.params.accessToken)
         .then((response) => {
             res.send(response);
         })

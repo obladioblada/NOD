@@ -2,6 +2,20 @@ import express = require('express');
 import {SpotifyService} from "./SpotifyService";
 import {DB} from "./db";
 import {User} from "./User";
+import { configure, getLogger } from 'log4js';
+
+const logger = getLogger("server");
+logger.level = 'info';
+
+configure({
+    appenders: {
+        rollingFileAppender: {type: "File", filename: "./logs/nod.log", maxLogSize: 10485760, numBackups: 3},
+        consoleAppender: {type: "console"}
+    },
+    categories: {
+        default: { appenders: [ "rollingFileAppender", "consoleAppender"], level: "INFO"}
+    }
+});
 
 let app = express();
 const db = new DB();
@@ -10,6 +24,7 @@ let spotifyService = new SpotifyService(
     process.env.SPOTIFY_CLIENT_SECRET
 );
 const PORT: any = 3000;
+
 
 
 //handling CORS
@@ -24,22 +39,21 @@ const scopes = 'user-read-private user-read-email user-follow-read streaming app
 spotifyService.redirectUrl = "http://localhost:4200/callback";
 
 
-
 app.get('/updateToken', (_req, res) => {
-    console.log("no access token or token is exprired, rinnovo");
-    console.log("ricevuto code " + _req.query.code);
+    logger.info("no access token or token is exprired, rinnovo");
+    logger.info("ricevuto code " + _req.query.code);
     const _user = db.getUser(Number(_req.params.accessToken));
     const authCode = _req.query.code || null;
 
     spotifyService.updateToken(_req.params.accessToken, _user && _user.refreshToken, _user && _user.expirationDate,authCode)
         .then((val) => {
-            console.log("rinnovo successful - next");
-            console.log(val);
+            logger.info("rinnovo successful - next");
+            logger.info(val);
             res.send({accesst_token: val["access_token"]});
         })
         .catch((error) => {
-            console.log(error)
-            console.log("rinnovo NOT successful - redirect to login");
+            logger.info(error)
+            logger.info("rinnovo NOT successful - redirect to login");
             res.send({status: 500});
         });
 });
@@ -49,9 +63,7 @@ app.get('', (_req, res) => {
 });
 
 app.get('/login', (_req, res) => {
-    console.log("CALLBACK to LOGIN");
-    console.log("prima call");
-    console.log(spotifyService.clientId);
+    logger.info("CALLBACK to LOGIN");
     res.send({
         redirectUrl: 'https://accounts.spotify.com/authorize' +
             '?response_type=code' +
@@ -67,7 +79,7 @@ app.get('/me', (_req, res) => {
             res.send(response);
         })
         .catch((error) => {
-            console.log(error);
+            logger.error(error);
             res.send(error);
         })
 });
@@ -80,7 +92,7 @@ app.get('/join', (_req, res) => {
 });
 
 async function join() {
-    console.log("start joining");
+    logger.info("start joining");
     let uriSong;
     let progressMs;
     let i = 0;
@@ -91,6 +103,7 @@ async function join() {
                     .then((song: any) => {
                         uriSong = song.uri;
                         progressMs = song.progress_ms;
+                        logger.info("selected " + song.name + " - Master: " + user.name );
                         return
                     });
             }
@@ -98,16 +111,18 @@ async function join() {
             await function () {
                 spotifyService.playSame(user.accessToken, uriSong, progressMs)
                     .then((response) => {
+                        logger.info(user.name +  " joined!");
                         return response
                     })
                     .catch((error) => {
-                        console.log(error);
+                        logger.info(user.name +  " failed to join!!");
+                        logger.error(error);
                         return error;
                     });
             }
         }
     }
-    console.log("end joining");
+    logger.info("end joining");
 }
 
 
@@ -117,7 +132,7 @@ app.get('/currently-playing', (_req, res) => {
             res.send(response);
         })
         .catch((error) => {
-            console.log(error);
+            logger.error(error);
             res.send(error);
         })
 });
@@ -129,7 +144,7 @@ app.get('/play', (_req, res) => {
             res.send(response);
         })
         .catch((error) => {
-            console.log(error);
+            logger.error(error);
             res.send(error);
         })
 });
@@ -140,7 +155,7 @@ app.get('/player', (_req, res) => {
             res.send(response);
         })
         .catch((error) => {
-            console.log(error);
+            logger.error(error);
             res.send(error);
         })
 });
@@ -151,15 +166,19 @@ app.get('/player/devices', (_req, res) => {
             res.send(response);
         })
         .catch((error) => {
-            console.log(error);
+            logger.error(error);
             res.send(error);
         })
 });
 
 
 app.listen(PORT, () => {
-        console.log(`Server is listening on ${PORT}`);
+        logger.info(`Server is listening on ${PORT}`);
     }
 );
+
+process.on('SIGTERM', () => {
+    logger.info('SIGTERM signal received.');
+});
 
 

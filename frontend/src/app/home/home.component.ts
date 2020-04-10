@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AuthService } from 'src/auth/auth.service';
 import { MainButtonService } from '../main-button/main-button.service';
 import { ButtonState, ButtonPosition } from '../main-button/button';
-import { Observable, Subject, concat, Subscription } from 'rxjs';
+import { Observable, Subject, concat, Subscription, merge } from 'rxjs';
 import { take, switchMap, shareReplay } from 'rxjs/operators';
 
 @Component({
@@ -13,12 +13,12 @@ import { take, switchMap, shareReplay } from 'rxjs/operators';
 export class HomeComponent implements AfterViewInit {
   devices$: Observable<any>;
   refreshOccurs$: Subject<any> = new Subject();
-  mainButton$:Subscription;
+  mainButton$: Subscription;
 
   constructor(private authService: AuthService, private mainButtonService: MainButtonService) {
     this.mainButtonService.setButtonState(ButtonState.LOADING);
-    this.devices$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.devices()));
-    this.mainButton$ = concat(this.devices$).subscribe(val => {
+    this.devices$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.devices()), shareReplay(1));
+    this.mainButton$ = merge(this.devices$).subscribe(val => {
       this.mainButtonService.setButtonPosition(ButtonPosition.BOTTOM);
       this.mainButtonService.setButtonState(ButtonState.SUCCESS);
     },

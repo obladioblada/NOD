@@ -13,6 +13,7 @@ import { take, switchMap, shareReplay } from 'rxjs/operators';
 export class HomeComponent implements AfterViewInit {
   devices$: Observable<any>;
   refreshOccurs$: Subject<any> = new Subject();
+  joinSucceded: boolean;
   mainButton$: Subscription;
 
   constructor(private authService: AuthService, private mainButtonService: MainButtonService) {
@@ -42,6 +43,14 @@ export class HomeComponent implements AfterViewInit {
 
   refresh() {
     this.refreshOccurs$.next();
+  }
+
+  join() {
+    this.authService.join().subscribe(val => {
+      console.log(val);
+      this.joinSucceded = true;
+      this.refresh();
+    });
   }
 
   trackById(index, device) {

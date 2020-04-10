@@ -23321,3 +23321,54 @@
   ]
 }
 [2020-04-10T18:32:31.368] [INFO] server - Server is listening on 3000
+[2020-04-10T18:40:31.335] [INFO] server - CALLBACK to LOGIN
+[2020-04-10T18:40:32.314] [INFO] server - AQDmPnl3NubDIJ1_IH4ktV1niPyN50zGbjlOd3ZWI3dqR1yPj1sSduOQZ3rvCPYawPz7KnQn9LzL8d8M73ngmf-VaLrQzySl6vyzZj_Jz3ClpzDJ5y4WYJBcFAvb83g4RVuVuIwX3OMIFLpna6m7ZEKt10tnp622W7eFA9FU1k2sjqxf8CvhkpY83OuJpB41AG7Q6rOewEPcH3K-uLVWmkqQjOCRKTcdJfvfTsFZ0AlDLpXQMteB_tZDpNq1CSmMD4frRZQMFh0Za-_aRbJnHapoj8WTGudQHTMoBRx83fyifSAEg83fij6UaA9diC9gRpQ3VyPwR8S9dHqJpQdRw-G--_5ObnvlycUJ27i2CFBHy7p0TCpnPUnkps7LEVkbNspo9x890lm0gA2SDi8r43Ua5_RyLY9T0qET9w
+[2020-04-10T18:40:32.471] [INFO] server - I got a token, lets get my info
+[2020-04-10T18:40:32.472] [INFO] server - BQDXu28tSSRm-XHgXGj9a5lNGmXZFkZ46ChzobkQ720QlXiVGGwPR0k5j7DtKDN0AKNByYMl0_sUNEQ3TTimjQUMJkSzWCrvfjGHptohMQe4tzkd1W6Td0Bbj8p2zQhyiRFjT-JYkBOJtPA3hzdQUjpvYEy5G2ksaAflWA-yW2nPwUCp
+[2020-04-10T18:40:32.472] [INFO] server - BQDXu28tSSRm-XHgXGj9a5lNGmXZFkZ46ChzobkQ720QlXiVGGwPR0k5j7DtKDN0AKNByYMl0_sUNEQ3TTimjQUMJkSzWCrvfjGHptohMQe4tzkd1W6Td0Bbj8p2zQhyiRFjT-JYkBOJtPA3hzdQUjpvYEy5G2ksaAflWA-yW2nPwUCp
+[2020-04-10T18:40:32.563] [INFO] server - user: 
+[2020-04-10T18:40:32.564] [INFO] server - {
+  country: 'NL',
+  display_name: 'Giuseppe Ministeri',
+  email: 'mrpaah@gmail.com',
+  explicit_content: { filter_enabled: false, filter_locked: false },
+  external_urls: { spotify: 'https://open.spotify.com/user/gadato' },
+  followers: { href: null, total: 21 },
+  href: 'https://api.spotify.com/v1/users/gadato',
+  id: 'gadato',
+  images: [
+    {
+      height: null,
+      url: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=fsibMeNH-DEAX9KTwMc&_nc_ht=scontent-cdt1-1.xx&oh=fab4d410633a68659490eccc22eb0866&oe=5EB6E663',
+      width: null
+    }
+  ],
+  product: 'premium',
+  type: 'user',
+  uri: 'spotify:user:gadato'
+}
+[2020-04-10T18:40:32.574] [INFO] server - risposta da auth:
+[2020-04-10T18:40:32.575] [INFO] server - {
+  access_token: 'BQDXu28tSSRm-XHgXGj9a5lNGmXZFkZ46ChzobkQ720QlXiVGGwPR0k5j7DtKDN0AKNByYMl0_sUNEQ3TTimjQUMJkSzWCrvfjGHptohMQe4tzkd1W6Td0Bbj8p2zQhyiRFjT-JYkBOJtPA3hzdQUjpvYEy5G2ksaAflWA-yW2nPwUCp',
+  token_type: 'Bearer',
+  expires_in: 3600,
+  refresh_token: 'AQCIqAVCcS_oZmrbMl_cFp-SYJUg7XB5qfnc44AN8rhwgKEJJ-Q_cOwUZ2txR_D2SGMtlMAbmivrSuBBQKHoA2DquiLcadP8j9enlCkGd4qXr3-agpuy3jj7G58NumJbdD8',
+  scope: 'streaming app-remote-control playlist-read-collaborative user-modify-playback-state user-follow-read user-read-playback-state user-read-email user-read-private',
+  id: 'gadato',
+  name: 'Giuseppe Ministeri',
+  status: 200
+}
+[2020-04-10T18:40:32.578] [INFO] server - send respons ok auth
+[2020-04-10T18:40:32.762] [INFO] server - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 100
+    }
+  ]
+}

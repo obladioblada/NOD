@@ -16,4 +16,4 @@
   </div>
 </div>
 <app-main-button (click)="refresh()"></app-main-button>
-<div class="join"></div>
+<div class="join" [ngClass]="{'success': joinSucceded | async}" (click)="join()"></div>

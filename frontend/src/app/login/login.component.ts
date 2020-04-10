@@ -50,7 +50,6 @@ export class LoginComponent implements OnInit {
       this.authService.getRedirectUrl().pipe(catchError((error) => this.errorHandler(error)))
       .subscribe((data) => {
         console.log(data.redirectUrl);
-        this.mainButtonService.setButtonState(ButtonState.SUCCESS);
         this.document.location.href = data.redirectUrl;
     });
     }

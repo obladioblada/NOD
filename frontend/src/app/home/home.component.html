@@ -1,14 +1,14 @@
 
-<div class="device-item" [ngClass]="{'play' : device.is_active}" *ngFor="let device of devices$ | async" (click)="play(device.id, device.is_active)">
+<div class="device-item" [ngClass]="{'play' : device.is_active}" *ngFor="let device of devices$ | async; trackBy: trackById" (click)="play(device.id, device.is_active)">
   <div class="title">
     <span class="name">{{device.name}} </span>
   </div>
   <div class="icon">
-    <div [class]="'device '+device.type | lowercase " [ngClass]="{'play' : device.is_active}">
+        <div [class]="'device '+device.type | lowercase " [ngClass]="{'play' : device.is_active}">
       <div class="screenWrapper x2">
       </div>
     </div>
   </div>
   <div class="footer">{{device.volume_percent}}</div>
 </div>
-<app-main-button></app-main-button>
+<app-main-button (click)="refresh()"></app-main-button>

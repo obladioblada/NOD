@@ -202,15 +202,86 @@ $vw-context: 100vw * 1px;
   }
 }
 
+
+.device.castaudio {
+  overflow: hidden;
+  width: 4em;
+  height: 3em;
+  font-size: 0.6em;
+  max-width: calc(1.78*24vh);
+  max-height: 80vh;
+  padding: 0.2em;
+  border-radius: 0.6em;
+  &:before {
+    content: "";
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    background: #515151;
+
+    background: repeating-radial-gradient(circle, #515151, #515151 0.4em, transparent -0.6em, transparent 2.6em);
+    z-index: 1;
+    left: -1em;
+    bottom: -1em;
+    border-radius: 2.3em;
+    box-shadow: 0 1px 4px 0 rgba(51, 51, 51, 0), 0 8px 24px 0 rgba(51, 51, 51, 0), 0 0 0 1px rgba(51, 51, 51, 0), inset 0 -1px 10px 4px rgba(51, 51, 51, 0.1);
+  }
+  &.play:before{
+  background: repeating-radial-gradient( circle, #515151, #515151 0.4em, transparent 0.4em, transparent 0.6em, #515151 0.6em );
+  }
+  &:after {
+  content: '';
+  width: 10%;
+  height: 5.8%;
+  position: absolute;
+  background: inherit;
+  z-index: 1;
+  left: 50%;
+  filter: brightness(1.5);
+  top: 0.2%;
+  transform: translateX(-50%) scale(0.3);
+  border-radius: 15px;
+  box-shadow: 0 1px 4px 0 rgba(51, 51, 51, 0), 0 8px 24px 0 rgba(51, 51, 51, 0), 0 0 0 1px rgba(51, 51, 51, 0), inset 0 -1px 10px 4px rgba(51, 51, 51, 0.1);
+}
+  &.rotate{
+    height: 40vw;
+    width: calc(40vw/0.53);
+    max-height: calc(1.78*24vh);
+    max-width: 80vh;
+    &:before {
+      width: 6%;
+      height: 10%;
+      left: 0%;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 0 15px 15px 0;
+    }
+    &:after {
+      width: 5.8%;
+      height: 10%;
+      left: 0.2%;
+      top: 50%;
+      transform: translateY(-50%) scale(0.3);
+    }
+  }
+  .screenWrapper {
+    border-radius: 1em;
+  }
+}
+
+.play .screenWrapper {
+  background: #20d75f;
+}
+
 .screenWrapper{
   webkit-border-radius: inherit;
   -moz-border-radius: inherit;
   border-radius: inherit;
   margin: 0 auto;
   overflow: hidden;
-  background: #20d75f;
   height: 100%;
   width: 100%;
+  background: #0f0f0f;
   box-shadow: 0 4px 19px 6px rgba(94, 219, 141, 0.2);
   transition-duration: 0s !important;
   &.x2{

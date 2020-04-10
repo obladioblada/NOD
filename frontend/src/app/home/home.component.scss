@@ -1,15 +1,23 @@
 .device-item {
+&:hover {
+  cursor: pointer;
+}
+
   display: grid;
   grid-template-columns: 5em auto;
   grid-template-rows: 2em 1em;
   width: 15em;
   padding: 1em;
+  padding-left: 0em;
   margin: 1em;
   border-radius: 1em;
   grid-gap: 1em;
   background: #434343;
+
+  border-left: 1em solid #434343;
   &.play{
-    box-shadow: 0 4px 19px 6px rgba(94, 219, 141, 0.2);
+    border-left: 1em solid #1ed760;
+    padding-left: 0.2em;
   }
 
   .title {

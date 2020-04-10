@@ -35,11 +35,26 @@ app.use((_req, res, next) => {
     next();
 });
 
+
+// spotify middleware to check if token is expired
+app.use((_req, res, next) => {
+    // check fi token is expired, if no -> continue, if yes, ask new one to spotify and then continue with user's request
+   if(_req.query.access_token) {
+        const user = this.db.getUserByAccessToken(_req.query.access_token);
+        if (user != null && spotifyService.isTokenExpried(user.expirationDate)) {
+
+        } else {
+            logger.info("token is still valid!")!
+            next();
+        }
+   }
+});
+
 const scopes = 'user-read-private user-read-email user-follow-read streaming app-remote-control user-modify-playback-state playlist-read-collaborative user-read-playback-state user-modify-playback-state';
 spotifyService.redirectUrl = "http://localhost:4200/callback";
 
 app.get('/authenticate', (req, res) => {
-    const authCode = req.query.code || null;    
+    const authCode = req.query.code || null;
     spotifyService.authenticate(authCode)
     .then((authResponse: any) => {
         logger.info("risposta da auth:");

@@ -2,10 +2,10 @@ import {User} from "./User";
 
 export class DB {
 
-    public USER: Map<number, User> = new Map<number, User>();
+    public USER: Map<string, User> = new Map<string, User>();
 
 
-    getUser(id: number): User {
+    getUser(id: string): User {
         return this.USER.get(id);
     }
 
@@ -20,10 +20,11 @@ export class DB {
 
     addUser(user: User): Boolean {
         console.log("adding " + user.name);
-        if(!this.USER.has(user.id)) {
+        if(user !== undefined && !this.USER.has(user.id)) {
             console.log("NON ESISTE AGGIUNGIAMOLO");
             this.USER.set(user.id, user);
             console.log(this.USER.size);
+            return true;
         } else {
             console.log("user already exist!");
             return false;

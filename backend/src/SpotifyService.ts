@@ -48,20 +48,11 @@ export class SpotifyService {
         };
         return new Promise((resolve, reject) => {
                 request.post(authOptions, (error, response, body) => {
-                    logger.info("from Post for token");
-                    logger.info(response.statusCode);
+                    logger.info("Post for token");
                     if (!error && response.statusCode === 200) {
-                            this.me(body.access_token).then((meResponse) => {
-                                logger.info(body)
-                                if (body.access_token) {
-                                    logger.info("setto access token col cazzo de valore "+ body.access_token);
-                                    body.accessToken = body.access_token;
-                                    logger.info("this.accessToken  " + body.accessToken);
-                                };
-                                resolve({
-                                    access_token: body.accessToken,
-                                });
-                            })                    
+                        resolve({
+                            access_token: body.accessToken,
+                        });                
                     } else {
                         reject({
                         error: body.error
@@ -90,23 +81,19 @@ export class SpotifyService {
         }
         return new Promise((resolve, reject) => {
             request.post(authOptions, (error, response, body) => {
-                logger.info("from Post for token");
-                logger.info(response.statusCode);
+                logger.info("I got a token, lets get my info");
+                logger.info(body.access_token);
                 if (!error && response.statusCode === 200) {
                         this.me(body.access_token)
-                        .then((val: any) => {
-                            logger.info(body)
-                            if (body.access_token) {
-                                logger.info("setto access token col cazzo de valore "+ body.access_token);
-                                body.accessToken = body.access_token;
-                                logger.info("this.accessToken  " + body.accessToken);
-                            };
+                        .then((user: any) => {
                             resolve({
-                                id: response.id,
+                                        //mbare scherzavo ah, non te lA PRENDERE A MALE
+                                    //daje io sono giá li ..ma come sticazzi vuol dire che usiamo un access oken sbagliato (HANGOUT sono su HANGOUT )
+                                    // /HANGOUT dai HANGOUTmbare, che anche funziona, quel 401 sti cazzi
+                                ...body,//HANGOUTHANGOUTHANGOUTHANGOUTHANGOUTHANGOUTHANGOUTHANGOUTHANGOUTHANGOUTHANGOUTHANGOUTHANGOUTHANGOUTHANGOUT
+                                id: user.id,
+                                name: user.display_name,
                                 status: response.statusCode,
-                                access_token: body.accessToken,
-                                refresh_token: body.refreshToken,
-                                expiration_date: body.expirationDate
                             });
                         })                    
                 } else {
@@ -123,12 +110,12 @@ export class SpotifyService {
     }
 
     isTokenExpried(_expirationDate: number) {
-        console.log("is token expired: " + (new Date().getTime() > _expirationDate));
+        logger.info("is token expired: " + (new Date().getTime() > _expirationDate));
         return new Date().getTime() > _expirationDate
     };
 
     me(_accessToken:string) {
-        console.log(_accessToken);
+        logger.info(_accessToken);
         return new Promise((resolve, reject) => {
             const options = {
                 url: 'https://api.spotify.com/v1/me',
@@ -137,13 +124,13 @@ export class SpotifyService {
             };
             // use the access token to access the Spotify Web API
             request.get(options, function (error, response, body) {
-                console.log('body: ');
-                console.log(body);
+             if(body.status === 401 || !body || body === undefined){
+                logger.error("error user")
+                reject(body);
+             }
+                logger.info('user: ');
+                logger.info(body);
                 resolve(body)
-            }, (error) => {
-
-                console.log(error)
-                reject(error);
             });
 
         });
@@ -161,7 +148,7 @@ export class SpotifyService {
                 if (error) {
                     reject(error);
                 }
-                console.log(body.item.name);
+                logger.info(body.item.name);
                 resolve({
                     "id": body.item.id,
                     "name": body.item.name,
@@ -214,19 +201,29 @@ export class SpotifyService {
         });
     }
 
-    player(_accessToken: string) {
+    player(_accessToken: string, id: string, play: boolean) {
         return new Promise((resolve, reject) => {
             const options = {
+                method: 'PUT',
                 url: 'https://api.spotify.com/v1/me/player',
                 headers: {'Authorization': 'Bearer ' + _accessToken},
-                json: true
-            };
-            // use the access token to access the Spotify Web API
-            request.get(options, function (error, response, body) {
-                if (error) {
-                    reject(error);
+                json: true,
+                body:{
+                    device_ids:[id],
+                    play: play
                 }
-                resolve(body)
+            };
+            logger.info(options)
+            // use the access token to access the Spotify Web API
+            request(options, function (error, response, body) {
+                if(!response || response.status !== 200 || response === undefined){
+                    logger.error("error player")
+                    logger.error(response.status)
+                    reject(response);
+                 } else {
+                    logger.info(body);
+                    resolve(response)
+                }
             });
 
         });
@@ -267,7 +264,7 @@ export class SpotifyService {
                 for(let i = 0; i < devices.length; i++) {
                     let device = devices[i];
                     if(device.is_active) {
-                        console.log("active devices is " + device.id)
+                        logger.info("active devices is " + device.id)
                         resolve(device.id);
                     }
                 }

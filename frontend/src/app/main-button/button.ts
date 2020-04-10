@@ -3,7 +3,8 @@ export enum ButtonState {
   IDLE = 0,
   LOADING = 1,
   SUCCESS = 2,
-  ERROR = 3
+  ERROR = 3,
+  PLAY = 4
 }
 
 export enum ButtonPosition {

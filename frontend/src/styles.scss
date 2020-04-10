@@ -1,5 +1,256 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
 /* You can add global styles to this file, and also import other style files */
 body {
   background: #0f0f0f;
   color: whitesmoke;
 }
+
+
+*, *:before, *:after {
+  font-family: 'Varela Round', sans-serif;
+  transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55),  font-size .2s ease-in-out;
+}
+
+
+
+
+@keyframes rotate {
+  0%   {transform: rotate(0deg) scale(0.4);}
+  100% {transform: rotate(360deg) scale(0.4);}
+}
+
+@keyframes rotateBack {
+  0% {transform: rotate(360deg) scale(0.4);}
+  100% {transform: rotate(360deg) scale(0.4);}
+}
+
+.device {
+    position: relative;
+    background: #464646;
+    background: -moz-linear-gradient(45deg, #464646 0%, #545454 100%);
+    background: -webkit-linear-gradient(45deg, #464646 0%,#545454 100%);
+    background: linear-gradient(45deg, #464646 0%,#545454 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#464646', endColorstr='#545454',GradientType=1 );
+    box-shadow: 0 1px 4px 0 rgba(51, 51, 51, 0.31), 0 8px 24px 0 rgba(51, 51, 51, 0.34), 0 0 0 1px rgba(51, 51, 51, 0), inset 0 -2px 2px 2px rgba(51, 51, 51, 0.13);
+
+  &.full-screen{
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: unset !important;
+    max-height: unset !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    z-index: 2 !important;
+    &:after,&:before {
+      content: none !important;
+    }
+    .screenWrapper {
+      border-radius: 0 !important;
+    }
+  }
+
+}
+
+$vw-context: 100vw * 1px;
+
+.device.smartphone {
+    overflow: hidden;
+    width: 3em;
+    height: 5em;
+    font-size: 0.6em;
+    max-width: calc(1.78*24vh);
+    max-height: 80vh;
+    padding: 0.2em;
+    border-radius: 0.6em;
+    &:before {
+      content: '';
+      width: 10%;
+      height: 6%;
+      position: absolute;
+      background: #515151;
+      z-index: 1;
+      left: 50%;
+      top: 1px;
+      transform: translateX(-50%);
+      border-radius: 0 0 15px 15px;
+      box-shadow: 0 1px 4px 0 rgba(51, 51, 51, 0), 0 8px 24px 0 rgba(51, 51, 51, 0), 0 0 0 1px rgba(51, 51, 51, 0), inset 0 -1px 10px 4px rgba(51, 51, 51, 0.1);
+    }
+    &:after {
+    content: '';
+    width: 10%;
+    height: 5.8%;
+    position: absolute;
+    background: inherit;
+    z-index: 1;
+    left: 50%;
+    filter: brightness(1.5);
+    top: 0.2%;
+    transform: translateX(-50%) scale(0.3);
+    border-radius: 15px;
+    box-shadow: 0 1px 4px 0 rgba(51, 51, 51, 0), 0 8px 24px 0 rgba(51, 51, 51, 0), 0 0 0 1px rgba(51, 51, 51, 0), inset 0 -1px 10px 4px rgba(51, 51, 51, 0.1);
+  }
+    &.rotate{
+      height: 40vw;
+      width: calc(40vw/0.53);
+      max-height: calc(1.78*24vh);
+      max-width: 80vh;
+      &:before {
+        width: 6%;
+        height: 10%;
+        left: 0%;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 0 15px 15px 0;
+      }
+      &:after {
+        width: 5.8%;
+        height: 10%;
+        left: 0.2%;
+        top: 50%;
+        transform: translateY(-50%) scale(0.3);
+      }
+    }
+    .screenWrapper {
+      border-radius: 1em;
+    }
+}
+
+.device.tablet {
+    overflow: hidden;
+    width: 50vw;
+    height: calc(50vw/0.6);
+    max-width: calc(1.78*30vh);
+    max-height: 70vh;
+    padding: 25px 10px 15px 10px;
+    border-radius: 20px;
+    &:before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      background: inherit;
+      z-index: 1;
+      left: 50%;
+      filter: brightness(1.3);
+      top: 6px;
+      transform: translateX(-50%);
+      border-radius: 15px;
+      box-shadow: 0 1px 4px 0 rgba(51, 51, 51, 0), 0 8px 24px 0 rgba(51, 51, 51, 0), 0 0 0 1px rgba(51, 51, 51, 0), inset 0 -1px 10px 4px rgba(51, 51, 51, 0.1);
+}
+    &.rotate {
+      width: calc(50vw/0.6);
+      height: 50vw;
+      max-width: 70vh;
+      max-height: calc(1.78*30vh);
+      padding: 10px 15px 10px 25px;
+      &:before {
+        width: 2.4%;
+        height: 4%;
+        position: absolute;
+        background: inherit;
+        z-index: 1;
+        left: 1%;
+        filter: brightness(1.3);
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+}
+
+
+.device.computer {
+    max-width: calc(1.78*70vh);
+    max-height: 70vh;
+    width: 5em;
+    height: 3em;
+    font-size: 0.6em;
+    padding: .2em 0.1em;
+    border-radius: 0.7em;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+
+  &:before {
+    content: '';
+    width: 107%;
+    height: 6%;
+    position: absolute;
+    background: inherit;
+    z-index: 1;
+    left: 50%;
+    bottom: -5%;
+    transform: translateX(-50%);
+    filter: brightness(1.3);
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 1px 4px 0 rgba(51, 51, 51, 0.15), 0 8px 24px 0 rgba(51, 51, 51, 0.13), 0 0 0 1px rgba(51, 51, 51, 0.21), inset 0 -1px 10px 4px rgba(51, 51, 51, 0.17);
+}
+   &:after {
+    content: '';
+    width: 10%;
+    height: 2%;
+    position: absolute;
+    background: inherit;
+    z-index: 1;
+    left: 50%;
+    bottom: -1%;
+    transform: translateX(-50%);
+    filter: brightness(2.3);
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 1px 4px 0 rgba(51, 51, 51, 0), 0 8px 24px 0 rgba(51, 51, 51, 0), 0 0 0 1px rgba(51, 51, 51, 0), inset 0 -1px 10px 4px rgba(51, 51, 51, 0.1);
+}
+  &.rotate{
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.screenWrapper{
+  webkit-border-radius: inherit;
+  -moz-border-radius: inherit;
+  border-radius: inherit;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #20d75f;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 4px 19px 6px rgba(94, 219, 141, 0.2);
+  transition-duration: 0s !important;
+  &.x2{
+    height: 200%;
+    width: 200%;
+    transform-origin: 0 0;
+    transform: scale(.5);
+  }
+}
+
+.screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-size: 1rem;
+    border:0;
+    border-radius: inherit;
+    transition-duration: 0s !important;
+}
+
+.frameInput {
+  border:0;
+  border-bottom: 2px solid black;
+  background: transparent;
+  width: -webkit-fill-available;
+  text-align:center;
+  cursor: pointer;
+  &:focus{
+    outline: none;
+    padding: 25px;
+    width: calc(100% - 50px);
+    z-index: 2;
+    position: absolute;
+    background: #000000b3;
+    top: 0;
+    color: white;
+    cursor: initial;
+    font-size: -webkit-xxx-large;
+  }
+}
+

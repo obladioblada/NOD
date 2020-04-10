@@ -23,7 +23,7 @@ import { MainButtonService } from './main-button/main-button.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [AuthGuardService, AuthService,MainButtonService],
+  providers: [AuthGuardService, AuthService, MainButtonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

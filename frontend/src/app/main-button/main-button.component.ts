@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ButtonPosition, ButtonState, ButtonEvent, ButtonEventType } from './button';
 import { MainButtonService } from './main-button.service';
+import { BuiltinFunctionCall } from '@angular/compiler/src/compiler_util/expression_converter';
 
 @Component({
   selector: 'app-main-button',
@@ -17,18 +18,21 @@ export class MainButtonComponent {
   callback: Function;
   callbackParameters: any;
 
-  verticalTransition: boolean = false;
-  horizontalTransition: boolean = false;
+  verticalTransition = false;
+  horizontalTransition = false;
 
-  constructor(private buttonService: MainButtonService) {
-    buttonService._buttonEvents$.subscribe((event: ButtonEvent) => {
+  constructor(mainButtonService: MainButtonService) {
+    mainButtonService._buttonEvents$.subscribe((event: ButtonEvent) => {
       switch (event.type) {
         case ButtonEventType.BUTTON_POSITION:
           this.setButtonPosition(event.value);
           break;
-        case ButtonEventType.BUTTON_SATE:
-          this.setButtonState(event.value);
-          break;
+          case ButtonEventType.BUTTON_SATE:
+            this.setButtonState(event.value);
+            break;
+            case ButtonEventType.BUTTON_CALLBACK:
+              this.setButtonCallBack(event.callback);
+              break;
       }
     });
   }
@@ -53,8 +57,12 @@ export class MainButtonComponent {
   setButtonPosition(buttonPosition: ButtonPosition) {
     this.position = buttonPosition;
     this.verticalTransition = true;
-    setTimeout(()=>{
+    setTimeout(() => {
       this.verticalTransition = false;
     }, 250);
+  }
+
+  setButtonCallBack(buttonCallback: Function) {
+    this.callback = buttonCallback;
   }
 }

@@ -42,13 +42,20 @@ app.get('/authenticate', (req, res) => {
     const authCode = req.query.code || null;    
     spotifyService.authenticate(authCode)
     .then((authResponse: any) => {
-        if (db.addUser(new User(authResponse["access_token"], authResponse.id, authResponse.name, authResponse["refresh_token"]))){
-            res.send(authResponse);
-        } else {
-            res.send({error: 'sorry User already exist or something went wrong!'});
+        logger.info("risposta da auth:");
+        logger.info(authResponse)
+        if (authResponse.id) {
+            if (db.addUser(new User(authResponse["access_token"], authResponse.id, authResponse.name, authResponse["refresh_token"]))){
+               logger.info("send respons ok auth")
+                res.send(authResponse);
+            } else if(db.getUser(authResponse.id)){
+                db.updateUser(new User(authResponse["access_token"], authResponse.id, authResponse.name, authResponse["refresh_token"]));
+                logger.info("update tokens and send respons ok auth")
+                res.send(authResponse);
+            } else {
+                res.send({error: 'sorry User already exist or something went wrong!'});
+            }
         }
-
-        
     })
     .catch((error) => {
         logger.error(error);
@@ -60,10 +67,10 @@ app.get('/authenticate', (req, res) => {
 app.get('/updateToken', (_req, res) => {
     logger.info("no access token or token is exprired, rinnovo");
     logger.info("ricevuto code " + _req.query.code);
-    let _user = db.getUser(+_req.params.id);
-    if(!_user){ _user = db.getUserByAccessToken(_req.params.accessToken); }
+    let _user = db.getUser(_req.params.id);
+    if(!_user){ _user = db.getUserByAccessToken(_req.params.access_token); }
 
-    spotifyService.updateToken(_req.params.accessToken)
+    spotifyService.updateToken(_req.params.access_token)
         .then((val) => {
             _user.accessToken = val["access_token"];
             db.updateUser(_user);
@@ -94,7 +101,7 @@ app.get('/login', (_req, res) => {
 });
 
 app.get('/me', (_req, res) => {
-    spotifyService.me(_req.params.accessToken)
+    spotifyService.me(_req.params.access_token)
         .then((response) => {
             res.send(response);
         })
@@ -147,7 +154,7 @@ async function join() {
 
 
 app.get('/currently-playing', (_req, res) => {
-    spotifyService.CurrentlyPlaying(_req.params.accessToken)
+    spotifyService.CurrentlyPlaying(_req.query.access_token)
         .then((response) => {
             res.send(response);
         })
@@ -159,7 +166,7 @@ app.get('/currently-playing', (_req, res) => {
 
 
 app.get('/play', (_req, res) => {
-    spotifyService.play(_req.params.accessToken)
+    spotifyService.play(_req.query.access_token)
         .then((response) => {
             res.send(response);
         })
@@ -169,20 +176,25 @@ app.get('/play', (_req, res) => {
         })
 });
 
-app.get('/player', (_req, res) => {
-    spotifyService.player(_req.params.accessToken)
+app.get('/player', (_req: any, res) => {
+    logger.info(_req.query.access_token);
+    logger.info(_req.query.id);
+    logger.info(_req.query.play);
+    spotifyService.player(_req.query.access_token, _req.query.id, _req.query.play)
         .then((response) => {
+            logger.info(response)
             res.send(response);
         })
         .catch((error) => {
-            logger.error(error);
+            logger.error(error.body);
             res.send(error);
         })
 });
 
 app.get('/player/devices', (_req, res) => {
-    spotifyService.devices(_req.params.accessToken)
+    spotifyService.devices(_req.query.access_token)
         .then((response) => {
+            logger.info(response)
             res.send(response);
         })
         .catch((error) => {

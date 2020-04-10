@@ -1,9 +1,11 @@
 <div
   class="main-button"
+  (click)="callback"
   [class.center]="position === ButtonPosition.CENTER"
   [class.bottom]="position === ButtonPosition.BOTTOM"
   [class.loop]="state === ButtonState.LOADING"
   [class.error]="state === ButtonState.ERROR"
+  [class.play]="state === ButtonState.PLAY"
   [ngClass]="{'squeezeV': verticalTransition, 'squeezeH': horizontalTransition}">
 
 </div>

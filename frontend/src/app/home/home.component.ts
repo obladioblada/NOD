@@ -1,18 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from 'src/auth/auth.service';
+import { MainButtonService } from '../main-button/main-button.service';
+import { ButtonState, ButtonPosition } from '../main-button/button';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
+  devices$: Observable<any>;
 
-  stuff;
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private mainButtonService: MainButtonService) {
+    this.mainButtonService.setButtonState(ButtonState.LOADING);
+    this.devices$ = this.authService.devices();
 
-  ngOnInit(): void {
-    this.authService.me().subscribe(data => this.stuff = data)
+    this.devices$.subscribe(val => {
+      this.mainButtonService.setButtonPosition(ButtonPosition.BOTTOM);
+      this.mainButtonService.setButtonState(ButtonState.SUCCESS);
+    });
+   }
+
+  play(id, play) {
+    this.authService.player(id, !play).subscribe(val => {
+      console.log(val);
+      this.mainButtonService.setButtonState(ButtonState.PLAY);
+    });
   }
 
 }

@@ -1,14 +1,14 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import {
   ButtonState,
   ButtonPosition,
   ButtonEvent,
   ButtonEventType
-} from "./button";
-import { Subject } from "rxjs";
+} from './button';
+import { Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class MainButtonService {
   private _buttonEvents = new Subject();
@@ -40,7 +40,7 @@ export class MainButtonService {
     this.next();
   }
 
-  next(){
+  next() {
     this._buttonEvents.next(this.eventButton);
   }
 }

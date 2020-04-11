@@ -1,10 +1,10 @@
 import express = require("express");
 import {SpotifyService} from "./SpotifyService";
 import {DB} from "./db";
-import {User} from "./User";
 import { configure, getLogger } from "log4js";
-
 const logger = getLogger();
+
+
 
 
 logger.level = "info";
@@ -50,16 +50,22 @@ app.get("/authenticate", (req, res) => {
         logger.info("risposta da auth:");
         logger.info(authResponse);
         if (authResponse.id) {
-            if (db.addUser(new User(authResponse.access_token, authResponse.id, authResponse.name, authResponse.refresh_token))) {
-               logger.info("send respons ok auth");
-                res.send(authResponse);
-            } else if(db.getUser(authResponse.id)) {
-                db.updateUser(new User(authResponse.access_token, authResponse.id, authResponse.name, authResponse.refresh_token));
-                logger.info("update tokens and send respons ok auth");
-                res.send(authResponse);
-            } else {
-                res.send({error: "sorry User already exist or something went wrong!"});
-            }
+            db.addOrUpdateUser({
+                id: authResponse.id,
+                name: authResponse.name,
+                accessToken: authResponse.access_token,
+                refreshToken: authResponse.refresh_token,
+                expirationDate: null,
+            })
+                .then((user) => {
+                    if (user != null) {
+                        res.send(user);
+                    } else {
+                        res.send({error: "error during upsert!"});
+                    }
+                }).catch((err) => {
+                res.send(err);
+            });
         }
     })
     .catch((error) => {
@@ -72,14 +78,19 @@ app.get("/authenticate", (req, res) => {
 app.get("/updateToken", (_req, res) => {
     logger.info("no access token or token is exprired, rinnovo");
     logger.info("ricevuto code " + _req.query.code);
-    let _user = db.getUser(_req.params.id);
-    if(!_user) { _user = db.getUserByAccessToken(_req.params.access_token); }
+    let _user:any = db.getUserById(_req.params.id);
+    if(!_user) {
+        _user = db.getUsedByAccessToken(_req.params.access_token);
+    }
 
-    spotifyService.updateToken(_req.params.access_token)
+    spotifyService.updateToken(_user.refreshToken)
         .then((val: any) => {
             _user.accessToken = val.access_token;
-            db.updateUser(_user);
-            res.send({accesst_token: val.access_token});
+            db.addOrUpdateUser(_user).then(() => {
+                res.send({accesst_token: val.access_token});
+            }).catch((err) => {
+                res.send(err)
+            });
         })
         .catch((error) => {
             logger.info(error);
@@ -128,11 +139,11 @@ async function join(masterAccessToken: string) {
     let uriSong: string;
     let progressMs: string;
     let i = 0;
-    const masterUser: User = db.getUserByAccessToken(masterAccessToken);
-    logger.info("Before await "+ masterUser.id);
+    // const masterUser: User = db.getUserByAccessToken(masterAccessToken);
+    //logger.info("Before await "+ masterUser.id);
     spotifyService.CurrentlyPlaying(masterAccessToken)
         .then((song: any) => {
-            uriSong = song.uri;
+         /*   uriSong = song.uri;
             progressMs = song.progress_ms;
             logger.info("selected " + song.name + " - Master: " + masterUser.name );
             logger.info("uri " + uriSong );
@@ -154,7 +165,7 @@ async function join(masterAccessToken: string) {
                 } else {
                     spotifyService.playSame(masterUser.accessToken, uriSong, progressMs)
                 }
-            }
+            }*/
         });
     
 

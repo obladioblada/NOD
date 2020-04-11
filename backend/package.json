@@ -9,6 +9,7 @@
   "private": true,
   "dependencies": {
     "log4js": "^6.1.2",
+    "mongoose": "^5.9.7",
     "request": "^2.88.0"
   },
   "devDependencies": {

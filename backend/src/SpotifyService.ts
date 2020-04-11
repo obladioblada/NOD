@@ -87,10 +87,7 @@ export class SpotifyService {
                         this.me(body.access_token)
                         .then((user: any) => {
                             resolve({
-                                        //mbare scherzavo ah, non te lA PRENDERE A MALE
-                                    //daje io sono giá li ..ma come sticazzi vuol dire che usiamo un access oken sbagliato (HANGOUT sono su HANGOUT )
-                                    // /HANGOUT dai HANGOUTmbare, che anche funziona, quel 401 sti cazzi
-                                ...body,//HANGOUTHANGOUTHANGOUTHANGOUTHANGOUTHANGOUTHANGOUTHANGOUTHANGOUTHANGOUTHANGOUTHANGOUTHANGOUTHANGOUTHANGOUT
+                                ...body,
                                 id: user.id,
                                 name: user.display_name,
                                 status: response.statusCode,

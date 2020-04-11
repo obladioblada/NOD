@@ -13,14 +13,10 @@
   }
 
   .main-button.squeezeV {
-    transition-duration: 150;
-    transition-delay: 75;
     transform: scaleX(0.8) scaleY(1.2);
   }
 
   .main-button.squeezeH {
-    transition-duration: 150;
-    transition-delay: 75;
     transform: scaleY(0.8) scaleX(1.2);
   }
 

@@ -153,7 +153,7 @@ export class SpotifyService {
                     "id": body.item.id,
                     "name": body.item.name,
                     "progress_ms": body.progress_ms,
-                    "uri": body.uri
+                    "uri": body.item.uri
                 })
             });
         });
@@ -187,7 +187,8 @@ export class SpotifyService {
                 json: true,
                 body: {
                     uris: [uri],
-                    position_ms: progressMs
+                    position_ms: +progressMs,
+                    play: true
                 }
             };
 

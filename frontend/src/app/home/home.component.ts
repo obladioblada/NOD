@@ -6,7 +6,7 @@ import { Observable, Subject, concat, Subscription, merge } from 'rxjs';
 import { take, switchMap, shareReplay } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-home',
+  selector: 'nod-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
@@ -35,7 +35,7 @@ export class HomeComponent implements AfterViewInit {
 
   play(id, play) {
     this.mainButtonService.setButtonState(ButtonState.LOADING);
-    this.authService.player(id, !play).subscribe(val => {
+    this.authService.player(id, play).subscribe(val => {
       console.log(val);
       this.refresh();
     });

@@ -4,7 +4,7 @@ import { MainButtonService } from './main-button.service';
 import { BuiltinFunctionCall } from '@angular/compiler/src/compiler_util/expression_converter';
 
 @Component({
-  selector: 'app-main-button',
+  selector: 'nod-main-button',
   templateUrl: './main-button.component.html',
   styleUrls: ['./main-button.component.scss']
 })
@@ -27,12 +27,12 @@ export class MainButtonComponent {
         case ButtonEventType.BUTTON_POSITION:
           this.setButtonPosition(event.value);
           break;
-          case ButtonEventType.BUTTON_SATE:
-            this.setButtonState(event.value);
-            break;
-            case ButtonEventType.BUTTON_CALLBACK:
-              this.setButtonCallBack(event.callback);
-              break;
+        case ButtonEventType.BUTTON_SATE:
+          this.setButtonState(event.value);
+          break;
+        case ButtonEventType.BUTTON_CALLBACK:
+          this.setButtonCallBack(event.callback);
+          break;
       }
     });
   }
@@ -59,7 +59,7 @@ export class MainButtonComponent {
     this.verticalTransition = true;
     setTimeout(() => {
       this.verticalTransition = false;
-    }, 250);
+    }, 300);
   }
 
   setButtonCallBack(buttonCallback: Function) {

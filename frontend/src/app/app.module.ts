@@ -10,13 +10,15 @@ import { AuthGuardService } from 'src/auth/auth-guard.service';
 import { AuthService } from 'src/auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MainButtonService } from './main-button/main-button.service';
+import { DeviceComponent } from './device/device.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    MainButtonComponent
+    MainButtonComponent,
+    DeviceComponent
   ],
   imports: [
     BrowserModule,

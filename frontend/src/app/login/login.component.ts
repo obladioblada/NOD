@@ -9,7 +9,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
 
 @Component({
-  selector: 'app-login',
+  selector: 'nod-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
@@ -23,7 +23,8 @@ export class LoginComponent implements OnInit {
   constructor(@Inject(DOCUMENT) private document: Document,
               private authService: AuthService,
               private mainButtonService: MainButtonService,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute,
+              private router: Router) {
 
   }
 
@@ -40,35 +41,20 @@ export class LoginComponent implements OnInit {
   }
     if (this.code) {
       this.mainButtonService.setButtonState(ButtonState.LOADING);
-      this.authService.login(this.code, this.retUrl);
+      this.authService.login(this.code).subscribe(() => {
+        if (this.retUrl) {
+              this.router.navigate( [this.retUrl]);
+         } else {
+              this.router.navigate( ['']);
+         }
+      });
     }
   }
 
   login() {
     if (!this.code) {
       this.mainButtonService.setButtonState(ButtonState.LOADING);
-      this.authService.getRedirectUrl().pipe(catchError((error) => this.errorHandler(error)))
-      .subscribe((data) => {
-        console.log(data.redirectUrl);
-        this.document.location.href = data.redirectUrl;
-    });
+      this.authService.getRedirectUrl();
     }
   }
-  errorHandler(error: HttpErrorResponse) {
-    this.mainButtonService.setButtonState(ButtonState.ERROR);
-    if (error.error instanceof ErrorEvent) {
-      // A client-side or network error occurred. Handle it accordingly.
-      console.error('An error occurred:', error.error.message);
-    } else {
-      // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong,
-      console.error(
-        `Backend returned code ${error.status}, ` +
-        `body was: ${error.error}`);
-    }
-    // return an observable with a user-facing error message
-    return throwError(
-      'Something bad happened; please try again later.');
-  }
-
 }

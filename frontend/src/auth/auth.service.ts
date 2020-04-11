@@ -1,69 +1,105 @@
 
 import { Injectable, Inject } from '@angular/core';
-import { of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { of, throwError } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Location, DOCUMENT } from '@angular/common';
 import { Router } from '@angular/router';
-import { map } from 'rxjs/operators';
+import { map, shareReplay, catchError } from 'rxjs/operators';
+import { ButtonState } from 'src/app/main-button/button';
+import { MainButtonService } from 'src/app/main-button/main-button.service';
+import * as moment from "moment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
   // TODO: use env var here
     private apiEndpoint = 'http://localhost:3000';
     private isloggedIn: boolean;
     private accessToken: string;
     private expirationDate: string;
     private refreshToken: string;
+    private redirectUrl: string;
     private userName: string;
 
-    constructor(@Inject(DOCUMENT) private document: Document, private http: HttpClient,  private router: Router) {
+    constructor(
+      @Inject(DOCUMENT) private document: Document,
+      private mainButtonService: MainButtonService,
+      private http: HttpClient,
+      private router: Router) {
     }
 
-    getRedirectUrl() {
-      return this.http.get<{redirectUrl: string}>(Location.joinWithSlash(this.apiEndpoint, 'login'));
-  }
-  login(code: string, redirectUrl: string) {
-      this.http.get(Location.joinWithSlash(this.apiEndpoint, 'authenticate/?code=' + code)).subscribe((data: any) => {
-        if (data.status !== 500) {
-            this.expirationDate = data.expiration_date;
-            this.refreshToken = data.refresh_token;
-            this.accessToken = data.access_token;
-            console.log(this.accessToken);
-            this.isloggedIn = true;
-            if (redirectUrl) {
-                  this.router.navigate( [redirectUrl]);
-             } else {
-                  this.router.navigate( ['']);
-             }
-          }
-      });
+  getRedirectUrl() {
+      return this.http.get<{redirectUrl: string}>(Location.joinWithSlash(this.apiEndpoint, 'login'))
+      .pipe(catchError((error) => this.errorHandler(error)))
+      .pipe(map((res => this.setRedirectUrl(res)))).subscribe((data) => {
+        this.document.location.href = this.redirectUrl;
+    });
   }
 
+
+  login(code: string) {
+    const body = {
+      'code': code
+    };
+    return this.http.get<any>((Location.joinWithSlash(this.apiEndpoint, 'authenticate?code=' + code)))
+    .pipe(map((res => this.setSession(res))), shareReplay());
+
+  }
+
+  private setRedirectUrl(getRedirectUrlResult) {
+    this.redirectUrl = getRedirectUrlResult.redirectUrl;
+    return getRedirectUrlResult;
+  }
+
+  private setSession(authResult) {
+
+    const expiresAt = moment().add(authResult.expires_in,'second');
+
+    localStorage.setItem('id_token', authResult.access_token);
+    localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()) );
+    //localStorage.setItem('expires_at', authResult.expirationDate);
+
+
+    if (authResult.status !== 500) {
+      this.expirationDate = authResult.expiration_date;
+      this.refreshToken = authResult.refresh_token;
+      console.log(localStorage.getItem('id_token'));
+      this.isloggedIn = true;
+    }
+}
+
   me() {
-    return this.http.get(Location.joinWithSlash(this.apiEndpoint, 'me?access_token=' + this.accessToken));
+    return this.http.get(Location.joinWithSlash(this.apiEndpoint, 'me?access_token=' + localStorage.getItem('id_token')));
   }
 
   join() {
-    return this.http.get(Location.joinWithSlash(this.apiEndpoint, 'join?access_token=' + this.accessToken));
+    return this.http.get(Location.joinWithSlash(this.apiEndpoint, 'join?access_token=' + localStorage.getItem('id_token')));
   }
 
   player(id: string, play: boolean) {
-    console.log(this.accessToken);
+    console.log(localStorage.getItem('id_token'));
     return this.http.get(
-      Location.joinWithSlash(this.apiEndpoint, 'player?access_token=' + this.accessToken + '&id=' + id + '&play=' + play));
+      Location.joinWithSlash(this.apiEndpoint, 'player?access_token=' + localStorage.getItem('id_token') + '&id=' + id + '&play=' + play));
   }
 
   devices() {
-    console.log(this.accessToken);
-    return this.http.get(Location.joinWithSlash(this.apiEndpoint, 'player/devices?access_token=' + this.accessToken))
+    console.log(localStorage.getItem('id_token'));
+    return this.http.get(Location.joinWithSlash(this.apiEndpoint, 'player/devices?access_token=' + localStorage.getItem('id_token')))
     .pipe(map((data: any) => data.devices));
   }
+  public isLoggedIn() {
+    return moment().isBefore(this.getExpiration());
+}
 
-    isUserLoggedIn(): boolean {
-        return this.isloggedIn;
+    isLoggedOut() {
+        return !this.isLoggedIn();
+    }
+
+    getExpiration() {
+        const expiration = localStorage.getItem("expires_at");
+        const expiresAt = JSON.parse(expiration);
+        return moment(expiresAt);
     }
 
     isAdminUser(): boolean {
@@ -75,6 +111,23 @@ export class AuthService {
 
     logoutUser(): void {
         this.isloggedIn = false;
+    }
+
+    errorHandler(error: HttpErrorResponse) {
+      this.mainButtonService.setButtonState(ButtonState.ERROR);
+      if (error.error instanceof ErrorEvent) {
+        // A client-side or network error occurred. Handle it accordingly.
+        console.error('An error occurred:', error.error.message);
+      } else {
+        // The backend returned an unsuccessful response code.
+        // The response body may contain clues as to what went wrong,
+        console.error(
+          `Backend returned code ${error.status}, ` +
+          `body was: ${error.error}`);
+      }
+      // return an observable with a user-facing error message
+      return throwError(
+        'Something bad happened; please try again later.');
     }
 
 }

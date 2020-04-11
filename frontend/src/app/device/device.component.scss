@@ -1,0 +1,73 @@
+
+:host(.is-active){
+  border-left: 1em solid #1ed760;
+  padding-left: 0.2em;
+  .icon {
+    background: #69d58e ;
+  }
+}
+:host {
+  display: grid;
+  grid-template-columns: 5em auto;
+  grid-template-rows: 2em 2em;
+  width: 15em;
+  padding: 1em;
+  padding-left: 0em;
+  margin: 1em;
+  border-radius: 1em;
+  grid-gap: 1em;
+  background: #434343;
+  border-left: 1em solid #434343;
+
+  .title {
+    grid-column: 2;
+    grid-row: 1;
+
+    display: flex;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .footer {
+    grid-column: 1;
+    grid-row: 3;
+    grid-column-end: 3;
+  }
+
+  .icon {
+    grid-column: 1;
+    grid-row: 1;
+    grid-row-end: 3;
+    display: grid;
+    background: #a4bead;
+    align-content: center;
+    border-radius: 1em;
+    justify-content: center;
+    font-size: 1.1em;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+
+  .volume {
+    display: flex;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .play-control {
+    &:hover {
+      cursor: pointer;
+    }
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      flex: auto;
+  }
+}

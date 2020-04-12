@@ -8,5 +8,5 @@ export const UserSchema = new Schema({
     accessToken: String,
     refreshToken: String,
     expirationDate: String,
-    }
-);
+    roomId: {type: Schema.Type.ObjectId, ref: 'Room'}
+});

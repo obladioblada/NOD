@@ -37,6 +37,9 @@ export class AuthService {
     });
   }
 
+  getAccessToken() {
+    return localStorage.getItem('id_token');
+  }
 
   login(code: string) {
     const body = {
@@ -54,16 +57,16 @@ export class AuthService {
 
   private setSession(authResult) {
 
-    const expiresAt = moment().add(authResult.expires_in,'second');
+    const expiresAt = moment().add(authResult.expirationDate,'second');
 
-    localStorage.setItem('id_token', authResult.access_token);
+    localStorage.setItem('id_token', authResult.accessToken);
     localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()) );
     //localStorage.setItem('expires_at', authResult.expirationDate);
 
 
     if (authResult.status !== 500) {
-      this.expirationDate = authResult.expiration_date;
-      this.refreshToken = authResult.refresh_token;
+      this.expirationDate = authResult.expirationDate;
+      this.refreshToken = authResult.refreshToken;
       console.log(localStorage.getItem('id_token'));
       this.isloggedIn = true;
     }
@@ -110,6 +113,7 @@ export class AuthService {
     }
 
     logoutUser(): void {
+        localStorage.clear();
         this.isloggedIn = false;
     }
 

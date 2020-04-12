@@ -24,3 +24,11 @@
       <input type="range" min="0" max="100" [ngClass]="'value-'+device.volume_percent" [value]="device.volume_percent" (change)="setVolume($event)" class="slider">
     </div>
   </div>
+<nod-tile>
+  <div (click)="play()" tile-image>
+    <div [class]="'device '+device.type | lowercase " [ngClass]="{'is-active' : device.is_active}">
+      <div class="screenWrapper x2">
+      </div>
+    </div>
+    </div>
+</nod-tile>

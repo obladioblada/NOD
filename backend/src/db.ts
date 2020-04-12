@@ -1,13 +1,15 @@
 import mongoose = require("mongoose");
 import {UserSchema} from "./models/User";
-import { getLogger } from "log4js";
+import {getLogger} from "log4js";
+
 const logger = getLogger();
 const User = mongoose.model('User', UserSchema);
+const Room = mongoose.model('Room', UserSchema);
 
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-   logger.info("coonected to db");
+db.once('open', function () {
+    logger.info("coonected to db");
 });
 
 export class DB {
@@ -17,24 +19,22 @@ export class DB {
     }
 
     private static connect() {
-        mongoose.connect('mongodb://localhost:27017/user', {useNewUrlParser: true, useUnifiedTopology: true});
-    }
-
-    async addUser(user: any) {
-        let newUser = new User(user);
-        await newUser.create((err, addedUser) => {
-            if (err){
-                logger.error(err);
-                return(err);
-            }
-            logger.info("added user", user);
-            return addedUser;
+        mongoose.connect('mongodb://localhost:27017/user', {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useFindAndModify: false
+        });
+        mongoose.connect('mongodb://localhost:27017/room', {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useFindAndModify: false
         });
     }
 
+
     async addOrUpdateUser(user: any) {
-        let newUser = new User(user);
-        await newUser.findOneAndUpdate(
+        //let newUser = new User(user);
+        return await User.findOneAndUpdate(
             {_id: user.id},
             user, {upsert: true, new: true, runValidators: true},
             function (err, doc) {
@@ -47,18 +47,18 @@ export class DB {
                     logger.info("user added or updated", doc);
                     return doc;
                 }
-        });
+            });
     }
 
 
-    async getUserById(id:string){
-        User.findById(id, function (err, user) {
+    async getUserById(id: string) {
+        return User.findById(id, function (err, user) {
             if (err) {
-
+                return err;
             }
             if (user === "null" || user === null) {
                 logger.info(" user " + id + " not found");
-                return  user;
+                return user;
             }
             logger.info("user :");
             logger.info(user);
@@ -67,8 +67,18 @@ export class DB {
 
     }
 
-    async getUsedByAccessToken(accessToken:string) {
-
+    async getUserByAccessToken(accessToken: string) {
+        return User.find({accessToken: accessToken}, function (err, user) {
+            if (err) {
+                return err;
+            }
+            if (user === "null" || user === null) {
+                logger.info(" user  with access token " + accessToken + " not found");
+                return user;
+            }
+            logger.info("userByAccessToken :");
+            logger.info(user);
+        });
     }
 
 }

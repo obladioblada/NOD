@@ -4,9 +4,6 @@ import {DB} from "./db";
 import { configure, getLogger } from "log4js";
 const logger = getLogger();
 
-
-
-
 logger.level = "info";
 
 configure({
@@ -25,9 +22,8 @@ let spotifyService = new SpotifyService(
     process.env.SPOTIFY_CLIENT_ID,
     process.env.SPOTIFY_CLIENT_SECRET
 );
+
 const PORT: any = 3000;
-
-
 
 // handling CORS
 app.use((_req, res, next) => {
@@ -43,6 +39,10 @@ app.use((_req, res, next) => {
 const scopes = "user-read-private user-read-email user-follow-read streaming app-remote-control user-modify-playback-state playlist-read-collaborative user-read-playback-state user-modify-playback-state";
 spotifyService.redirectUrl = "http://localhost:4200/callback";
 
+app.get("", (_req, res) => {
+    res.send("NOD server is ON");
+});
+
 app.get("/authenticate", (req, res) => {
     const authCode = req.query.code || null;
     spotifyService.authenticate(authCode)
@@ -55,15 +55,16 @@ app.get("/authenticate", (req, res) => {
                 name: authResponse.name,
                 accessToken: authResponse.access_token,
                 refreshToken: authResponse.refresh_token,
-                expirationDate: null,
+                expirationDate: authResponse.expires_in,
             })
                 .then((user) => {
-                    if (user != null) {
+                    if (user !== null) {
                         res.send(user);
                     } else {
                         res.send({error: "error during upsert!"});
                     }
-                }).catch((err) => {
+                })
+                .catch((err) => {
                 res.send(err);
             });
         }
@@ -74,13 +75,13 @@ app.get("/authenticate", (req, res) => {
     });
 });
 
-
 app.get("/updateToken", (_req, res) => {
     logger.info("no access token or token is exprired, rinnovo");
     logger.info("ricevuto code " + _req.query.code);
-    let _user:any = db.getUserById(_req.params.id);
-    if(!_user) {
-        _user = db.getUsedByAccessToken(_req.params.access_token);
+    let _user: any = db.getUserById(_req.params.id);
+    logger.info(_user);
+    if (!_user) {
+        _user = db.getUserByAccessToken(_req.params.access_token);
     }
 
     spotifyService.updateToken(_user.refreshToken)
@@ -97,10 +98,6 @@ app.get("/updateToken", (_req, res) => {
             logger.info("rinnovo NOT successful - redirect to login");
             res.send({status: 500});
         });
-});
-
-app.get("", (_req, res) => {
-    res.send("NOD server is ON");
 });
 
 app.get("/login", (_req, res) => {
@@ -139,8 +136,8 @@ async function join(masterAccessToken: string) {
     let uriSong: string;
     let progressMs: string;
     let i = 0;
-    // const masterUser: User = db.getUserByAccessToken(masterAccessToken);
-    //logger.info("Before await "+ masterUser.id);
+    const masterUser: any = db.getUserByAccessToken(masterAccessToken);
+    logger.info("Before await "+ masterUser.id);
     spotifyService.CurrentlyPlaying(masterAccessToken)
         .then((song: any) => {
          /*   uriSong = song.uri;
@@ -172,7 +169,6 @@ async function join(masterAccessToken: string) {
     logger.info("end joining");
 }
 
-
 app.get("/currently-playing", (_req, res) => {
     spotifyService.CurrentlyPlaying(_req.query.access_token)
         .then((response) => {
@@ -183,7 +179,6 @@ app.get("/currently-playing", (_req, res) => {
             res.send(error);
         });
 });
-
 
 app.get("/play", (_req, res) => {
     spotifyService.play(_req.query.access_token)

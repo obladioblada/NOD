@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,9 @@ import { AuthService } from 'src/auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MainButtonService } from './main-button/main-button.service';
 import { DeviceComponent } from './device/device.component';
+import { SpotifyService } from './services/spotify.services';
+import { SearchComponent } from './components/Search/search.component';
+import { TileComponent } from './components/tile/tile.component';
 
 @NgModule({
   declarations: [
@@ -18,14 +22,18 @@ import { DeviceComponent } from './device/device.component';
     LoginComponent,
     HomeComponent,
     MainButtonComponent,
-    DeviceComponent
+    DeviceComponent,
+    SearchComponent,
+    TileComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [AuthGuardService, AuthService, MainButtonService],
+  providers: [AuthGuardService, AuthService, SpotifyService, MainButtonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

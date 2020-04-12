@@ -1,0 +1,39 @@
+<div class="main">
+  <div class="ui form" [formGroup]="formGroup">
+    <div class="ui icon fluid input">
+      <input type="text" formControlName="query" placeholder="Search for Songs...">
+      <i class="search icon"></i>
+    </div>
+  </div>
+</div>
+
+<div class="ui hidden divider"></div>
+
+<div class="result" *ngIf="results">
+  <div class="ui scheme raised segments" *ngFor="let res of results">
+    <div class="ui segment">
+      <div class="ui items" *ngIf="res.images.length > 0">
+        <div class="item">
+          <div class="ui small image">
+            <img src="{{res.images[0].url}}" alt="">
+          </div>
+
+          <div class="content">
+            <h3><a href="/artist/{{res.id}}">{{res.name}}</a></h3>
+            <div class="ui labels">
+              <div class="ui blue label">Followers: {{res.followers.total}}</div>
+              <div class="ui green label">Popularity: {{res.popularity}}</div>
+            </div>
+            <div class="ui horizontal list" *ngFor="let genre of res.genres">
+              <div class="item">
+                <div class="ui labels">
+                  <div class="ui label">{{genre}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

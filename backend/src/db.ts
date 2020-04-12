@@ -23,11 +23,15 @@ export class DB {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false
+        }).catch(function (reason) {
+            console.log('Unable to connect to the mongodb instance. Error: ', reason);
         });
         mongoose.connect('mongodb://localhost:27017/room', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false
+        }).catch(function (reason) {
+            console.log('Unable to connect to the mongodb instance. Error: ', reason);
         });
     }
 

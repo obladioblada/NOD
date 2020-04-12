@@ -52,11 +52,11 @@ export class SpotifyService {
                     if (!error && response.statusCode === 200) {
                         resolve({
                             access_token: body.accessToken,
-                        });                
+                        });
                     } else {
                         reject({
                         error: body.error
-                    })
+                    });
                 }
             });
     

@@ -1,0 +1,36 @@
+
+:host(.is-active){
+  border-left: 1em solid #1ed760;
+  padding-left: 0.2em;
+}
+:host {
+  display: grid;
+  grid-template-columns: 5em auto;
+  grid-template-rows: 2em 2em;
+  width: 15em;
+  padding: 1em;
+  padding-left: 0em;
+  margin: 1em;
+  border-radius: 1em;
+  grid-gap: 1em;
+  background: #434343;
+  border-left: 1em solid #434343;
+
+}
+
+.tile-title {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.tile-image {
+  grid-column: 1;
+  grid-row: 1;
+  grid-row-end: 3;
+}
+
+.tile-footer {
+  grid-column: 1;
+  grid-row: 3;
+  grid-column-end: 3;
+}

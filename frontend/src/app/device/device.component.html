@@ -1,34 +1,16 @@
-
-  <div class="title"  (click)="play()">
+<nod-tile>
+  <div class="title tile-title" (click)="play()">
     <span class="name">{{device.name}} </span>
-    <!--
-    <div class="play-control">
-      <span (click)="play(device.id, true)">
-        <i class="play"> </i>
-      </span>
-      -
-      <span (click)="play(device.id, false)">
-        <i class="pause"> </i>
-      </span>
-    </div>
-    -->
   </div>
-  <div class="icon" (click)="play()">
-        <div [class]="'device '+device.type | lowercase " [ngClass]="{'is-active' : device.is_active}">
-      <div class="screenWrapper x2">
-      </div>
-    </div>
-  </div>
-  <div class="footer">
+  <div calss="tile-footer">
     <div class="volume">
       <input type="range" min="0" max="100" [ngClass]="'value-'+device.volume_percent" [value]="device.volume_percent" (change)="setVolume($event)" class="slider">
     </div>
   </div>
-<nod-tile>
-  <div (click)="play()" tile-image>
+  <div class="icon tile-image" (click)="play()">
     <div [class]="'device '+device.type | lowercase " [ngClass]="{'is-active' : device.is_active}">
       <div class="screenWrapper x2">
       </div>
     </div>
-    </div>
+  </div>
 </nod-tile>

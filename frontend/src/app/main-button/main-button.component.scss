@@ -105,6 +105,10 @@
     animation: 4s load-loop ease-in-out infinite;
   }
 
+  .loop.main-button:after {
+    animation: 4s load-loop-name ease-in-out infinite;
+  }
+
   @keyframes load-loop {
     0%,
     100% {
@@ -112,6 +116,15 @@
     }
     50% {
       transform: scale(0);
+    }
+  }
+  @keyframes load-loop-name {
+    0%,
+    100% {
+      text-shadow: 0px 0px 6px rgba(94, 219, 141, 0);
+    }
+    50% {
+      text-shadow: 0px 0px 16px rgba(94, 219, 141, 0);
     }
   }
 }

@@ -8,10 +8,19 @@ $ui-elements-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55),  font-s
 
 body {
   background: #0f0f0f;
-  color: whitesmoke;
-  transition: none;
+  color: white;
+  font-size: 14px;
+  margin: 0;
 }
 
+img {
+  width: 100%;
+}
+a {
+  color: whitesmoke;
+  text-decoration: none;
+  font-weight: bold;
+}
 
 .play{
   width: 1em;

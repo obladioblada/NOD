@@ -38693,3 +38693,96 @@
     }
   ]
 }
+[2020-04-13T00:08:50.236] [INFO] default - Server is listening on 3000
+[2020-04-13T00:08:50.261] [INFO] default - coonected to db
+[2020-04-13T00:11:31.014] [INFO] default - { error: { status: 401, message: 'The access token expired' } }
+[2020-04-13T00:11:33.780] [INFO] default - { error: { status: 401, message: 'The access token expired' } }
+[2020-04-13T00:11:43.895] [INFO] default - CALLBACK to LOGIN
+[2020-04-13T00:11:44.832] [INFO] server - AQA4M50IK3_qnwxzPnzAKQ5YT3ysm3KX2MQ8V0D3vPvj4x8spFukcdpffjCwZsfF0-E0mCecjliDfA8EFQ_vgCAqhmAMEgKNdf1rozoE1JsXcs3aML0Nfu6Hg7r8_RJgWJTuj1MGlYjIzNRlxkk1sRk2aQEbRi9wHxMPbAEURKQ_8U02hc3lpaD4cNXlBcvGJEQ5o_gHgUOhLmuEQeGjw1wGdALG5fuu7YY8QLUZlKf4yobb3sDLQmouRhWOXBto9dKevp7YTiCfpoLb2dSt0bnSE-QBk5CP1AvkKT1qNmaHuT9QeYoSqdU0Ok_F-9K1XJbf_4xtseev_VRzBHvN0DJV24sM6B-1X_kC30nQ-hvw28FNW4VodFoVdDVSZ5qDjPpu8tUZ_w6TQZHGDV5FuMUELo3faQg7zKDgqg
+[2020-04-13T00:11:44.930] [INFO] server - I got a token, lets get my info
+[2020-04-13T00:11:44.932] [INFO] server - BQB82Nx7zTH_mRbHoE2oxp91rHk2i0q_hjRlAPEGoxr4Yrf2xZQ-7wM0nVa84in12chRCkV8QUfGli6EYQtQnVU8UgkYiYfZ-urHeyaWYwR0gJ7_khyEFWiNEkxveKhzLgyd2FpFIIiyrtZbIvQA47uxo2oDwphzvH6dU3aLnFc5U7L1
+[2020-04-13T00:11:44.936] [INFO] server - BQB82Nx7zTH_mRbHoE2oxp91rHk2i0q_hjRlAPEGoxr4Yrf2xZQ-7wM0nVa84in12chRCkV8QUfGli6EYQtQnVU8UgkYiYfZ-urHeyaWYwR0gJ7_khyEFWiNEkxveKhzLgyd2FpFIIiyrtZbIvQA47uxo2oDwphzvH6dU3aLnFc5U7L1
+[2020-04-13T00:11:45.024] [INFO] server - user: 
+[2020-04-13T00:11:45.025] [INFO] server - {
+  country: 'NL',
+  display_name: 'Giuseppe Ministeri',
+  email: 'mrpaah@gmail.com',
+  explicit_content: { filter_enabled: false, filter_locked: false },
+  external_urls: { spotify: 'https://open.spotify.com/user/gadato' },
+  followers: { href: null, total: 21 },
+  href: 'https://api.spotify.com/v1/users/gadato',
+  id: 'gadato',
+  images: [
+    {
+      height: null,
+      url: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmevakqe6OPsmLtSWJBhkBgzt7x5q7USJ4BI3_pEJnBL2qEX7UzrAEvW3nmvIE5LTE&_nc_ht=scontent-amt2-1.xx&oh=9d06151712a672f65a4b2d1d4ad84c61&oe=5EB6E663',
+      width: null
+    }
+  ],
+  product: 'premium',
+  type: 'user',
+  uri: 'spotify:user:gadato'
+}
+[2020-04-13T00:11:45.041] [INFO] default - risposta da auth:
+[2020-04-13T00:11:45.042] [INFO] default - {
+  access_token: 'BQB82Nx7zTH_mRbHoE2oxp91rHk2i0q_hjRlAPEGoxr4Yrf2xZQ-7wM0nVa84in12chRCkV8QUfGli6EYQtQnVU8UgkYiYfZ-urHeyaWYwR0gJ7_khyEFWiNEkxveKhzLgyd2FpFIIiyrtZbIvQA47uxo2oDwphzvH6dU3aLnFc5U7L1',
+  token_type: 'Bearer',
+  expires_in: 3600,
+  refresh_token: 'AQCAGNOL2h6c5IhTOkmw0fVHSU3_getewJc07yqffra-88dhvtxXUyuGPM4CWR7Eht6PQn40Inn2iNEKKluDw2Xfke6nXdBL2KFm0Wip9DBSdZnH3HauUyW-OXCYQd07Khc',
+  scope: 'streaming app-remote-control playlist-read-collaborative user-modify-playback-state user-follow-read user-read-playback-state user-read-email user-read-private',
+  id: 'gadato',
+  name: 'Giuseppe Ministeri',
+  status: 200
+}
+[2020-04-13T00:11:45.158] [INFO] default - user added or updated {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQB82Nx7zTH_mRbHoE2oxp91rHk2i0q_hjRlAPEGoxr4Yrf2xZQ-7wM0nVa84in12chRCkV8QUfGli6EYQtQnVU8UgkYiYfZ-urHeyaWYwR0gJ7_khyEFWiNEkxveKhzLgyd2FpFIIiyrtZbIvQA47uxo2oDwphzvH6dU3aLnFc5U7L1',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  refreshToken: 'AQCAGNOL2h6c5IhTOkmw0fVHSU3_getewJc07yqffra-88dhvtxXUyuGPM4CWR7Eht6PQn40Inn2iNEKKluDw2Xfke6nXdBL2KFm0Wip9DBSdZnH3HauUyW-OXCYQd07Khc'
+}
+[2020-04-13T00:11:45.362] [INFO] default - {
+  devices: [
+    {
+      id: '2094eb9adb112ec1cb846dab73bc05e46981cddb',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'BLN-L21',
+      type: 'Smartphone',
+      volume_percent: 100
+    },
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T00:12:01.891] [INFO] default - {
+  devices: [
+    {
+      id: '2094eb9adb112ec1cb846dab73bc05e46981cddb',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'BLN-L21',
+      type: 'Smartphone',
+      volume_percent: 100
+    },
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}

@@ -5,7 +5,6 @@ import { from, Observable } from "rxjs";
 
 const logger = getLogger();
 const User: any = mongoose.model('User', UserSchema);
-const Room = mongoose.model('Room', UserSchema);
 
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

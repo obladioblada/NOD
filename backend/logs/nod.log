@@ -38786,3 +38786,1795 @@
     }
   ]
 }
+[2020-04-13T00:15:42.100] [INFO] default - {
+  devices: [
+    {
+      id: '2094eb9adb112ec1cb846dab73bc05e46981cddb',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'BLN-L21',
+      type: 'Smartphone',
+      volume_percent: 100
+    },
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T00:18:19.674] [INFO] default - {
+  devices: [
+    {
+      id: '2094eb9adb112ec1cb846dab73bc05e46981cddb',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'BLN-L21',
+      type: 'Smartphone',
+      volume_percent: 100
+    },
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T01:27:16.128] [INFO] default - CALLBACK to LOGIN
+[2020-04-13T01:27:17.230] [INFO] server - AQA_Q7VKnBSpVhqczCcj01nm4XdfCUYpvwUU72_iHN5k1CnaP_mq5dVfUMwvGSpOwJyOMPhNWGQjcc-1syPpOB-ynZrhPdE2pxwze52DjrvyhYfq6Y_sNjWOpx5i0gu2HsJksNNVsUkCtwjRgifLlB-I3hRd3_EHeye2h2otYi6X4lbOXX1EP2Fwka9usK5w0ehvPDzBD_h3rIH_i8aTFtCPXlHzZRLV4QerE2g-nqrwcASGm17LvErJvn_AfywOLKXNSq-zEwoxZ63Admrt2hV_gYgWOv9rStF8uZwLUt3SAGig8FTPkgF_mG62uENWU2_gHZNK39yDz2YIz3VOvPZ0G4MOa96JmSXNM00oS6vfGQL9u7s0Tk-2g25T1ysuxfm4EbgdCzzJOQ_OmrRn6TYp83ZWP4dazFLTwA
+[2020-04-13T01:27:17.340] [INFO] server - I got a token, lets get my info
+[2020-04-13T01:27:17.341] [INFO] server - BQDc0Lewd6-ruvdrA4zGu32W25YjnWHjpq8BdH_D9FHiiO3yB1-U09lGh7w79-WyxDCg0r-6nXqwJrxHx2Faq4K8vBMc6I4FEE8n9ldqI9GMrUQpxgXBez1BTLse-Stqgpc33xdPx4CGzPm2Q3yXVg1mWH2dxC0IEQ4-GJrFLzYxqVXw
+[2020-04-13T01:27:17.343] [INFO] server - BQDc0Lewd6-ruvdrA4zGu32W25YjnWHjpq8BdH_D9FHiiO3yB1-U09lGh7w79-WyxDCg0r-6nXqwJrxHx2Faq4K8vBMc6I4FEE8n9ldqI9GMrUQpxgXBez1BTLse-Stqgpc33xdPx4CGzPm2Q3yXVg1mWH2dxC0IEQ4-GJrFLzYxqVXw
+[2020-04-13T01:27:17.445] [INFO] server - user: 
+[2020-04-13T01:27:17.446] [INFO] server - {
+  country: 'NL',
+  display_name: 'Giuseppe Ministeri',
+  email: 'mrpaah@gmail.com',
+  explicit_content: { filter_enabled: false, filter_locked: false },
+  external_urls: { spotify: 'https://open.spotify.com/user/gadato' },
+  followers: { href: null, total: 21 },
+  href: 'https://api.spotify.com/v1/users/gadato',
+  id: 'gadato',
+  images: [
+    {
+      height: null,
+      url: 'https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=fsibMeNH-DEAX_sJEf8&_nc_ht=scontent-atl3-1.xx&oh=8fa969c5308466bf7cbfaedcbaa4a8b9&oe=5EBADAE3',
+      width: null
+    }
+  ],
+  product: 'premium',
+  type: 'user',
+  uri: 'spotify:user:gadato'
+}
+[2020-04-13T01:27:17.457] [INFO] default - risposta da auth:
+[2020-04-13T01:27:17.459] [INFO] default - {
+  access_token: 'BQDc0Lewd6-ruvdrA4zGu32W25YjnWHjpq8BdH_D9FHiiO3yB1-U09lGh7w79-WyxDCg0r-6nXqwJrxHx2Faq4K8vBMc6I4FEE8n9ldqI9GMrUQpxgXBez1BTLse-Stqgpc33xdPx4CGzPm2Q3yXVg1mWH2dxC0IEQ4-GJrFLzYxqVXw',
+  token_type: 'Bearer',
+  expires_in: 3600,
+  refresh_token: 'AQDYI3ZNC0sgcJIFSx26sU1zN6OoBlrIsCJ_ZDKiDew9xCSoPRO2dilO1WnDhVoZdB0sfO2OEu4kU3SvYJ8e9iWbxmS74AgQAO7N5F7K1gxauLaJzIPRrxisCf5B9Ak52wU',
+  scope: 'streaming app-remote-control playlist-read-collaborative user-modify-playback-state user-follow-read user-read-playback-state user-read-email user-read-private',
+  id: 'gadato',
+  name: 'Giuseppe Ministeri',
+  status: 200
+}
+[2020-04-13T01:27:17.500] [INFO] default - user added or updated {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQDc0Lewd6-ruvdrA4zGu32W25YjnWHjpq8BdH_D9FHiiO3yB1-U09lGh7w79-WyxDCg0r-6nXqwJrxHx2Faq4K8vBMc6I4FEE8n9ldqI9GMrUQpxgXBez1BTLse-Stqgpc33xdPx4CGzPm2Q3yXVg1mWH2dxC0IEQ4-GJrFLzYxqVXw',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  refreshToken: 'AQDYI3ZNC0sgcJIFSx26sU1zN6OoBlrIsCJ_ZDKiDew9xCSoPRO2dilO1WnDhVoZdB0sfO2OEu4kU3SvYJ8e9iWbxmS74AgQAO7N5F7K1gxauLaJzIPRrxisCf5B9Ak52wU'
+}
+[2020-04-13T01:27:17.657] [INFO] default - {
+  devices: [
+    {
+      id: '2094eb9adb112ec1cb846dab73bc05e46981cddb',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'BLN-L21',
+      type: 'Smartphone',
+      volume_percent: 100
+    },
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T01:28:37.126] [INFO] default - {
+  devices: [
+    {
+      id: '2094eb9adb112ec1cb846dab73bc05e46981cddb',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'BLN-L21',
+      type: 'Smartphone',
+      volume_percent: 100
+    },
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T01:29:53.607] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T01:30:45.757] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T01:30:50.064] [INFO] default - BQDc0Lewd6-ruvdrA4zGu32W25YjnWHjpq8BdH_D9FHiiO3yB1-U09lGh7w79-WyxDCg0r-6nXqwJrxHx2Faq4K8vBMc6I4FEE8n9ldqI9GMrUQpxgXBez1BTLse-Stqgpc33xdPx4CGzPm2Q3yXVg1mWH2dxC0IEQ4-GJrFLzYxqVXw
+[2020-04-13T01:30:50.086] [INFO] default - 4efd922fe184e7e72c4d04b5477a19ea47812467
+[2020-04-13T01:30:50.088] [INFO] default - true
+[2020-04-13T01:30:50.092] [INFO] server - {
+  method: 'PUT',
+  url: 'https://api.spotify.com/v1/me/player',
+  headers: {
+    Authorization: 'Bearer BQDc0Lewd6-ruvdrA4zGu32W25YjnWHjpq8BdH_D9FHiiO3yB1-U09lGh7w79-WyxDCg0r-6nXqwJrxHx2Faq4K8vBMc6I4FEE8n9ldqI9GMrUQpxgXBez1BTLse-Stqgpc33xdPx4CGzPm2Q3yXVg1mWH2dxC0IEQ4-GJrFLzYxqVXw'
+  },
+  json: true,
+  body: {
+    device_ids: [ '4efd922fe184e7e72c4d04b5477a19ea47812467' ],
+    play: 'true'
+  }
+}
+[2020-04-13T01:30:50.422] [ERROR] server - error player
+[2020-04-13T01:30:50.423] [ERROR] server - undefined
+[2020-04-13T01:30:50.424] [ERROR] default - undefined
+[2020-04-13T01:30:54.044] [INFO] default - BQDc0Lewd6-ruvdrA4zGu32W25YjnWHjpq8BdH_D9FHiiO3yB1-U09lGh7w79-WyxDCg0r-6nXqwJrxHx2Faq4K8vBMc6I4FEE8n9ldqI9GMrUQpxgXBez1BTLse-Stqgpc33xdPx4CGzPm2Q3yXVg1mWH2dxC0IEQ4-GJrFLzYxqVXw
+[2020-04-13T01:30:54.046] [INFO] default - 4efd922fe184e7e72c4d04b5477a19ea47812467
+[2020-04-13T01:30:54.046] [INFO] default - false
+[2020-04-13T01:30:54.049] [INFO] server - {
+  method: 'PUT',
+  url: 'https://api.spotify.com/v1/me/player',
+  headers: {
+    Authorization: 'Bearer BQDc0Lewd6-ruvdrA4zGu32W25YjnWHjpq8BdH_D9FHiiO3yB1-U09lGh7w79-WyxDCg0r-6nXqwJrxHx2Faq4K8vBMc6I4FEE8n9ldqI9GMrUQpxgXBez1BTLse-Stqgpc33xdPx4CGzPm2Q3yXVg1mWH2dxC0IEQ4-GJrFLzYxqVXw'
+  },
+  json: true,
+  body: {
+    device_ids: [ '4efd922fe184e7e72c4d04b5477a19ea47812467' ],
+    play: 'false'
+  }
+}
+[2020-04-13T01:30:54.299] [ERROR] server - error player
+[2020-04-13T01:30:54.299] [ERROR] server - undefined
+[2020-04-13T01:30:54.301] [ERROR] default - { error: { status: 502, message: 'Bad gateway.' } }
+[2020-04-13T01:38:20.279] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: true,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T01:42:29.775] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T01:43:11.556] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T01:44:15.119] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T01:45:06.601] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T01:46:05.246] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T01:48:19.641] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T01:53:21.422] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T01:56:30.664] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T01:56:44.652] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T01:59:05.112] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:00:07.076] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:04:23.548] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:05:55.986] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:06:13.299] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:06:39.198] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:09:55.032] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:11:13.544] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:11:44.663] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:19:29.897] [INFO] default - {
+  devices: [
+    {
+      id: '2094eb9adb112ec1cb846dab73bc05e46981cddb',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'BLN-L21',
+      type: 'Smartphone',
+      volume_percent: 100
+    },
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:19:53.213] [INFO] default - {
+  devices: [
+    {
+      id: '2094eb9adb112ec1cb846dab73bc05e46981cddb',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'BLN-L21',
+      type: 'Smartphone',
+      volume_percent: 100
+    },
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:21:26.086] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:21:54.291] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:23:28.056] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:24:49.905] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:26:08.664] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:26:28.550] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:28:29.668] [INFO] default - CALLBACK to LOGIN
+[2020-04-13T02:28:30.901] [INFO] server - AQAHEsMC4qdg7JfEDG5BaG4eAVP0vEJm_GgsNLeu0JL9szxjpsB53E8z767vdFWqqtV-4f_7syOWH_igLiC4Y1TpiGjuDbkgY9yJVjmA5bdRRL_hwnuH-wLmY9mwsd55TgaPypeBrdoKNYoNrWN8vQWG6uk4aVB5vIA27XcpwPAZ6DwQ8wtEi7QShtioQvymeVlfAqahNlrlhoJx2v9KwSGeqxUOoRIFKdemaoXVYY5mLuJgYozwPatNtEq5xfcNQ6Z1u_-Lq0MYn4Soi7CpHwdsMu9AjpibMfYUmFCrWIwwtF6t4rvAvzix96pJbUv6soFJfr3GdS2kHzeYGajHFPvpaxwgj-JrKHNiMD-PXT9-wiJmCByOKsQ6zaQlmJJVFdUgMF7epEM5wLrKvPK7ojeaj03cXtYeQ9Tqiw
+[2020-04-13T02:28:30.996] [INFO] server - I got a token, lets get my info
+[2020-04-13T02:28:30.996] [INFO] server - BQD6TNZ6p58wXMDYzsFALBmMI76I_T41eHQXqKdStXJ-ecjrspw339EljXJ_61cQiH03ognqocg_ClON9qDS-bwvLQj8G_eptcD0Xvzljulsitt_S4vBuYSjJgt-h4A08IRom2akdlD5pDmhVvm_aXNCkSYtVyxdBYXTXcwI1F5oe4dc
+[2020-04-13T02:28:30.997] [INFO] server - BQD6TNZ6p58wXMDYzsFALBmMI76I_T41eHQXqKdStXJ-ecjrspw339EljXJ_61cQiH03ognqocg_ClON9qDS-bwvLQj8G_eptcD0Xvzljulsitt_S4vBuYSjJgt-h4A08IRom2akdlD5pDmhVvm_aXNCkSYtVyxdBYXTXcwI1F5oe4dc
+[2020-04-13T02:28:31.110] [INFO] server - user: 
+[2020-04-13T02:28:31.111] [INFO] server - {
+  country: 'NL',
+  display_name: 'Giuseppe Ministeri',
+  email: 'mrpaah@gmail.com',
+  explicit_content: { filter_enabled: false, filter_locked: false },
+  external_urls: { spotify: 'https://open.spotify.com/user/gadato' },
+  followers: { href: null, total: 21 },
+  href: 'https://api.spotify.com/v1/users/gadato',
+  id: 'gadato',
+  images: [
+    {
+      height: null,
+      url: 'https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=fsibMeNH-DEAX_sJEf8&_nc_ht=scontent-atl3-1.xx&oh=8fa969c5308466bf7cbfaedcbaa4a8b9&oe=5EBADAE3',
+      width: null
+    }
+  ],
+  product: 'premium',
+  type: 'user',
+  uri: 'spotify:user:gadato'
+}
+[2020-04-13T02:28:31.119] [INFO] default - risposta da auth:
+[2020-04-13T02:28:31.120] [INFO] default - {
+  access_token: 'BQD6TNZ6p58wXMDYzsFALBmMI76I_T41eHQXqKdStXJ-ecjrspw339EljXJ_61cQiH03ognqocg_ClON9qDS-bwvLQj8G_eptcD0Xvzljulsitt_S4vBuYSjJgt-h4A08IRom2akdlD5pDmhVvm_aXNCkSYtVyxdBYXTXcwI1F5oe4dc',
+  token_type: 'Bearer',
+  expires_in: 3600,
+  refresh_token: 'AQBPxgYji-WjRPY4ucAl_vl0uTztyR-BypDO5-pCSlh3ovUr3MZcbo60sCFgtpCwlvCsdF55mqhbn-g6wmFIPFh42GjdIMuVNJl7ZxmC2SVDHQtvx3j9Jb6eiP9OSBRdsxo',
+  scope: 'streaming app-remote-control playlist-read-collaborative user-modify-playback-state user-follow-read user-read-playback-state user-read-email user-read-private',
+  id: 'gadato',
+  name: 'Giuseppe Ministeri',
+  status: 200
+}
+[2020-04-13T02:28:31.149] [INFO] default - user added or updated {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQD6TNZ6p58wXMDYzsFALBmMI76I_T41eHQXqKdStXJ-ecjrspw339EljXJ_61cQiH03ognqocg_ClON9qDS-bwvLQj8G_eptcD0Xvzljulsitt_S4vBuYSjJgt-h4A08IRom2akdlD5pDmhVvm_aXNCkSYtVyxdBYXTXcwI1F5oe4dc',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  refreshToken: 'AQBPxgYji-WjRPY4ucAl_vl0uTztyR-BypDO5-pCSlh3ovUr3MZcbo60sCFgtpCwlvCsdF55mqhbn-g6wmFIPFh42GjdIMuVNJl7ZxmC2SVDHQtvx3j9Jb6eiP9OSBRdsxo'
+}
+[2020-04-13T02:28:31.325] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:30:19.755] [ERROR] default - Error: socket hang up
+    at connResetException (internal/errors.js:604:14)
+    at TLSSocket.socketOnEnd (_http_client.js:460:23)
+    at TLSSocket.emit (events.js:333:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  code: 'ECONNRESET'
+}
+[2020-04-13T02:30:49.053] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:31:59.284] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:33:04.716] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:33:17.404] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:33:32.060] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T02:33:40.745] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:11:20.203] [INFO] default - CALLBACK to LOGIN
+[2020-04-13T11:11:20.636] [INFO] server - AQAuICOCX3sOAqpcMYErSw18Ing_fM5bctzkjDk3qlZtPtUxjHsN0jF04d_oPTvmb-m3Sv8g62vl8COIb6s-pCDf4YnLJwI8FTrom-V31otRNbAsQqpnExHn9_WqZUiNQWxnFd1UZ5AWqlhvEAVIKg3EuPDAXn2CK9OjAM64SspFgONTjG1eHh9GH0pL3dNDlVpz6ObpRdNlICNRYo5hyyeDpIXdhUD1vI0uysD6lVlT0_3wDCQ0g8e3qSoYBkUyG8P6DbH2L9bBhU25TUrGgzSk2gLHI6nNfkWmZJdHin-P13owUburrsqwkMqje3Rcjy9rczOFag9sHMiDrHJzC8HOaoRJoZXiiG7LsuU2lfVDCUYqIWSc2Fqp44AVZ4VAI5kqIIAL1oehZZ3MaPKbPba9d_iLluIAVyx5oQ
+[2020-04-13T11:11:20.725] [INFO] server - I got a token, lets get my info
+[2020-04-13T11:11:20.726] [INFO] server - BQAIkUOFUhw_vsKo11iRiOtHPrphaf73mTOLSLTWcZbuJGfkTMRvu86papneFemZhsfsGf2WtOmN7WBNccxr6J1GKnivj4JxfWVroMuvjHv2cBMJZWYTjt0uIPZsy8fThCvqCj6pkza_ofDilvaQ0ooopiFD2bggpK7_fZ2T-A6irI7-
+[2020-04-13T11:11:20.727] [INFO] server - BQAIkUOFUhw_vsKo11iRiOtHPrphaf73mTOLSLTWcZbuJGfkTMRvu86papneFemZhsfsGf2WtOmN7WBNccxr6J1GKnivj4JxfWVroMuvjHv2cBMJZWYTjt0uIPZsy8fThCvqCj6pkza_ofDilvaQ0ooopiFD2bggpK7_fZ2T-A6irI7-
+[2020-04-13T11:11:20.844] [INFO] server - user: 
+[2020-04-13T11:11:20.846] [INFO] server - {
+  country: 'NL',
+  display_name: 'Giuseppe Ministeri',
+  email: 'mrpaah@gmail.com',
+  explicit_content: { filter_enabled: false, filter_locked: false },
+  external_urls: { spotify: 'https://open.spotify.com/user/gadato' },
+  followers: { href: null, total: 21 },
+  href: 'https://api.spotify.com/v1/users/gadato',
+  id: 'gadato',
+  images: [
+    {
+      height: null,
+      url: 'https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=fsibMeNH-DEAX_sJEf8&_nc_ht=scontent-atl3-1.xx&oh=8fa969c5308466bf7cbfaedcbaa4a8b9&oe=5EBADAE3',
+      width: null
+    }
+  ],
+  product: 'premium',
+  type: 'user',
+  uri: 'spotify:user:gadato'
+}
+[2020-04-13T11:11:20.859] [INFO] default - risposta da auth:
+[2020-04-13T11:11:20.860] [INFO] default - {
+  access_token: 'BQAIkUOFUhw_vsKo11iRiOtHPrphaf73mTOLSLTWcZbuJGfkTMRvu86papneFemZhsfsGf2WtOmN7WBNccxr6J1GKnivj4JxfWVroMuvjHv2cBMJZWYTjt0uIPZsy8fThCvqCj6pkza_ofDilvaQ0ooopiFD2bggpK7_fZ2T-A6irI7-',
+  token_type: 'Bearer',
+  expires_in: 3600,
+  refresh_token: 'AQDD9Nu2tXAvTyrwn5Yi0eTHr390w0SjE7-1fR9CUUDrAENxxgr9siq0C0-PNkKreW3VC4X-Hpmn7_rwhPkH_e3WKT7UIZ2-K55Bb37j-NTx9STvfZzlbsc7cRjHsNvod0k',
+  scope: 'streaming app-remote-control playlist-read-collaborative user-modify-playback-state user-follow-read user-read-playback-state user-read-email user-read-private',
+  id: 'gadato',
+  name: 'Giuseppe Ministeri',
+  status: 200
+}
+[2020-04-13T11:11:20.885] [INFO] default - user added or updated {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQAIkUOFUhw_vsKo11iRiOtHPrphaf73mTOLSLTWcZbuJGfkTMRvu86papneFemZhsfsGf2WtOmN7WBNccxr6J1GKnivj4JxfWVroMuvjHv2cBMJZWYTjt0uIPZsy8fThCvqCj6pkza_ofDilvaQ0ooopiFD2bggpK7_fZ2T-A6irI7-',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  refreshToken: 'AQDD9Nu2tXAvTyrwn5Yi0eTHr390w0SjE7-1fR9CUUDrAENxxgr9siq0C0-PNkKreW3VC4X-Hpmn7_rwhPkH_e3WKT7UIZ2-K55Bb37j-NTx9STvfZzlbsc7cRjHsNvod0k'
+}
+[2020-04-13T11:11:20.997] [INFO] default - {
+  devices: [
+    {
+      id: '2094eb9adb112ec1cb846dab73bc05e46981cddb',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'BLN-L21',
+      type: 'Smartphone',
+      volume_percent: 100
+    },
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:12:39.991] [ERROR] default - Error: socket hang up
+    at connResetException (internal/errors.js:604:14)
+    at TLSSocket.socketOnEnd (_http_client.js:460:23)
+    at TLSSocket.emit (events.js:333:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  code: 'ECONNRESET'
+}
+[2020-04-13T11:14:56.845] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:15:25.245] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:17:04.699] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:21:16.506] [ERROR] default - Error: socket hang up
+    at connResetException (internal/errors.js:604:14)
+    at TLSSocket.socketOnEnd (_http_client.js:460:23)
+    at TLSSocket.emit (events.js:333:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  code: 'ECONNRESET'
+}
+[2020-04-13T11:24:26.713] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:25:11.601] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:25:34.181] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:26:37.957] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:29:40.113] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:32:38.097] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:35:48.520] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:39:03.553] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:42:07.195] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:42:16.902] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:42:35.801] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:46:42.375] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:46:46.675] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:53:14.243] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:56:27.576] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:56:49.039] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:57:04.436] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:57:58.799] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:58:07.869] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T11:59:45.314] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T12:00:18.826] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T12:03:47.088] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T12:04:02.770] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T12:04:28.627] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T12:05:13.480] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T12:05:26.917] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T12:07:39.929] [INFO] default - {
+  devices: [
+    {
+      id: '2094eb9adb112ec1cb846dab73bc05e46981cddb',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'BLN-L21',
+      type: 'Smartphone',
+      volume_percent: 100
+    },
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T12:08:23.888] [INFO] default - {
+  devices: [
+    {
+      id: '2094eb9adb112ec1cb846dab73bc05e46981cddb',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'BLN-L21',
+      type: 'Smartphone',
+      volume_percent: 100
+    },
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T12:10:48.208] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T12:11:30.130] [INFO] default - CALLBACK to LOGIN
+[2020-04-13T12:11:31.374] [INFO] server - AQA6cUAiVZLRuypRawvwzgTp8oM0iopKTUpV-lsfFW6QLw12DSk8UH7xy8djsKQNh7dbVNl1BaV0yQ4Y03th0b-p5BZDsbBxUUnGG_CmkznslQ3rR-AUPipEsCsMne8xKPvs1bLVUPCoJcAET4UCs6EG_EEyzU7UiQ9t-TvkhmxvsdDqKhY90aDyJPcsbxfZD2RWItjZh7wn4fzy7NfBTh1FGgoadBm_vyKQCdbLjkkkwBwBn2rD2iLuBqMeQNZbFFAR54zS13NjB08y99EQWBSJpk0OiMcZ2o9FWJ6Frn27dee8R3wkm3A3U3XvMWzvgNRDBuq7LlW5LmJwg56PtiQw3JHjpaTbgZBrLZSoYHUIcLn4mSYOPbtdi8J2POKRaTmxoSTnPjN5KSZfopvw6Gbdj76z9mz4xYm89g
+[2020-04-13T12:11:31.470] [INFO] server - I got a token, lets get my info
+[2020-04-13T12:11:31.471] [INFO] server - BQD_cxzcDFlkldjcDEGzh2-rco3CdFjhK2Afe1wR6E2Hl-sU1qoXb_dD5gqfcuTDdYYpBg2b_ULWcgt38naQIaoNRDGf2QimfBMsoFHvakQrAbC6D3DGdMFkfTmvXHXId9Up9nMlI6RERPwzJMIW5iN3Tap7sF20C5FfAZ3dgbQ8NmIl
+[2020-04-13T12:11:31.471] [INFO] server - BQD_cxzcDFlkldjcDEGzh2-rco3CdFjhK2Afe1wR6E2Hl-sU1qoXb_dD5gqfcuTDdYYpBg2b_ULWcgt38naQIaoNRDGf2QimfBMsoFHvakQrAbC6D3DGdMFkfTmvXHXId9Up9nMlI6RERPwzJMIW5iN3Tap7sF20C5FfAZ3dgbQ8NmIl
+[2020-04-13T12:11:31.558] [INFO] server - user: 
+[2020-04-13T12:11:31.559] [INFO] server - {
+  country: 'NL',
+  display_name: 'Giuseppe Ministeri',
+  email: 'mrpaah@gmail.com',
+  explicit_content: { filter_enabled: false, filter_locked: false },
+  external_urls: { spotify: 'https://open.spotify.com/user/gadato' },
+  followers: { href: null, total: 21 },
+  href: 'https://api.spotify.com/v1/users/gadato',
+  id: 'gadato',
+  images: [
+    {
+      height: null,
+      url: 'https://scontent-atl3-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=fsibMeNH-DEAX_sJEf8&_nc_ht=scontent-atl3-1.xx&oh=8fa969c5308466bf7cbfaedcbaa4a8b9&oe=5EBADAE3',
+      width: null
+    }
+  ],
+  product: 'premium',
+  type: 'user',
+  uri: 'spotify:user:gadato'
+}
+[2020-04-13T12:11:31.568] [INFO] default - risposta da auth:
+[2020-04-13T12:11:31.569] [INFO] default - {
+  access_token: 'BQD_cxzcDFlkldjcDEGzh2-rco3CdFjhK2Afe1wR6E2Hl-sU1qoXb_dD5gqfcuTDdYYpBg2b_ULWcgt38naQIaoNRDGf2QimfBMsoFHvakQrAbC6D3DGdMFkfTmvXHXId9Up9nMlI6RERPwzJMIW5iN3Tap7sF20C5FfAZ3dgbQ8NmIl',
+  token_type: 'Bearer',
+  expires_in: 3600,
+  refresh_token: 'AQDcEzElAhwLDoxYKXaAaGpURYsAMVFzRkA7qiZGbbpRiP0MgjN_kaGVm2PRP3tByTEQoGqPEsM4JvTmGAAWv0-3SisMJriZu-7OLN0hwobI4xrVO1jfgUzwkmi6mjvd718',
+  scope: 'streaming app-remote-control playlist-read-collaborative user-modify-playback-state user-follow-read user-read-playback-state user-read-email user-read-private',
+  id: 'gadato',
+  name: 'Giuseppe Ministeri',
+  status: 200
+}
+[2020-04-13T12:11:31.594] [INFO] default - user added or updated {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQD_cxzcDFlkldjcDEGzh2-rco3CdFjhK2Afe1wR6E2Hl-sU1qoXb_dD5gqfcuTDdYYpBg2b_ULWcgt38naQIaoNRDGf2QimfBMsoFHvakQrAbC6D3DGdMFkfTmvXHXId9Up9nMlI6RERPwzJMIW5iN3Tap7sF20C5FfAZ3dgbQ8NmIl',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  refreshToken: 'AQDcEzElAhwLDoxYKXaAaGpURYsAMVFzRkA7qiZGbbpRiP0MgjN_kaGVm2PRP3tByTEQoGqPEsM4JvTmGAAWv0-3SisMJriZu-7OLN0hwobI4xrVO1jfgUzwkmi6mjvd718'
+}
+[2020-04-13T12:11:31.739] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T12:13:45.239] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T12:17:09.902] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T12:18:07.296] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T12:18:24.238] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:18:20.574] [INFO] default - CALLBACK to LOGIN
+[2020-04-13T16:18:21.636] [INFO] server - AQDvmpuUEcGhfcdAcUll2DEPwaPTdgZIl_nX-VNWdHnyQVfqNBfZFgNleeJtZbzFUosApj0uN7WYf-k6dV5_4b7Hfd_VJ_kf7lrJzWmBmxcYr1d0hjMhUxInuzqHYj3J2F9Cyaweqi5k3uUosLPtWjZ6Uo5dIdbrbn8DCjg1-rzN0wlzSNhK2nRpzv0_mC8vXVqHJ_rgcUtajfc2tj2sr8OM8TCGqhmElrXIxg660W2XAbGejXFYUQJsECeAoF-HG6RBiiOvcMn4lXYVBzUIm03-Qhqvy-72c0GEIZ0RAV3-5vwz0NGNkU2TYEqNppWhpz1DO1phRsfJxP9oJyqNQDDW1oS0l1NaUdmTm3JdmXdhJpoFu9BfCSIIG0EI60lSRMLwar8f58Hr_eOzUQsiHsQ_iskPLkltuna9Qw
+[2020-04-13T16:18:21.738] [INFO] server - I got a token, lets get my info
+[2020-04-13T16:18:21.739] [INFO] server - BQB0rIZ6klSHAyTLXTxv0FzEtNh6UV0cwlohzJT_Q_grBydfnU77ZhuvrWGdpzDXFsK7Ow0vzL6lRpFxGxoDJO1I3MvRThhyltsLedROnp_g6IFWSWfDN8dEtwGyoutr5QvtV7GJSteVmNc-Rnbc4BkvkmoahFYfZ-ruPYadbE5vSCqd
+[2020-04-13T16:18:21.740] [INFO] server - BQB0rIZ6klSHAyTLXTxv0FzEtNh6UV0cwlohzJT_Q_grBydfnU77ZhuvrWGdpzDXFsK7Ow0vzL6lRpFxGxoDJO1I3MvRThhyltsLedROnp_g6IFWSWfDN8dEtwGyoutr5QvtV7GJSteVmNc-Rnbc4BkvkmoahFYfZ-ruPYadbE5vSCqd
+[2020-04-13T16:18:21.869] [INFO] server - user: 
+[2020-04-13T16:18:21.870] [INFO] server - {
+  country: 'NL',
+  display_name: 'Giuseppe Ministeri',
+  email: 'mrpaah@gmail.com',
+  explicit_content: { filter_enabled: false, filter_locked: false },
+  external_urls: { spotify: 'https://open.spotify.com/user/gadato' },
+  followers: { href: null, total: 21 },
+  href: 'https://api.spotify.com/v1/users/gadato',
+  id: 'gadato',
+  images: [
+    {
+      height: null,
+      url: 'https://scontent-frt3-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=2FxRjdwi810AX-iC_4o&_nc_ht=scontent-frt3-1.xx&oh=e31f20a29cf31a50f0a643d63d746eca&oe=5EBADAE3',
+      width: null
+    }
+  ],
+  product: 'premium',
+  type: 'user',
+  uri: 'spotify:user:gadato'
+}
+[2020-04-13T16:18:21.883] [INFO] default - risposta da auth:
+[2020-04-13T16:18:21.884] [INFO] default - {
+  access_token: 'BQB0rIZ6klSHAyTLXTxv0FzEtNh6UV0cwlohzJT_Q_grBydfnU77ZhuvrWGdpzDXFsK7Ow0vzL6lRpFxGxoDJO1I3MvRThhyltsLedROnp_g6IFWSWfDN8dEtwGyoutr5QvtV7GJSteVmNc-Rnbc4BkvkmoahFYfZ-ruPYadbE5vSCqd',
+  token_type: 'Bearer',
+  expires_in: 3600,
+  refresh_token: 'AQA4WB0SMvjdMRcZ0VouKpEYUxfcTEsBJO6oIu3J5sItYGI5-DjbQOFOBA6b2fy6er92qHdMVSQPALmXEdS5Rtdx1OW7Z9kwuvBwZ3m7EJMaJFjtOe8_ULnQeQjECUd1rn8',
+  scope: 'streaming app-remote-control playlist-read-collaborative user-modify-playback-state user-follow-read user-read-playback-state user-read-email user-read-private',
+  id: 'gadato',
+  name: 'Giuseppe Ministeri',
+  status: 200
+}
+[2020-04-13T16:18:21.929] [INFO] default - user added or updated {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQB0rIZ6klSHAyTLXTxv0FzEtNh6UV0cwlohzJT_Q_grBydfnU77ZhuvrWGdpzDXFsK7Ow0vzL6lRpFxGxoDJO1I3MvRThhyltsLedROnp_g6IFWSWfDN8dEtwGyoutr5QvtV7GJSteVmNc-Rnbc4BkvkmoahFYfZ-ruPYadbE5vSCqd',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  refreshToken: 'AQA4WB0SMvjdMRcZ0VouKpEYUxfcTEsBJO6oIu3J5sItYGI5-DjbQOFOBA6b2fy6er92qHdMVSQPALmXEdS5Rtdx1OW7Z9kwuvBwZ3m7EJMaJFjtOe8_ULnQeQjECUd1rn8'
+}
+[2020-04-13T16:18:22.172] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:25:09.419] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:25:19.208] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:26:35.355] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:27:39.014] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:30:23.484] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:30:56.521] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:31:17.585] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:33:01.756] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:35:28.648] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:35:46.551] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:38:04.242] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:39:36.079] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:40:41.619] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:40:46.362] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:41:54.833] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:42:58.628] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:43:29.998] [ERROR] default - Error: socket hang up
+    at connResetException (internal/errors.js:604:14)
+    at TLSSocket.socketOnEnd (_http_client.js:460:23)
+    at TLSSocket.emit (events.js:333:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  code: 'ECONNRESET'
+}
+[2020-04-13T16:43:32.859] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:43:32.872] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:45:20.443] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:47:39.536] [ERROR] default - Error: socket hang up
+    at connResetException (internal/errors.js:604:14)
+    at TLSSocket.socketOnEnd (_http_client.js:460:23)
+    at TLSSocket.emit (events.js:333:22)
+    at endReadableNT (_stream_readable.js:1204:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  code: 'ECONNRESET'
+}
+[2020-04-13T16:48:53.760] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:49:10.544] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:53:02.514] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:54:54.451] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:56:13.242] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T16:56:28.773] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-13T17:22:54.092] [INFO] default - CALLBACK to LOGIN
+[2020-04-13T17:22:55.347] [INFO] server - AQCHQz5COtiKx_W147a8QYFU8BFrfr9fzH4gJ3a7Eosb8s-pOjljYi8LiJD7q3BZt-zXbNUzjodqLHp5kbJZjQAXcA-XtEOf48crGm4gARybmlHESfF4xISmfD6lbZb0noEuV-fpLtB5oU71f9nnwljVh6NUA2I1iAdCR-L2hgEdiU1B68AosY5UdURdLnlOsJNPxaPgNnrr_suwbsA3RtkjHIBL-jJp5CHDwOjKViWiJgfCKmse_Nqg78lHOQSu37MXdD4KK0oGtkdKeSDEdHQqYfu71L3_XploFxvzCBrddBk951iL5FuoYB9e5J8WPxPHxoSmTWEGFcl8eFaEKwv6g_a3rpPnzbYnwc2lezmgumgn2AjxnaDz8XkYNh0a2e0O-65Kzk2YPerProK3Zm0I9DZPt6ARCiuZgA
+[2020-04-13T17:22:55.461] [INFO] server - I got a token, lets get my info
+[2020-04-13T17:22:55.462] [INFO] server - BQCTBGJTOz4mzPS7EzZXxPt_T-89GIlS0iGm3lyPbxZDltPKi7iv3Y_j_5tWvVoflPaDXN8EfPczFj-pqlzjlGH4AanNWkjoWx1KU-xnOBrYWTabBuHWHMuSWQHh0AYr9frezxxMkNFFx_tCYgkuuBZTBwbFgkuKhJ0A2Jx-s6eEh7zq
+[2020-04-13T17:22:55.464] [INFO] server - BQCTBGJTOz4mzPS7EzZXxPt_T-89GIlS0iGm3lyPbxZDltPKi7iv3Y_j_5tWvVoflPaDXN8EfPczFj-pqlzjlGH4AanNWkjoWx1KU-xnOBrYWTabBuHWHMuSWQHh0AYr9frezxxMkNFFx_tCYgkuuBZTBwbFgkuKhJ0A2Jx-s6eEh7zq
+[2020-04-13T17:22:55.611] [INFO] server - user: 
+[2020-04-13T17:22:55.612] [INFO] server - {
+  country: 'NL',
+  display_name: 'Giuseppe Ministeri',
+  email: 'mrpaah@gmail.com',
+  explicit_content: { filter_enabled: false, filter_locked: false },
+  external_urls: { spotify: 'https://open.spotify.com/user/gadato' },
+  followers: { href: null, total: 21 },
+  href: 'https://api.spotify.com/v1/users/gadato',
+  id: 'gadato',
+  images: [
+    {
+      height: null,
+      url: 'https://scontent-frt3-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=2FxRjdwi810AX-iC_4o&_nc_ht=scontent-frt3-1.xx&oh=e31f20a29cf31a50f0a643d63d746eca&oe=5EBADAE3',
+      width: null
+    }
+  ],
+  product: 'premium',
+  type: 'user',
+  uri: 'spotify:user:gadato'
+}
+[2020-04-13T17:22:55.627] [INFO] default - risposta da auth:
+[2020-04-13T17:22:55.628] [INFO] default - {
+  access_token: 'BQCTBGJTOz4mzPS7EzZXxPt_T-89GIlS0iGm3lyPbxZDltPKi7iv3Y_j_5tWvVoflPaDXN8EfPczFj-pqlzjlGH4AanNWkjoWx1KU-xnOBrYWTabBuHWHMuSWQHh0AYr9frezxxMkNFFx_tCYgkuuBZTBwbFgkuKhJ0A2Jx-s6eEh7zq',
+  token_type: 'Bearer',
+  expires_in: 3600,
+  refresh_token: 'AQBxVWsP6UF-oowEXCkyX-ot-f0etkNRAiJ1RaA7Aw58jy6CVWOuzpNTUFMBEUeOY3rkCruCLT_08md0tSsulyvD90ojvnaoIkAfYEMIevteI7_bPcCfQAccF6Owf88TrXc',
+  scope: 'streaming app-remote-control playlist-read-collaborative user-modify-playback-state user-follow-read user-read-playback-state user-read-email user-read-private',
+  id: 'gadato',
+  name: 'Giuseppe Ministeri',
+  status: 200
+}
+[2020-04-13T17:22:55.682] [INFO] default - user added or updated {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQCTBGJTOz4mzPS7EzZXxPt_T-89GIlS0iGm3lyPbxZDltPKi7iv3Y_j_5tWvVoflPaDXN8EfPczFj-pqlzjlGH4AanNWkjoWx1KU-xnOBrYWTabBuHWHMuSWQHh0AYr9frezxxMkNFFx_tCYgkuuBZTBwbFgkuKhJ0A2Jx-s6eEh7zq',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  refreshToken: 'AQBxVWsP6UF-oowEXCkyX-ot-f0etkNRAiJ1RaA7Aw58jy6CVWOuzpNTUFMBEUeOY3rkCruCLT_08md0tSsulyvD90ojvnaoIkAfYEMIevteI7_bPcCfQAccF6Owf88TrXc'
+}
+[2020-04-13T17:22:55.893] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}

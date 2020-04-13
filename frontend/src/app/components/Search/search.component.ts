@@ -9,6 +9,7 @@ import { AuthService } from 'src/auth/auth.service';
 @Component({
   selector: 'nod-search',
   templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss'],
   providers: [SpotifyService]
 })
 export class SearchComponent {
@@ -17,7 +18,7 @@ export class SearchComponent {
   formGroup: FormGroup;
   query: FormControl = new FormControl();
 
-  constructor(private spotifyService: SpotifyService, private authService: AuthService) { 
+  constructor(private spotifyService: SpotifyService, private authService: AuthService) {
     this.formGroup =  new FormGroup({
       query: this.query
     });

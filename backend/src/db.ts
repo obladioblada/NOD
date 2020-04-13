@@ -64,11 +64,30 @@ export class DB {
                 logger.info(" user " + id + " not found");
                 return user;
             }
-            logger.info("user :");
-            logger.info(user);
         });
+    }
+
+    async getUsers() {
+        return User.find(function (err, users) {
+            if (err) {
+                return err;
+            }
+            if (users === "null" || users === null) {
+                logger.info("users:");
+                return users;
+            }
+        });
+    }
 
 
+    async getUsersAsMap() {
+        return  User.find({}, function(err, users) {
+            let userMap = {};
+            users.forEach(function(user) {
+              userMap[user._id] = user;
+            });
+            return userMap;
+          });
     }
 
     async getUserByAccessToken(accessToken: string) {

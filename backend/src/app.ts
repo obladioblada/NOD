@@ -59,7 +59,17 @@ app.get("/authenticate", (req, res) => {
             })
                 .then((user) => {
                     if (user !== null) {
-                        res.send(user);
+                        db.getUsers()
+                        .then((loeggedUsers)=> {
+                            logger.info("logged users: ");
+                            logger.info(loeggedUsers)
+                            res.send(...loeggedUsers,user);
+                        })
+                        .catch((err)=> {
+                            logger.info(err);
+                            res.send(err);
+                        });
+                        
                     } else {
                         res.send({error: "error during upsert!"});
                     }
@@ -136,18 +146,20 @@ async function join(masterAccessToken: string) {
     let uriSong: string;
     let progressMs: string;
     let i = 0;
-    const masterUser: any = db.getUserByAccessToken(masterAccessToken);
-    logger.info("Before await "+ masterUser.id);
-    spotifyService.CurrentlyPlaying(masterAccessToken)
+    db.getUserByAccessToken(masterAccessToken)
+    .then((masterUser) => {
+        logger.info("Before await "+ masterUser._id);
+        spotifyService.CurrentlyPlaying(masterAccessToken)
         .then((song: any) => {
-         /*   uriSong = song.uri;
-            progressMs = song.progress_ms;
-            logger.info("selected " + song.name + " - Master: " + masterUser.name );
-            logger.info("uri " + uriSong );
-
-            for (let [id, user] of db.USER)    {
+         uriSong = song.uri;
+        progressMs = song.progress_ms;
+        logger.info("selected " + song.name + " - Master: " + masterUser.name );
+        logger.info("uri " + uriSong );
+         db.getUsers()
+            .then((users)=>{
+                users.forEach(user => {
                 if (user.accessToken !== masterAccessToken) {
-                    logger.info("Before playsame "+ id);
+                    logger.info("Before playsame "+ user._id);
                     spotifyService.playSame(user.accessToken, uriSong, progressMs)
                         .then((response) => {
                             logger.info(response);
@@ -162,10 +174,20 @@ async function join(masterAccessToken: string) {
                 } else {
                     spotifyService.playSame(masterUser.accessToken, uriSong, progressMs)
                 }
-            }*/
+            });
+           })
+           .catch((err)=> {
+                logger.info(err)
+                return err;
+           })
         });
-    
-
+    })
+    .catch((err)=>{
+        logger.error((err) => {
+            logger.error(err);
+            return err;
+        })
+    });
     logger.info("end joining");
 }
 

@@ -145,6 +145,7 @@ export class SpotifyService {
                 if (error) {
                     reject(error);
                 }
+                logger.info(body);
                 logger.info(body.item.name);
                 resolve({
                     "id": body.item.id,

@@ -61,7 +61,6 @@ export class AuthService {
 
     localStorage.setItem('id_token', authResult.accessToken);
     localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()) );
-    //localStorage.setItem('expires_at', authResult.expirationDate);
 
 
     if (authResult.status !== 500) {
@@ -92,6 +91,9 @@ export class AuthService {
     .pipe(map((data: any) => data.devices));
   }
   public isLoggedIn() {
+    console.log(localStorage.getItem('id_token'));
+    console.log(moment().isBefore(this.getExpiration()));
+
     return moment().isBefore(this.getExpiration());
 }
 

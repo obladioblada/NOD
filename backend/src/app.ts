@@ -2,8 +2,12 @@ import express = require("express");
 import {SpotifyService} from "./SpotifyService";
 import {DB} from "./db";
 import { configure, getLogger } from "log4js";
-const logger = getLogger();
+import { RoomManager } from "./roomManager";
+import { combineLatest, Observable } from "rxjs";
+import { take, map } from "rxjs/operators";
 
+const logger = getLogger();
+const roomManager = new RoomManager();
 logger.level = "info";
 
 configure({
@@ -17,7 +21,7 @@ configure({
 });
 
 let app = express();
-const db = new DB();
+const db: DB = new DB();
 let spotifyService = new SpotifyService(
     process.env.SPOTIFY_CLIENT_ID,
     process.env.SPOTIFY_CLIENT_SECRET
@@ -62,14 +66,13 @@ app.get("/authenticate", (req, res) => {
                         db.getUsers()
                         .then((loeggedUsers)=> {
                             logger.info("logged users: ");
-                            logger.info(loeggedUsers)
-                            res.send(...loeggedUsers,user);
+                            logger.info(loeggedUsers);
+                            res.send(user);
                         })
                         .catch((err)=> {
                             logger.info(err);
                             res.send(err);
                         });
-                        
                     } else {
                         res.send({error: "error during upsert!"});
                     }
@@ -100,7 +103,7 @@ app.get("/updateToken", (_req, res) => {
             db.addOrUpdateUser(_user).then(() => {
                 res.send({accesst_token: val.access_token});
             }).catch((err) => {
-                res.send(err)
+                res.send(err);
             });
         })
         .catch((error) => {
@@ -135,30 +138,53 @@ app.get("/me", (_req, res) => {
 });
 
 app.get("/join", (_req, res) => {
-    join(_req.query.access_token)
+    join(_req.query.access_token,_req.query.user_id_to_join)
         .then((val) => {
             res.send(val);
         });
 });
 
-async function join(masterAccessToken: string) {
+async function join(userAccessToken: string, userIdToJoin: string) {
     logger.info("start joining");
     let uriSong: string;
     let progressMs: string;
     let i = 0;
-    db.getUserByAccessToken(masterAccessToken)
+
+    const userToJoin$: Observable<any> = db.getUserById(userIdToJoin).pipe( take(1) );
+    const userJoiner$: Observable<any> = db.getUserByAccessToken(userAccessToken).pipe( take(1) );
+
+
+ 
+    //TODO: replace with http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-zip
+    const usersResult$: Observable<any> = combineLatest([userToJoin$, userJoiner$]).pipe(
+        map(  ([userToJoin, userJoiner]) => ({ userToJoin, userJoiner })  ),
+        take(1) );
+    
+    usersResult$.subscribe(result => {
+            logger.info("userToJoin");
+            logger.info(result.userToJoin);
+            logger.info("userToJoiner");
+            logger.info(result.userJoiner);
+            if(!result.userToJoin.roomId){
+                roomManager.createRoom(result.userJoiner, result.userToJoin)
+            }
+        });
+
+    
+
+    /*db.getUserByAccessToken(userAccessToken)
     .then((masterUser) => {
         logger.info("Before await "+ masterUser._id);
-        spotifyService.CurrentlyPlaying(masterAccessToken)
+        spotifyService.CurrentlyPlaying(userAccessToken)
         .then((song: any) => {
          uriSong = song.uri;
         progressMs = song.progress_ms;
         logger.info("selected " + song.name + " - Master: " + masterUser.name );
         logger.info("uri " + uriSong );
-         db.getUsers()
-            .then((users)=>{
+        db.getUsers()
+            .then((users)=> {
                 users.forEach(user => {
-                if (user.accessToken !== masterAccessToken) {
+                if (user.accessToken !== userAccessToken) {
                     logger.info("Before playsame "+ user._id);
                     spotifyService.playSame(user.accessToken, uriSong, progressMs)
                         .then((response) => {
@@ -172,22 +198,23 @@ async function join(masterAccessToken: string) {
                             return error;
                         });
                 } else {
-                    spotifyService.playSame(masterUser.accessToken, uriSong, progressMs)
+                    spotifyService.playSame(masterUser.accessToken, uriSong, progressMs);
                 }
             });
            })
            .catch((err)=> {
-                logger.info(err)
+                logger.info(err);
                 return err;
-           })
+           });
         });
     })
-    .catch((err)=>{
+    .catch((err)=> {
         logger.error((err) => {
             logger.error(err);
             return err;
-        })
+        });
     });
+    */
     logger.info("end joining");
 }
 

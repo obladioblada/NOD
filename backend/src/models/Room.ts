@@ -5,5 +5,5 @@ const Schema = mongoose.Schema;
 
 export const RoomSchema = new Schema({
     _id: String,
-    user: [{type: Schema.Type.ObjectId, ref: 'User'}]
+    user: [{type: Schema.Types.ObjectId, ref: 'User'}]
 });

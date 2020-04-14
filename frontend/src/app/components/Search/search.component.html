@@ -1,7 +1,7 @@
 
 <div  class="search search-bar"  [formGroup]="formGroup" [ngClass]="{'has-results':results, 'focus': searchInput.isActive}">
 <input type="text" formControlName="query" #searchInput (focus)="searchInput.isActive=true" (blur)="searchInput.isActive=false " placeholder="Search for Songs..."/>
-<div class=" clearButton"  [ngClass]="{'loop': searchInput.isActive}">
+<div class=" clearButton cross"  [ngClass]="{'loop': searchInput.isActive}">
 <i class="icono-cross" ></i>
 </div>
 
@@ -20,7 +20,10 @@
     <i class="icono-search"></i>
   </div>
 </ul>
-<ul class="results show" [ngClass]="{'filters-on': searchInput.isActive}" *ngIf="results">
+<div class="results-header" *ngIf="results" [ngClass]="{'filters-on': searchInput.isActive}">
+  <div class="button-action cross loop" *ngIf="!resultModal.close"></div>
+</div>
+<ul class="results" #resultModal [ngClass]="{'filters-on': searchInput.isActive, 'show': results && results.length > 0}">
   <li>
     Songs
     <ul class="resultSet">

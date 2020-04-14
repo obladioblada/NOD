@@ -24,7 +24,7 @@ input {
   position: fixed;
   height: 2em;
   left: 25vw;
-  z-index: 102;
+  z-index: 105;
   transform: translateX(-50%);
   text-align: center;
   top: 0em;
@@ -54,6 +54,7 @@ input.whiteMe {
   font-size: 0;
 }
 
+
 .clearButton {
   top: 2.7em;
   background: white;
@@ -64,9 +65,6 @@ input.whiteMe {
   width: 1em;
   opacity: 0;
   font-size: 0.5em;
-  height: 1em;
-  -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
-  clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
   &.loop{
     opacity: 1;
      animation: .4s loop linear 1 !important;
@@ -81,7 +79,7 @@ ul.filters {
     list-style: none;
     display: inline-flex;
     position: fixed;
-    z-index: 101;
+    z-index: 103;
     margin: 0;
     padding: 0;
 
@@ -91,7 +89,7 @@ ul.filters {
     justify-content: space-evenly;
     background: #1ed760;
 
-    transform: translateY(calc(-100% + -0.5em));
+    transform: translateY(calc(-100% + 0.2em));
     transition: $faster-transition;
 
     &.search {
@@ -306,50 +304,78 @@ ul.filters {
     }
 }
 
+.results, .results-header {
+  left: 18vw;
+}
+
+.results-header {
+  height: 3em;
+  z-index: 104;
+  background: #222222;
+  position: fixed;
+  right: calc(18vw + 17px);
+
+  align-content: center;
+  display: grid;
+  grid-template-columns: auto 3em;
+  .button-action {
+    grid-column: 2;
+  }
+  &.filters-on {
+
+    top: 7.5em;
+    background: transparent;
+    border-radius: 1em;
+    border: 2px solid #18803d;
+  }
+}
+
 .results {
     list-style: none;
     margin: 0;
-    top: 0;
+    top: 0.2em;
     padding: 1em;
-    padding-top: 4em;
-    max-height: calc( 100vh - 4em );
-    &.filters-on{
-      top: 6.5em;
-      padding-top: 1em;
-      max-height: calc(100vh - 1em - 6.5em);
-    }
-
+    padding-top: 0;
+    max-height: calc( 90vh - 4em );
     list-style: none;
     position: fixed;
-    z-index: 101;
+    z-index: 103;
     background: #222;
-
-    left: 18vw;
     right: 18vw;
-
-
-    overflow: scroll;
-
-    transform: translateY(-200%);
-  li {
-    transform: translateX(-100%);
-  }
-    @for $i from 1 through 5 {
-      * {
-        // :nth-child(1-9)
-        &:nth-child(#{$i}) {
-          // Delay the animation. Delay increases as items loop.
-          transition-delay: $i * (.5s / 5);
-        }
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 0 0 1em 1em;
+    height: 0;
+    font-size: 0;
+      &.filters-on{
+        top: 7.5em;
+        border-radius: 1em;
+        padding-top: 1em;
+        max-height: calc(100vh - 10.5em);
       }
-    }
+  li {
+    transform: translateX(25%);
+  }
+
 }
 .results.show  {
-    transform: translateY(0%);
+    height: 100%;
+    padding-top: 4em;
+    font-size: 1em;
   li {
     transform: translateX(0%);
+
+    &.close {
+      height: 2em;
+      transition-duration: .6s;
+      * {
+          font-size: 0;
+          transition-duration: .01s;
+      }
+    }
   }
 }
+
 
 .resultSet {
     li {
@@ -368,10 +394,20 @@ ul.filters {
       bottom: 0;
     }
 
+    @for $i from 1 through 10 {
+    li:nth-child(#{$i}n) {
+        animation-delay: #{$i * 0.1}s;
+      }
+    }
+
+    * {
+      transition-delay: 0;
+    }
+
     &.selected:after {
       transform: scaleX(0.9);
     }
-    }
+  }
    .result {
      pointer-events: none;
     display: flex;

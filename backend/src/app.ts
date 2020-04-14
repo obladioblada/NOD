@@ -1,13 +1,15 @@
 import express = require("express");
 import {SpotifyService} from "./SpotifyService";
 import {DB} from "./db";
-import { configure, getLogger } from "log4js";
+import { configure, getLogger, Logger } from "log4js";
 import { RoomManager } from "./roomManager";
 import { combineLatest, Observable } from "rxjs";
 import { take, map } from "rxjs/operators";
+import { User, IUserDocument, Users } from "./models/User";
 
-const logger = getLogger();
-const roomManager = new RoomManager();
+
+const logger : Logger = getLogger();
+const roomManager: RoomManager = new RoomManager();
 logger.level = "info";
 
 configure({
@@ -22,7 +24,7 @@ configure({
 
 let app = express();
 const db: DB = new DB();
-let spotifyService = new SpotifyService(
+let spotifyService : SpotifyService = new SpotifyService(
     process.env.SPOTIFY_CLIENT_ID,
     process.env.SPOTIFY_CLIENT_SECRET
 );
@@ -54,32 +56,31 @@ app.get("/authenticate", (req, res) => {
         logger.info("risposta da auth:");
         logger.info(authResponse);
         if (authResponse.id) {
-            db.addOrUpdateUser({
-                id: authResponse.id,
+            db.addOrUpdateUser(new User ({
+                _id: authResponse.id,
                 name: authResponse.name,
                 accessToken: authResponse.access_token,
                 refreshToken: authResponse.refresh_token,
                 expirationDate: authResponse.expires_in,
-            })
-                .then((user) => {
+            })).subscribe((user) => {
                     if (user !== null) {
                         db.getUsers()
-                        .then((loeggedUsers)=> {
+                        .subscribe((loeggedUsers)=> {
                             logger.info("logged users: ");
                             logger.info(loeggedUsers);
                             res.send(user);
-                        })
-                        .catch((err)=> {
+                        },
+                        (err)=> {
                             logger.info(err);
                             res.send(err);
                         });
                     } else {
                         res.send({error: "error during upsert!"});
                     }
-                })
-                .catch((err) => {
-                res.send(err);
-            });
+                },(err)=> {
+                    logger.info(err);
+                    res.send(err);
+                });
         }
     })
     .catch((error) => {
@@ -91,26 +92,25 @@ app.get("/authenticate", (req, res) => {
 app.get("/updateToken", (_req, res) => {
     logger.info("no access token or token is exprired, rinnovo");
     logger.info("ricevuto code " + _req.query.code);
-    let _user: any = db.getUserById(_req.params.id);
-    logger.info(_user);
-    if (!_user) {
-        _user = db.getUserByAccessToken(_req.params.access_token);
-    }
-
-    spotifyService.updateToken(_user.refreshToken)
-        .then((val: any) => {
-            _user.accessToken = val.access_token;
-            db.addOrUpdateUser(_user).then(() => {
-                res.send({accesst_token: val.access_token});
-            }).catch((err) => {
-                res.send(err);
-            });
-        })
-        .catch((error) => {
-            logger.info(error);
-            logger.info("rinnovo NOT successful - redirect to login");
-            res.send({status: 500});
-        });
+    db.getUserById(_req.params.id).subscribe((_user: User)=> {
+        logger.info(_user);
+        if (!_user) {
+            spotifyService.updateToken(_user.refreshToken)
+                .then((val: any) => {
+                    _user.accessToken = val.access_token;
+                    db.addOrUpdateUser(_user).subscribe(() => {
+                        res.send({accesst_token: val.access_token});
+                    },(err) => {
+                        res.send(err);
+                    });
+                })
+                .catch((error) => {
+                    logger.info(error);
+                    logger.info("rinnovo NOT successful - redirect to login");
+                    res.send({status: 500});
+                });
+        }
+    });
 });
 
 app.get("/login", (_req, res) => {
@@ -121,7 +121,7 @@ app.get("/login", (_req, res) => {
             "?response_type=code" +
             "&client_id=" + spotifyService.clientId +
             (scopes ? "&scope=" + encodeURIComponent(scopes) : "") +
-            "&redirect_uri=" + encodeURIComponent(spotifyService.redirectUrl),
+            "&redirect_uri=" + encodeURIComponent(spotifyService.redirectUrl.toString()),
         // sessionId: uuid
     });
 });
@@ -144,33 +144,30 @@ app.get("/join", (_req, res) => {
         });
 });
 
-async function join(userAccessToken: string, userIdToJoin: string) {
+async function join(userAccessToken: String, userIdToJoin: String) {
     logger.info("start joining");
-    let uriSong: string;
-    let progressMs: string;
+    let uriSong: String;
+    let progressMs: String;
     let i = 0;
 
     const userToJoin$: Observable<any> = db.getUserById(userIdToJoin).pipe( take(1) );
     const userJoiner$: Observable<any> = db.getUserByAccessToken(userAccessToken).pipe( take(1) );
 
 
- 
     //TODO: replace with http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-zip
     const usersResult$: Observable<any> = combineLatest([userToJoin$, userJoiner$]).pipe(
         map(  ([userToJoin, userJoiner]) => ({ userToJoin, userJoiner })  ),
         take(1) );
-    
+
     usersResult$.subscribe(result => {
             logger.info("userToJoin");
             logger.info(result.userToJoin);
             logger.info("userToJoiner");
             logger.info(result.userJoiner);
             if(!result.userToJoin.roomId){
-                roomManager.createRoom(result.userJoiner, result.userToJoin)
+                roomManager.createRoom(result.userJoiner, result.userToJoin);
             }
         });
-
-    
 
     /*db.getUserByAccessToken(userAccessToken)
     .then((masterUser) => {

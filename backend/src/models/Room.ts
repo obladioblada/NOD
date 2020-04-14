@@ -1,9 +1,23 @@
-import * as mongoose from 'mongoose';
+import { Document, Schema, model } from "mongoose";
+import { User } from "./User";
 
-const Schema = mongoose.Schema;
+export class Room {
+    _id: String;
+    users: User[];
 
+    constructor(data: {
+        users: User[]
+    }) {
+        this.users = data.users;
+    }
+}
 
-export const RoomSchema = new Schema({
+export const RoomSchema: Schema = new Schema({
     _id: String,
-    user: [{type: Schema.Types.ObjectId, ref: 'User'}]
+    users: [{type: [Schema.Types.ObjectId], ref: "Room"}]
 });
+
+// 2) Document
+export interface IRoomDocument extends Room, Document {}
+// 3) MODEL
+export const Rooms: model<IRoomDocument> = model<IRoomDocument>("Room", RoomSchema);

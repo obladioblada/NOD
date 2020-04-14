@@ -1,8 +1,9 @@
 import mongoose = require("mongoose");
-import { RoomSchema } from "./models/Room";
-import { configure, getLogger } from "log4js";
-const logger = getLogger();
-const Room = mongoose.model('Room', RoomSchema);
+import { Room, IRoomDocument, Rooms } from "./models/Room";
+import { getLogger, Logger } from "log4js";
+import { User } from "./models/User";
+import { from, Observable } from "rxjs";
+const logger: Logger = getLogger();
 
 export class RoomManager {
 
@@ -16,8 +17,8 @@ export class RoomManager {
         });
     }
 
-
     createRoom(user1,user2) {
+
         logger.info("Imma gonna create a funky room boooy")
     }
 

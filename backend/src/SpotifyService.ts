@@ -5,28 +5,28 @@ logger.level = 'info';
 
 export class SpotifyService {
 
-    private _clientId: string;
-    private _secretClient: string;
-    redirectUrl: string;
+    private _clientId: String;
+    private _secretClient: String;
+    redirectUrl: String;
 
-    constructor(clientId: string, secretClientId: string ) {
+    constructor(clientId: String, secretClientId: String ) {
         this._clientId = clientId;
         this._secretClient = secretClientId;
     }
 
-    get clientId(): string {
+    get clientId(): String {
         return this._clientId;
     }
 
-    set clientId(value: string) {
+    set clientId(value: String) {
         this._clientId = value;
     }
 
-    get secretClient(): string {
+    get secretClient(): String {
         return this._secretClient;
     }
 
-    set secretClient(value: string) {
+    set secretClient(value: String) {
         this._secretClient = value;
     }
 
@@ -35,7 +35,7 @@ export class SpotifyService {
      *  chiamata principale per login e update refresh token.
      *
      */
-    updateToken(_refreshToken?: string) {
+    updateToken(_refreshToken?: String) {
         let authOptions;
         authOptions = {
             url: 'https://accounts.spotify.com/api/token',
@@ -64,7 +64,7 @@ export class SpotifyService {
       
     }
 
-    authenticate(_authCode: string) {
+    authenticate(_authCode: String) {
         let authOptions;
         logger.info(_authCode);
         authOptions = {
@@ -111,7 +111,7 @@ export class SpotifyService {
         return new Date().getTime() > _expirationDate
     };
 
-    me(_accessToken:string) {
+    me(_accessToken:String) {
         logger.info(_accessToken);
         return new Promise((resolve, reject) => {
             const options = {
@@ -133,7 +133,7 @@ export class SpotifyService {
         });
     }
 
-    CurrentlyPlaying(_accessToken:string) {
+    CurrentlyPlaying(_accessToken:String) {
         return new Promise((resolve, reject) => {
             const options = {
                 url: 'https://api.spotify.com/v1/me/player/currently-playing',
@@ -157,7 +157,7 @@ export class SpotifyService {
         });
     }
 
-    play(_accessToken:string) {
+    play(_accessToken:String) {
         return new Promise((resolve, reject) => {
             const options = {
                 url: 'https://api.spotify.com/v1/me/player/play',
@@ -176,7 +176,7 @@ export class SpotifyService {
         });
     }
 
-    playSame(accessToken: string, uri: string, progressMs: string) {
+    playSame(accessToken: String, uri: String, progressMs: String) {
         return new Promise((resolve, reject) => {
             const options = {
                 url: 'https://api.spotify.com/v1/me/player/play',
@@ -200,7 +200,7 @@ export class SpotifyService {
         });
     }
 
-    player(_accessToken: string, id: string, play: boolean) {
+    player(_accessToken: String, id: String, play: boolean) {
         return new Promise((resolve, reject) => {
             const options = {
                 method: 'PUT',
@@ -229,7 +229,7 @@ export class SpotifyService {
     }
 
 
-    devices(_accessToken:string) {
+    devices(_accessToken:String) {
         return new Promise((resolve, reject) => {
             const options = {
                 url: 'https://api.spotify.com/v1/me/player/devices',
@@ -247,7 +247,7 @@ export class SpotifyService {
         });
     }
 
-    activeDevices(_accessToken:string) {
+    activeDevices(_accessToken:String) {
         return new Promise((resolve, reject) => {
             const options = {
                 url: 'https://api.spotify.com/v1/me/player/devices',

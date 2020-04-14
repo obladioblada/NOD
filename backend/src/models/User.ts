@@ -1,12 +1,42 @@
-import * as mongoose from 'mongoose';
-const Schema = mongoose.Schema;
+import { Document, Schema, model } from "mongoose";
+
+export class User {
+
+    _id: String;
+    name: String;
+    accessToken: String;
+    refreshToken: String;
+    expirationDate: String;
+    roomId: String;
+
+    constructor(data: {
+        _id: String,
+        name: String,
+        accessToken: String,
+        refreshToken: String,
+        expirationDate: String,
+    }) {
+        this._id = data._id;
+        this.name = data.name;
+        this.accessToken = data.accessToken;
+        this.refreshToken = data.refreshToken;
+        this.expirationDate = data.expirationDate;
+    }
+
+}
 
 
-export const UserSchema = new Schema({
+export const UserSchema: Schema = new Schema({
     _id: String,
     name: String,
     accessToken: String,
     refreshToken: String,
     expirationDate: String,
-    roomId: {type: Schema.Types.ObjectId, ref: 'Room'}
+    roomId: {type: Schema.Types.ObjectId, ref: "Room"}
 });
+
+// 2) Document
+export interface IUserDocument extends User, Document {}
+// 3) MODEL
+export const Users: model<IUserDocument> = model<IUserDocument>("User", UserSchema);
+

@@ -1,14 +1,13 @@
 import mongoose = require("mongoose");
-import {UserSchema} from "./models/User";
-import {getLogger} from "log4js";
+import { Logger, getLogger } from "log4js";
 import { from, Observable } from "rxjs";
+import { User, IUserDocument, Users } from "./models/User";
 
-const logger = getLogger();
-const User: any = mongoose.model('User', UserSchema);
+const logger: Logger = getLogger();
 
 let db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function () {
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", function () {
     logger.info("coonected to db");
 });
 
@@ -18,86 +17,77 @@ export class DB {
         DB.connect();
     }
 
-    private static connect() {
-        mongoose.connect('mongodb://localhost:27017/user', {
+    private static connect(): any {
+        mongoose.connect("mongodb://localhost:27017/user", {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false
         }).catch(function (reason) {
-            console.log('Unable to connect to the mongodb instance. Error: ', reason);
+            console.log("Unable to connect to the mongodb instance. Error: ", reason);
         });
     }
 
 
-    async addOrUpdateUser(user: any) {
-        //let newUser = new User(user);
-        return await User.findOneAndUpdate(
-            {_id: user.id},
+    addOrUpdateUser(user: User): Observable<User> {
+        return from(
+            Users.findOneAndUpdate(
+            {_id: user._id},
             user, {upsert: true, new: true, runValidators: true},
-            function (err, doc) {
+            function (err: any, document: IUserDocument) {
                 if (err) {
                     // handle error
                     logger.error(err);
                     return null;
                 } else {
                     // handle document
-                    logger.info("user added or updated", doc);
-                    return doc;
+                    logger.info("user added or updated", document);
+                    return document;
                 }
-            });
-    }
-
-
-    getUserById(id: string) :Observable<any> {
-        return from(
-            User.findById(id, function (err, user) {
-                if (err) {
-                    return err;
-                }
-                if (user === "null" || user === null) {
-                    logger.info(" user " + id + " not found");
-                    return user;
-                }
-            })
+            }) as Observable<User>
         );
     }
 
-    async   getUsers() {
-        return User.find(function (err, users) {
-            if (err) {
-                return err;
-            }
-            if (users === "null" || users === null) {
-                logger.info("users:");
-                return users;
-            }
-        });
-    }
 
-
-    async getUsersAsMap() {
-        return  User.find({}, function(err, users) {
-            let userMap = {};
-            users.forEach(function(user) {
-              userMap[user._id] = user;
-            });
-            return userMap;
-          });
-    }
-
-     getUserByAccessToken(accessToken: string): Observable<any> {
+    getUserById(id: String): Observable<User> {
         return from(
-            User.find({accessToken: accessToken}, function (err, user) {
+            Users.findById(id, function (err: any, document: IUserDocument) {
                 if (err) {
                     return err;
                 }
-                if (user === "null" || user === null) {
+                if (document === null) {
+                    logger.info(" user " + id + " not found");
+                    return document;
+                }
+            }) as Observable<User>
+        );
+    }
+
+    getUsers(): Observable<any> {
+        return from( Users.find(function (err: any,  document: IUserDocument[]) {
+            if (err) {
+                return err;
+            }
+            if (document === null) {
+                logger.info("users:");
+                return document;
+            }
+        }) as Observable<IUserDocument[]>
+        );
+    }
+
+     getUserByAccessToken(accessToken: String): Observable<User> {
+        return from(
+            Users.find({accessToken: accessToken}, function (err: any, document: IUserDocument) {
+                if (err) {
+                    return err;
+                }
+                if (document === null) {
                     logger.info(" user  with access token " + accessToken + " not found");
-                    return user;
+                    return document;
                 }
                 logger.info("userByAccessToken :");
-                logger.info(user);
-            })
+                logger.info(document);
+            }) as Observable<User>
         );
     }
 

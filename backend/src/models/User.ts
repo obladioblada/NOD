@@ -7,6 +7,7 @@ export class User {
     accessToken: String;
     refreshToken: String;
     expirationDate: String;
+    pictureUrl: String;
     roomId: String;
 
     constructor(data: {
@@ -15,12 +16,14 @@ export class User {
         accessToken: String,
         refreshToken: String,
         expirationDate: String,
+        pictureUrl: String,
     }) {
         this._id = data._id;
         this.name = data.name;
         this.accessToken = data.accessToken;
         this.refreshToken = data.refreshToken;
         this.expirationDate = data.expirationDate;
+        this.pictureUrl = data.pictureUrl;
     }
 
 }
@@ -32,6 +35,7 @@ export const UserSchema: Schema = new Schema({
     accessToken: String,
     refreshToken: String,
     expirationDate: String,
+    pictureUrl: String,
     roomId: {type: Schema.Types.ObjectId, ref: "Room"}
 });
 

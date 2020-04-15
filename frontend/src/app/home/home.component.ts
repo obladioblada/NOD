@@ -12,6 +12,7 @@ import { take, switchMap, shareReplay } from 'rxjs/operators';
 })
 export class HomeComponent implements AfterViewInit {
   devices$: Observable<any>;
+  users$: Observable<any>;
   refreshOccurs$: Subject<any> = new Subject();
   joinSucceded: boolean;
   mainButton$: Subscription;
@@ -19,7 +20,8 @@ export class HomeComponent implements AfterViewInit {
   constructor(private authService: AuthService, private mainButtonService: MainButtonService) {
     this.mainButtonService.setButtonState(ButtonState.LOADING);
     this.devices$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.devices()), shareReplay(1));
-    this.mainButton$ = merge(this.devices$).subscribe(val => {
+    this.users$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.users()), shareReplay(1));
+    this.mainButton$ = merge(this.devices$, this.users$).subscribe(val => {
       this.mainButtonService.setButtonPosition(ButtonPosition.BOTTOM);
       this.mainButtonService.setButtonState(ButtonState.SUCCESS);
     },

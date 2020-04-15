@@ -15,6 +15,7 @@ import { DeviceComponent } from './device/device.component';
 import { SpotifyService } from './services/spotify.services';
 import { SearchComponent } from './components/Search/search.component';
 import { TileComponent } from './components/tile/tile.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TileComponent } from './components/tile/tile.component';
     MainButtonComponent,
     DeviceComponent,
     SearchComponent,
-    TileComponent
+    TileComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

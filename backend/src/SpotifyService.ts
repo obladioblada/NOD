@@ -78,7 +78,7 @@ export class SpotifyService {
                 'Authorization': 'Basic ' + (Buffer.from(this._clientId + ':' + this._secretClient).toString('base64'))
             },
             json: true
-        }
+        };
         return new Promise((resolve, reject) => {
             request.post(authOptions, (error, response, body) => {
                 logger.info("I got a token, lets get my info");
@@ -90,7 +90,8 @@ export class SpotifyService {
                                 ...body,
                                 id: user.id,
                                 name: user.display_name,
-                                status: response.statusCode,
+                                pictureUrl: user.images[0].url,
+                                status: response.statusCode
                             });
                         })                    
                 } else {

@@ -65,7 +65,14 @@ export class HttpAuthService {
   devices() {
     console.log(this.accessToken);
     return this.http.get(Location.joinWithSlash(this.apiEndpoint, 'player/devices?access_token=' + this.accessToken))
-    .pipe(map((data: any) => data.devices));
+      .pipe(map((data: any) => data.devices));
+  }
+
+  users() {
+    console.log(this.accessToken);
+    console.log("get users");
+    return this.http.get(Location.joinWithSlash(this.apiEndpoint, 'users?access_token=' + this.accessToken))
+      .pipe(map((data: any) => data.users));
   }
 
     isUserLoggedIn(): boolean {

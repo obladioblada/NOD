@@ -2,7 +2,7 @@ import express = require("express");
 import {SpotifyService} from "./SpotifyService";
 import {DB} from "./db";
 import { configure, getLogger, Logger } from "log4js";
-import { RoomManager } from "./roomManager";
+import { RoomManager } from "./RoomManager";
 import { combineLatest, Observable } from "rxjs";
 import { take, map } from "rxjs/operators";
 import { User, IUserDocument, Users } from "./models/User";
@@ -62,18 +62,10 @@ app.get("/authenticate", (req, res) => {
                 accessToken: authResponse.access_token,
                 refreshToken: authResponse.refresh_token,
                 expirationDate: authResponse.expires_in,
+                pictureUrl: authResponse.pictureUrl
             })).subscribe((user) => {
                     if (user !== null) {
-                        db.getUsers()
-                        .subscribe((loeggedUsers)=> {
-                            logger.info("logged users: ");
-                            logger.info(loeggedUsers);
-                            res.send(user);
-                        },
-                        (err)=> {
-                            logger.info(err);
-                            res.send(err);
-                        });
+                        res.send(user);
                     } else {
                         res.send({error: "error during upsert!"});
                     }
@@ -88,6 +80,7 @@ app.get("/authenticate", (req, res) => {
         res.send(error);
     });
 });
+
 
 app.get("/updateToken", (_req, res) => {
     logger.info("no access token or token is exprired, rinnovo");
@@ -137,6 +130,21 @@ app.get("/me", (_req, res) => {
         });
 });
 
+app.get("/users", (_req, res) => {
+    logger.info("ricevuto tokn " + _req.params.access_token);
+    db.getUsers()
+        .subscribe((loeggedUsers)=> {
+                logger.info("logged users: ");
+                logger.info(loeggedUsers);
+                res.send(loeggedUsers);
+            },
+            (err)=> {
+                logger.info(err);
+                res.send(err);
+        });
+});
+
+
 app.get("/join", (_req, res) => {
     join(_req.query.access_token,_req.query.user_id_to_join)
         .then((val) => {
@@ -164,9 +172,7 @@ async function join(userAccessToken: String, userIdToJoin: String) {
             logger.info(result.userToJoin);
             logger.info("userToJoiner");
             logger.info(result.userJoiner);
-            if(!result.userToJoin.roomId){
-                roomManager.createRoom(result.userJoiner, result.userToJoin);
-            }
+            roomManager.createOrUpdateRoom(result.userJoiner, result.userToJoin);
         });
 
     /*db.getUserByAccessToken(userAccessToken)

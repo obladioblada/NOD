@@ -1,4 +1,5 @@
 import { Component, Input} from '@angular/core';
+import { AuthService } from 'src/auth/auth.service';
 
 
 @Component({
@@ -8,7 +9,16 @@ import { Component, Input} from '@angular/core';
 })
 export class UserComponent {
 
+
+  constructor(private authService: AuthService) {
+  }
   @Input()
   user;
+
+
+  join(user: {_id: string}) {
+
+    this.authService.join(user._id).subscribe(val => console.log(val));
+  }
 
 }

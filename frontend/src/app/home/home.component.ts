@@ -48,11 +48,11 @@ export class HomeComponent implements AfterViewInit {
   }
 
   join() {
-    this.authService.join().subscribe(val => {
-      console.log(val);
-      this.joinSucceded = true;
-      this.refresh();
-    });
+  // this.authService.join().subscribe(val => {
+  //   console.log(val);
+  //   this.joinSucceded = true;
+  //   this.refresh();
+  // });
   }
 
   trackById(index, device) {

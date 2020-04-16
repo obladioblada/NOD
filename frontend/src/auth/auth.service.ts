@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { map, shareReplay, catchError } from 'rxjs/operators';
 import { ButtonState } from 'src/app/main-button/button';
 import { MainButtonService } from 'src/app/main-button/main-button.service';
-import * as moment from "moment";
+import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,9 +16,7 @@ export class AuthService {
   // TODO: use env var here
     private apiEndpoint = 'http://localhost:3000';
     private isloggedIn: boolean;
-    private accessToken: string;
-    private expirationDate: string;
-    private refreshToken: string;
+
     private redirectUrl: string;
     private userName: string;
 
@@ -43,29 +41,27 @@ export class AuthService {
 
   login(code: string) {
     const body = {
-      'code': code
+      code: code
     };
     return this.http.get<any>((Location.joinWithSlash(this.apiEndpoint, 'authenticate?code=' + code)))
     .pipe(map((res => this.setSession(res))), shareReplay());
 
   }
 
-  private setRedirectUrl(getRedirectUrlResult) {
+  private setRedirectUrl(getRedirectUrlResult: { redirectUrl: any; }) {
     this.redirectUrl = getRedirectUrlResult.redirectUrl;
     return getRedirectUrlResult;
   }
 
-  private setSession(authResult) {
+  private setSession(authResult: { expirationDate: moment.DurationInputArg1; accessToken: string; status: number; refreshToken: string; }) {
 
-    const expiresAt = moment().add(authResult.expirationDate,'second');
+    const expiresAt = moment().add(authResult.expirationDate, 'second');
 
     localStorage.setItem('id_token', authResult.accessToken);
-    localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()) );
+    localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()) );
 
 
     if (authResult.status !== 500) {
-      this.expirationDate = authResult.expirationDate;
-      this.refreshToken = authResult.refreshToken;
       console.log(localStorage.getItem('id_token'));
       this.isloggedIn = true;
     }
@@ -75,8 +71,10 @@ export class AuthService {
     return this.http.get(Location.joinWithSlash(this.apiEndpoint, 'me?access_token=' + localStorage.getItem('id_token')));
   }
 
-  join() {
-    return this.http.get(Location.joinWithSlash(this.apiEndpoint, 'join?access_token=' + localStorage.getItem('id_token')));
+  join(id: string) {
+    return this.http.get(
+      Location.joinWithSlash(this.apiEndpoint, 'join?user_id_to_join=' + id + '&access_token=' + localStorage.getItem('id_token'))
+    );
   }
 
   player(id: string, play: boolean) {
@@ -110,7 +108,7 @@ export class AuthService {
     }
 
     getExpiration() {
-        const expiration = localStorage.getItem("expires_at");
+        const expiration = localStorage.getItem('expires_at');
         const expiresAt = JSON.parse(expiration);
         return moment(expiresAt);
     }

@@ -77,7 +77,7 @@ export class DB {
 
      getUserByAccessToken(accessToken: String): Observable<User> {
         return from(
-            Users.find({accessToken: accessToken}, function (err: any, document: IUserDocument) {
+            Users.findOne({accessToken: accessToken}, function (err: any, document: IUserDocument) {
                 if (err) {
                     return err;
                 }

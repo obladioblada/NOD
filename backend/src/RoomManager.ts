@@ -2,7 +2,8 @@ import mongoose = require("mongoose");
 import { Room, IRoomDocument, Rooms } from "./models/Room";
 import { getLogger, Logger } from "log4js";
 import {IUserDocument, User, Users} from "./models/User";
-import { from, Observable } from "rxjs";
+import { from, Observable, merge } from "rxjs";
+import { shareReplay } from "rxjs/operators";
 const logger: Logger = getLogger();
 
 export class RoomManager {
@@ -21,37 +22,34 @@ export class RoomManager {
 
         logger.info("Imma gonna create a funky room boooy")
     }
-
-
-
-    createOrUpdateRoom(userToJoin: User, Joiner: User): Observable<User> {
-        return from(
-
-            Rooms.findOneAndUpdate(
-                {_id: userToJoin.roomId},
-                new Room({users:[userToJoin, Joiner]}), {
-                    upsert: true,
-                    new: true,
-                    runValidators: true,
-                    fields: { users: { $push: Joiner }}
-                },
-                function (err: any, document: IUserDocument) {
-                    if (err) {
-                        // handle error
-                        logger.error(err);
-                        return null;
-                    } else {
-                        // handle document
-                        logger.info("room created or updated", document);
-                        return document;
-                    }
-                }) as Observable<User>
-        );
-    }
-
-    joinRoom(user) {
-
-    }
-
     
+    joinRoom(userToJoin: User, joiner: User): Observable<Room> {
+
+  //      obs1$;
+  //      obs2$;
+
+        if(!userToJoin.roomId) {
+ //           obs1$ = this.createRoom()
+
+            const newRoom = new Room([userToJoin._id, joiner._id]);
+            const newRoom$ = from(Rooms.create(newRoom)).pipe(shareReplay()) as Observable<Room>;
+            newRoom$.subscribe(room => {
+                Users.updateMany(
+                    { _id: { $in: [userToJoin._id, joiner._id] } }, 
+                    { $set: { roomId: room._id } },
+                    (val) => {
+                        console.log(val);
+                    }
+                  );
+            })
+            return newRoom$;
+       } else {
+           let room$ = Rooms.findById({_id: userToJoin.roomId});
+           room$.users.push(joiner._id);
+           return room$.save() as Observable<Room>;
+  //         obs$ = update()
+       }
+
+//       merge(ob$,obs2$s).pipe(take(1)).subscribe
+    }
 }

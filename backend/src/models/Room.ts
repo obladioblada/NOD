@@ -3,18 +3,15 @@ import { User } from "./User";
 
 export class Room {
     _id: String;
-    users: User[];
+    users: String[];
 
-    constructor(data: {
-        users: User[]
-    }) {
-        this.users = data.users;
+    constructor(users: String[]) {
+        this.users = users;
     }
 }
 
 export const RoomSchema: Schema = new Schema({
-    _id: String,
-    users: [{type: [Schema.Types.ObjectId], ref: "Room"}]
+    users: [{type: String, ref: "User"}]
 });
 
 // 2) Document

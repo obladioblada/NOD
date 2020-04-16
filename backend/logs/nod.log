@@ -62206,3 +62206,2132 @@
     }
   ]
 }
+[2020-04-16T20:29:50.640] [INFO] default - ricevuto tokn undefined
+[2020-04-16T20:29:50.649] [INFO] default - logged users: 
+[2020-04-16T20:29:50.665] [INFO] default - [
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+    expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+    name: 'Gianpaolo Basilicò',
+    refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+  },
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQC7eD2CBeTFpbrS2UrttWAAtOmhM7huWynseHw5VnfVmnKekuYms-gEekVEfROa_v0xAW3H1UynuWbPF6HWkxSr5anvGNeXxZo8CacSRuv2BPXGXUrOyDWsrpD0nESQIR8U2uyJy0QOzsWwjiT1Shgn3CRHNz7Kj0Kd3KCF8Q9_Cegy',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQCTG6N6vCgFcX1j5a5rZzhaYX5pO2Up6Pswb_8Oln5agmiEUTHZi5GuzxZzMiAMweAc756eyMZJIQB39AHdGnY3LT1nG-jKSex-T2BLxJwBIQQU0xkcEuImDchOoMDmJ5c',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T20:29:50.768] [INFO] default - {
+  devices: [
+    {
+      id: '40377507ea8e76a8fadd004fd0a1734a',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'Salotto 1',
+      type: 'CastAudio',
+      volume_percent: 50
+    },
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T20:29:59.164] [INFO] default - ricevuto tokn undefined
+[2020-04-16T20:29:59.171] [INFO] default - logged users: 
+[2020-04-16T20:29:59.180] [INFO] default - [
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+    expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+    name: 'Gianpaolo Basilicò',
+    refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+  },
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQC7eD2CBeTFpbrS2UrttWAAtOmhM7huWynseHw5VnfVmnKekuYms-gEekVEfROa_v0xAW3H1UynuWbPF6HWkxSr5anvGNeXxZo8CacSRuv2BPXGXUrOyDWsrpD0nESQIR8U2uyJy0QOzsWwjiT1Shgn3CRHNz7Kj0Kd3KCF8Q9_Cegy',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQCTG6N6vCgFcX1j5a5rZzhaYX5pO2Up6Pswb_8Oln5agmiEUTHZi5GuzxZzMiAMweAc756eyMZJIQB39AHdGnY3LT1nG-jKSex-T2BLxJwBIQQU0xkcEuImDchOoMDmJ5c',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T20:29:59.325] [INFO] default - {
+  devices: [
+    {
+      id: '40377507ea8e76a8fadd004fd0a1734a',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'Salotto 1',
+      type: 'CastAudio',
+      volume_percent: 50
+    },
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T20:30:42.391] [INFO] default - BQC7eD2CBeTFpbrS2UrttWAAtOmhM7huWynseHw5VnfVmnKekuYms-gEekVEfROa_v0xAW3H1UynuWbPF6HWkxSr5anvGNeXxZo8CacSRuv2BPXGXUrOyDWsrpD0nESQIR8U2uyJy0QOzsWwjiT1Shgn3CRHNz7Kj0Kd3KCF8Q9_Cegy
+[2020-04-16T20:30:42.393] [INFO] default - 40377507ea8e76a8fadd004fd0a1734a
+[2020-04-16T20:30:42.395] [INFO] default - true
+[2020-04-16T20:30:42.411] [INFO] server - {
+  method: 'PUT',
+  url: 'https://api.spotify.com/v1/me/player',
+  headers: {
+    Authorization: 'Bearer BQC7eD2CBeTFpbrS2UrttWAAtOmhM7huWynseHw5VnfVmnKekuYms-gEekVEfROa_v0xAW3H1UynuWbPF6HWkxSr5anvGNeXxZo8CacSRuv2BPXGXUrOyDWsrpD0nESQIR8U2uyJy0QOzsWwjiT1Shgn3CRHNz7Kj0Kd3KCF8Q9_Cegy'
+  },
+  json: true,
+  body: { device_ids: [ '40377507ea8e76a8fadd004fd0a1734a' ], play: 'true' }
+}
+[2020-04-16T20:30:42.837] [ERROR] server - error player
+[2020-04-16T20:30:42.838] [ERROR] server - undefined
+[2020-04-16T20:30:42.839] [ERROR] default - undefined
+[2020-04-16T20:30:47.146] [INFO] default - BQC7eD2CBeTFpbrS2UrttWAAtOmhM7huWynseHw5VnfVmnKekuYms-gEekVEfROa_v0xAW3H1UynuWbPF6HWkxSr5anvGNeXxZo8CacSRuv2BPXGXUrOyDWsrpD0nESQIR8U2uyJy0QOzsWwjiT1Shgn3CRHNz7Kj0Kd3KCF8Q9_Cegy
+[2020-04-16T20:30:47.147] [INFO] default - 40377507ea8e76a8fadd004fd0a1734a
+[2020-04-16T20:30:47.149] [INFO] default - false
+[2020-04-16T20:30:47.165] [INFO] server - {
+  method: 'PUT',
+  url: 'https://api.spotify.com/v1/me/player',
+  headers: {
+    Authorization: 'Bearer BQC7eD2CBeTFpbrS2UrttWAAtOmhM7huWynseHw5VnfVmnKekuYms-gEekVEfROa_v0xAW3H1UynuWbPF6HWkxSr5anvGNeXxZo8CacSRuv2BPXGXUrOyDWsrpD0nESQIR8U2uyJy0QOzsWwjiT1Shgn3CRHNz7Kj0Kd3KCF8Q9_Cegy'
+  },
+  json: true,
+  body: { device_ids: [ '40377507ea8e76a8fadd004fd0a1734a' ], play: 'false' }
+}
+[2020-04-16T20:30:47.573] [ERROR] server - error player
+[2020-04-16T20:30:47.574] [ERROR] server - undefined
+[2020-04-16T20:30:47.575] [ERROR] default - undefined
+[2020-04-16T20:30:51.351] [INFO] default - ricevuto tokn undefined
+[2020-04-16T20:30:51.356] [INFO] default - logged users: 
+[2020-04-16T20:30:51.368] [INFO] default - [
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+    expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+    name: 'Gianpaolo Basilicò',
+    refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+  },
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQC7eD2CBeTFpbrS2UrttWAAtOmhM7huWynseHw5VnfVmnKekuYms-gEekVEfROa_v0xAW3H1UynuWbPF6HWkxSr5anvGNeXxZo8CacSRuv2BPXGXUrOyDWsrpD0nESQIR8U2uyJy0QOzsWwjiT1Shgn3CRHNz7Kj0Kd3KCF8Q9_Cegy',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQCTG6N6vCgFcX1j5a5rZzhaYX5pO2Up6Pswb_8Oln5agmiEUTHZi5GuzxZzMiAMweAc756eyMZJIQB39AHdGnY3LT1nG-jKSex-T2BLxJwBIQQU0xkcEuImDchOoMDmJ5c',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T20:30:51.585] [INFO] default - {
+  devices: [
+    {
+      id: '40377507ea8e76a8fadd004fd0a1734a',
+      is_active: true,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'Salotto 1',
+      type: 'CastAudio',
+      volume_percent: 50
+    },
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T20:30:54.418] [INFO] default - BQC7eD2CBeTFpbrS2UrttWAAtOmhM7huWynseHw5VnfVmnKekuYms-gEekVEfROa_v0xAW3H1UynuWbPF6HWkxSr5anvGNeXxZo8CacSRuv2BPXGXUrOyDWsrpD0nESQIR8U2uyJy0QOzsWwjiT1Shgn3CRHNz7Kj0Kd3KCF8Q9_Cegy
+[2020-04-16T20:30:54.419] [INFO] default - 40377507ea8e76a8fadd004fd0a1734a
+[2020-04-16T20:30:54.421] [INFO] default - true
+[2020-04-16T20:30:54.436] [INFO] server - {
+  method: 'PUT',
+  url: 'https://api.spotify.com/v1/me/player',
+  headers: {
+    Authorization: 'Bearer BQC7eD2CBeTFpbrS2UrttWAAtOmhM7huWynseHw5VnfVmnKekuYms-gEekVEfROa_v0xAW3H1UynuWbPF6HWkxSr5anvGNeXxZo8CacSRuv2BPXGXUrOyDWsrpD0nESQIR8U2uyJy0QOzsWwjiT1Shgn3CRHNz7Kj0Kd3KCF8Q9_Cegy'
+  },
+  json: true,
+  body: { device_ids: [ '40377507ea8e76a8fadd004fd0a1734a' ], play: 'true' }
+}
+[2020-04-16T20:30:54.830] [ERROR] server - error player
+[2020-04-16T20:30:54.832] [ERROR] server - undefined
+[2020-04-16T20:30:54.835] [ERROR] default - undefined
+[2020-04-16T20:30:58.694] [INFO] default - BQC7eD2CBeTFpbrS2UrttWAAtOmhM7huWynseHw5VnfVmnKekuYms-gEekVEfROa_v0xAW3H1UynuWbPF6HWkxSr5anvGNeXxZo8CacSRuv2BPXGXUrOyDWsrpD0nESQIR8U2uyJy0QOzsWwjiT1Shgn3CRHNz7Kj0Kd3KCF8Q9_Cegy
+[2020-04-16T20:30:58.696] [INFO] default - 40377507ea8e76a8fadd004fd0a1734a
+[2020-04-16T20:30:58.698] [INFO] default - false
+[2020-04-16T20:30:58.724] [INFO] server - {
+  method: 'PUT',
+  url: 'https://api.spotify.com/v1/me/player',
+  headers: {
+    Authorization: 'Bearer BQC7eD2CBeTFpbrS2UrttWAAtOmhM7huWynseHw5VnfVmnKekuYms-gEekVEfROa_v0xAW3H1UynuWbPF6HWkxSr5anvGNeXxZo8CacSRuv2BPXGXUrOyDWsrpD0nESQIR8U2uyJy0QOzsWwjiT1Shgn3CRHNz7Kj0Kd3KCF8Q9_Cegy'
+  },
+  json: true,
+  body: { device_ids: [ '40377507ea8e76a8fadd004fd0a1734a' ], play: 'false' }
+}
+[2020-04-16T20:30:59.170] [ERROR] server - error player
+[2020-04-16T20:30:59.171] [ERROR] server - undefined
+[2020-04-16T20:30:59.172] [ERROR] default - undefined
+[2020-04-16T20:37:24.374] [INFO] default - ricevuto tokn undefined
+[2020-04-16T20:37:24.416] [INFO] default - logged users: 
+[2020-04-16T20:37:24.418] [INFO] default - [
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+    expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+    name: 'Gianpaolo Basilicò',
+    refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+  },
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQC7eD2CBeTFpbrS2UrttWAAtOmhM7huWynseHw5VnfVmnKekuYms-gEekVEfROa_v0xAW3H1UynuWbPF6HWkxSr5anvGNeXxZo8CacSRuv2BPXGXUrOyDWsrpD0nESQIR8U2uyJy0QOzsWwjiT1Shgn3CRHNz7Kj0Kd3KCF8Q9_Cegy',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQCTG6N6vCgFcX1j5a5rZzhaYX5pO2Up6Pswb_8Oln5agmiEUTHZi5GuzxZzMiAMweAc756eyMZJIQB39AHdGnY3LT1nG-jKSex-T2BLxJwBIQQU0xkcEuImDchOoMDmJ5c',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T20:37:24.489] [INFO] default - {
+  devices: [
+    {
+      id: '40377507ea8e76a8fadd004fd0a1734a',
+      is_active: true,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'Salotto 1',
+      type: 'CastAudio',
+      volume_percent: 50
+    },
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T20:38:19.286] [INFO] default - ricevuto tokn undefined
+[2020-04-16T20:38:19.293] [INFO] default - logged users: 
+[2020-04-16T20:38:19.294] [INFO] default - [
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+    expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+    name: 'Gianpaolo Basilicò',
+    refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+  },
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQC7eD2CBeTFpbrS2UrttWAAtOmhM7huWynseHw5VnfVmnKekuYms-gEekVEfROa_v0xAW3H1UynuWbPF6HWkxSr5anvGNeXxZo8CacSRuv2BPXGXUrOyDWsrpD0nESQIR8U2uyJy0QOzsWwjiT1Shgn3CRHNz7Kj0Kd3KCF8Q9_Cegy',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQCTG6N6vCgFcX1j5a5rZzhaYX5pO2Up6Pswb_8Oln5agmiEUTHZi5GuzxZzMiAMweAc756eyMZJIQB39AHdGnY3LT1nG-jKSex-T2BLxJwBIQQU0xkcEuImDchOoMDmJ5c',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T20:38:19.414] [INFO] default - {
+  devices: [
+    {
+      id: '40377507ea8e76a8fadd004fd0a1734a',
+      is_active: true,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'Salotto 1',
+      type: 'CastAudio',
+      volume_percent: 50
+    },
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T20:38:22.803] [INFO] default - ricevuto tokn undefined
+[2020-04-16T20:38:22.809] [INFO] default - logged users: 
+[2020-04-16T20:38:22.823] [INFO] default - [
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+    expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+    name: 'Gianpaolo Basilicò',
+    refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+  },
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQC7eD2CBeTFpbrS2UrttWAAtOmhM7huWynseHw5VnfVmnKekuYms-gEekVEfROa_v0xAW3H1UynuWbPF6HWkxSr5anvGNeXxZo8CacSRuv2BPXGXUrOyDWsrpD0nESQIR8U2uyJy0QOzsWwjiT1Shgn3CRHNz7Kj0Kd3KCF8Q9_Cegy',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQCTG6N6vCgFcX1j5a5rZzhaYX5pO2Up6Pswb_8Oln5agmiEUTHZi5GuzxZzMiAMweAc756eyMZJIQB39AHdGnY3LT1nG-jKSex-T2BLxJwBIQQU0xkcEuImDchOoMDmJ5c',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T20:38:22.921] [INFO] default - {
+  devices: [
+    {
+      id: '40377507ea8e76a8fadd004fd0a1734a',
+      is_active: true,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'Salotto 1',
+      type: 'CastAudio',
+      volume_percent: 50
+    },
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T20:44:08.154] [INFO] default - ricevuto tokn undefined
+[2020-04-16T20:44:08.160] [INFO] default - logged users: 
+[2020-04-16T20:44:08.169] [INFO] default - [
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+    expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+    name: 'Gianpaolo Basilicò',
+    refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+  },
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQC7eD2CBeTFpbrS2UrttWAAtOmhM7huWynseHw5VnfVmnKekuYms-gEekVEfROa_v0xAW3H1UynuWbPF6HWkxSr5anvGNeXxZo8CacSRuv2BPXGXUrOyDWsrpD0nESQIR8U2uyJy0QOzsWwjiT1Shgn3CRHNz7Kj0Kd3KCF8Q9_Cegy',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQCTG6N6vCgFcX1j5a5rZzhaYX5pO2Up6Pswb_8Oln5agmiEUTHZi5GuzxZzMiAMweAc756eyMZJIQB39AHdGnY3LT1nG-jKSex-T2BLxJwBIQQU0xkcEuImDchOoMDmJ5c',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T20:44:08.273] [INFO] default - {
+  devices: [
+    {
+      id: '4218b8f86d822b195bf494dbc7c5966c7c13bb96',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'MacBook Pro',
+      type: 'Computer',
+      volume_percent: 100
+    }
+  ]
+}
+[2020-04-16T20:56:55.510] [INFO] default - ricevuto tokn undefined
+[2020-04-16T20:56:55.524] [INFO] default - logged users: 
+[2020-04-16T20:56:55.549] [INFO] default - [
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+    expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+    name: 'Gianpaolo Basilicò',
+    refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+  },
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQC7eD2CBeTFpbrS2UrttWAAtOmhM7huWynseHw5VnfVmnKekuYms-gEekVEfROa_v0xAW3H1UynuWbPF6HWkxSr5anvGNeXxZo8CacSRuv2BPXGXUrOyDWsrpD0nESQIR8U2uyJy0QOzsWwjiT1Shgn3CRHNz7Kj0Kd3KCF8Q9_Cegy',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQCTG6N6vCgFcX1j5a5rZzhaYX5pO2Up6Pswb_8Oln5agmiEUTHZi5GuzxZzMiAMweAc756eyMZJIQB39AHdGnY3LT1nG-jKSex-T2BLxJwBIQQU0xkcEuImDchOoMDmJ5c',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T20:56:55.699] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T20:57:11.377] [INFO] default - ricevuto tokn undefined
+[2020-04-16T20:57:11.383] [INFO] default - logged users: 
+[2020-04-16T20:57:11.399] [INFO] default - [
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+    expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+    name: 'Gianpaolo Basilicò',
+    refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+  },
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQC7eD2CBeTFpbrS2UrttWAAtOmhM7huWynseHw5VnfVmnKekuYms-gEekVEfROa_v0xAW3H1UynuWbPF6HWkxSr5anvGNeXxZo8CacSRuv2BPXGXUrOyDWsrpD0nESQIR8U2uyJy0QOzsWwjiT1Shgn3CRHNz7Kj0Kd3KCF8Q9_Cegy',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQCTG6N6vCgFcX1j5a5rZzhaYX5pO2Up6Pswb_8Oln5agmiEUTHZi5GuzxZzMiAMweAc756eyMZJIQB39AHdGnY3LT1nG-jKSex-T2BLxJwBIQQU0xkcEuImDchOoMDmJ5c',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T20:57:11.538] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T20:57:58.598] [INFO] default - ricevuto tokn undefined
+[2020-04-16T20:57:58.606] [INFO] default - logged users: 
+[2020-04-16T20:57:58.609] [INFO] default - [
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+    expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+    name: 'Gianpaolo Basilicò',
+    refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+  },
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQC7eD2CBeTFpbrS2UrttWAAtOmhM7huWynseHw5VnfVmnKekuYms-gEekVEfROa_v0xAW3H1UynuWbPF6HWkxSr5anvGNeXxZo8CacSRuv2BPXGXUrOyDWsrpD0nESQIR8U2uyJy0QOzsWwjiT1Shgn3CRHNz7Kj0Kd3KCF8Q9_Cegy',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQCTG6N6vCgFcX1j5a5rZzhaYX5pO2Up6Pswb_8Oln5agmiEUTHZi5GuzxZzMiAMweAc756eyMZJIQB39AHdGnY3LT1nG-jKSex-T2BLxJwBIQQU0xkcEuImDchOoMDmJ5c',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T20:57:58.684] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T20:58:35.807] [INFO] default - ricevuto tokn undefined
+[2020-04-16T20:58:35.819] [INFO] default - logged users: 
+[2020-04-16T20:58:35.823] [INFO] default - [
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+    expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+    name: 'Gianpaolo Basilicò',
+    refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+  },
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQC7eD2CBeTFpbrS2UrttWAAtOmhM7huWynseHw5VnfVmnKekuYms-gEekVEfROa_v0xAW3H1UynuWbPF6HWkxSr5anvGNeXxZo8CacSRuv2BPXGXUrOyDWsrpD0nESQIR8U2uyJy0QOzsWwjiT1Shgn3CRHNz7Kj0Kd3KCF8Q9_Cegy',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQCTG6N6vCgFcX1j5a5rZzhaYX5pO2Up6Pswb_8Oln5agmiEUTHZi5GuzxZzMiAMweAc756eyMZJIQB39AHdGnY3LT1nG-jKSex-T2BLxJwBIQQU0xkcEuImDchOoMDmJ5c',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T20:58:35.932] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T20:59:06.741] [INFO] default - BQDu4nhm6QZjuO89h4MtbrJurw2S2KyW18I30OHzrh76oAhapDGa5Eg7R3RZVeFG5hmRgnIbZLQppICLt3-5Ci1L1sQ-Na48FDNujt8-5PyH_nqnKbxhEI2SMxA-ANEbzTw81FZ8k9N1UU5L9wYjh2l3S9gz4g1ujCtH-Wdjzn0kXx-nOx8zX9c
+[2020-04-16T20:59:06.742] [INFO] default - 4218b8f86d822b195bf494dbc7c5966c7c13bb96
+[2020-04-16T20:59:06.743] [INFO] default - true
+[2020-04-16T20:59:06.744] [INFO] server - {
+  method: 'PUT',
+  url: 'https://api.spotify.com/v1/me/player',
+  headers: {
+    Authorization: 'Bearer BQDu4nhm6QZjuO89h4MtbrJurw2S2KyW18I30OHzrh76oAhapDGa5Eg7R3RZVeFG5hmRgnIbZLQppICLt3-5Ci1L1sQ-Na48FDNujt8-5PyH_nqnKbxhEI2SMxA-ANEbzTw81FZ8k9N1UU5L9wYjh2l3S9gz4g1ujCtH-Wdjzn0kXx-nOx8zX9c'
+  },
+  json: true,
+  body: {
+    device_ids: [ '4218b8f86d822b195bf494dbc7c5966c7c13bb96' ],
+    play: 'true'
+  }
+}
+[2020-04-16T20:59:07.004] [ERROR] server - error player
+[2020-04-16T20:59:07.008] [ERROR] server - undefined
+[2020-04-16T20:59:07.009] [ERROR] default - undefined
+[2020-04-16T20:59:10.964] [INFO] default - BQDu4nhm6QZjuO89h4MtbrJurw2S2KyW18I30OHzrh76oAhapDGa5Eg7R3RZVeFG5hmRgnIbZLQppICLt3-5Ci1L1sQ-Na48FDNujt8-5PyH_nqnKbxhEI2SMxA-ANEbzTw81FZ8k9N1UU5L9wYjh2l3S9gz4g1ujCtH-Wdjzn0kXx-nOx8zX9c
+[2020-04-16T20:59:10.965] [INFO] default - 4218b8f86d822b195bf494dbc7c5966c7c13bb96
+[2020-04-16T20:59:10.966] [INFO] default - false
+[2020-04-16T20:59:10.967] [INFO] server - {
+  method: 'PUT',
+  url: 'https://api.spotify.com/v1/me/player',
+  headers: {
+    Authorization: 'Bearer BQDu4nhm6QZjuO89h4MtbrJurw2S2KyW18I30OHzrh76oAhapDGa5Eg7R3RZVeFG5hmRgnIbZLQppICLt3-5Ci1L1sQ-Na48FDNujt8-5PyH_nqnKbxhEI2SMxA-ANEbzTw81FZ8k9N1UU5L9wYjh2l3S9gz4g1ujCtH-Wdjzn0kXx-nOx8zX9c'
+  },
+  json: true,
+  body: {
+    device_ids: [ '4218b8f86d822b195bf494dbc7c5966c7c13bb96' ],
+    play: 'false'
+  }
+}
+[2020-04-16T20:59:11.200] [ERROR] server - error player
+[2020-04-16T20:59:11.201] [ERROR] server - undefined
+[2020-04-16T20:59:11.202] [ERROR] default - undefined
+[2020-04-16T20:59:21.250] [INFO] default - ricevuto tokn undefined
+[2020-04-16T20:59:21.258] [INFO] default - logged users: 
+[2020-04-16T20:59:21.258] [INFO] default - [
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+    expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+    name: 'Gianpaolo Basilicò',
+    refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+  },
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQC7eD2CBeTFpbrS2UrttWAAtOmhM7huWynseHw5VnfVmnKekuYms-gEekVEfROa_v0xAW3H1UynuWbPF6HWkxSr5anvGNeXxZo8CacSRuv2BPXGXUrOyDWsrpD0nESQIR8U2uyJy0QOzsWwjiT1Shgn3CRHNz7Kj0Kd3KCF8Q9_Cegy',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQCTG6N6vCgFcX1j5a5rZzhaYX5pO2Up6Pswb_8Oln5agmiEUTHZi5GuzxZzMiAMweAc756eyMZJIQB39AHdGnY3LT1nG-jKSex-T2BLxJwBIQQU0xkcEuImDchOoMDmJ5c',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T20:59:21.354] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T21:00:03.284] [INFO] default - CALLBACK to LOGIN
+[2020-04-16T21:00:04.373] [INFO] server - AQArZPgRAuiU_adz9odg_R4IfCJawXBAf9Ik1d9QeI9xztZn8veXqTnfTGw8qakprZIPhzUdEj4D7KNqnWgMFq5Gc15H8CBPJd5Y62dBB7Io_StILg0nZFvZY5gkWtPudLqKmdvlC9sQmxOaR_x8MFm0PhzOWVfon074QqJc50KcjekPVG2kr00VQe8L3_80qMnpILksHiNG2gNcJmB-oHI9Ohr5A0Z_7X6VjA-h5CKy73F-Euh7ChhA6v-yCF-17HTABLNSMUqB0zfzb8wMOUBDia5qly-FEpnarEBN7RpwyohmcxgbDijtlrH56DhYRcKh1Zuf5vz94-wdjbF_Q4x83jJYB4f_2TyxROM6HhxlWGC-XMIsdGd14vLx4jO9aeQHZEw72T-bNgQiOerwRWl48xcwMFEP5MUeKg
+[2020-04-16T21:00:04.482] [INFO] server - I got a token, lets get my info
+[2020-04-16T21:00:04.487] [INFO] server - BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9
+[2020-04-16T21:00:04.488] [INFO] server - BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9
+[2020-04-16T21:00:04.598] [INFO] server - user: 
+[2020-04-16T21:00:04.599] [INFO] server - {
+  country: 'NL',
+  display_name: 'Giuseppe Ministeri',
+  email: 'mrpaah@gmail.com',
+  explicit_content: { filter_enabled: false, filter_locked: false },
+  external_urls: { spotify: 'https://open.spotify.com/user/gadato' },
+  followers: { href: null, total: 22 },
+  href: 'https://api.spotify.com/v1/users/gadato',
+  id: 'gadato',
+  images: [
+    {
+      height: null,
+      url: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63',
+      width: null
+    }
+  ],
+  product: 'premium',
+  type: 'user',
+  uri: 'spotify:user:gadato'
+}
+[2020-04-16T21:00:04.607] [INFO] default - risposta da auth:
+[2020-04-16T21:00:04.609] [INFO] default - {
+  access_token: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+  token_type: 'Bearer',
+  expires_in: 3600,
+  refresh_token: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+  scope: 'streaming app-remote-control playlist-read-collaborative user-modify-playback-state user-follow-read user-read-playback-state user-read-email user-read-private',
+  id: 'gadato',
+  name: 'Giuseppe Ministeri',
+  pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63',
+  status: 200
+}
+[2020-04-16T21:00:04.690] [INFO] default - user added or updated {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+  pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+}
+[2020-04-16T21:00:04.819] [INFO] default - ricevuto tokn undefined
+[2020-04-16T21:00:04.824] [INFO] default - logged users: 
+[2020-04-16T21:00:04.824] [INFO] default - [
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+    expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+    name: 'Gianpaolo Basilicò',
+    refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+  },
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:00:04.945] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T21:00:29.058] [INFO] default - ricevuto tokn undefined
+[2020-04-16T21:00:29.067] [INFO] default - logged users: 
+[2020-04-16T21:00:29.068] [INFO] default - [
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+    expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+    name: 'Gianpaolo Basilicò',
+    refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+  },
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:00:29.186] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T21:02:03.136] [INFO] default - ricevuto tokn undefined
+[2020-04-16T21:02:03.141] [INFO] default - logged users: 
+[2020-04-16T21:02:03.150] [INFO] default - [
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+    expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+    name: 'Gianpaolo Basilicò',
+    refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+  },
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:02:03.276] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T21:02:05.705] [INFO] default - start joining
+[2020-04-16T21:02:05.723] [INFO] default - end joining
+[2020-04-16T21:02:05.738] [INFO] default - start joining
+[2020-04-16T21:02:05.742] [INFO] default - end joining
+[2020-04-16T21:02:05.751] [INFO] default -  user undefined not found
+[2020-04-16T21:02:05.753] [INFO] default - userByAccessToken :
+[2020-04-16T21:02:05.754] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:02:05.765] [INFO] default - userToJoin
+[2020-04-16T21:02:05.766] [INFO] default - null
+[2020-04-16T21:02:05.767] [INFO] default - userToJoiner
+[2020-04-16T21:02:05.768] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:02:05.793] [ERROR] default - MongooseError [CastError]: Cast to ObjectId failed for value "[
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]" at path "users"
+    at new CastError (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\error\cast.js:29:11)
+    at model.Query.exec (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:4331:21)
+    at model.Query.Query.findOneAndUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:3011:8)
+    at Function.Model.findOneAndUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\model.js:2523:13)
+    at RoomManager.createOrUpdateRoom (C:\Users\samir\workspace\NOD\backend\src\RoomManager.ts:30:19)
+    at SafeSubscriber._next (C:\Users\samir\workspace\NOD\backend\src\app.ts:175:25)
+    at SafeSubscriber.__tryOrUnsub (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:265:10)
+    at SafeSubscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:207:14)
+    at Subscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:139:22)
+    at Subscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:99:12)
+    at TakeSubscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\operators\take.ts:92:24)
+    at TakeSubscriber.Subscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:99:12)
+    at MapSubscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\operators\map.ts:89:22)
+    at MapSubscriber.Subscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:99:12)
+    at CombineLatestSubscriber.notifyNext (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\observable\combineLatest.ts:313:26)
+    at InnerSubscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\InnerSubscriber.ts:17:17) {
+  message: 'Cast to ObjectId failed for value "[\n' +
+    '  {\n' +
+    "    _id: 'gadato',\n" +
+    '    __v: 0,\n' +
+    "    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',\n" +
+    "    expirationDate: '3600',\n" +
+    "    name: 'Giuseppe Ministeri',\n" +
+    "    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',\n" +
+    "    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'\n" +
+    '  }\n' +
+    ']" at path "users"',
+  name: 'CastError',
+  messageFormat: undefined,
+  stringValue: '"[\n' +
+    '  {\n' +
+    "    _id: 'gadato',\n" +
+    '    __v: 0,\n' +
+    "    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',\n" +
+    "    expirationDate: '3600',\n" +
+    "    name: 'Giuseppe Ministeri',\n" +
+    "    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',\n" +
+    "    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'\n" +
+    '  }\n' +
+    ']"',
+  kind: undefined,
+  value: [
+    {
+      _id: 'gadato',
+      __v: 0,
+      accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+      expirationDate: '3600',
+      name: 'Giuseppe Ministeri',
+      refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+      pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+    }
+  ],
+  path: 'users',
+  reason: Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+      at new ObjectID (C:\Users\samir\workspace\NOD\backend\node_modules\bson\lib\bson\objectid.js:59:11)
+      at castObjectId (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at ObjectId.cast (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schema\objectid.js:267:12)
+      at ObjectId.SchemaType.applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1010:12)
+      at SchemaArray.SchemaType._applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:985:26)
+      at SchemaArray._applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schema\array.js:291:45)
+      at SchemaArray.SchemaType.applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1003:16)
+      at SchemaArray.SchemaType._castForQuery (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1424:15)
+      at SchemaArray.SchemaType.castForQueryWrapper (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1391:17)
+      at castUpdateVal (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\helpers\query\castUpdate.js:502:19)
+      at walkUpdatePath (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\helpers\query\castUpdate.js:329:22)
+      at castUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\helpers\query\castUpdate.js:92:7)
+      at model.Query._castUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:4499:10)
+      at castDoc (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:4527:18)
+      at model.Query.Query._findAndModify (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:3478:22)
+      at model.Query.<anonymous> (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:3028:8)
+}
+[2020-04-16T21:02:05.913] [INFO] default -  user undefined not found
+[2020-04-16T21:02:05.916] [INFO] default - userByAccessToken :
+[2020-04-16T21:02:05.917] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:02:05.921] [INFO] default - userToJoin
+[2020-04-16T21:02:05.922] [INFO] default - null
+[2020-04-16T21:02:05.923] [INFO] default - userToJoiner
+[2020-04-16T21:02:05.924] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:02:05.929] [ERROR] default - MongooseError [CastError]: Cast to ObjectId failed for value "[
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]" at path "users"
+    at new CastError (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\error\cast.js:29:11)
+    at model.Query.exec (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:4331:21)
+    at model.Query.Query.findOneAndUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:3011:8)
+    at Function.Model.findOneAndUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\model.js:2523:13)
+    at RoomManager.createOrUpdateRoom (C:\Users\samir\workspace\NOD\backend\src\RoomManager.ts:30:19)
+    at SafeSubscriber._next (C:\Users\samir\workspace\NOD\backend\src\app.ts:175:25)
+    at SafeSubscriber.__tryOrUnsub (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:265:10)
+    at SafeSubscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:207:14)
+    at Subscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:139:22)
+    at Subscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:99:12)
+    at TakeSubscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\operators\take.ts:92:24)
+    at TakeSubscriber.Subscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:99:12)
+    at MapSubscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\operators\map.ts:89:22)
+    at MapSubscriber.Subscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:99:12)
+    at CombineLatestSubscriber.notifyNext (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\observable\combineLatest.ts:313:26)
+    at InnerSubscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\InnerSubscriber.ts:17:17) {
+  message: 'Cast to ObjectId failed for value "[\n' +
+    '  {\n' +
+    "    _id: 'gadato',\n" +
+    '    __v: 0,\n' +
+    "    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',\n" +
+    "    expirationDate: '3600',\n" +
+    "    name: 'Giuseppe Ministeri',\n" +
+    "    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',\n" +
+    "    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'\n" +
+    '  }\n' +
+    ']" at path "users"',
+  name: 'CastError',
+  messageFormat: undefined,
+  stringValue: '"[\n' +
+    '  {\n' +
+    "    _id: 'gadato',\n" +
+    '    __v: 0,\n' +
+    "    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',\n" +
+    "    expirationDate: '3600',\n" +
+    "    name: 'Giuseppe Ministeri',\n" +
+    "    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',\n" +
+    "    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'\n" +
+    '  }\n' +
+    ']"',
+  kind: undefined,
+  value: [
+    {
+      _id: 'gadato',
+      __v: 0,
+      accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+      expirationDate: '3600',
+      name: 'Giuseppe Ministeri',
+      refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+      pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+    }
+  ],
+  path: 'users',
+  reason: Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+      at new ObjectID (C:\Users\samir\workspace\NOD\backend\node_modules\bson\lib\bson\objectid.js:59:11)
+      at castObjectId (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at ObjectId.cast (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schema\objectid.js:267:12)
+      at ObjectId.SchemaType.applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1010:12)
+      at SchemaArray.SchemaType._applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:985:26)
+      at SchemaArray._applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schema\array.js:291:45)
+      at SchemaArray.SchemaType.applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1003:16)
+      at SchemaArray.SchemaType._castForQuery (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1424:15)
+      at SchemaArray.SchemaType.castForQueryWrapper (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1391:17)
+      at castUpdateVal (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\helpers\query\castUpdate.js:502:19)
+      at walkUpdatePath (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\helpers\query\castUpdate.js:329:22)
+      at castUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\helpers\query\castUpdate.js:92:7)
+      at model.Query._castUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:4499:10)
+      at castDoc (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:4527:18)
+      at model.Query.Query._findAndModify (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:3478:22)
+      at model.Query.<anonymous> (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:3028:8)
+}
+[2020-04-16T21:02:16.527] [INFO] default - ricevuto tokn undefined
+[2020-04-16T21:02:16.532] [INFO] default - logged users: 
+[2020-04-16T21:02:16.532] [INFO] default - [
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+    expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+    name: 'Gianpaolo Basilicò',
+    refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+  },
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:02:16.635] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T21:02:18.340] [INFO] default - start joining
+[2020-04-16T21:02:18.342] [INFO] default - end joining
+[2020-04-16T21:02:18.346] [INFO] default - userByAccessToken :
+[2020-04-16T21:02:18.347] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:02:18.355] [INFO] default -  user undefined not found
+[2020-04-16T21:02:18.356] [INFO] default - userToJoin
+[2020-04-16T21:02:18.357] [INFO] default - null
+[2020-04-16T21:02:18.358] [INFO] default - userToJoiner
+[2020-04-16T21:02:18.358] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:02:18.367] [ERROR] default - MongooseError [CastError]: Cast to ObjectId failed for value "[
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]" at path "users"
+    at new CastError (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\error\cast.js:29:11)
+    at model.Query.exec (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:4331:21)
+    at model.Query.Query.findOneAndUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:3011:8)
+    at Function.Model.findOneAndUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\model.js:2523:13)
+    at RoomManager.createOrUpdateRoom (C:\Users\samir\workspace\NOD\backend\src\RoomManager.ts:30:19)
+    at SafeSubscriber._next (C:\Users\samir\workspace\NOD\backend\src\app.ts:175:25)
+    at SafeSubscriber.__tryOrUnsub (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:265:10)
+    at SafeSubscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:207:14)
+    at Subscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:139:22)
+    at Subscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:99:12)
+    at TakeSubscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\operators\take.ts:92:24)
+    at TakeSubscriber.Subscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:99:12)
+    at MapSubscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\operators\map.ts:89:22)
+    at MapSubscriber.Subscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:99:12)
+    at CombineLatestSubscriber.notifyNext (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\observable\combineLatest.ts:313:26)
+    at InnerSubscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\InnerSubscriber.ts:17:17) {
+  message: 'Cast to ObjectId failed for value "[\n' +
+    '  {\n' +
+    "    _id: 'gadato',\n" +
+    '    __v: 0,\n' +
+    "    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',\n" +
+    "    expirationDate: '3600',\n" +
+    "    name: 'Giuseppe Ministeri',\n" +
+    "    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',\n" +
+    "    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'\n" +
+    '  }\n' +
+    ']" at path "users"',
+  name: 'CastError',
+  messageFormat: undefined,
+  stringValue: '"[\n' +
+    '  {\n' +
+    "    _id: 'gadato',\n" +
+    '    __v: 0,\n' +
+    "    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',\n" +
+    "    expirationDate: '3600',\n" +
+    "    name: 'Giuseppe Ministeri',\n" +
+    "    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',\n" +
+    "    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'\n" +
+    '  }\n' +
+    ']"',
+  kind: undefined,
+  value: [
+    {
+      _id: 'gadato',
+      __v: 0,
+      accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+      expirationDate: '3600',
+      name: 'Giuseppe Ministeri',
+      refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+      pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+    }
+  ],
+  path: 'users',
+  reason: Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+      at new ObjectID (C:\Users\samir\workspace\NOD\backend\node_modules\bson\lib\bson\objectid.js:59:11)
+      at castObjectId (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at ObjectId.cast (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schema\objectid.js:267:12)
+      at ObjectId.SchemaType.applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1010:12)
+      at SchemaArray.SchemaType._applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:985:26)
+      at SchemaArray._applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schema\array.js:291:45)
+      at SchemaArray.SchemaType.applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1003:16)
+      at SchemaArray.SchemaType._castForQuery (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1424:15)
+      at SchemaArray.SchemaType.castForQueryWrapper (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1391:17)
+      at castUpdateVal (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\helpers\query\castUpdate.js:502:19)
+      at walkUpdatePath (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\helpers\query\castUpdate.js:329:22)
+      at castUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\helpers\query\castUpdate.js:92:7)
+      at model.Query._castUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:4499:10)
+      at castDoc (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:4527:18)
+      at model.Query.Query._findAndModify (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:3478:22)
+      at model.Query.<anonymous> (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:3028:8)
+}
+[2020-04-16T21:04:01.778] [INFO] default - ricevuto tokn undefined
+[2020-04-16T21:04:01.784] [INFO] default - logged users: 
+[2020-04-16T21:04:01.793] [INFO] default - [
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+    expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+    name: 'Gianpaolo Basilicò',
+    refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+  },
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:04:01.880] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T21:04:11.275] [INFO] default - start joining
+[2020-04-16T21:04:11.276] [INFO] default - end joining
+[2020-04-16T21:04:11.283] [INFO] default - userByAccessToken :
+[2020-04-16T21:04:11.289] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:04:11.299] [INFO] default - userToJoin
+[2020-04-16T21:04:11.301] [INFO] default - {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+  expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+  name: 'Gianpaolo Basilicò',
+  refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+}
+[2020-04-16T21:04:11.318] [INFO] default - userToJoiner
+[2020-04-16T21:04:11.329] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:04:11.353] [ERROR] default - MongooseError [CastError]: Cast to ObjectId failed for value "[
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]" at path "users"
+    at new CastError (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\error\cast.js:29:11)
+    at model.Query.exec (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:4331:21)
+    at model.Query.Query.findOneAndUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:3011:8)
+    at Function.Model.findOneAndUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\model.js:2523:13)
+    at RoomManager.createOrUpdateRoom (C:\Users\samir\workspace\NOD\backend\src\RoomManager.ts:30:19)
+    at SafeSubscriber._next (C:\Users\samir\workspace\NOD\backend\src\app.ts:175:25)
+    at SafeSubscriber.__tryOrUnsub (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:265:10)
+    at SafeSubscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:207:14)
+    at Subscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:139:22)
+    at Subscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:99:12)
+    at TakeSubscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\operators\take.ts:92:24)
+    at TakeSubscriber.Subscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:99:12)
+    at MapSubscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\operators\map.ts:89:22)
+    at MapSubscriber.Subscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:99:12)
+    at CombineLatestSubscriber.notifyNext (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\observable\combineLatest.ts:313:26)
+    at InnerSubscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\InnerSubscriber.ts:17:17) {
+  message: 'Cast to ObjectId failed for value "[\n' +
+    '  {\n' +
+    "    _id: 'gadato',\n" +
+    '    __v: 0,\n' +
+    "    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',\n" +
+    "    expirationDate: '3600',\n" +
+    "    name: 'Giuseppe Ministeri',\n" +
+    "    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',\n" +
+    "    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'\n" +
+    '  }\n' +
+    ']" at path "users"',
+  name: 'CastError',
+  messageFormat: undefined,
+  stringValue: '"[\n' +
+    '  {\n' +
+    "    _id: 'gadato',\n" +
+    '    __v: 0,\n' +
+    "    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',\n" +
+    "    expirationDate: '3600',\n" +
+    "    name: 'Giuseppe Ministeri',\n" +
+    "    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',\n" +
+    "    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'\n" +
+    '  }\n' +
+    ']"',
+  kind: undefined,
+  value: [
+    {
+      _id: 'gadato',
+      __v: 0,
+      accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+      expirationDate: '3600',
+      name: 'Giuseppe Ministeri',
+      refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+      pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+    }
+  ],
+  path: 'users',
+  reason: Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+      at new ObjectID (C:\Users\samir\workspace\NOD\backend\node_modules\bson\lib\bson\objectid.js:59:11)
+      at castObjectId (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at ObjectId.cast (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schema\objectid.js:267:12)
+      at ObjectId.SchemaType.applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1010:12)
+      at SchemaArray.SchemaType._applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:985:26)
+      at SchemaArray._applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schema\array.js:291:45)
+      at SchemaArray.SchemaType.applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1003:16)
+      at SchemaArray.SchemaType._castForQuery (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1424:15)
+      at SchemaArray.SchemaType.castForQueryWrapper (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1391:17)
+      at castUpdateVal (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\helpers\query\castUpdate.js:502:19)
+      at walkUpdatePath (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\helpers\query\castUpdate.js:329:22)
+      at castUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\helpers\query\castUpdate.js:92:7)
+      at model.Query._castUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:4499:10)
+      at castDoc (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:4527:18)
+      at model.Query.Query._findAndModify (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:3478:22)
+      at model.Query.<anonymous> (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:3028:8)
+}
+[2020-04-16T21:08:03.530] [INFO] default - Server is listening on 3000
+[2020-04-16T21:08:03.583] [INFO] default - coonected to db
+[2020-04-16T21:08:07.721] [INFO] default - ricevuto tokn undefined
+[2020-04-16T21:08:07.764] [INFO] default - logged users: 
+[2020-04-16T21:08:07.765] [INFO] default - [
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+    expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+    name: 'Gianpaolo Basilicò',
+    refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+  },
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:08:07.835] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T21:08:10.888] [INFO] default - start joining
+[2020-04-16T21:08:10.891] [INFO] default - end joining
+[2020-04-16T21:08:10.906] [INFO] default - userByAccessToken :
+[2020-04-16T21:08:10.907] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:08:10.919] [INFO] default - userToJoin
+[2020-04-16T21:08:10.926] [INFO] default - {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+  expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+  name: 'Gianpaolo Basilicò',
+  refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+}
+[2020-04-16T21:08:10.931] [INFO] default - userToJoiner
+[2020-04-16T21:08:10.942] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:08:10.970] [ERROR] default - MongooseError [CastError]: Cast to ObjectId failed for value "[
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]" at path "users"
+    at new CastError (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\error\cast.js:29:11)
+    at model.Query.exec (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:4331:21)
+    at model.Query.Query.findOneAndUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:3011:8)
+    at Function.Model.findOneAndUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\model.js:2523:13)
+    at RoomManager.createOrUpdateRoom (C:\Users\samir\workspace\NOD\backend\src\RoomManager.ts:30:19)
+    at SafeSubscriber._next (C:\Users\samir\workspace\NOD\backend\src\app.ts:175:25)
+    at SafeSubscriber.__tryOrUnsub (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:265:10)
+    at SafeSubscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:207:14)
+    at Subscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:139:22)
+    at Subscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:99:12)
+    at TakeSubscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\operators\take.ts:92:24)
+    at TakeSubscriber.Subscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:99:12)
+    at MapSubscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\operators\map.ts:89:22)
+    at MapSubscriber.Subscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:99:12)
+    at CombineLatestSubscriber.notifyNext (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\observable\combineLatest.ts:313:26)
+    at InnerSubscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\InnerSubscriber.ts:17:17) {
+  message: 'Cast to ObjectId failed for value "[\n' +
+    '  {\n' +
+    "    _id: 'gadato',\n" +
+    '    __v: 0,\n' +
+    "    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',\n" +
+    "    expirationDate: '3600',\n" +
+    "    name: 'Giuseppe Ministeri',\n" +
+    "    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',\n" +
+    "    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'\n" +
+    '  }\n' +
+    ']" at path "users"',
+  name: 'CastError',
+  messageFormat: undefined,
+  stringValue: '"[\n' +
+    '  {\n' +
+    "    _id: 'gadato',\n" +
+    '    __v: 0,\n' +
+    "    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',\n" +
+    "    expirationDate: '3600',\n" +
+    "    name: 'Giuseppe Ministeri',\n" +
+    "    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',\n" +
+    "    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'\n" +
+    '  }\n' +
+    ']"',
+  kind: undefined,
+  value: [
+    {
+      _id: 'gadato',
+      __v: 0,
+      accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+      expirationDate: '3600',
+      name: 'Giuseppe Ministeri',
+      refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+      pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+    }
+  ],
+  path: 'users',
+  reason: Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+      at new ObjectID (C:\Users\samir\workspace\NOD\backend\node_modules\bson\lib\bson\objectid.js:59:11)
+      at castObjectId (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at ObjectId.cast (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schema\objectid.js:267:12)
+      at ObjectId.SchemaType.applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1010:12)
+      at SchemaArray.SchemaType._applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:985:26)
+      at SchemaArray._applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schema\array.js:291:45)
+      at SchemaArray.SchemaType.applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1003:16)
+      at SchemaArray.SchemaType._castForQuery (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1424:15)
+      at SchemaArray.SchemaType.castForQueryWrapper (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1391:17)
+      at castUpdateVal (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\helpers\query\castUpdate.js:502:19)
+      at walkUpdatePath (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\helpers\query\castUpdate.js:329:22)
+      at castUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\helpers\query\castUpdate.js:92:7)
+      at model.Query._castUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:4499:10)
+      at castDoc (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:4527:18)
+      at model.Query.Query._findAndModify (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:3478:22)
+      at model.Query.<anonymous> (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:3028:8)
+}
+[2020-04-16T21:11:07.971] [INFO] default - Server is listening on 3000
+[2020-04-16T21:11:08.027] [INFO] default - coonected to db
+[2020-04-16T21:17:37.422] [INFO] default - Server is listening on 3000
+[2020-04-16T21:17:37.445] [INFO] default - coonected to db
+[2020-04-16T21:31:39.567] [INFO] default - Server is listening on 3000
+[2020-04-16T21:31:39.592] [INFO] default - coonected to db
+[2020-04-16T21:31:42.168] [INFO] default - start joining
+[2020-04-16T21:31:42.174] [INFO] default - end joining
+[2020-04-16T21:31:42.225] [INFO] default - userByAccessToken :
+[2020-04-16T21:31:42.226] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:31:42.236] [INFO] default - userToJoin
+[2020-04-16T21:31:42.237] [INFO] default - {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+  expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+  name: 'Gianpaolo Basilicò',
+  refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+}
+[2020-04-16T21:31:42.254] [INFO] default - userToJoiner
+[2020-04-16T21:31:42.255] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:31:42.288] [ERROR] default - MongooseError [CastError]: Cast to ObjectId failed for value "11135339447" at path "users"
+    at new CastError (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\error\cast.js:29:11)
+    at model.Query.exec (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:4331:21)
+    at model.Query.Query.findOneAndUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:3011:8)
+    at Function.Model.findOneAndUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\model.js:2523:13)
+    at RoomManager.createOrUpdateRoom (C:\Users\samir\workspace\NOD\backend\src\RoomManager.ts:30:19)
+    at SafeSubscriber._next (C:\Users\samir\workspace\NOD\backend\src\app.ts:175:25)
+    at SafeSubscriber.__tryOrUnsub (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:265:10)
+    at SafeSubscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:207:14)
+    at Subscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:139:22)
+    at Subscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:99:12)
+    at TakeSubscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\operators\take.ts:92:24)
+    at TakeSubscriber.Subscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:99:12)
+    at MapSubscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\operators\map.ts:89:22)
+    at MapSubscriber.Subscriber.next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\Subscriber.ts:99:12)
+    at CombineLatestSubscriber.notifyNext (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\observable\combineLatest.ts:313:26)
+    at InnerSubscriber._next (C:\Users\samir\workspace\NOD\backend\node_modules\rxjs\src\internal\InnerSubscriber.ts:17:17) {
+  message: 'Cast to ObjectId failed for value "11135339447" at path "users"',
+  name: 'CastError',
+  messageFormat: undefined,
+  stringValue: '"11135339447"',
+  kind: undefined,
+  value: '11135339447',
+  path: 'users',
+  reason: Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters
+      at new ObjectID (C:\Users\samir\workspace\NOD\backend\node_modules\bson\lib\bson\objectid.js:59:11)
+      at castObjectId (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at ObjectId.cast (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schema\objectid.js:267:12)
+      at ObjectId.SchemaType.applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1010:12)
+      at SchemaArray.SchemaType._applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:985:26)
+      at SchemaArray._applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schema\array.js:291:45)
+      at SchemaArray.SchemaType.applySetters (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1003:16)
+      at SchemaArray.SchemaType._castForQuery (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1424:15)
+      at SchemaArray.SchemaType.castForQueryWrapper (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\schematype.js:1391:17)
+      at castUpdateVal (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\helpers\query\castUpdate.js:502:19)
+      at walkUpdatePath (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\helpers\query\castUpdate.js:329:22)
+      at castUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\helpers\query\castUpdate.js:92:7)
+      at model.Query._castUpdate (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:4499:10)
+      at castDoc (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:4527:18)
+      at model.Query.Query._findAndModify (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:3478:22)
+      at model.Query.<anonymous> (C:\Users\samir\workspace\NOD\backend\node_modules\mongoose\lib\query.js:3028:8)
+}
+[2020-04-16T21:32:58.328] [INFO] default - Server is listening on 3000
+[2020-04-16T21:32:58.353] [INFO] default - coonected to db
+[2020-04-16T21:35:44.800] [INFO] default - start joining
+[2020-04-16T21:35:44.807] [INFO] default - end joining
+[2020-04-16T21:35:44.858] [INFO] default - userByAccessToken :
+[2020-04-16T21:35:44.859] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:35:44.872] [INFO] default - userToJoin
+[2020-04-16T21:35:44.872] [INFO] default - {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+  expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+  name: 'Gianpaolo Basilicò',
+  refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+}
+[2020-04-16T21:35:44.885] [INFO] default - userToJoiner
+[2020-04-16T21:35:44.886] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:35:44.980] [ERROR] default - MongoError: Unsupported projection option: users: { $push: { _id: "11135339447", __v: 0, accessToken: "BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjws...", expirationDate: "AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI", name: "Gianpaolo Basilicò", refreshToken: "AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI" } }
+    at MessageStream.messageHandler (C:\Users\samir\workspace\NOD\backend\node_modules\mongodb\lib\cmap\connection.js:261:20)
+    at MessageStream.emit (events.js:321:20)
+    at processIncomingData (C:\Users\samir\workspace\NOD\backend\node_modules\mongodb\lib\cmap\message_stream.js:144:12)
+    at MessageStream._write (C:\Users\samir\workspace\NOD\backend\node_modules\mongodb\lib\cmap\message_stream.js:42:5)
+    at doWrite (_stream_writable.js:441:12)
+    at writeOrBuffer (_stream_writable.js:425:5)
+    at MessageStream.Writable.write (_stream_writable.js:316:11)
+    at Socket.ondata (_stream_readable.js:714:22)
+    at Socket.emit (events.js:321:20)
+    at addChunk (_stream_readable.js:294:12)
+    at readableAddChunk (_stream_readable.js:275:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23) {
+  ok: 0,
+  errmsg: 'Unsupported projection option: users: { $push: { _id: "11135339447", __v: 0, accessToken: "BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjws...", expirationDate: "AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI", name: "Gianpaolo Basilicò", refreshToken: "AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI" } }',
+  code: 2,
+  codeName: 'BadValue',
+  name: 'MongoError',
+  [Symbol(mongoErrorContextSymbol)]: {}
+}
+[2020-04-16T21:37:29.219] [INFO] default - Server is listening on 3000
+[2020-04-16T21:37:29.252] [INFO] default - coonected to db
+[2020-04-16T21:37:34.021] [INFO] default - start joining
+[2020-04-16T21:37:34.026] [INFO] default - end joining
+[2020-04-16T21:37:34.072] [INFO] default - userByAccessToken :
+[2020-04-16T21:37:34.073] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:37:34.103] [INFO] default - userToJoin
+[2020-04-16T21:37:34.110] [INFO] default - {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+  expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+  name: 'Gianpaolo Basilicò',
+  refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+}
+[2020-04-16T21:37:34.124] [INFO] default - userToJoiner
+[2020-04-16T21:37:34.125] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:37:34.147] [ERROR] default - MongoError: Unsupported projection option: users: { $push: "11135339447" }
+    at MessageStream.messageHandler (C:\Users\samir\workspace\NOD\backend\node_modules\mongodb\lib\cmap\connection.js:261:20)
+    at MessageStream.emit (events.js:321:20)
+    at processIncomingData (C:\Users\samir\workspace\NOD\backend\node_modules\mongodb\lib\cmap\message_stream.js:144:12)
+    at MessageStream._write (C:\Users\samir\workspace\NOD\backend\node_modules\mongodb\lib\cmap\message_stream.js:42:5)
+    at doWrite (_stream_writable.js:441:12)
+    at writeOrBuffer (_stream_writable.js:425:5)
+    at MessageStream.Writable.write (_stream_writable.js:316:11)
+    at Socket.ondata (_stream_readable.js:714:22)
+    at Socket.emit (events.js:321:20)
+    at addChunk (_stream_readable.js:294:12)
+    at readableAddChunk (_stream_readable.js:275:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23) {
+  ok: 0,
+  errmsg: 'Unsupported projection option: users: { $push: "11135339447" }',
+  code: 2,
+  codeName: 'BadValue',
+  name: 'MongoError',
+  [Symbol(mongoErrorContextSymbol)]: {}
+}
+[2020-04-16T21:42:43.835] [INFO] default - Server is listening on 3000
+[2020-04-16T21:42:43.856] [INFO] default - coonected to db
+[2020-04-16T21:44:12.457] [INFO] default - Server is listening on 3000
+[2020-04-16T21:44:12.481] [INFO] default - coonected to db
+[2020-04-16T21:44:19.557] [INFO] default - start joining
+[2020-04-16T21:44:19.564] [INFO] default - end joining
+[2020-04-16T21:44:19.613] [INFO] default - userByAccessToken :
+[2020-04-16T21:44:19.614] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:44:19.624] [INFO] default - userToJoin
+[2020-04-16T21:44:19.635] [INFO] default - {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+  expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+  name: 'Gianpaolo Basilicò',
+  refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+}
+[2020-04-16T21:44:19.641] [INFO] default - userToJoiner
+[2020-04-16T21:44:19.641] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:46:55.644] [INFO] default - Server is listening on 3000
+[2020-04-16T21:46:55.662] [INFO] default - start joining
+[2020-04-16T21:46:55.679] [INFO] default - end joining
+[2020-04-16T21:46:55.714] [INFO] default - coonected to db
+[2020-04-16T21:46:55.768] [INFO] default -  user 11135339447 not found
+[2020-04-16T21:46:55.774] [INFO] default - userToJoin
+[2020-04-16T21:47:55.076] [INFO] default - Server is listening on 3000
+[2020-04-16T21:47:55.104] [INFO] default - coonected to db
+[2020-04-16T21:47:57.566] [INFO] default - start joining
+[2020-04-16T21:47:57.571] [INFO] default - end joining
+[2020-04-16T21:47:57.622] [INFO] default - userByAccessToken :
+[2020-04-16T21:47:57.623] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:47:57.647] [INFO] default - userToJoin
+[2020-04-16T21:47:57.659] [INFO] default - {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+  expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+  name: 'Gianpaolo Basilicò',
+  refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+}
+[2020-04-16T21:47:57.673] [INFO] default - userToJoiner
+[2020-04-16T21:47:57.677] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:48:56.288] [INFO] default - Server is listening on 3000
+[2020-04-16T21:48:56.313] [INFO] default - coonected to db
+[2020-04-16T21:48:57.798] [INFO] default - start joining
+[2020-04-16T21:48:57.805] [INFO] default - end joining
+[2020-04-16T21:48:57.850] [INFO] default - userByAccessToken :
+[2020-04-16T21:48:57.852] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:48:57.862] [INFO] default - userToJoin
+[2020-04-16T21:48:57.863] [INFO] default - {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+  expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+  name: 'Gianpaolo Basilicò',
+  refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+}
+[2020-04-16T21:48:57.881] [INFO] default - userToJoiner
+[2020-04-16T21:48:57.882] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:49:34.297] [INFO] default - Server is listening on 3000
+[2020-04-16T21:49:34.319] [INFO] default - coonected to db
+[2020-04-16T21:49:35.898] [INFO] default - start joining
+[2020-04-16T21:49:35.903] [INFO] default - end joining
+[2020-04-16T21:49:35.951] [INFO] default - userByAccessToken :
+[2020-04-16T21:49:35.953] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:49:35.990] [INFO] default - userToJoin
+[2020-04-16T21:49:36.001] [INFO] default - {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+  expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+  name: 'Gianpaolo Basilicò',
+  refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+}
+[2020-04-16T21:49:36.017] [INFO] default - userToJoiner
+[2020-04-16T21:49:36.018] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:52:48.807] [INFO] default - Server is listening on 3000
+[2020-04-16T21:52:48.831] [INFO] default - coonected to db
+[2020-04-16T21:53:11.303] [INFO] default - Server is listening on 3000
+[2020-04-16T21:53:11.323] [INFO] default - coonected to db
+[2020-04-16T21:53:22.971] [INFO] default - start joining
+[2020-04-16T21:53:22.977] [INFO] default - end joining
+[2020-04-16T21:53:23.020] [INFO] default - userByAccessToken :
+[2020-04-16T21:53:23.021] [INFO] default - {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+  pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+}
+[2020-04-16T21:53:23.041] [INFO] default - userToJoin
+[2020-04-16T21:53:23.059] [INFO] default - {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+  expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+  name: 'Gianpaolo Basilicò',
+  refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+}
+[2020-04-16T21:53:23.088] [INFO] default - userToJoiner
+[2020-04-16T21:53:23.089] [INFO] default - {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+  pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+}
+[2020-04-16T21:54:12.616] [INFO] default - Server is listening on 3000
+[2020-04-16T21:54:12.635] [INFO] default - coonected to db
+[2020-04-16T21:54:47.378] [INFO] default - start joining
+[2020-04-16T21:54:47.383] [INFO] default - end joining
+[2020-04-16T21:54:47.435] [INFO] default - userByAccessToken :
+[2020-04-16T21:54:47.436] [INFO] default - {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+  pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+}
+[2020-04-16T21:54:47.445] [INFO] default - userToJoin
+[2020-04-16T21:54:47.446] [INFO] default - {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+  expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+  name: 'Gianpaolo Basilicò',
+  refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+}
+[2020-04-16T21:54:47.450] [INFO] default - userToJoiner
+[2020-04-16T21:54:47.461] [INFO] default - {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+  pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+}
+[2020-04-16T21:55:30.901] [INFO] default - ricevuto tokn undefined
+[2020-04-16T21:55:30.917] [INFO] default - logged users: 
+[2020-04-16T21:55:30.923] [INFO] default - [
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+    expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+    name: 'Gianpaolo Basilicò',
+    refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+  },
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T21:55:31.064] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T22:06:42.299] [INFO] default - Server is listening on 3000
+[2020-04-16T22:06:42.326] [INFO] default - coonected to db
+[2020-04-16T22:07:03.505] [INFO] default - Server is listening on 3000
+[2020-04-16T22:07:03.526] [INFO] default - coonected to db
+[2020-04-16T22:07:05.347] [INFO] default - start joining
+[2020-04-16T22:07:05.354] [INFO] default - end joining
+[2020-04-16T22:07:05.397] [INFO] default - userByAccessToken :
+[2020-04-16T22:07:05.399] [INFO] default - {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+  pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+}
+[2020-04-16T22:07:05.406] [INFO] default - userToJoin
+[2020-04-16T22:07:05.407] [INFO] default - {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+  expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+  name: 'Gianpaolo Basilicò',
+  refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+}
+[2020-04-16T22:07:05.411] [INFO] default - userToJoiner
+[2020-04-16T22:07:05.412] [INFO] default - {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+  pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+}
+[2020-04-16T22:13:05.750] [INFO] default - Server is listening on 3000
+[2020-04-16T22:13:05.770] [INFO] default - coonected to db
+[2020-04-16T22:13:24.737] [INFO] default - Server is listening on 3000
+[2020-04-16T22:13:24.756] [INFO] default - coonected to db
+[2020-04-16T22:13:25.213] [INFO] default - start joining
+[2020-04-16T22:13:25.219] [INFO] default - end joining
+[2020-04-16T22:13:25.260] [INFO] default - userByAccessToken :
+[2020-04-16T22:13:25.261] [INFO] default - {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+  pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+}
+[2020-04-16T22:13:25.280] [INFO] default - userToJoin
+[2020-04-16T22:13:25.281] [INFO] default - {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+  expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+  name: 'Gianpaolo Basilicò',
+  refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+}
+[2020-04-16T22:13:25.315] [INFO] default - userToJoiner
+[2020-04-16T22:13:25.318] [INFO] default - {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  refreshToken: 'AQB8XJdX0HB3g2PtSoQA7Q3qLPIqdncXHJPXIrk467Y6ElC_umaEqAMX5Jr0ELuGwH03l4A7mrXEPCUgOuVlBEoOr_vZxdM7PDwCRieDQYTgTjEC-HhMYpP4HYaNL-QEJsk',
+  pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+}
+[2020-04-16T22:17:02.882] [INFO] default - Server is listening on 3000
+[2020-04-16T22:17:02.909] [INFO] default - coonected to db
+[2020-04-16T22:17:49.468] [INFO] default - BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9
+[2020-04-16T22:17:49.470] [INFO] default - 4efd922fe184e7e72c4d04b5477a19ea47812467
+[2020-04-16T22:17:49.471] [INFO] default - true
+[2020-04-16T22:17:49.487] [INFO] server - {
+  method: 'PUT',
+  url: 'https://api.spotify.com/v1/me/player',
+  headers: {
+    Authorization: 'Bearer BQCt3WzgL8swH_Eap-tVU-glY9vlld-61awxxKop7Sg_b5BNJ_cnA3qT77cVmgi6v2LzMzCCe7rBvLc-YTmv3Fxu60ajEcNbHYcElE7ixo3HkHuJLDs4uasdwPZA_Eq-obZFZljBOD5qd-5chEOcPT2vi4RKL0MPF4BILJdi2ty8eAq9'
+  },
+  json: true,
+  body: {
+    device_ids: [ '4efd922fe184e7e72c4d04b5477a19ea47812467' ],
+    play: 'true'
+  }
+}
+[2020-04-16T22:17:49.657] [ERROR] server - error player
+[2020-04-16T22:17:49.658] [ERROR] server - undefined
+[2020-04-16T22:17:49.660] [ERROR] default - { error: { status: 401, message: 'The access token expired' } }
+[2020-04-16T22:18:10.559] [INFO] default - CALLBACK to LOGIN
+[2020-04-16T22:18:11.496] [INFO] server - AQCORbmpzOVIAekG2R9NF6RNNwPYn1Qv7GSF8PWSJrvhO6s4HiuScwAkh0HoRzJey2GPyM0QJYvKx_jqsV_0B13VcN8gm57Z9sW1IuQwmJJEoVa_FJirrqdgxQSTsLgq2QOZ8RRmngdnv2TJUBXRj_Ptpqy-02svgoMq9g1wpJghdZsRAbLBG6EVazt_uTXyq8Z09POK9LGR_kuMweC8lcICnK8geZMsJOPNSsuY2RZxeme7uFASZ1BKCWWfqNeF6nYuNxJ9O2cVtx7v4S8YGor3indrcKGIp5FyF9Jc63v6ztpURfr3mfAt3ECnTH7_tt9PiniudDMid4ZRecCk7SuxeaDvM2BcjloiZhbM5xGwAWkFWk6HJZ3NjE9tj1tbK-P-feLwmQgu-4Blw1NWGmqR_fl0cVDNIOPJtA
+[2020-04-16T22:18:11.591] [INFO] server - I got a token, lets get my info
+[2020-04-16T22:18:11.592] [INFO] server - BQAONt8SBQShTTeYg0CkUjOrXZNbId4It5sh8OFxfw30xuJJlsVJV2vJvsHVjW8YWDohs7n43MVz3E3mchAycaLq19gJRa_fQ9eOHE565F204qcSYizyMHoHGPwrvtPVFuIKXA7domOgYmjNgKA2bOFrgM_So7Fvn8w9Nv8Ymndg-kq-
+[2020-04-16T22:18:11.592] [INFO] server - BQAONt8SBQShTTeYg0CkUjOrXZNbId4It5sh8OFxfw30xuJJlsVJV2vJvsHVjW8YWDohs7n43MVz3E3mchAycaLq19gJRa_fQ9eOHE565F204qcSYizyMHoHGPwrvtPVFuIKXA7domOgYmjNgKA2bOFrgM_So7Fvn8w9Nv8Ymndg-kq-
+[2020-04-16T22:18:11.696] [INFO] server - user: 
+[2020-04-16T22:18:11.697] [INFO] server - {
+  country: 'NL',
+  display_name: 'Giuseppe Ministeri',
+  email: 'mrpaah@gmail.com',
+  explicit_content: { filter_enabled: false, filter_locked: false },
+  external_urls: { spotify: 'https://open.spotify.com/user/gadato' },
+  followers: { href: null, total: 22 },
+  href: 'https://api.spotify.com/v1/users/gadato',
+  id: 'gadato',
+  images: [
+    {
+      height: null,
+      url: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63',
+      width: null
+    }
+  ],
+  product: 'premium',
+  type: 'user',
+  uri: 'spotify:user:gadato'
+}
+[2020-04-16T22:18:11.741] [INFO] default - risposta da auth:
+[2020-04-16T22:18:11.742] [INFO] default - {
+  access_token: 'BQAONt8SBQShTTeYg0CkUjOrXZNbId4It5sh8OFxfw30xuJJlsVJV2vJvsHVjW8YWDohs7n43MVz3E3mchAycaLq19gJRa_fQ9eOHE565F204qcSYizyMHoHGPwrvtPVFuIKXA7domOgYmjNgKA2bOFrgM_So7Fvn8w9Nv8Ymndg-kq-',
+  token_type: 'Bearer',
+  expires_in: 3600,
+  refresh_token: 'AQB-heR07ET8Tfknw8DQEtIVVxDOhoBYX0FS3Oq_0rGBTc24r5sk32YFB-AOi6LAXEF7IQ0F4HcZgR-PSp_wyjzigKy-MxH7VyCVvpQoV6THPGmnJw5yLAH-4QxNGdLUkPQ',
+  scope: 'streaming app-remote-control playlist-read-collaborative user-modify-playback-state user-follow-read user-read-playback-state user-read-email user-read-private',
+  id: 'gadato',
+  name: 'Giuseppe Ministeri',
+  pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63',
+  status: 200
+}
+[2020-04-16T22:18:11.789] [INFO] default - user added or updated {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQAONt8SBQShTTeYg0CkUjOrXZNbId4It5sh8OFxfw30xuJJlsVJV2vJvsHVjW8YWDohs7n43MVz3E3mchAycaLq19gJRa_fQ9eOHE565F204qcSYizyMHoHGPwrvtPVFuIKXA7domOgYmjNgKA2bOFrgM_So7Fvn8w9Nv8Ymndg-kq-',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  refreshToken: 'AQB-heR07ET8Tfknw8DQEtIVVxDOhoBYX0FS3Oq_0rGBTc24r5sk32YFB-AOi6LAXEF7IQ0F4HcZgR-PSp_wyjzigKy-MxH7VyCVvpQoV6THPGmnJw5yLAH-4QxNGdLUkPQ',
+  pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+}
+[2020-04-16T22:18:11.892] [INFO] default - ricevuto tokn undefined
+[2020-04-16T22:18:11.910] [INFO] default - logged users: 
+[2020-04-16T22:18:11.922] [INFO] default - [
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQD1CzbFDivSanK4t1fGB9q2VtUxTaAXTgaoU7EXwMh9oUtMyQp6grGmI-Rn2ZVkJs9aZrMTF1d-RxUIiAvFbfsoqoUBkAbUDmRbjz3dSRXpmveyu1vYJnG-94NnWcPP0C1A-Xpnicq1eEwnZvjjwsIHi8r0i4sKbUERaVrzjL6EVcRmp-sCp_4',
+    expirationDate: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI',
+    name: 'Gianpaolo Basilicò',
+    refreshToken: 'AQDXdLJyADg1QCLgXoh-ixDQnDkq9zIqt8wek3r1VnhOoyD7d2M3SYzXC4IoHHEu3Saee5XfltIBywE-TRaNRh_yt5mAdVbRtD1lJGkz8g-gb4XZbKvvXz3sdFBWksL9GUI'
+  },
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQAONt8SBQShTTeYg0CkUjOrXZNbId4It5sh8OFxfw30xuJJlsVJV2vJvsHVjW8YWDohs7n43MVz3E3mchAycaLq19gJRa_fQ9eOHE565F204qcSYizyMHoHGPwrvtPVFuIKXA7domOgYmjNgKA2bOFrgM_So7Fvn8w9Nv8Ymndg-kq-',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    refreshToken: 'AQB-heR07ET8Tfknw8DQEtIVVxDOhoBYX0FS3Oq_0rGBTc24r5sk32YFB-AOi6LAXEF7IQ0F4HcZgR-PSp_wyjzigKy-MxH7VyCVvpQoV6THPGmnJw5yLAH-4QxNGdLUkPQ',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63'
+  }
+]
+[2020-04-16T22:18:11.979] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T22:24:04.335] [INFO] default - Server is listening on 3000
+[2020-04-16T22:24:04.356] [INFO] default - coonected to db
+[2020-04-16T22:24:14.354] [INFO] default - ricevuto tokn undefined
+[2020-04-16T22:24:14.388] [INFO] default - logged users: 
+[2020-04-16T22:24:14.390] [INFO] default - []
+[2020-04-16T22:24:14.486] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T22:24:25.221] [INFO] default - CALLBACK to LOGIN
+[2020-04-16T22:24:26.235] [INFO] server - AQDyh7S2geRPv2bQ6fRh7hgUhx9d5spozjrerjs6jiKncQAPP1ZpHEjP7dxK4tekMw-aL6Ud07TtJom2gMVn78UU6Jm73rs6nxUMfdQWwwgSqA9AhX_Da3bI4v4YhAqmJslPkNYGdV9qUPHXo2SFD4GnrfdepQXmNwHyxO4AU_ElNCF71_XhX1J3xgFQ14YX-LL_MtmDOO5-QxJ7StKRYXEwsDq7dPZgo1-wZ-nB8MWBIaqvIhhpcqiHGGEJSRIjgh3vjXk5VceDbbtHVL7Mo2HHYJWhAzxdYKbPcYIPN2Bq9gX7GhazVOibMniDe8ABxIi4TiGF4HdCH6DEVpK2xquj9CtkvodB861E7gvNGtcLFaUySc6o7dM2UzEvyZ7XCgZuZxIqzvbRPl4l1wgvanszRrPNQsi_GhhSRQ
+[2020-04-16T22:24:26.336] [INFO] server - I got a token, lets get my info
+[2020-04-16T22:24:26.337] [INFO] server - BQB0cXUNfrOtIC2M1tWlLtmZTQ7ey_8c1moGZBcn2oh4L1jnJt59RGM5xUd-QD1TmjxwsBm63hEc1RemdvhLDDfqebxkV4QvA862u5GbADNw3FlDzxusvuN18LJ3l9LKuNDjL-L2mAvbt7CBcK_Lsk1Sh5y_sU4QBW9KpbAbZvPjJrSr
+[2020-04-16T22:24:26.338] [INFO] server - BQB0cXUNfrOtIC2M1tWlLtmZTQ7ey_8c1moGZBcn2oh4L1jnJt59RGM5xUd-QD1TmjxwsBm63hEc1RemdvhLDDfqebxkV4QvA862u5GbADNw3FlDzxusvuN18LJ3l9LKuNDjL-L2mAvbt7CBcK_Lsk1Sh5y_sU4QBW9KpbAbZvPjJrSr
+[2020-04-16T22:24:26.434] [INFO] server - user: 
+[2020-04-16T22:24:26.435] [INFO] server - {
+  country: 'NL',
+  display_name: 'Giuseppe Ministeri',
+  email: 'mrpaah@gmail.com',
+  explicit_content: { filter_enabled: false, filter_locked: false },
+  external_urls: { spotify: 'https://open.spotify.com/user/gadato' },
+  followers: { href: null, total: 22 },
+  href: 'https://api.spotify.com/v1/users/gadato',
+  id: 'gadato',
+  images: [
+    {
+      height: null,
+      url: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63',
+      width: null
+    }
+  ],
+  product: 'premium',
+  type: 'user',
+  uri: 'spotify:user:gadato'
+}
+[2020-04-16T22:24:26.474] [INFO] default - risposta da auth:
+[2020-04-16T22:24:26.475] [INFO] default - {
+  access_token: 'BQB0cXUNfrOtIC2M1tWlLtmZTQ7ey_8c1moGZBcn2oh4L1jnJt59RGM5xUd-QD1TmjxwsBm63hEc1RemdvhLDDfqebxkV4QvA862u5GbADNw3FlDzxusvuN18LJ3l9LKuNDjL-L2mAvbt7CBcK_Lsk1Sh5y_sU4QBW9KpbAbZvPjJrSr',
+  token_type: 'Bearer',
+  expires_in: 3600,
+  refresh_token: 'AQCG8_3GkcWVfowQN_ekGmd0FhIv-t0zmlrVE-XQc8Mb3903bPCw8OelkhIUeHxrh6h3R-qpXotM4GxR2OcamZymQ0hiOQ3wGv7LvCLcOeOCjQHz-mohFY_e-Efr_MkBo4w',
+  scope: 'streaming app-remote-control playlist-read-collaborative user-modify-playback-state user-follow-read user-read-playback-state user-read-email user-read-private',
+  id: 'gadato',
+  name: 'Giuseppe Ministeri',
+  pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63',
+  status: 200
+}
+[2020-04-16T22:24:26.531] [INFO] default - user added or updated {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQB0cXUNfrOtIC2M1tWlLtmZTQ7ey_8c1moGZBcn2oh4L1jnJt59RGM5xUd-QD1TmjxwsBm63hEc1RemdvhLDDfqebxkV4QvA862u5GbADNw3FlDzxusvuN18LJ3l9LKuNDjL-L2mAvbt7CBcK_Lsk1Sh5y_sU4QBW9KpbAbZvPjJrSr',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63',
+  refreshToken: 'AQCG8_3GkcWVfowQN_ekGmd0FhIv-t0zmlrVE-XQc8Mb3903bPCw8OelkhIUeHxrh6h3R-qpXotM4GxR2OcamZymQ0hiOQ3wGv7LvCLcOeOCjQHz-mohFY_e-Efr_MkBo4w'
+}
+[2020-04-16T22:24:26.605] [INFO] default - ricevuto tokn undefined
+[2020-04-16T22:24:26.614] [INFO] default - logged users: 
+[2020-04-16T22:24:26.631] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQB0cXUNfrOtIC2M1tWlLtmZTQ7ey_8c1moGZBcn2oh4L1jnJt59RGM5xUd-QD1TmjxwsBm63hEc1RemdvhLDDfqebxkV4QvA862u5GbADNw3FlDzxusvuN18LJ3l9LKuNDjL-L2mAvbt7CBcK_Lsk1Sh5y_sU4QBW9KpbAbZvPjJrSr',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63',
+    refreshToken: 'AQCG8_3GkcWVfowQN_ekGmd0FhIv-t0zmlrVE-XQc8Mb3903bPCw8OelkhIUeHxrh6h3R-qpXotM4GxR2OcamZymQ0hiOQ3wGv7LvCLcOeOCjQHz-mohFY_e-Efr_MkBo4w'
+  }
+]
+[2020-04-16T22:24:26.719] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 50
+    }
+  ]
+}
+[2020-04-16T22:25:43.469] [INFO] default - start joining
+[2020-04-16T22:25:43.472] [INFO] default - end joining
+[2020-04-16T22:25:43.492] [INFO] default - userByAccessToken :
+[2020-04-16T22:25:43.493] [INFO] default - {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQB0cXUNfrOtIC2M1tWlLtmZTQ7ey_8c1moGZBcn2oh4L1jnJt59RGM5xUd-QD1TmjxwsBm63hEc1RemdvhLDDfqebxkV4QvA862u5GbADNw3FlDzxusvuN18LJ3l9LKuNDjL-L2mAvbt7CBcK_Lsk1Sh5y_sU4QBW9KpbAbZvPjJrSr',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63',
+  refreshToken: 'AQCG8_3GkcWVfowQN_ekGmd0FhIv-t0zmlrVE-XQc8Mb3903bPCw8OelkhIUeHxrh6h3R-qpXotM4GxR2OcamZymQ0hiOQ3wGv7LvCLcOeOCjQHz-mohFY_e-Efr_MkBo4w'
+}
+[2020-04-16T22:25:43.500] [INFO] default - userToJoin
+[2020-04-16T22:25:43.509] [INFO] default - {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQB0cXUNfrOtIC2M1tWlLtmZTQ7ey_8c1moGZBcn2oh4L1jnJt59RGM5xUd-QD1TmjxwsBm63hEc1RemdvhLDDfqebxkV4QvA862u5GbADNw3FlDzxusvuN18LJ3l9LKuNDjL-L2mAvbt7CBcK_Lsk1Sh5y_sU4QBW9KpbAbZvPjJrSr',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63',
+  refreshToken: 'AQCG8_3GkcWVfowQN_ekGmd0FhIv-t0zmlrVE-XQc8Mb3903bPCw8OelkhIUeHxrh6h3R-qpXotM4GxR2OcamZymQ0hiOQ3wGv7LvCLcOeOCjQHz-mohFY_e-Efr_MkBo4w'
+}
+[2020-04-16T22:25:43.515] [INFO] default - userToJoiner
+[2020-04-16T22:25:43.552] [INFO] default - {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQB0cXUNfrOtIC2M1tWlLtmZTQ7ey_8c1moGZBcn2oh4L1jnJt59RGM5xUd-QD1TmjxwsBm63hEc1RemdvhLDDfqebxkV4QvA862u5GbADNw3FlDzxusvuN18LJ3l9LKuNDjL-L2mAvbt7CBcK_Lsk1Sh5y_sU4QBW9KpbAbZvPjJrSr',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  pictureUrl: 'https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_ohc=L1O5dBWHv4QAX9oYoR7&_nc_ht=scontent-amt2-1.xx&oh=13cadb301f738a2b37cacde0947f93c1&oe=5EBECF63',
+  refreshToken: 'AQCG8_3GkcWVfowQN_ekGmd0FhIv-t0zmlrVE-XQc8Mb3903bPCw8OelkhIUeHxrh6h3R-qpXotM4GxR2OcamZymQ0hiOQ3wGv7LvCLcOeOCjQHz-mohFY_e-Efr_MkBo4w'
+}

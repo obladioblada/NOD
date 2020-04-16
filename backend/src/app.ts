@@ -4,7 +4,7 @@ import {DB} from "./db";
 import { configure, getLogger, Logger } from "log4js";
 import { RoomManager } from "./RoomManager";
 import { combineLatest, Observable } from "rxjs";
-import { take, map } from "rxjs/operators";
+import { take, map, switchMap } from "rxjs/operators";
 import { User, IUserDocument, Users } from "./models/User";
 
 
@@ -147,33 +147,34 @@ app.get("/users", (_req, res) => {
 
 app.get("/join", (_req, res) => {
     join(_req.query.access_token,_req.query.user_id_to_join)
-        .then((val) => {
+        .subscribe((val) => {
             res.send(val);
         });
 });
 
-async function join(userAccessToken: String, userIdToJoin: String) {
+function join(userAccessToken: String, userIdToJoin: String): Observable<any> {
     logger.info("start joining");
     let uriSong: String;
     let progressMs: String;
     let i = 0;
 
-    const userToJoin$: Observable<any> = db.getUserById(userIdToJoin).pipe( take(1) );
-    const userJoiner$: Observable<any> = db.getUserByAccessToken(userAccessToken).pipe( take(1) );
+    const userToJoin$: Observable<User> = db.getUserById(userIdToJoin).pipe( take(1) );
+    const userJoiner$: Observable<User> = db.getUserByAccessToken(userAccessToken).pipe( take(1) );
 
 
     //TODO: replace with http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-zip
-    const usersResult$: Observable<any> = combineLatest([userToJoin$, userJoiner$]).pipe(
+    let usersResult$: Observable<any> = combineLatest([userToJoin$, userJoiner$]).pipe(
         map(  ([userToJoin, userJoiner]) => ({ userToJoin, userJoiner })  ),
         take(1) );
 
-    usersResult$.subscribe(result => {
+    return usersResult$.pipe(switchMap(result => {
             logger.info("userToJoin");
             logger.info(result.userToJoin);
             logger.info("userToJoiner");
             logger.info(result.userJoiner);
-            roomManager.createOrUpdateRoom(result.userJoiner, result.userToJoin);
-        });
+            return roomManager.joinRoom(result.userJoiner, result.userToJoin);
+        })
+    );
 
     /*db.getUserByAccessToken(userAccessToken)
     .then((masterUser) => {

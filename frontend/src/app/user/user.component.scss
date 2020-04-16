@@ -1,0 +1,50 @@
+
+:host(.is-active){
+  .icon {
+    background: #69d58e ;
+  }
+}
+:host {
+
+  .title {
+    display: flex;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+
+  .icon {
+    display: grid;
+    background: #a4bead;
+    align-content: center;
+    border-radius: 1em;
+    height: 100%;
+    justify-content: center;
+    font-size: 1.1em;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+
+  .volume {
+    display: flex;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .play-control {
+    &:hover {
+      cursor: pointer;
+    }
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      flex: auto;
+  }
+}

@@ -1,4 +1,7 @@
+<nod-user *ngFor="let user of users$ | async" [user]="user"></nod-user>
+<div class="devices">
 <nod-device *ngFor="let device of devices$ | async; trackBy: trackById" [device]="device"></nod-device>
+</div>
 <nod-main-button (click)="refresh()"></nod-main-button>
 <div class="join" [ngClass]="{'success': joinSucceded}" (click)="join()"></div>
-<nod-user *ngFor="let user of users$ | async" [user]="user"></nod-user>
+

@@ -213,17 +213,12 @@ export class SpotifyService {
                     play: play
                 }
             };
-            logger.info(options)
             // use the access token to access the Spotify Web API
-            request(options, function (error, response, body) {
-                if(!response || response.status !== 200 || response === undefined){
-                    logger.error("error player")
-                    logger.error(response.status)
-                    reject(response);
-                 } else {
-                    logger.info(body);
-                    resolve(response)
+            request(options, function (error, response) {
+                if (error) {
+                    reject(error);
                 }
+                resolve({actionPerformed: true});
             });
 
         });

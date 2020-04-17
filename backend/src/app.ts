@@ -5,7 +5,39 @@ import { configure, getLogger, Logger } from "log4js";
 import { RoomManager } from "./RoomManager";
 import { combineLatest, Observable } from "rxjs";
 import { take, map, switchMap } from "rxjs/operators";
-import { User, IUserDocument, Users } from "./models/User";
+import { User} from "./models/User";
+import * as WebSocket from 'ws';
+import * as http from 'http';
+const PORT: any = 3000;
+let app = express();
+//initialize a simple http server
+const server = http.createServer(app);
+//initialize the WebSocket server instance
+const wss = new WebSocket.Server({ server });
+
+// When a connection is established
+wss.on('connection', function(socket) {
+    console.log('Opened connection ');
+    // The connection was closed
+    socket.on('close', function() {
+        console.log('Closed Connection ');
+    });
+
+});
+
+app.get("", (_req, res) => {
+    res.send("NOD server is ON");
+});
+
+server.listen(PORT, () => {
+        logger.info(`Server is listening on ${PORT}`);
+    }
+);
+
+process.on("SIGTERM", () => {
+    logger.info("SIGTERM signal received.");
+});
+
 
 
 const logger : Logger = getLogger();
@@ -22,14 +54,13 @@ configure({
     }
 });
 
-let app = express();
 const db: DB = new DB();
 let spotifyService : SpotifyService = new SpotifyService(
     process.env.SPOTIFY_CLIENT_ID,
     process.env.SPOTIFY_CLIENT_SECRET
 );
 
-const PORT: any = 3000;
+
 
 // handling CORS
 app.use((_req, res, next) => {
@@ -45,9 +76,6 @@ app.use((_req, res, next) => {
 const scopes = "user-read-private user-read-email user-follow-read streaming app-remote-control user-modify-playback-state playlist-read-collaborative user-read-playback-state user-modify-playback-state";
 spotifyService.redirectUrl = "http://localhost:4200/callback";
 
-app.get("", (_req, res) => {
-    res.send("NOD server is ON");
-});
 
 app.get("/authenticate", (req, res) => {
     const authCode = req.query.code || null;
@@ -245,16 +273,12 @@ app.get("/play", (_req, res) => {
 });
 
 app.get("/player", (_req: any, res) => {
-    logger.info(_req.query.access_token);
-    logger.info(_req.query.id);
-    logger.info(_req.query.play);
     spotifyService.player(_req.query.access_token, _req.query.id, _req.query.play)
         .then((response) => {
-            logger.info(response);
             res.send(response);
         })
         .catch((error) => {
-            logger.error(error.body);
+            logger.error(error);
             res.send(error);
         });
 });
@@ -270,15 +294,3 @@ app.get("/player/devices", (_req, res) => {
             res.send(error);
         });
 });
-
-
-app.listen(PORT, () => {
-        logger.info(`Server is listening on ${PORT}`);
-    }
-);
-
-process.on("SIGTERM", () => {
-    logger.info("SIGTERM signal received.");
-});
-
-

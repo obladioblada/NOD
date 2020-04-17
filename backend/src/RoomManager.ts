@@ -41,7 +41,7 @@ export class RoomManager {
                         console.log(val);
                     }
                   );
-            })
+            });
             return newRoom$;
        } else {
            let room$ = Rooms.findById({_id: userToJoin.roomId});

@@ -1,26 +1,41 @@
 import express = require("express");
-import {SpotifyService} from "./SpotifyService";
+import {spotifyService} from "./SpotifyService";
 import {DB} from "./db";
-import { configure, getLogger, Logger } from "log4js";
 import { RoomManager } from "./RoomManager";
 import { combineLatest, Observable } from "rxjs";
 import { take, map, switchMap } from "rxjs/operators";
 import { User} from "./models/User";
 import * as WebSocket from 'ws';
 import * as http from 'http';
+import {logger} from "./logging/Logger";
 const PORT: any = 3000;
 let app = express();
 //initialize a simple http server
 const server = http.createServer(app);
 //initialize the WebSocket server instance
-const wss = new WebSocket.Server({ server });
+const ws = new WebSocket.Server({ server });
+const roomManager: RoomManager = new RoomManager();
+const db: DB = new DB();
+
+
 
 // When a connection is established
-wss.on('connection', function(socket) {
-    console.log('Opened connection ');
+ws.on('connection', function(socket: WebSocket) {
+    logger.info('Opened connection ');
+
+    //connection is up, let's add a simple simple event
+    socket.on('message', (message: string) => {
+
+        //log the received message and send it back to the client
+        logger.info('received: %s', message);
+        socket.send(`Hello, you sent -> ${message}`);
+    });
+
+    //send immediatly a feedback to the incoming connection
+    socket.send('Hi there, I am a WebSocket server');
     // The connection was closed
     socket.on('close', function() {
-        console.log('Closed Connection ');
+        logger.info('Closed Connection ');
     });
 
 });
@@ -40,27 +55,6 @@ process.on("SIGTERM", () => {
 
 
 
-const logger : Logger = getLogger();
-const roomManager: RoomManager = new RoomManager();
-logger.level = "info";
-
-configure({
-    appenders: {
-        rollingFileAppender: {type: "File", filename: "./logs/nod.log", maxLogSize: 10485760, numBackups: 3},
-        consoleAppender: {type: "console"}
-    },
-    categories: {
-        default: { appenders: [ "rollingFileAppender", "consoleAppender"], level: "INFO"}
-    }
-});
-
-const db: DB = new DB();
-let spotifyService : SpotifyService = new SpotifyService(
-    process.env.SPOTIFY_CLIENT_ID,
-    process.env.SPOTIFY_CLIENT_SECRET
-);
-
-
 
 // handling CORS
 app.use((_req, res, next) => {
@@ -69,8 +63,6 @@ app.use((_req, res, next) => {
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE, OPTIONS");
     next();
 });
-
-
 
 
 const scopes = "user-read-private user-read-email user-follow-read streaming app-remote-control user-modify-playback-state playlist-read-collaborative user-read-playback-state user-modify-playback-state";
@@ -204,7 +196,7 @@ function join(userAccessToken: String, userIdToJoin: String): Observable<any> {
         })
     );
 
-    /*db.getUserByAccessToken(userAccessToken)
+    /* db.getUserByAccessToken(userAccessToken)
     .then((masterUser) => {
         logger.info("Before await "+ masterUser._id);
         spotifyService.CurrentlyPlaying(userAccessToken)
@@ -218,17 +210,7 @@ function join(userAccessToken: String, userIdToJoin: String): Observable<any> {
                 users.forEach(user => {
                 if (user.accessToken !== userAccessToken) {
                     logger.info("Before playsame "+ user._id);
-                    spotifyService.playSame(user.accessToken, uriSong, progressMs)
-                        .then((response) => {
-                            logger.info(response);
-                            logger.info(user.name +  " joined!");
-                            return response;
-                        })
-                        .catch((error) => {
-                            logger.info(user.name +  " failed to join!!");
-                            logger.error(error);
-                            return error;
-                        });
+
                 } else {
                     spotifyService.playSame(masterUser.accessToken, uriSong, progressMs);
                 }

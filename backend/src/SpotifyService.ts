@@ -1,7 +1,5 @@
 const request = require('request');
-import { configure, getLogger } from 'log4js';
-const logger = getLogger("server");
-logger.level = 'info';
+import {logger} from "./logging/Logger";
 
 export class SpotifyService {
 
@@ -122,8 +120,8 @@ export class SpotifyService {
             };
             // use the access token to access the Spotify Web API
             request.get(options, function (error, response, body) {
-             if(body.status === 401 || !body || body === undefined){
-                logger.error("error user")
+             if(body.status === 401 || !body){
+                logger.error("error user");
                 reject(body);
              }
                 logger.info('user: ');
@@ -259,7 +257,7 @@ export class SpotifyService {
                 for(let i = 0; i < devices.length; i++) {
                     let device = devices[i];
                     if(device.is_active) {
-                        logger.info("active devices is " + device.id)
+                        logger.info("active devices is " + device.id);
                         resolve(device.id);
                     }
                 }
@@ -272,5 +270,7 @@ export class SpotifyService {
 
 }
 
-
-
+export let spotifyService : SpotifyService = new SpotifyService(
+    process.env.SPOTIFY_CLIENT_ID,
+    process.env.SPOTIFY_CLIENT_SECRET
+);

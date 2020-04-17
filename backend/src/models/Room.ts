@@ -4,6 +4,7 @@ import { User } from "./User";
 export class Room {
     _id: String;
     users: String[];
+    queue: String[];
 
     constructor(users: String[]) {
         this.users = users;
@@ -11,7 +12,8 @@ export class Room {
 }
 
 export const RoomSchema: Schema = new Schema({
-    users: [{type: String, ref: "User"}]
+    users: [{type: String, ref: "User"}],
+    queue: [{type: String}]
 });
 
 // 2) Document

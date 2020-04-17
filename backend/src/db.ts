@@ -23,7 +23,7 @@ export class DB {
             useUnifiedTopology: true,
             useFindAndModify: false
         }).catch(function (reason) {
-            console.log("Unable to connect to the mongodb instance. Error: ", reason);
+            logger.error("Unable to connect to the mongodb instance. Error: ", reason);
         });
     }
 

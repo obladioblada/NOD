@@ -3,7 +3,7 @@ export class User {
   id: string;
   name: string;
   roomId: string;
-  pictureUrl:string;
+  pictureUrl: string;
 
   constructor(id: string, name: string, pictureUrl: string) {
     this.id = id;

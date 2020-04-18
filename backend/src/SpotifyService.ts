@@ -133,6 +133,7 @@ export class SpotifyService {
     }
 
     CurrentlyPlaying(_accessToken:String) {
+        logger.info(_accessToken);
         return new Promise((resolve, reject) => {
             const options = {
                 url: 'https://api.spotify.com/v1/me/player/currently-playing',
@@ -144,8 +145,14 @@ export class SpotifyService {
                 if (error) {
                     reject(error);
                 }
+
+
+
+
+                logger.info(error);
+                logger.info(response.statusCode);
+                logger.info(response.body);
                 logger.info(body);
-                logger.info(body.item.name);
                 resolve({
                     "id": body.item.id,
                     "name": body.item.name,

@@ -192,7 +192,7 @@ function join(userAccessToken: String, userIdToJoin: String): Observable<any> {
             logger.info(result.userToJoin);
             logger.info("userToJoiner");
             logger.info(result.userJoiner);
-            return roomManager.joinRoom(result.userJoiner, result.userToJoin);
+            return roomManager.joinRoom(result.userToJoin, result.userJoiner);
         })
     );
 

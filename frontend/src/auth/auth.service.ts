@@ -89,9 +89,9 @@ export class AuthService {
       .pipe(map((data: any) => data.devices));
   }
 
-  users() {
+  friends() {
     console.log(localStorage.getItem('id_token'));
-    return this.http.get(Location.joinWithSlash(this.apiEndpoint, 'users?access_token=' + localStorage.getItem('id_token')))
+    return this.http.get(Location.joinWithSlash(this.apiEndpoint, 'friends?access_token=' + localStorage.getItem('id_token')))
       .pipe(map((data: any) => data));
   }
 

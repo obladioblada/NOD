@@ -1,5 +1,6 @@
 const request = require('request');
 import {logger} from "./logging/Logger";
+import { User } from "./models/User";
 
 export class SpotifyService {
 
@@ -145,15 +146,11 @@ export class SpotifyService {
                 if (error) {
                     reject(error);
                 }
-
-
-
-
                 logger.info(error);
                 logger.info(response.statusCode);
                 logger.info(response.body);
                 logger.info(body);
-                resolve({
+                resolve(body && {
                     "id": body.item.id,
                     "name": body.item.name,
                     "progress_ms": body.progress_ms,
@@ -161,6 +158,28 @@ export class SpotifyService {
                 })
             });
         });
+    }
+
+
+    syncUsers(userToJoin: User, joiner: User) {
+        return spotifyService.CurrentlyPlaying(userToJoin.accessToken)
+                .then((song: any) => {
+                    logger.info("playing song: " + song.name);
+                   const uriSong = song.uri;
+                   const progressMs = song.progress_ms;
+                   return spotifyService.playSame(joiner.accessToken, uriSong, progressMs)
+                        .then((response) => {
+                            logger.info(response);
+                            logger.info(joiner.name +  " joined!");
+                            return {response, song};
+                        })
+                        .catch((error) => {
+                            logger.info(joiner.name +  " failed to join!!");
+                            logger.error(error);
+                            return error;
+                        });
+                });
+
     }
 
     play(_accessToken:String) {

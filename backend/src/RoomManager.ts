@@ -28,10 +28,13 @@ export class RoomManager {
 
     updateRoom(roomId: String, joiner) {
         let room$ = from(Rooms.findById(roomId,(err, room)=> {
-            room.users.push(joiner._id);
+            if (!room.users.includes(joiner._id)) {
+                room.users.push(joiner._id);
+            }
             room.save();
             return room;
         })).pipe(shareReplay());
+        
         return room$  as Observable<Room>;
     }
 
@@ -50,23 +53,7 @@ export class RoomManager {
                     logger.info(val);
                 }
             );
-            return spotifyService.CurrentlyPlaying(userToJoin.accessToken)
-                .then((song: any) => {
-                    logger.info("playing song: " + song.name);
-                   const uriSong = song.uri;
-                   const progressMs = song.progress_ms;
-                   return spotifyService.playSame(joiner.accessToken, uriSong, progressMs)
-                        .then((response) => {
-                            logger.info(response);
-                            logger.info(joiner.name +  " joined!");
-                            return {response, song};
-                        })
-                        .catch((error) => {
-                            logger.info(joiner.name +  " failed to join!!");
-                            logger.error(error);
-                            return error;
-                        });
-                });
+           return spotifyService.syncUsers(userToJoin,joiner);
         });
         return room$;
     }

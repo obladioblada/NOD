@@ -105,7 +105,7 @@ app.get("/authenticate", (req, res) => {
 app.get("/updateToken", (_req, res) => {
     logger.info("no access token or token is exprired, rinnovo");
     logger.info("ricevuto code " + _req.query.code);
-    db.getUserById(_req.params.id).subscribe((_user: User)=> {
+    db.getUserById(_req.query.id).subscribe((_user: User)=> {
         logger.info(_user);
         if (!_user) {
             spotifyService.updateToken(_user.refreshToken)
@@ -140,7 +140,7 @@ app.get("/login", (_req, res) => {
 });
 
 app.get("/me", (_req, res) => {
-    spotifyService.me(_req.params.access_token)
+    spotifyService.me(_req.query.access_token)
         .then((response) => {
             res.send(response);
         })
@@ -151,12 +151,37 @@ app.get("/me", (_req, res) => {
 });
 
 app.get("/users", (_req, res) => {
-    logger.info("ricevuto tokn " + _req.params.access_token);
+    logger.info("ricevuto tokn " + _req.query.access_token);
     db.getUsers()
         .subscribe((loeggedUsers)=> {
                 logger.info("logged users: ");
                 logger.info(loeggedUsers);
                 res.send(loeggedUsers);
+            },
+            (err)=> {
+                logger.info(err);
+                res.send(err);
+        });
+});
+
+app.get("/friends", (_req, res) => {
+    logger.info("ricevuto tokn " + _req.query.access_token);
+    db.getUsers()
+        .subscribe((loggedUsers)=> {
+                logger.info("logged users: ");
+                logger.info(loggedUsers);
+                res.send(loggedUsers.filter(user => {
+                    logger.info("Hi, for me this token");
+                    logger.info(user.accessToken);
+                    logger.info("ïs the same of ");
+                    logger.info(_req.query.access_token);
+                    logger.info(user.accessToken !== _req.query.access_token);
+                    return user.accessToken !== _req.query.access_token
+                }).map(user => { 
+                    return {
+                        name: user.name, pictureUrl: user.pictureUrl, _id: user._id, roomId: user.rooomId
+                    }
+                }));
             },
             (err)=> {
                 logger.info(err);

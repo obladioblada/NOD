@@ -70073,3 +70073,1251 @@
 [2020-04-18T21:14:42.322] [INFO] default - Gianpaolo Basilicò joined!
 [2020-04-18T21:16:47.669] [INFO] default - Server is listening on 3000
 [2020-04-18T21:16:47.696] [INFO] default - coonected to db
+[2020-04-18T21:18:15.372] [INFO] default - start joining
+[2020-04-18T21:18:15.417] [INFO] default - userByAccessToken :
+[2020-04-18T21:18:15.418] [INFO] default - {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQDHXhxh4HcHCTQz2xyGrBeK8C7n9rsI8gL4TlripUmGRP9qMC7VpuOFQBHGTI-Gb78yzolPsqdiZgNpHl0UcI-jAuO9bnXWjP3RXpdQgO6QuVVVGrhMSNAvDl33H54C1Ba214K_xk2JOaOHXjOGlrTrroA99PmP93nwsS-E0tLf21rl',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+  refreshToken: 'AQAaLNUwIS530X6oSeHdjyJWlRj02UPLahVygTseX-WFExQGAtFCZUu4jIv4ZvTLs4vNSb_FdQ_p--oMDdwFz1-IqLkYcwpbTZw9crcnxCY8hLk1iUVMIhZ-6Ty2yyOwLqg',
+  roomId: 5e9b5078445ca02940e4f1f5
+}
+[2020-04-18T21:18:15.428] [INFO] default - userToJoin
+[2020-04-18T21:18:15.429] [INFO] default - {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQB9XK-XEQV-n5BqU3QZogEIzIaI-YtJx-mrtqiHo3ZdWDrNEOOtoxJ9D-GpY-YeHtJ64w1wH4GBa7TFhGIJwT5LVm907UHPpimje8OwzaUyLBNBQbUJqH5G_5Yr7aE_MuER0YaA8frpvO_wlVTOBGsktYpnk4GrcAkqZkALt1AIPyjtewCUapM',
+  expirationDate: '3600',
+  name: 'Gianpaolo Basilicò',
+  pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+  refreshToken: 'AQBU5PkIXKkbjV6328HYmsUHLIlfOzrsyuxkvIF_IpUfsW7U0l-_GIemi5wPM0jvg_4JpLVsBI6b4bCCECacNwGpzRI-trKTKy5IeIWIFS0JRuUB1uTxtxdTL__XrDt53Ww',
+  roomId: 5e9b5078445ca02940e4f1f5
+}
+[2020-04-18T21:18:15.434] [INFO] default - userToJoiner
+[2020-04-18T21:18:15.435] [INFO] default - {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQDHXhxh4HcHCTQz2xyGrBeK8C7n9rsI8gL4TlripUmGRP9qMC7VpuOFQBHGTI-Gb78yzolPsqdiZgNpHl0UcI-jAuO9bnXWjP3RXpdQgO6QuVVVGrhMSNAvDl33H54C1Ba214K_xk2JOaOHXjOGlrTrroA99PmP93nwsS-E0tLf21rl',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+  refreshToken: 'AQAaLNUwIS530X6oSeHdjyJWlRj02UPLahVygTseX-WFExQGAtFCZUu4jIv4ZvTLs4vNSb_FdQ_p--oMDdwFz1-IqLkYcwpbTZw9crcnxCY8hLk1iUVMIhZ-6Ty2yyOwLqg',
+  roomId: 5e9b5078445ca02940e4f1f5
+}
+[2020-04-18T21:18:15.475] [INFO] default - BQB9XK-XEQV-n5BqU3QZogEIzIaI-YtJx-mrtqiHo3ZdWDrNEOOtoxJ9D-GpY-YeHtJ64w1wH4GBa7TFhGIJwT5LVm907UHPpimje8OwzaUyLBNBQbUJqH5G_5Yr7aE_MuER0YaA8frpvO_wlVTOBGsktYpnk4GrcAkqZkALt1AIPyjtewCUapM
+[2020-04-18T21:18:15.513] [INFO] default - null
+[2020-04-18T21:18:15.626] [INFO] default - null
+[2020-04-18T21:18:15.627] [INFO] default - 200
+[2020-04-18T21:18:15.628] [INFO] default - {
+  timestamp: 1587237392387,
+  context: null,
+  progress_ms: 150951,
+  item: {
+    album: {
+      album_type: 'single',
+      artists: [Array],
+      available_markets: [Array],
+      external_urls: [Object],
+      href: 'https://api.spotify.com/v1/albums/7FqRFrHJQeA9B6qs9lqijy',
+      id: '7FqRFrHJQeA9B6qs9lqijy',
+      images: [Array],
+      name: 'Ipocondria (feat. Rancore)',
+      release_date: '2018-05-04',
+      release_date_precision: 'day',
+      total_tracks: 1,
+      type: 'album',
+      uri: 'spotify:album:7FqRFrHJQeA9B6qs9lqijy'
+    },
+    artists: [ [Object], [Object] ],
+    available_markets: [
+      'AD', 'AE', 'AR', 'AT', 'AU', 'BE', 'BG', 'BH',
+      'BO', 'BR', 'CA', 'CH', 'CL', 'CO', 'CR', 'CY',
+      'CZ', 'DE', 'DK', 'DO', 'DZ', 'EC', 'EE', 'EG',
+      'ES', 'FI', 'FR', 'GB', 'GR', 'GT', 'HK', 'HN',
+      'HU', 'ID', 'IE', 'IL', 'IN', 'IS', 'IT', 'JO',
+      'JP', 'KW', 'LB', 'LI', 'LT', 'LU', 'LV', 'MA',
+      'MC', 'MT', 'MX', 'MY', 'NI', 'NL', 'NO', 'NZ',
+      'OM', 'PA', 'PE', 'PH', 'PL', 'PS', 'PT', 'PY',
+      'QA', 'RO', 'SA', 'SE', 'SG', 'SK', 'SV', 'TH',
+      'TN', 'TR', 'TW', 'US', 'UY', 'VN', 'ZA'
+    ],
+    disc_number: 1,
+    duration_ms: 227594,
+    explicit: true,
+    external_ids: { isrc: 'ITCV31705809' },
+    external_urls: {
+      spotify: 'https://open.spotify.com/track/31SdPbsgJIcMIJLzgO6KII'
+    },
+    href: 'https://api.spotify.com/v1/tracks/31SdPbsgJIcMIJLzgO6KII',
+    id: '31SdPbsgJIcMIJLzgO6KII',
+    is_local: false,
+    name: 'Ipocondria (feat. Rancore)',
+    popularity: 40,
+    preview_url: 'https://p.scdn.co/mp3-preview/1fb499d5f55a5320676e47679c2acb39561b5ef3?cid=9dc9612b49ac4e9bba44e1ecc936b188',
+    track_number: 1,
+    type: 'track',
+    uri: 'spotify:track:31SdPbsgJIcMIJLzgO6KII'
+  },
+  currently_playing_type: 'track',
+  actions: { disallows: { pausing: true, skipping_prev: true } },
+  is_playing: false
+}
+[2020-04-18T21:18:15.660] [INFO] default - {
+  timestamp: 1587237392387,
+  context: null,
+  progress_ms: 150951,
+  item: {
+    album: {
+      album_type: 'single',
+      artists: [Array],
+      available_markets: [Array],
+      external_urls: [Object],
+      href: 'https://api.spotify.com/v1/albums/7FqRFrHJQeA9B6qs9lqijy',
+      id: '7FqRFrHJQeA9B6qs9lqijy',
+      images: [Array],
+      name: 'Ipocondria (feat. Rancore)',
+      release_date: '2018-05-04',
+      release_date_precision: 'day',
+      total_tracks: 1,
+      type: 'album',
+      uri: 'spotify:album:7FqRFrHJQeA9B6qs9lqijy'
+    },
+    artists: [ [Object], [Object] ],
+    available_markets: [
+      'AD', 'AE', 'AR', 'AT', 'AU', 'BE', 'BG', 'BH',
+      'BO', 'BR', 'CA', 'CH', 'CL', 'CO', 'CR', 'CY',
+      'CZ', 'DE', 'DK', 'DO', 'DZ', 'EC', 'EE', 'EG',
+      'ES', 'FI', 'FR', 'GB', 'GR', 'GT', 'HK', 'HN',
+      'HU', 'ID', 'IE', 'IL', 'IN', 'IS', 'IT', 'JO',
+      'JP', 'KW', 'LB', 'LI', 'LT', 'LU', 'LV', 'MA',
+      'MC', 'MT', 'MX', 'MY', 'NI', 'NL', 'NO', 'NZ',
+      'OM', 'PA', 'PE', 'PH', 'PL', 'PS', 'PT', 'PY',
+      'QA', 'RO', 'SA', 'SE', 'SG', 'SK', 'SV', 'TH',
+      'TN', 'TR', 'TW', 'US', 'UY', 'VN', 'ZA'
+    ],
+    disc_number: 1,
+    duration_ms: 227594,
+    explicit: true,
+    external_ids: { isrc: 'ITCV31705809' },
+    external_urls: {
+      spotify: 'https://open.spotify.com/track/31SdPbsgJIcMIJLzgO6KII'
+    },
+    href: 'https://api.spotify.com/v1/tracks/31SdPbsgJIcMIJLzgO6KII',
+    id: '31SdPbsgJIcMIJLzgO6KII',
+    is_local: false,
+    name: 'Ipocondria (feat. Rancore)',
+    popularity: 40,
+    preview_url: 'https://p.scdn.co/mp3-preview/1fb499d5f55a5320676e47679c2acb39561b5ef3?cid=9dc9612b49ac4e9bba44e1ecc936b188',
+    track_number: 1,
+    type: 'track',
+    uri: 'spotify:track:31SdPbsgJIcMIJLzgO6KII'
+  },
+  currently_playing_type: 'track',
+  actions: { disallows: { pausing: true, skipping_prev: true } },
+  is_playing: false
+}
+[2020-04-18T21:18:15.695] [INFO] default - playing song: Ipocondria (feat. Rancore)
+[2020-04-18T21:18:15.974] [INFO] default - undefined
+[2020-04-18T21:18:15.976] [INFO] default - Giuseppe Ministeri joined!
+[2020-04-18T21:30:43.839] [INFO] default - Server is listening on 3000
+[2020-04-18T21:30:43.865] [INFO] default - coonected to db
+[2020-04-18T21:31:42.884] [INFO] default - Server is listening on 3000
+[2020-04-18T21:31:42.920] [INFO] default - coonected to db
+[2020-04-18T21:32:07.978] [INFO] default - Server is listening on 3000
+[2020-04-18T21:32:08.008] [INFO] default - coonected to db
+[2020-04-18T21:32:39.183] [INFO] default - CALLBACK to LOGIN
+[2020-04-18T21:32:40.785] [INFO] default - AQDn64MzYQ93P4DeHLJ0MIcWesOsKlan0hSxVT_mgONtXxH5pqJJXmz34192K7JHC7RNMPMpqPcuMMPyNMVXl8S7aGxD50fPf4Xq4w-7LpXjR-2shr2PWPA-5QMSoKPKoV8zpkyfCPF05BtkdcWg6z-WdpCmjAmDsd06PAZ6fpPPlO84c4dLbXEwCy4Dqyrzexro81pIvMniB3QCioErYvJPI7plZHXY9xGdmxXKbuIn-HBZDWGItH0ItsupF0aI0zlDmVMP3rQgHm92p-kivgXPs-c3rjhcY1I4gS6wblhZUQsHmw8nFHaT7sfa1fLREQ7g7uEd4MyAAza3hH7k4cO1eWE_C7K0FzSy9NqKiIfxwckvggFcDd8tblLrgWXEaTFideo5nLT5h0Vo9C-oaKnkseX09znKhN4dCw
+[2020-04-18T21:32:40.933] [INFO] default - I got a token, lets get my info
+[2020-04-18T21:32:40.934] [INFO] default - BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4
+[2020-04-18T21:32:40.935] [INFO] default - BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4
+[2020-04-18T21:32:41.076] [INFO] default - user: 
+[2020-04-18T21:32:41.078] [INFO] default - {
+  country: 'NL',
+  display_name: 'Giuseppe Ministeri',
+  email: 'mrpaah@gmail.com',
+  explicit_content: { filter_enabled: false, filter_locked: false },
+  external_urls: { spotify: 'https://open.spotify.com/user/gadato' },
+  followers: { href: null, total: 22 },
+  href: 'https://api.spotify.com/v1/users/gadato',
+  id: 'gadato',
+  images: [
+    {
+      height: null,
+      url: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+      width: null
+    }
+  ],
+  product: 'premium',
+  type: 'user',
+  uri: 'spotify:user:gadato'
+}
+[2020-04-18T21:32:41.157] [INFO] default - risposta da auth:
+[2020-04-18T21:32:41.167] [INFO] default - {
+  access_token: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+  token_type: 'Bearer',
+  expires_in: 3600,
+  refresh_token: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo',
+  scope: 'streaming app-remote-control playlist-read-collaborative user-modify-playback-state user-follow-read user-read-playback-state user-read-email user-read-private',
+  id: 'gadato',
+  name: 'Giuseppe Ministeri',
+  pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+  status: 200
+}
+[2020-04-18T21:32:41.311] [INFO] default - user added or updated {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+  refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo'
+}
+[2020-04-18T21:32:41.470] [INFO] default - ricevuto tokn undefined
+[2020-04-18T21:32:41.489] [INFO] default - logged users: 
+[2020-04-18T21:32:41.511] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+    refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo'
+  }
+]
+[2020-04-18T21:32:41.630] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 68
+    }
+  ]
+}
+[2020-04-18T21:32:46.204] [INFO] default - CALLBACK to LOGIN
+[2020-04-18T21:32:47.333] [INFO] default - AQDyy0yIRByu-OGMgeTHEnN-vUcC8Ikw6o0CimO57Qu_MWbiadbpiODzX20J0BwRkN_31nJchhsvWbDu6U4ptRlle_4kPUEAOTVPsusbRC42sbO96RwvoueN1YA8upLDRLWLGTiMlb1vjEUcf3T_xSR4Tnuw8NWwTZLsO97yA-kJz-jA-Ki9DVhT0YCA3B0UA30eI2MeVHOqVSLbrjWS1txN_icagAhCWhRgFGUIsRS30IkVIbsl5K8N18J_twy53hPxy17HItOZm11geaNQWMNyNGkMr0hXEumc2UQhZwGFbmpaE7talT9PyFnhzd5BVDsCe2X2ffNy5BT8cC9EdbqlEAJd4kp9aFdUbHQ5zE5iNR42V4ZnT-SjEWkp5TAxFfMErhTjVJ2Jqwk_GGeSnpfsd2WzHbkFMSF-Fw
+[2020-04-18T21:32:47.432] [INFO] default - I got a token, lets get my info
+[2020-04-18T21:32:47.433] [INFO] default - BQBlcSggM8Z-uanHSq0QeX_7lmW9XpNONN-bj-c91v8vB0eB7Vh2cfDHyaZBQWKq-Bz2asj5UkDRSPY0Xy3xKEMjx3LSytBOgHZ_0QFv-5HWttdTAbL376UOLOqemYwVXeRN6-OIrgtLJq-VRoesf5mKMJEN-OAs55NqdW7iylbuZAbVl_jkdm4
+[2020-04-18T21:32:47.433] [INFO] default - BQBlcSggM8Z-uanHSq0QeX_7lmW9XpNONN-bj-c91v8vB0eB7Vh2cfDHyaZBQWKq-Bz2asj5UkDRSPY0Xy3xKEMjx3LSytBOgHZ_0QFv-5HWttdTAbL376UOLOqemYwVXeRN6-OIrgtLJq-VRoesf5mKMJEN-OAs55NqdW7iylbuZAbVl_jkdm4
+[2020-04-18T21:32:47.526] [INFO] default - user: 
+[2020-04-18T21:32:47.528] [INFO] default - {
+  country: 'BE',
+  display_name: 'Gianpaolo Basilicò',
+  email: 'gianpaolo.basilico@gmail.com',
+  explicit_content: { filter_enabled: false, filter_locked: false },
+  external_urls: { spotify: 'https://open.spotify.com/user/11135339447' },
+  followers: { href: null, total: 33 },
+  href: 'https://api.spotify.com/v1/users/11135339447',
+  id: '11135339447',
+  images: [
+    {
+      height: null,
+      url: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+      width: null
+    }
+  ],
+  product: 'premium',
+  type: 'user',
+  uri: 'spotify:user:11135339447'
+}
+[2020-04-18T21:32:47.545] [INFO] default - risposta da auth:
+[2020-04-18T21:32:47.546] [INFO] default - {
+  access_token: 'BQBlcSggM8Z-uanHSq0QeX_7lmW9XpNONN-bj-c91v8vB0eB7Vh2cfDHyaZBQWKq-Bz2asj5UkDRSPY0Xy3xKEMjx3LSytBOgHZ_0QFv-5HWttdTAbL376UOLOqemYwVXeRN6-OIrgtLJq-VRoesf5mKMJEN-OAs55NqdW7iylbuZAbVl_jkdm4',
+  token_type: 'Bearer',
+  expires_in: 3600,
+  refresh_token: 'AQBVr0vS1l5X-eOO8teyaqgYIOye1f9JKe-HB9NN1hocjYP_EfV8OZdNle1VdSwSoCLlcVIVFBGj7a-ENUl0tHGHEouANKduY-yv6DDXbzN1OHm6ZD17brdYRnzUHR8boMM',
+  scope: 'streaming app-remote-control playlist-read-collaborative user-modify-playback-state user-follow-read user-read-playback-state user-read-email user-read-private',
+  id: '11135339447',
+  name: 'Gianpaolo Basilicò',
+  pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+  status: 200
+}
+[2020-04-18T21:32:47.583] [INFO] default - user added or updated {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQBlcSggM8Z-uanHSq0QeX_7lmW9XpNONN-bj-c91v8vB0eB7Vh2cfDHyaZBQWKq-Bz2asj5UkDRSPY0Xy3xKEMjx3LSytBOgHZ_0QFv-5HWttdTAbL376UOLOqemYwVXeRN6-OIrgtLJq-VRoesf5mKMJEN-OAs55NqdW7iylbuZAbVl_jkdm4',
+  expirationDate: '3600',
+  name: 'Gianpaolo Basilicò',
+  pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+  refreshToken: 'AQBVr0vS1l5X-eOO8teyaqgYIOye1f9JKe-HB9NN1hocjYP_EfV8OZdNle1VdSwSoCLlcVIVFBGj7a-ENUl0tHGHEouANKduY-yv6DDXbzN1OHm6ZD17brdYRnzUHR8boMM'
+}
+[2020-04-18T21:32:47.792] [INFO] default - {
+  devices: [
+    {
+      id: '4218b8f86d822b195bf494dbc7c5966c7c13bb96',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'MacBook Pro',
+      type: 'Computer',
+      volume_percent: 65
+    }
+  ]
+}
+[2020-04-18T21:32:47.854] [INFO] default - ricevuto tokn undefined
+[2020-04-18T21:32:47.860] [INFO] default - logged users: 
+[2020-04-18T21:32:47.860] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+    refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo'
+  },
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQBlcSggM8Z-uanHSq0QeX_7lmW9XpNONN-bj-c91v8vB0eB7Vh2cfDHyaZBQWKq-Bz2asj5UkDRSPY0Xy3xKEMjx3LSytBOgHZ_0QFv-5HWttdTAbL376UOLOqemYwVXeRN6-OIrgtLJq-VRoesf5mKMJEN-OAs55NqdW7iylbuZAbVl_jkdm4',
+    expirationDate: '3600',
+    name: 'Gianpaolo Basilicò',
+    pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+    refreshToken: 'AQBVr0vS1l5X-eOO8teyaqgYIOye1f9JKe-HB9NN1hocjYP_EfV8OZdNle1VdSwSoCLlcVIVFBGj7a-ENUl0tHGHEouANKduY-yv6DDXbzN1OHm6ZD17brdYRnzUHR8boMM'
+  }
+]
+[2020-04-18T21:32:56.636] [INFO] default - ricevuto tokn undefined
+[2020-04-18T21:32:56.645] [INFO] default - logged users: 
+[2020-04-18T21:32:56.653] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+    refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo'
+  },
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQBlcSggM8Z-uanHSq0QeX_7lmW9XpNONN-bj-c91v8vB0eB7Vh2cfDHyaZBQWKq-Bz2asj5UkDRSPY0Xy3xKEMjx3LSytBOgHZ_0QFv-5HWttdTAbL376UOLOqemYwVXeRN6-OIrgtLJq-VRoesf5mKMJEN-OAs55NqdW7iylbuZAbVl_jkdm4',
+    expirationDate: '3600',
+    name: 'Gianpaolo Basilicò',
+    pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+    refreshToken: 'AQBVr0vS1l5X-eOO8teyaqgYIOye1f9JKe-HB9NN1hocjYP_EfV8OZdNle1VdSwSoCLlcVIVFBGj7a-ENUl0tHGHEouANKduY-yv6DDXbzN1OHm6ZD17brdYRnzUHR8boMM'
+  }
+]
+[2020-04-18T21:32:56.796] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 68
+    }
+  ]
+}
+[2020-04-18T21:33:00.134] [INFO] default - start joining
+[2020-04-18T21:33:00.149] [INFO] default - userByAccessToken :
+[2020-04-18T21:33:00.150] [INFO] default - {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQBlcSggM8Z-uanHSq0QeX_7lmW9XpNONN-bj-c91v8vB0eB7Vh2cfDHyaZBQWKq-Bz2asj5UkDRSPY0Xy3xKEMjx3LSytBOgHZ_0QFv-5HWttdTAbL376UOLOqemYwVXeRN6-OIrgtLJq-VRoesf5mKMJEN-OAs55NqdW7iylbuZAbVl_jkdm4',
+  expirationDate: '3600',
+  name: 'Gianpaolo Basilicò',
+  pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+  refreshToken: 'AQBVr0vS1l5X-eOO8teyaqgYIOye1f9JKe-HB9NN1hocjYP_EfV8OZdNle1VdSwSoCLlcVIVFBGj7a-ENUl0tHGHEouANKduY-yv6DDXbzN1OHm6ZD17brdYRnzUHR8boMM'
+}
+[2020-04-18T21:33:00.158] [INFO] default - userToJoin
+[2020-04-18T21:33:00.159] [INFO] default - {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQBlcSggM8Z-uanHSq0QeX_7lmW9XpNONN-bj-c91v8vB0eB7Vh2cfDHyaZBQWKq-Bz2asj5UkDRSPY0Xy3xKEMjx3LSytBOgHZ_0QFv-5HWttdTAbL376UOLOqemYwVXeRN6-OIrgtLJq-VRoesf5mKMJEN-OAs55NqdW7iylbuZAbVl_jkdm4',
+  expirationDate: '3600',
+  name: 'Gianpaolo Basilicò',
+  pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+  refreshToken: 'AQBVr0vS1l5X-eOO8teyaqgYIOye1f9JKe-HB9NN1hocjYP_EfV8OZdNle1VdSwSoCLlcVIVFBGj7a-ENUl0tHGHEouANKduY-yv6DDXbzN1OHm6ZD17brdYRnzUHR8boMM'
+}
+[2020-04-18T21:33:00.171] [INFO] default - userToJoiner
+[2020-04-18T21:33:00.171] [INFO] default - {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQBlcSggM8Z-uanHSq0QeX_7lmW9XpNONN-bj-c91v8vB0eB7Vh2cfDHyaZBQWKq-Bz2asj5UkDRSPY0Xy3xKEMjx3LSytBOgHZ_0QFv-5HWttdTAbL376UOLOqemYwVXeRN6-OIrgtLJq-VRoesf5mKMJEN-OAs55NqdW7iylbuZAbVl_jkdm4',
+  expirationDate: '3600',
+  name: 'Gianpaolo Basilicò',
+  pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+  refreshToken: 'AQBVr0vS1l5X-eOO8teyaqgYIOye1f9JKe-HB9NN1hocjYP_EfV8OZdNle1VdSwSoCLlcVIVFBGj7a-ENUl0tHGHEouANKduY-yv6DDXbzN1OHm6ZD17brdYRnzUHR8boMM'
+}
+[2020-04-18T21:33:00.194] [INFO] default - BQBlcSggM8Z-uanHSq0QeX_7lmW9XpNONN-bj-c91v8vB0eB7Vh2cfDHyaZBQWKq-Bz2asj5UkDRSPY0Xy3xKEMjx3LSytBOgHZ_0QFv-5HWttdTAbL376UOLOqemYwVXeRN6-OIrgtLJq-VRoesf5mKMJEN-OAs55NqdW7iylbuZAbVl_jkdm4
+[2020-04-18T21:33:00.212] [INFO] default - null
+[2020-04-18T21:34:45.579] [INFO] default - Server is listening on 3000
+[2020-04-18T21:34:45.605] [INFO] default - coonected to db
+[2020-04-18T21:35:36.335] [INFO] default - ricevuto tokn undefined
+[2020-04-18T21:35:36.364] [INFO] default - logged users: 
+[2020-04-18T21:35:36.365] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+    refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo'
+  },
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQBlcSggM8Z-uanHSq0QeX_7lmW9XpNONN-bj-c91v8vB0eB7Vh2cfDHyaZBQWKq-Bz2asj5UkDRSPY0Xy3xKEMjx3LSytBOgHZ_0QFv-5HWttdTAbL376UOLOqemYwVXeRN6-OIrgtLJq-VRoesf5mKMJEN-OAs55NqdW7iylbuZAbVl_jkdm4',
+    expirationDate: '3600',
+    name: 'Gianpaolo Basilicò',
+    pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+    refreshToken: 'AQBVr0vS1l5X-eOO8teyaqgYIOye1f9JKe-HB9NN1hocjYP_EfV8OZdNle1VdSwSoCLlcVIVFBGj7a-ENUl0tHGHEouANKduY-yv6DDXbzN1OHm6ZD17brdYRnzUHR8boMM',
+    roomId: 5e9b55ecec954944b82871ad
+  }
+]
+[2020-04-18T21:35:36.526] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: true,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 18
+    }
+  ]
+}
+[2020-04-18T21:39:23.257] [INFO] default - Server is listening on 3000
+[2020-04-18T21:39:23.282] [INFO] default - coonected to db
+[2020-04-18T21:39:42.453] [INFO] default - Server is listening on 3000
+[2020-04-18T21:39:42.480] [INFO] default - coonected to db
+[2020-04-18T21:40:08.042] [INFO] default - start joining
+[2020-04-18T21:40:08.088] [INFO] default - userByAccessToken :
+[2020-04-18T21:40:08.089] [INFO] default - {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+  refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo'
+}
+[2020-04-18T21:40:08.097] [INFO] default - userToJoin
+[2020-04-18T21:40:08.098] [INFO] default - {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQBlcSggM8Z-uanHSq0QeX_7lmW9XpNONN-bj-c91v8vB0eB7Vh2cfDHyaZBQWKq-Bz2asj5UkDRSPY0Xy3xKEMjx3LSytBOgHZ_0QFv-5HWttdTAbL376UOLOqemYwVXeRN6-OIrgtLJq-VRoesf5mKMJEN-OAs55NqdW7iylbuZAbVl_jkdm4',
+  expirationDate: '3600',
+  name: 'Gianpaolo Basilicò',
+  pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+  refreshToken: 'AQBVr0vS1l5X-eOO8teyaqgYIOye1f9JKe-HB9NN1hocjYP_EfV8OZdNle1VdSwSoCLlcVIVFBGj7a-ENUl0tHGHEouANKduY-yv6DDXbzN1OHm6ZD17brdYRnzUHR8boMM',
+  roomId: 5e9b55ecec954944b82871ad
+}
+[2020-04-18T21:40:08.128] [INFO] default - userToJoiner
+[2020-04-18T21:40:08.129] [INFO] default - {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+  refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo'
+}
+[2020-04-18T21:40:08.180] [INFO] default - BQBlcSggM8Z-uanHSq0QeX_7lmW9XpNONN-bj-c91v8vB0eB7Vh2cfDHyaZBQWKq-Bz2asj5UkDRSPY0Xy3xKEMjx3LSytBOgHZ_0QFv-5HWttdTAbL376UOLOqemYwVXeRN6-OIrgtLJq-VRoesf5mKMJEN-OAs55NqdW7iylbuZAbVl_jkdm4
+[2020-04-18T21:40:08.226] [INFO] default - null
+[2020-04-18T21:42:51.324] [INFO] default - Server is listening on 3000
+[2020-04-18T21:42:51.348] [INFO] default - coonected to db
+[2020-04-18T21:42:58.455] [INFO] default - CALLBACK to LOGIN
+[2020-04-18T21:42:59.465] [INFO] default - AQBWA-YwUQvaXJ3X1XO7BHhaCxARJhpneqwFS4L6_7WXCN0WaQJ2FmKQGU0HLAszY1zKjbl0Zdq2vSgYwDogMxdJ99zXuGWpzzCzT9nhVWfk-W2AJl3W0mds9fGkZZIRb3TAfhMRAz7xJAByd0InCPpUH2rAFL929Cd7k0mMzrL2EfH_vi8M9895a9yVBidEn62yzr4D-S2aOmFJBqFdj0ThMTRZOd90uSrjcHSkM07L0n8sDFN5SilG6dbWqZOU_oD180inQneys4U1ePTjQzdsW4N5Vo3nFuAADkWA9-EMaEkqb6koretHhs6uaQTZrYmZyPlI0OlxoiNYMhkXk52RJz7VcCk_-m-8hL7MiHXtd8ORlHhpbRU4lZtsyeJ2MkX_Q8W_woSnIc4gVeMFXqabH59nb_JiNPTtcA
+[2020-04-18T21:42:59.614] [INFO] default - I got a token, lets get my info
+[2020-04-18T21:42:59.615] [INFO] default - BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4
+[2020-04-18T21:42:59.615] [INFO] default - BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4
+[2020-04-18T21:42:59.634] [INFO] default - ricevuto tokn undefined
+[2020-04-18T21:42:59.688] [INFO] default - logged users: 
+[2020-04-18T21:42:59.708] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+    refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo',
+    roomId: 5e9b55ecec954944b82871ad
+  },
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQBlcSggM8Z-uanHSq0QeX_7lmW9XpNONN-bj-c91v8vB0eB7Vh2cfDHyaZBQWKq-Bz2asj5UkDRSPY0Xy3xKEMjx3LSytBOgHZ_0QFv-5HWttdTAbL376UOLOqemYwVXeRN6-OIrgtLJq-VRoesf5mKMJEN-OAs55NqdW7iylbuZAbVl_jkdm4',
+    expirationDate: '3600',
+    name: 'Gianpaolo Basilicò',
+    pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+    refreshToken: 'AQBVr0vS1l5X-eOO8teyaqgYIOye1f9JKe-HB9NN1hocjYP_EfV8OZdNle1VdSwSoCLlcVIVFBGj7a-ENUl0tHGHEouANKduY-yv6DDXbzN1OHm6ZD17brdYRnzUHR8boMM',
+    roomId: 5e9b55ecec954944b82871ad
+  }
+]
+[2020-04-18T21:42:59.814] [INFO] default - user: 
+[2020-04-18T21:42:59.815] [INFO] default - {
+  country: 'BE',
+  display_name: 'Gianpaolo Basilicò',
+  email: 'gianpaolo.basilico@gmail.com',
+  explicit_content: { filter_enabled: false, filter_locked: false },
+  external_urls: { spotify: 'https://open.spotify.com/user/11135339447' },
+  followers: { href: null, total: 33 },
+  href: 'https://api.spotify.com/v1/users/11135339447',
+  id: '11135339447',
+  images: [
+    {
+      height: null,
+      url: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+      width: null
+    }
+  ],
+  product: 'premium',
+  type: 'user',
+  uri: 'spotify:user:11135339447'
+}
+[2020-04-18T21:42:59.884] [INFO] default - risposta da auth:
+[2020-04-18T21:42:59.886] [INFO] default - {
+  access_token: 'BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4',
+  token_type: 'Bearer',
+  expires_in: 3600,
+  refresh_token: 'AQA5rc249N6HlVnaxUXkZFDRNr_KHLSLtDbwDC3mx1T0KHS_cbp2TAxTQSHLQrchNHyJ5iylPuNzuulYu8UpspWc2xSb7jAITaSQpdZosXI2wTWoALo_nvt2Is0bueG94bg',
+  scope: 'streaming app-remote-control playlist-read-collaborative user-modify-playback-state user-follow-read user-read-playback-state user-read-email user-read-private',
+  id: '11135339447',
+  name: 'Gianpaolo Basilicò',
+  pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+  status: 200
+}
+[2020-04-18T21:42:59.917] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: true,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 18
+    }
+  ]
+}
+[2020-04-18T21:42:59.942] [INFO] default - user added or updated {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4',
+  expirationDate: '3600',
+  name: 'Gianpaolo Basilicò',
+  pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+  refreshToken: 'AQA5rc249N6HlVnaxUXkZFDRNr_KHLSLtDbwDC3mx1T0KHS_cbp2TAxTQSHLQrchNHyJ5iylPuNzuulYu8UpspWc2xSb7jAITaSQpdZosXI2wTWoALo_nvt2Is0bueG94bg',
+  roomId: 5e9b55ecec954944b82871ad
+}
+[2020-04-18T21:43:00.168] [INFO] default - {
+  devices: [
+    {
+      id: '4218b8f86d822b195bf494dbc7c5966c7c13bb96',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'MacBook Pro',
+      type: 'Computer',
+      volume_percent: 65
+    }
+  ]
+}
+[2020-04-18T21:43:00.252] [INFO] default - ricevuto tokn undefined
+[2020-04-18T21:43:00.264] [INFO] default - logged users: 
+[2020-04-18T21:43:00.273] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+    refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo',
+    roomId: 5e9b55ecec954944b82871ad
+  },
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4',
+    expirationDate: '3600',
+    name: 'Gianpaolo Basilicò',
+    pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+    refreshToken: 'AQA5rc249N6HlVnaxUXkZFDRNr_KHLSLtDbwDC3mx1T0KHS_cbp2TAxTQSHLQrchNHyJ5iylPuNzuulYu8UpspWc2xSb7jAITaSQpdZosXI2wTWoALo_nvt2Is0bueG94bg',
+    roomId: 5e9b55ecec954944b82871ad
+  }
+]
+[2020-04-18T21:43:06.927] [INFO] default - ricevuto tokn undefined
+[2020-04-18T21:43:06.933] [INFO] default - logged users: 
+[2020-04-18T21:43:06.933] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+    refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo',
+    roomId: 5e9b55ecec954944b82871ad
+  },
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4',
+    expirationDate: '3600',
+    name: 'Gianpaolo Basilicò',
+    pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+    refreshToken: 'AQA5rc249N6HlVnaxUXkZFDRNr_KHLSLtDbwDC3mx1T0KHS_cbp2TAxTQSHLQrchNHyJ5iylPuNzuulYu8UpspWc2xSb7jAITaSQpdZosXI2wTWoALo_nvt2Is0bueG94bg',
+    roomId: 5e9b55ecec954944b82871ad
+  }
+]
+[2020-04-18T21:43:07.011] [INFO] default - {
+  devices: [
+    {
+      id: '4218b8f86d822b195bf494dbc7c5966c7c13bb96',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'MacBook Pro',
+      type: 'Computer',
+      volume_percent: 65
+    }
+  ]
+}
+[2020-04-18T21:43:12.183] [INFO] default - {
+  devices: [
+    {
+      id: '4218b8f86d822b195bf494dbc7c5966c7c13bb96',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'MacBook Pro',
+      type: 'Computer',
+      volume_percent: 65
+    }
+  ]
+}
+[2020-04-18T21:43:12.298] [INFO] default - ricevuto tokn undefined
+[2020-04-18T21:43:12.303] [INFO] default - logged users: 
+[2020-04-18T21:43:12.308] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+    refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo',
+    roomId: 5e9b55ecec954944b82871ad
+  },
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4',
+    expirationDate: '3600',
+    name: 'Gianpaolo Basilicò',
+    pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+    refreshToken: 'AQA5rc249N6HlVnaxUXkZFDRNr_KHLSLtDbwDC3mx1T0KHS_cbp2TAxTQSHLQrchNHyJ5iylPuNzuulYu8UpspWc2xSb7jAITaSQpdZosXI2wTWoALo_nvt2Is0bueG94bg',
+    roomId: 5e9b55ecec954944b82871ad
+  }
+]
+[2020-04-18T21:43:16.207] [INFO] default - ricevuto tokn undefined
+[2020-04-18T21:43:16.212] [INFO] default - logged users: 
+[2020-04-18T21:43:16.218] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+    refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo',
+    roomId: 5e9b55ecec954944b82871ad
+  },
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4',
+    expirationDate: '3600',
+    name: 'Gianpaolo Basilicò',
+    pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+    refreshToken: 'AQA5rc249N6HlVnaxUXkZFDRNr_KHLSLtDbwDC3mx1T0KHS_cbp2TAxTQSHLQrchNHyJ5iylPuNzuulYu8UpspWc2xSb7jAITaSQpdZosXI2wTWoALo_nvt2Is0bueG94bg',
+    roomId: 5e9b55ecec954944b82871ad
+  }
+]
+[2020-04-18T21:43:16.292] [INFO] default - {
+  devices: [
+    {
+      id: '4218b8f86d822b195bf494dbc7c5966c7c13bb96',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'MacBook Pro',
+      type: 'Computer',
+      volume_percent: 65
+    }
+  ]
+}
+[2020-04-18T21:43:34.006] [INFO] default - Server is listening on 3000
+[2020-04-18T21:43:34.036] [INFO] default - coonected to db
+[2020-04-18T21:43:34.075] [INFO] default - ricevuto tokn undefined
+[2020-04-18T21:43:34.113] [INFO] default - logged users: 
+[2020-04-18T21:43:34.114] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+    refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo',
+    roomId: 5e9b55ecec954944b82871ad
+  },
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4',
+    expirationDate: '3600',
+    name: 'Gianpaolo Basilicò',
+    pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+    refreshToken: 'AQA5rc249N6HlVnaxUXkZFDRNr_KHLSLtDbwDC3mx1T0KHS_cbp2TAxTQSHLQrchNHyJ5iylPuNzuulYu8UpspWc2xSb7jAITaSQpdZosXI2wTWoALo_nvt2Is0bueG94bg',
+    roomId: 5e9b55ecec954944b82871ad
+  }
+]
+[2020-04-18T21:43:34.206] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: true,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 18
+    }
+  ]
+}
+[2020-04-18T21:43:39.539] [INFO] default - ricevuto tokn undefined
+[2020-04-18T21:43:39.659] [INFO] default - logged users: 
+[2020-04-18T21:43:39.660] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+    refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo',
+    roomId: 5e9b55ecec954944b82871ad
+  },
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4',
+    expirationDate: '3600',
+    name: 'Gianpaolo Basilicò',
+    pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+    refreshToken: 'AQA5rc249N6HlVnaxUXkZFDRNr_KHLSLtDbwDC3mx1T0KHS_cbp2TAxTQSHLQrchNHyJ5iylPuNzuulYu8UpspWc2xSb7jAITaSQpdZosXI2wTWoALo_nvt2Is0bueG94bg',
+    roomId: 5e9b55ecec954944b82871ad
+  }
+]
+[2020-04-18T21:43:39.727] [INFO] default - {
+  devices: [
+    {
+      id: '4218b8f86d822b195bf494dbc7c5966c7c13bb96',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'MacBook Pro',
+      type: 'Computer',
+      volume_percent: 65
+    }
+  ]
+}
+[2020-04-18T21:45:36.702] [INFO] default - Server is listening on 3000
+[2020-04-18T21:45:36.727] [INFO] default - coonected to db
+[2020-04-18T21:45:36.804] [INFO] default - ricevuto tokn undefined
+[2020-04-18T21:45:36.837] [INFO] default - logged users: 
+[2020-04-18T21:45:36.838] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+    refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo',
+    roomId: 5e9b55ecec954944b82871ad
+  },
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4',
+    expirationDate: '3600',
+    name: 'Gianpaolo Basilicò',
+    pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+    refreshToken: 'AQA5rc249N6HlVnaxUXkZFDRNr_KHLSLtDbwDC3mx1T0KHS_cbp2TAxTQSHLQrchNHyJ5iylPuNzuulYu8UpspWc2xSb7jAITaSQpdZosXI2wTWoALo_nvt2Is0bueG94bg',
+    roomId: 5e9b55ecec954944b82871ad
+  }
+]
+[2020-04-18T21:45:36.936] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 18
+    }
+  ]
+}
+[2020-04-18T21:46:18.186] [INFO] default - ricevuto tokn undefined
+[2020-04-18T21:46:18.199] [INFO] default - logged users: 
+[2020-04-18T21:46:18.242] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+    refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo',
+    roomId: 5e9b55ecec954944b82871ad
+  },
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4',
+    expirationDate: '3600',
+    name: 'Gianpaolo Basilicò',
+    pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+    refreshToken: 'AQA5rc249N6HlVnaxUXkZFDRNr_KHLSLtDbwDC3mx1T0KHS_cbp2TAxTQSHLQrchNHyJ5iylPuNzuulYu8UpspWc2xSb7jAITaSQpdZosXI2wTWoALo_nvt2Is0bueG94bg',
+    roomId: 5e9b55ecec954944b82871ad
+  }
+]
+[2020-04-18T21:46:18.510] [INFO] default - Hi, for me this token
+[2020-04-18T21:46:18.614] [INFO] default - undefined
+[2020-04-18T21:46:18.661] [INFO] default - ïs the same of 
+[2020-04-18T21:46:18.735] [INFO] default - undefined
+[2020-04-18T21:46:18.783] [INFO] default - false
+[2020-04-18T21:46:18.836] [INFO] default - Hi, for me this token
+[2020-04-18T21:46:18.850] [INFO] default - undefined
+[2020-04-18T21:46:18.882] [INFO] default - ïs the same of 
+[2020-04-18T21:46:18.884] [INFO] default - undefined
+[2020-04-18T21:46:18.885] [INFO] default - false
+[2020-04-18T21:46:18.951] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 18
+    }
+  ]
+}
+[2020-04-18T21:46:31.561] [INFO] default - ricevuto tokn undefined
+[2020-04-18T21:46:31.571] [INFO] default - logged users: 
+[2020-04-18T21:46:31.573] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+    refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo',
+    roomId: 5e9b55ecec954944b82871ad
+  },
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4',
+    expirationDate: '3600',
+    name: 'Gianpaolo Basilicò',
+    pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+    refreshToken: 'AQA5rc249N6HlVnaxUXkZFDRNr_KHLSLtDbwDC3mx1T0KHS_cbp2TAxTQSHLQrchNHyJ5iylPuNzuulYu8UpspWc2xSb7jAITaSQpdZosXI2wTWoALo_nvt2Is0bueG94bg',
+    roomId: 5e9b55ecec954944b82871ad
+  }
+]
+[2020-04-18T21:46:31.669] [INFO] default - Hi, for me this token
+[2020-04-18T21:46:31.669] [INFO] default - undefined
+[2020-04-18T21:46:31.671] [INFO] default - ïs the same of 
+[2020-04-18T21:46:31.683] [INFO] default - undefined
+[2020-04-18T21:46:31.685] [INFO] default - false
+[2020-04-18T21:46:31.686] [INFO] default - Hi, for me this token
+[2020-04-18T21:46:31.686] [INFO] default - undefined
+[2020-04-18T21:46:31.687] [INFO] default - ïs the same of 
+[2020-04-18T21:46:31.687] [INFO] default - undefined
+[2020-04-18T21:46:31.688] [INFO] default - false
+[2020-04-18T21:46:31.764] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 18
+    }
+  ]
+}
+[2020-04-18T21:47:17.117] [INFO] default - ricevuto tokn undefined
+[2020-04-18T21:47:17.126] [INFO] default - logged users: 
+[2020-04-18T21:47:17.133] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+    refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo',
+    roomId: 5e9b55ecec954944b82871ad
+  },
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4',
+    expirationDate: '3600',
+    name: 'Gianpaolo Basilicò',
+    pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+    refreshToken: 'AQA5rc249N6HlVnaxUXkZFDRNr_KHLSLtDbwDC3mx1T0KHS_cbp2TAxTQSHLQrchNHyJ5iylPuNzuulYu8UpspWc2xSb7jAITaSQpdZosXI2wTWoALo_nvt2Is0bueG94bg',
+    roomId: 5e9b55ecec954944b82871ad
+  }
+]
+[2020-04-18T21:47:17.150] [INFO] default - Hi, for me this token
+[2020-04-18T21:47:17.151] [INFO] default - undefined
+[2020-04-18T21:47:17.152] [INFO] default - ïs the same of 
+[2020-04-18T21:47:17.152] [INFO] default - undefined
+[2020-04-18T21:47:17.153] [INFO] default - false
+[2020-04-18T21:47:17.153] [INFO] default - Hi, for me this token
+[2020-04-18T21:47:17.154] [INFO] default - undefined
+[2020-04-18T21:47:17.156] [INFO] default - ïs the same of 
+[2020-04-18T21:47:17.167] [INFO] default - undefined
+[2020-04-18T21:47:17.169] [INFO] default - false
+[2020-04-18T21:47:17.230] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 18
+    }
+  ]
+}
+[2020-04-18T21:47:25.460] [INFO] default - {
+  devices: [
+    {
+      id: '4218b8f86d822b195bf494dbc7c5966c7c13bb96',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'MacBook Pro',
+      type: 'Computer',
+      volume_percent: 65
+    }
+  ]
+}
+[2020-04-18T21:47:41.370] [INFO] default - {
+  devices: [
+    {
+      id: '4218b8f86d822b195bf494dbc7c5966c7c13bb96',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'MacBook Pro',
+      type: 'Computer',
+      volume_percent: 65
+    }
+  ]
+}
+[2020-04-18T21:48:03.669] [INFO] default - ricevuto tokn undefined
+[2020-04-18T21:48:03.673] [INFO] default - logged users: 
+[2020-04-18T21:48:03.685] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+    refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo',
+    roomId: 5e9b55ecec954944b82871ad
+  },
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4',
+    expirationDate: '3600',
+    name: 'Gianpaolo Basilicò',
+    pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+    refreshToken: 'AQA5rc249N6HlVnaxUXkZFDRNr_KHLSLtDbwDC3mx1T0KHS_cbp2TAxTQSHLQrchNHyJ5iylPuNzuulYu8UpspWc2xSb7jAITaSQpdZosXI2wTWoALo_nvt2Is0bueG94bg',
+    roomId: 5e9b55ecec954944b82871ad
+  }
+]
+[2020-04-18T21:48:03.721] [INFO] default - Hi, for me this token
+[2020-04-18T21:48:03.722] [INFO] default - undefined
+[2020-04-18T21:48:03.722] [INFO] default - ïs the same of 
+[2020-04-18T21:48:03.723] [INFO] default - undefined
+[2020-04-18T21:48:03.752] [INFO] default - false
+[2020-04-18T21:48:03.753] [INFO] default - Hi, for me this token
+[2020-04-18T21:48:03.754] [INFO] default - undefined
+[2020-04-18T21:48:03.755] [INFO] default - ïs the same of 
+[2020-04-18T21:48:03.756] [INFO] default - undefined
+[2020-04-18T21:48:03.759] [INFO] default - false
+[2020-04-18T21:48:03.877] [INFO] default - {
+  devices: [
+    {
+      id: '4218b8f86d822b195bf494dbc7c5966c7c13bb96',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'MacBook Pro',
+      type: 'Computer',
+      volume_percent: 65
+    }
+  ]
+}
+[2020-04-18T21:48:40.081] [INFO] default - Server is listening on 3000
+[2020-04-18T21:48:40.138] [INFO] default - ricevuto tokn undefined
+[2020-04-18T21:48:40.154] [INFO] default - coonected to db
+[2020-04-18T21:48:40.178] [INFO] default - logged users: 
+[2020-04-18T21:48:40.178] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQCAkbS9QvB28K61awlkXZNWBRqvKlvTDWidm4IJYPuI2F7Q0thcFr37yNN7OrIg1jpF5rwUuY385xg9me8MEpD05R5PAQ7qMoR0vLhCfIxEwqTpBXm_AGzFQWhhkfJKsu_X-GoT2qzp2VHjYMOSahPX2HCOZMLGKuGnaJKXNQ3l6e0N',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+    refreshToken: 'AQApKQlz8rz-MQhxq6eUjhw7CbS53ro2f39_y2YxjHfMihoK9zpv1ZkoMdHzCK6DFtKdcD-AVLvYV5BmhKeGNWJbCnQPZlyV4ivdlO-yJ1blhBF8vKcObp4g63Gi054qBC0',
+    roomId: 5e9b4dbf531f12202c6ee496
+  },
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQAli5Qq86qPGbQSgAv0_mTLRZK7TYsM0CyEfxfwCB97x533E54-N3vAyZAfV59_ebZyNGm9Pnsf6A-ADJ07_ZMqktl5B3NOdzGJXb-5PxKFw9CpkQqNWVoUFR9kG3Vi39fnAm77IAyZGph_44CJlVL6hdax4T6xUj8Bc0V52tZ7Qf1d5dJfaIw',
+    expirationDate: '3600',
+    name: 'Gianpaolo Basilicò',
+    pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+    refreshToken: 'AQD6T72s83WlJ99WP70Rb17aPuzu9q9oO4ph-LkffGIJq0JsuwBjIglFsPYTqEWxUdzjwokFGXpnlXBgybDiTSht9jwk8WCShKnazU4QC27VTGpB6S2wMzKNkfAOwYXFjaY',
+    roomId: 5e9b4dbf531f12202c6ee496
+  }
+]
+[2020-04-18T21:48:40.190] [INFO] default - Hi, for me this token
+[2020-04-18T21:48:40.191] [INFO] default - BQCAkbS9QvB28K61awlkXZNWBRqvKlvTDWidm4IJYPuI2F7Q0thcFr37yNN7OrIg1jpF5rwUuY385xg9me8MEpD05R5PAQ7qMoR0vLhCfIxEwqTpBXm_AGzFQWhhkfJKsu_X-GoT2qzp2VHjYMOSahPX2HCOZMLGKuGnaJKXNQ3l6e0N
+[2020-04-18T21:48:40.192] [INFO] default - ïs the same of 
+[2020-04-18T21:48:40.193] [INFO] default - undefined
+[2020-04-18T21:48:40.193] [INFO] default - true
+[2020-04-18T21:48:40.193] [INFO] default - Hi, for me this token
+[2020-04-18T21:48:40.194] [INFO] default - BQAli5Qq86qPGbQSgAv0_mTLRZK7TYsM0CyEfxfwCB97x533E54-N3vAyZAfV59_ebZyNGm9Pnsf6A-ADJ07_ZMqktl5B3NOdzGJXb-5PxKFw9CpkQqNWVoUFR9kG3Vi39fnAm77IAyZGph_44CJlVL6hdax4T6xUj8Bc0V52tZ7Qf1d5dJfaIw
+[2020-04-18T21:48:40.194] [INFO] default - ïs the same of 
+[2020-04-18T21:48:40.195] [INFO] default - undefined
+[2020-04-18T21:48:40.195] [INFO] default - true
+[2020-04-18T21:48:40.263] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 18
+    }
+  ]
+}
+[2020-04-18T21:50:28.063] [INFO] default - Server is listening on 3000
+[2020-04-18T21:50:28.091] [INFO] default - coonected to db
+[2020-04-18T21:50:28.181] [INFO] default - ricevuto tokn BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4
+[2020-04-18T21:50:28.212] [INFO] default - logged users: 
+[2020-04-18T21:50:28.213] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+    refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo',
+    roomId: 5e9b55ecec954944b82871ad
+  },
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4',
+    expirationDate: '3600',
+    name: 'Gianpaolo Basilicò',
+    pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+    refreshToken: 'AQA5rc249N6HlVnaxUXkZFDRNr_KHLSLtDbwDC3mx1T0KHS_cbp2TAxTQSHLQrchNHyJ5iylPuNzuulYu8UpspWc2xSb7jAITaSQpdZosXI2wTWoALo_nvt2Is0bueG94bg',
+    roomId: 5e9b55ecec954944b82871ad
+  }
+]
+[2020-04-18T21:50:28.228] [INFO] default - Hi, for me this token
+[2020-04-18T21:50:28.229] [INFO] default - BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4
+[2020-04-18T21:50:28.230] [INFO] default - ïs the same of 
+[2020-04-18T21:50:28.230] [INFO] default - BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4
+[2020-04-18T21:50:28.231] [INFO] default - false
+[2020-04-18T21:50:28.231] [INFO] default - Hi, for me this token
+[2020-04-18T21:50:28.234] [INFO] default - BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4
+[2020-04-18T21:50:28.247] [INFO] default - ïs the same of 
+[2020-04-18T21:50:28.249] [INFO] default - BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4
+[2020-04-18T21:50:28.259] [INFO] default - true
+[2020-04-18T21:50:28.376] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 18
+    }
+  ]
+}
+[2020-04-18T21:51:13.047] [INFO] default - Server is listening on 3000
+[2020-04-18T21:51:13.073] [INFO] default - coonected to db
+[2020-04-18T21:51:21.248] [INFO] default - ricevuto tokn BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4
+[2020-04-18T21:51:21.283] [INFO] default - logged users: 
+[2020-04-18T21:51:21.284] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+    refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo',
+    roomId: 5e9b55ecec954944b82871ad
+  },
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4',
+    expirationDate: '3600',
+    name: 'Gianpaolo Basilicò',
+    pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+    refreshToken: 'AQA5rc249N6HlVnaxUXkZFDRNr_KHLSLtDbwDC3mx1T0KHS_cbp2TAxTQSHLQrchNHyJ5iylPuNzuulYu8UpspWc2xSb7jAITaSQpdZosXI2wTWoALo_nvt2Is0bueG94bg',
+    roomId: 5e9b55ecec954944b82871ad
+  }
+]
+[2020-04-18T21:51:21.304] [INFO] default - Hi, for me this token
+[2020-04-18T21:51:21.304] [INFO] default - BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4
+[2020-04-18T21:51:21.306] [INFO] default - ïs the same of 
+[2020-04-18T21:51:21.306] [INFO] default - BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4
+[2020-04-18T21:51:21.308] [INFO] default - true
+[2020-04-18T21:51:21.309] [INFO] default - Hi, for me this token
+[2020-04-18T21:51:21.322] [INFO] default - BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4
+[2020-04-18T21:51:21.324] [INFO] default - ïs the same of 
+[2020-04-18T21:51:21.325] [INFO] default - BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4
+[2020-04-18T21:51:21.336] [INFO] default - false
+[2020-04-18T21:51:21.403] [INFO] default - {
+  devices: [
+    {
+      id: '4218b8f86d822b195bf494dbc7c5966c7c13bb96',
+      is_active: false,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'MacBook Pro',
+      type: 'Computer',
+      volume_percent: 65
+    }
+  ]
+}
+[2020-04-18T21:51:23.811] [INFO] default - ricevuto tokn BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4
+[2020-04-18T21:51:23.820] [INFO] default - logged users: 
+[2020-04-18T21:51:23.826] [INFO] default - [
+  {
+    _id: 'gadato',
+    __v: 0,
+    accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+    expirationDate: '3600',
+    name: 'Giuseppe Ministeri',
+    pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+    refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo',
+    roomId: 5e9b55ecec954944b82871ad
+  },
+  {
+    _id: '11135339447',
+    __v: 0,
+    accessToken: 'BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4',
+    expirationDate: '3600',
+    name: 'Gianpaolo Basilicò',
+    pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+    refreshToken: 'AQA5rc249N6HlVnaxUXkZFDRNr_KHLSLtDbwDC3mx1T0KHS_cbp2TAxTQSHLQrchNHyJ5iylPuNzuulYu8UpspWc2xSb7jAITaSQpdZosXI2wTWoALo_nvt2Is0bueG94bg',
+    roomId: 5e9b55ecec954944b82871ad
+  }
+]
+[2020-04-18T21:51:23.859] [INFO] default - Hi, for me this token
+[2020-04-18T21:51:23.866] [INFO] default - BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4
+[2020-04-18T21:51:23.889] [INFO] default - ïs the same of 
+[2020-04-18T21:51:23.904] [INFO] default - BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4
+[2020-04-18T21:51:23.904] [INFO] default - false
+[2020-04-18T21:51:23.905] [INFO] default - Hi, for me this token
+[2020-04-18T21:51:23.905] [INFO] default - BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4
+[2020-04-18T21:51:23.906] [INFO] default - ïs the same of 
+[2020-04-18T21:51:23.906] [INFO] default - BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4
+[2020-04-18T21:51:23.907] [INFO] default - true
+[2020-04-18T21:51:23.972] [INFO] default - {
+  devices: [
+    {
+      id: '4efd922fe184e7e72c4d04b5477a19ea47812467',
+      is_active: true,
+      is_private_session: false,
+      is_restricted: false,
+      name: 'SAMIR',
+      type: 'Computer',
+      volume_percent: 18
+    }
+  ]
+}
+[2020-04-18T21:51:41.407] [INFO] default - start joining
+[2020-04-18T21:51:41.424] [INFO] default - userByAccessToken :
+[2020-04-18T21:51:41.426] [INFO] default - {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+  refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo',
+  roomId: 5e9b55ecec954944b82871ad
+}
+[2020-04-18T21:51:41.438] [INFO] default - userToJoin
+[2020-04-18T21:51:41.443] [INFO] default - {
+  _id: '11135339447',
+  __v: 0,
+  accessToken: 'BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4',
+  expirationDate: '3600',
+  name: 'Gianpaolo Basilicò',
+  pictureUrl: 'https://scontent.flux1-1.fna.fbcdn.net/v/t1.0-1/s320x320/57203891_2351869941490932_7675621073559224320_n.jpg?_nc_cat=109&_nc_sid=0c64ff&_nc_oc=AQlDCWAUCX_DZyZDc0le2igwfsL0Cpi0REcvGR9ZbFiPoVDtdCmPiZIezeu5HH6055c&_nc_ht=scontent.flux1-1.fna&_nc_tp=7&oh=95f7e58e05b50a71a85c4ac9e8d1b629&oe=5EC12F0B',
+  refreshToken: 'AQA5rc249N6HlVnaxUXkZFDRNr_KHLSLtDbwDC3mx1T0KHS_cbp2TAxTQSHLQrchNHyJ5iylPuNzuulYu8UpspWc2xSb7jAITaSQpdZosXI2wTWoALo_nvt2Is0bueG94bg',
+  roomId: 5e9b55ecec954944b82871ad
+}
+[2020-04-18T21:51:41.458] [INFO] default - userToJoiner
+[2020-04-18T21:51:41.460] [INFO] default - {
+  _id: 'gadato',
+  __v: 0,
+  accessToken: 'BQAkEDAm2NBOBp7YzsVube8WXnXvBgNSUQvVvI3xQxlqN3b2uinrqybMc9g48ZBMwv9--OnVskFlJVLYi6AQVAZf1VL2YzzmUoO_Og6geuxp2OCHRf8xm_5wNajAkjsgTqx1gp7ccFLlnhlAo8Qm1qptJMHY2Iug_P2UfYAJLw6gMo_4',
+  expirationDate: '3600',
+  name: 'Giuseppe Ministeri',
+  pictureUrl: 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-1/c68.0.320.320a/p320x320/12983210_10208886033010023_8005226510709082827_o.jpg?_nc_cat=106&_nc_sid=0c64ff&_nc_oc=AQmLCcwjcfGuzNoaFIiVaEeW0TRwdi_gQqXwCT1-XHCoP9PzCt21HICqG2hUD4mPdxo&_nc_ht=scontent-cdt1-1.xx&oh=d967bc2852f8fd43ecc644190b885b79&oe=5EC2C3E3',
+  refreshToken: 'AQCYtKZfy62uf3-tX52kJJbRgdqELqNMzfQM1qratJhgnQIAMnzGrAKyM4XBoCOKGmdxD6R_JtjYVijwjlYnn1TpCyMCjbpTkVyLAE13NQglmR-HGOvDmFQp0uaACUsMYeo',
+  roomId: 5e9b55ecec954944b82871ad
+}
+[2020-04-18T21:51:41.491] [INFO] default - BQBWdH1ulVPRdDgfMba2N-0RJg069CxI5nlNQFyLT2cxk8IowbYVgvkH0cHh0LvV0ufDiRst37bPJofhpbPO-V6FKiQ82IPZOVcDomXXfyhl2-7yctyV6GMoJFfSRKak6zhqOr0X_XAj1iF95Wn40WNUIQZocM_D-U_Mumme1qjeaZABe4dzYA4
+[2020-04-18T21:51:41.505] [INFO] default - null

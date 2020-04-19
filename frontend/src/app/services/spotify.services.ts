@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, EMPTY } from 'rxjs';
 import { map, distinctUntilChanged, debounceTime } from 'rxjs/operators';
+import { SearchType } from '../components/Search/model';
 
 
 @Injectable()
@@ -17,10 +18,8 @@ export class SpotifyService {
 
   constructor(private http: HttpClient) { }
 
-
-
   // Get search results for a query
-  searchMusic(query: string, type = 'artist', authToken: string) {
+  searchMusic(query: string, type, authToken: string) {
     //const headers = new HttpHeaders();
     //headers.set('Authorization', 'Bearer ' + authToken);
 
@@ -28,7 +27,7 @@ export class SpotifyService {
       headers: {'Authorization': 'Bearer ' + authToken}
     }
 
-    this.searchUrl = 'https://api.spotify.com/v1/search?q=' + query + '&offset=0&limit=20&type=' + type + '&market=US';
+    this.searchUrl = 'https://api.spotify.com/v1/search?q=' + query + '&offset=0&limit=20&type=' + type + '&market=from_token';
     console.log(this.searchUrl);
     console.log(headers);
 
@@ -50,7 +49,7 @@ export class SpotifyService {
     const headers= new HttpHeaders();
     headers.append('Authorization', 'Bearer ' + authToken);
 
-    this.albumsUrl = 'https://api.spotify.com/v1/artists/' + id + '/albums?market=US&album_type=single';
+    this.albumsUrl = 'https://api.spotify.com/v1/artists/' + id + '/albums?market=from_token&album_type=single';
 
     return this.http.get(this.albumsUrl, { headers });
   }

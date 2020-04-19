@@ -1,6 +1,6 @@
 
-<div  class="search search-bar"  [formGroup]="formGroup" [ngClass]="{'has-results':results, 'focus': searchInput.isActive}">
-<input type="text" formControlName="query" #searchInput (focus)="searchInput.isActive=true" (blur)="searchInput.isActive=false " placeholder="Search for Songs..."/>
+<div  class="search search-bar"  [formGroup]="formGroup" [ngClass]="{'has-results':results, 'focus': searchInput.isActive}" (blur)="resultModal.close=true; searchInput.isActive=false">
+<input type="text" formControlName="query"[ngClass]="{'focus': searchInput.isActive}"  #searchInput (focus)="searchInput.isActive=true;resultModal.close = false "  placeholder="Search for Songs..."/>
 <div class=" clearButton cross"  [ngClass]="{'loop': searchInput.isActive}">
 <i class="icono-cross" ></i>
 </div>
@@ -8,54 +8,58 @@
 <ul class="filters search" [ngClass]="{'search': searchInput.isActive}">
   <!--
   <div class="backButton">
-    <i class="icono-leftArrow"></i>
+    <i class="icono-leftArrow"></i> ou ahah mbar ma che stai a fa?? naah
+    hangaout
+    cosi ti facico vedere
+    hai tipo finito il FE? no no mbare quale ahah ahha si comunque
   </div>
   -->
-  <li>Song</li>
-  <li>Artist</li>
-  <li>Album</li>
-  <li>Playlist</li>
-  <li>Friend</li>
+  <li (click)="setType('tracks')">Tracks</li>
+  <li (click)="setType('artists')">Artists</li>
+  <li (click)="setType('albums')">Albums</li>
+  <li (click)="setType('playlists')">Playlists</li>
+  <li (click)="setType('friends')">Friends</li>
   <div class="searchButton">
     <i class="icono-search"></i>
   </div>
 </ul>
-<div class="results-header" *ngIf="results" [ngClass]="{'filters-on': searchInput.isActive}">
-  <div class="button-action cross loop" *ngIf="!resultModal.close"></div>
+<div class="results-header" *ngIf="!resultModal.close && results" [ngClass]="{'filters-on': searchInput.isActive}">
+<span>{{getType()}}</span> <div class="button-action cross loop" (click)="resultModal.close=true; searchInput.isActive=false" *ngIf="!resultModal.close"></div>
 </div>
-<ul class="results" #resultModal [ngClass]="{'filters-on': searchInput.isActive, 'show': results && results.length > 0}">
-  <li>
-    Songs
+
+<ul class="results" #resultModal [ngClass]="{'filters-on': searchInput.isActive, 'show': !resultModal.close && results && results.length > 0}">
+  <li [ngClass]="{ 'show': results && results.length > 0}">
     <ul class="resultSet">
       <li *ngFor="let res of results">
         <nod-tile class="result" >
           <div class="title tile-title">
             <div class="content">
-                    <a href="/artist/{{res.id}}">{{res.name}}</a>
-                    <div class="ui labels">
-                      <div class="ui blue label">Followers: {{res.followers.total}}</div>
-                      <div class="ui green label">Popularity: {{res.popularity}}</div>
-                    </div>
-                  </div>
+              <a href="/{{getType()}}/{{res.id}}">{{res.name}}</a>
+              <div class="ui labels" *ngIf="getType()==='artist'">
+                <div *ngIf="res.followers" class="ui blue label">Followers: {{res.followers.total}}</div>
+                <div *ngIf="res.popularity" class="ui green label">Popularity: {{res.popularity}}</div>
+              </div>
+            </div>
           </div>
           <div calss="tile-footer">
-        <div class="ui horizontal list" *ngFor="let genre of res.genres">
-                      <div class="item">
-                        <div class="ui labels">
-                          <div class="ui label">{{genre}}</div>
-                        </div>
-                      </div>
-                    </div>
+            {{res | json}}
+            <div class="ui horizontal list" *ngFor="let genre of res.genres">
+              <div class="item">
+                <div class="ui labels">
+                  <div class="ui label">{{genre}}</div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="icon tile-image" *ngIf="res.images.length > 0"  >
-            <img src="{{res.images[0].url}}" alt="">
-          </div>
+            <div class="icon tile-image"  >
+              <img *ngIf="res.images?.length > 0"  src="{{res.images[0].url}}" alt="">
+              <img  *ngIf="res.album?.images[1]" src="{{res.album?.images[1].url}}" alt="">
+            </div>
         </nod-tile>
       </li>
     </ul>
   </li>
-  <li>Artists</li>
-  <li>Albums</li>
-  <li>Playlists</li>
-  <li>Friends</li>
+  <li *ngIf="results"  [ngClass]="{ 'show': results.length === 0}">
+    No results, sorry!
+  </li>
  </ul>

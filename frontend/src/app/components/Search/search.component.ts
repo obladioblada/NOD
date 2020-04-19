@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.services';
 import { FormControl, FormGroup } from '@angular/forms';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
 
 import { Artist } from '../../models/Artist';
+import {SearchType} from './model';
 import { AuthService } from 'src/auth/auth.service';
+import { Subject, merge, BehaviorSubject, combineLatest } from 'rxjs';
 
 @Component({
   selector: 'nod-search',
@@ -14,24 +16,37 @@ import { AuthService } from 'src/auth/auth.service';
 })
 export class SearchComponent {
   searchStr: string;
-  results: Artist[];
+  results: any[];
   formGroup: FormGroup;
   query: FormControl = new FormControl();
+  type_$: BehaviorSubject<SearchType> = new BehaviorSubject(SearchType.artists);
 
   constructor(private spotifyService: SpotifyService, private authService: AuthService) {
     this.formGroup =  new FormGroup({
       query: this.query
     });
-    this.formGroup.valueChanges
+    combineLatest(
+      this.formGroup.valueChanges,
+      this.type_$.asObservable()
+    )
     .pipe(
       debounceTime(400),
-      distinctUntilChanged()
-    ).subscribe((queryForm: any) =>{
-      this.spotifyService.searchMusic(queryForm.query, 'artist', this.authService.getAccessToken())
-        .subscribe( (res: { artists: { items: Artist[]; }; }) => {
-          console.log(res.artists.items)
-          this.results = res.artists.items
+      distinctUntilChanged(),
+      map(val => val[0]),
+      filter(val => val.query.length > 0)
+    ).subscribe((queryForm: any) => {
+      this.spotifyService.searchMusic(queryForm.query, this.type_$.getValue(), this.authService.getAccessToken())
+        .subscribe( (res) => {
+          console.log(res[this.type_$.getValue()+'s'].items)
+          this.results = res[this.type_$.getValue()+'s'].items
         })
     });
+  }
+
+  setType(type: string) {
+    this.type_$.next(SearchType[type]);
+  }
+  getType() {
+    return this.results && this.type_$.getValue();
   }
 }

@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     this.retUrl = params.get('retUrl');
     console.log( 'LoginComponent/ngOnInit ' + this.retUrl);
     });
-    this.mainButtonService.setButtonCallback(this.login);
+    this.mainButtonService.setButtonCallback(this.getRedirectUrl);
 
     if (this.document.location.href.search('code') !== -1) {
     this.code = this.document.location.href.split('=')[1];
@@ -49,10 +49,10 @@ export class LoginComponent implements OnInit {
          }
       });
     }
-    this.login();
+    this.getRedirectUrl();
   }
 
-  login() {
+  getRedirectUrl() {
     if (!this.code) {
       this.mainButtonService.setButtonState(ButtonState.LOADING);
       this.authService.getRedirectUrl();

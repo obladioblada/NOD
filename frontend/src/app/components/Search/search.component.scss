@@ -23,7 +23,7 @@ input {
   color: #ffffff9c;
   position: fixed;
   height: 2em;
-  left: 25vw;
+  left: 50vw;
   z-index: 105;
   transform: translateX(-50%);
   text-align: center;
@@ -38,7 +38,7 @@ input {
   transition: $faster-transition;
 }
 
-input:focus {
+input.focus {
   outline: none;
   top: -.1em;
   border: 0.1em solid #1ed760;
@@ -108,7 +108,7 @@ ul.filters {
       width: 100vw;
       height: 0vh;
       background: #0f0f0f70;
-      content: '';
+      //content: '';
     }
 
 
@@ -309,25 +309,30 @@ ul.filters {
 }
 
 .results-header {
+  top: .2em;
   height: 3em;
   z-index: 104;
   background: #222222;
   position: fixed;
-  right: calc(18vw + 17px);
-
+  right: calc(18vw + 5px);
   align-content: center;
   display: grid;
   grid-template-columns: auto 3em;
   .button-action {
     grid-column: 2;
-  }
-  &.filters-on {
 
-    top: 7.5em;
-    background: transparent;
-    border-radius: 1em;
-    border: 2px solid #18803d;
+    z-index: 104;
   }
+  span {
+    width: 100%;
+    margin-left: .5em;
+  }
+
+  &.filters-on {
+    top: 7.5em;
+    border-radius: 1em 1em 0 0;
+  }
+
 }
 
 .results {
@@ -335,9 +340,11 @@ ul.filters {
     margin: 0;
     top: 0.2em;
     padding: 1em;
-    padding-top: 0;
+    padding-top: 2em;
     max-height: calc( 90vh - 4em );
     list-style: none;
+
+    transition-duration: .2s !important;
     position: fixed;
     z-index: 103;
     background: #222;
@@ -345,32 +352,30 @@ ul.filters {
     overflow-y: auto;
     overflow-x: hidden;
     border-radius: 0 0 1em 1em;
-    height: 0;
     font-size: 0;
-      &.filters-on{
-        top: 7.5em;
-        border-radius: 1em;
-        padding-top: 1em;
-        max-height: calc(100vh - 10.5em);
-      }
+
+    &.filters-on{
+      top: 10.5em;
+      padding-top: 1em;
+      max-height: calc(100vh - 13.5em);
+    }
   li {
     transform: translateX(25%);
   }
-
+&.show {
+  font-size: 1em;
 }
-.results.show  {
-    height: 100%;
-    padding-top: 4em;
-    font-size: 1em;
   li {
     transform: translateX(0%);
-
+    &.show  {
+      height: 100%;
+      font-size: 1em;
+    }
     &.close {
       height: 2em;
-      transition-duration: .6s;
+      transition-duration: 0;
       * {
-          font-size: 0;
-          transition-duration: .01s;
+          transition-duration: 0;
       }
     }
   }
@@ -400,9 +405,6 @@ ul.filters {
       }
     }
 
-    * {
-      transition-delay: 0;
-    }
 
     &.selected:after {
       transform: scaleX(0.9);
@@ -412,6 +414,9 @@ ul.filters {
      pointer-events: none;
     display: flex;
     align-items: center;
+    * {
+      transition: none !important;
+    }
      img {
       border-radius: 100%;
       width: 2em;

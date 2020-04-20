@@ -4,7 +4,7 @@ logger.level = "info";
 
 configure({
     appenders: {
-        rollingFileAppender: {type: "File", filename: "./logs/nod.log", maxLogSize: 10485760, numBackups: 3},
+        rollingFileAppender: {type: "file", filename: "./logs/nod.log", maxLogSize: 10485760, numBackups: 3},
         consoleAppender: {type: "console"}
     },
     categories: {

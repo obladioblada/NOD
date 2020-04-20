@@ -16,6 +16,7 @@ import { SpotifyService } from './services/spotify.services';
 import { SearchComponent } from './components/Search/search.component';
 import { TileComponent } from './components/tile/tile.component';
 import { UserComponent } from './user/user.component';
+import {SocketServices} from './services/socket.services';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { UserComponent } from './user/user.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [AuthGuardService, AuthService, SpotifyService, MainButtonService],
+  providers: [AuthGuardService, AuthService, SpotifyService, MainButtonService, SocketServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

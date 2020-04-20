@@ -2,8 +2,9 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AuthService } from 'src/auth/auth.service';
 import { MainButtonService } from '../main-button/main-button.service';
 import { ButtonState, ButtonPosition } from '../main-button/button';
-import { Observable, Subject, concat, Subscription, merge } from 'rxjs';
-import { take, switchMap, shareReplay } from 'rxjs/operators';
+import { Observable, Subject, Subscription, merge } from 'rxjs';
+import { switchMap, shareReplay } from 'rxjs/operators';
+import {SocketServices} from '../services/socket.services';
 
 @Component({
   selector: 'nod-home',
@@ -17,7 +18,8 @@ export class HomeComponent implements AfterViewInit {
   joinSucceded: boolean;
   mainButton$: Subscription;
 
-  constructor(private authService: AuthService, private mainButtonService: MainButtonService) {
+  constructor(private authService: AuthService, private mainButtonService: MainButtonService, socketServices: SocketServices) {
+    socketServices.sendMessage({message: 'heyyyy amico'});
     this.mainButtonService.setButtonState(ButtonState.LOADING);
     this.devices$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.devices()), shareReplay(1));
     this.users$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.friends()), shareReplay(1));
@@ -35,6 +37,10 @@ export class HomeComponent implements AfterViewInit {
     this.refresh();
    }
 
+   updateFriends() {
+     this.users$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.friends()), shareReplay(1));
+   }
+
   play(id, play) {
     this.mainButtonService.setButtonState(ButtonState.LOADING);
     this.authService.player(id, play).subscribe(val => {
@@ -42,6 +48,7 @@ export class HomeComponent implements AfterViewInit {
       this.refresh();
     });
   }
+
 
   refresh() {
     this.refreshOccurs$.next();

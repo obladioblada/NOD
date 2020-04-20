@@ -12,7 +12,6 @@ const PORT: any = 3000;
 let app = express();
 //initialize a simple http server
 const server = http.createServer(app);
-//initialize the WebSocket server instance
 const ws = new WebSocket.Server({ server });
 const roomManager: RoomManager = new RoomManager();
 const db: DB = new DB();
@@ -22,17 +21,25 @@ const db: DB = new DB();
 // When a connection is established
 ws.on('connection', function(socket: WebSocket) {
     logger.info('Opened connection ');
+    logger.info('broadcasting!');
+    ws.clients.forEach((client)=> {
+        logger.info(WebSocket.OPEN);
+        logger.info(client.readyState);
+        if (client.readyState === WebSocket.OPEN) {
+            client.send(JSON.stringify({ type: 'newUserLogged'}));
+        }
+    });
 
     //connection is up, let's add a simple simple event
     socket.on('message', (message: string) => {
 
         //log the received message and send it back to the client
         logger.info('received: %s', message);
-        socket.send(`Hello, you sent -> ${message}`);
     });
 
     //send immediatly a feedback to the incoming connection
-    socket.send('Hi there, I am a WebSocket server');
+    socket.send(JSON.stringify({message: 'Hi there, I am a WebSocket server'}));
+
     // The connection was closed
     socket.on('close', function() {
         logger.info('Closed Connection ');

@@ -11,6 +11,7 @@ export class User {
     pictureUrl: String;
     roomId: String;
     socket: WebSocket;
+    uuuiD: String;
 
     constructor(data: {
         _id: String,

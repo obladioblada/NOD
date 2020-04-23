@@ -1,17 +1,15 @@
 import mongoose = require("mongoose");
-import { Logger, getLogger } from "log4js";
+import { logger } from "./logging/Logger";
 import { from, Observable } from "rxjs";
 import { User, IUserDocument, Users } from "./models/User";
 
-const logger: Logger = getLogger();
-
-let db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", function () {
-    logger.info("coonected to db");
+let dbManager = mongoose.connection;
+dbManager.on("error", console.error.bind(console, "connection error:"));
+dbManager.once("open", function () {
+    logger.info("coonected to dbManager");
 });
 
-export class DB {
+class DB {
 
     constructor() {
         DB.connect();
@@ -92,3 +90,5 @@ export class DB {
     }
 
 }
+
+export const userDBManager : DB = new DB();

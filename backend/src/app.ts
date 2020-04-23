@@ -1,7 +1,7 @@
 import express = require("express");
-import {spotifyService} from "./SpotifyService";
-import {DB} from "./db";
-import { RoomManager } from "./RoomManager";
+import {spotifyService} from "./spotifyService";
+import {userDBManager} from "./DbManager";
+import { roomManager } from "./RoomManager";
 import { combineLatest, Observable } from "rxjs";
 import { take, map, switchMap } from "rxjs/operators";
 import { User} from "./models/User";
@@ -11,41 +11,11 @@ import {logger} from "./logging/Logger";
 const PORT: any = 3000;
 let app = express();
 //initialize a simple http server
-const server = http.createServer(app);
-const ws = new WebSocket.Server({ server });
-const roomManager: RoomManager = new RoomManager();
-const db: DB = new DB();
+export const server = http.createServer(app);
 
 
 
-// When a connection is established
-ws.on('connection', function(socket: WebSocket) {
-    logger.info('Opened connection ');
-    logger.info('broadcasting!');
-    ws.clients.forEach((client)=> {
-        logger.info(WebSocket.OPEN);
-        logger.info(client.readyState);
-        if (client.readyState === WebSocket.OPEN) {
-            client.send(JSON.stringify({ type: 'newUserLogged'}));
-        }
-    });
 
-    //connection is up, let's add a simple simple event
-    socket.on('message', (message: string) => {
-
-        //log the received message and send it back to the client
-        logger.info('received: %s', message);
-    });
-
-    //send immediatly a feedback to the incoming connection
-    socket.send(JSON.stringify({message: 'Hi there, I am a WebSocket server'}));
-
-    // The connection was closed
-    socket.on('close', function() {
-        logger.info('Closed Connection ');
-    });
-
-});
 
 app.get("", (_req, res) => {
     res.send("NOD server is ON");
@@ -83,7 +53,7 @@ app.get("/authenticate", (req, res) => {
         logger.info("risposta da auth:");
         logger.info(authResponse);
         if (authResponse.id) {
-            db.addOrUpdateUser(new User ({
+            userDBManager.addOrUpdateUser(new User ({
                 _id: authResponse.id,
                 name: authResponse.name,
                 accessToken: authResponse.access_token,
@@ -112,13 +82,13 @@ app.get("/authenticate", (req, res) => {
 app.get("/updateToken", (_req, res) => {
     logger.info("no access token or token is exprired, rinnovo");
     logger.info("ricevuto code " + _req.query.code);
-    db.getUserById(_req.query.id).subscribe((_user: User)=> {
+    userDBManager.getUserById(_req.query.id).subscribe((_user: User)=> {
         logger.info(_user);
         if (!_user) {
             spotifyService.updateToken(_user.refreshToken)
                 .then((val: any) => {
                     _user.accessToken = val.access_token;
-                    db.addOrUpdateUser(_user).subscribe(() => {
+                    userDBManager.addOrUpdateUser(_user).subscribe(() => {
                         res.send({accesst_token: val.access_token});
                     },(err) => {
                         res.send(err);
@@ -159,7 +129,7 @@ app.get("/me", (_req, res) => {
 
 app.get("/users", (_req, res) => {
     logger.info("ricevuto tokn " + _req.query.access_token);
-    db.getUsers()
+    userDBManager.getUsers()
         .subscribe((loeggedUsers)=> {
                 logger.info("logged users: ");
                 logger.info(loeggedUsers);
@@ -173,7 +143,7 @@ app.get("/users", (_req, res) => {
 
 app.get("/friends", (_req, res) => {
     logger.info("ricevuto tokn " + _req.query.access_token);
-    db.getUsers()
+    userDBManager.getUsers()
         .subscribe((loggedUsers)=> {
                 logger.info("logged users: ");
                 logger.info(loggedUsers);
@@ -184,7 +154,7 @@ app.get("/friends", (_req, res) => {
                     logger.info(_req.query.access_token);
                     logger.info(user.accessToken !== _req.query.access_token);
                     return user.accessToken !== _req.query.access_token
-                }).map(user => { 
+                }).map(user => {
                     return {
                         name: user.name, pictureUrl: user.pictureUrl, _id: user._id, roomId: user.rooomId
                     }
@@ -210,8 +180,8 @@ function join(userAccessToken: String, userIdToJoin: String): Observable<any> {
     let progressMs: String;
     let i = 0;
 
-    const userToJoin$: Observable<User> = db.getUserById(userIdToJoin).pipe( take(1) );
-    const userJoiner$: Observable<User> = db.getUserByAccessToken(userAccessToken).pipe( take(1) );
+    const userToJoin$: Observable<User> = userDBManager.getUserById(userIdToJoin).pipe( take(1) );
+    const userJoiner$: Observable<User> = userDBManager.getUserByAccessToken(userAccessToken).pipe( take(1) );
 
 
     //TODO: replace with http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-zip

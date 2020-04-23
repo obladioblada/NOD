@@ -1,14 +1,13 @@
 import mongoose = require("mongoose");
 import {Room, Rooms} from "./models/Room";
-import {getLogger, Logger} from "log4js";
+import {logger} from "./logging/Logger";
 import {User, Users} from "./models/User";
-import {from, merge, Observable} from "rxjs";
-import {shareReplay, switchMap, take, subscribeOn} from "rxjs/operators";
-import {spotifyService} from "./SpotifyService";
+import {from, Observable} from "rxjs";
+import {shareReplay} from "rxjs/operators";
+import {spotifyService} from "./spotifyService";
 
-const logger: Logger = getLogger();
 
-export class RoomManager {
+class RoomManager {
 
     constructor() {
         mongoose.connect('mongodb://localhost:27017/room', {
@@ -58,3 +57,5 @@ export class RoomManager {
         return room$;
     }
 }
+
+export const roomManager: RoomManager = new RoomManager();

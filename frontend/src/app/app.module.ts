@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { WindowRef } from './WindowRef';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,7 +37,7 @@ import {SocketServices} from './services/socket.services';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [AuthGuardService, AuthService, SpotifyService, MainButtonService, SocketServices],
+  providers: [AuthGuardService, AuthService, SpotifyService, MainButtonService, SocketServices, WindowRef ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

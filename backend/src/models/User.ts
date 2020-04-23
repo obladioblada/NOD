@@ -1,4 +1,5 @@
 import { Document, Schema, model } from "mongoose";
+import * as WebSocket from 'ws';
 
 export class User {
 
@@ -9,6 +10,7 @@ export class User {
     expirationDate: String;
     pictureUrl: String;
     roomId: String;
+    socket: WebSocket;
 
     constructor(data: {
         _id: String,

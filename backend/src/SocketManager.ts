@@ -2,12 +2,14 @@ import { userDBManager } from './DbManager'
 import * as WebSocket from "ws";
 import { server } from "./app"
 import {logger} from "./logging/Logger";
+import { MessageDto, MESSAGE_TYPE, joinMessage } from './models/sockets/Message';
+
 class SocketManager {
      ws : WebSocket.Server;
 
     constructor(server) {
         this.ws  = new WebSocket.Server({ server });
-        this.listen()
+        this.listen();
     }
 
     listen() {
@@ -15,18 +17,26 @@ class SocketManager {
         this.ws.on('connection', function(socket: WebSocket) {
             logger.info('Opened connection ');
             logger.info('broadcasting!');
-            // this.ws.clients.forEach((client)=> {
-            //     logger.info(WebSocket.OPEN);
-            //     logger.info(client.readyState);
-            //     if (client.readyState === WebSocket.OPEN) {
-            //         client.send(JSON.stringify({ type: 'newUserLogged'}));
-            //     }
-            // });
+    
 
             //connection is up, let's add a simple simple event
-            socket.on('message', (message: string) => {
+            socket.on('message', (m: string) => {
                 //log the received message and send it back to the client
-                logger.info('received: %s', message);
+                logger.info('received: %s', m);
+                let  message = MessageDto.unmarshal(JSON.parse(m));
+                
+
+                switch (message.type) {
+                    case MESSAGE_TYPE.JOIN:
+                        message= message as joinMessage;
+                        
+                        break;
+                        
+                        default:
+                            break;
+                            
+                        }
+            
             });
 
             //send immediatly a feedback to the incoming connection
@@ -46,6 +56,7 @@ class SocketManager {
 
     }
 
+    join(){};
 
 }
 

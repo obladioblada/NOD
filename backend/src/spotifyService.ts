@@ -297,6 +297,6 @@ export class SpotifyService {
 }
 
 export let spotifyService : SpotifyService = new SpotifyService(
-    process.env.SPOTIFY_CLIENT_ID,
-    process.env.SPOTIFY_CLIENT_SECRET
+    "9dc9612b49ac4e9bba44e1ecc936b188",
+    "ff2c9b01d6c941819d4ec3a1af126e82"
 );

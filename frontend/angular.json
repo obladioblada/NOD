@@ -31,7 +31,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "https://sdk.scdn.co/spotify-player.js"
+              "./src/spotify-player.js"
             ]
           },
           "configurations": {

@@ -5,16 +5,11 @@ import { roomManager } from "./RoomManager";
 import { combineLatest, Observable } from "rxjs";
 import { take, map, switchMap } from "rxjs/operators";
 import { User} from "./models/User";
-import * as WebSocket from 'ws';
 import * as http from 'http';
 import {logger} from "./logging/Logger";
 const PORT: any = 3000;
 let app = express();
-//initialize a simple http server
 export const server = http.createServer(app);
-
-
-
 
 
 app.get("", (_req, res) => {
@@ -29,8 +24,6 @@ server.listen(PORT, () => {
 process.on("SIGTERM", () => {
     logger.info("SIGTERM signal received.");
 });
-
-
 
 
 // handling CORS

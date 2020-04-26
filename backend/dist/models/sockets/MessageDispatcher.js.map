@@ -1,0 +1,1 @@
+{"version":3,"file":"MessageDispatcher.js","sourceRoot":"","sources":["../../../src/models/sockets/MessageDispatcher.ts"],"names":[],"mappings":";;AAEA,MAAM,iBAAiB;IAEnB,QAAQ;QACJ,OAAO,IAAI,CAAC;IAChB,CAAC;IAEK,OAAO,CAAC,GAAY;QACtB,OAAO,IAAI,CAAC;IAChB,CAAC;CACJ;AAEY,QAAA,iBAAiB,GAAG,IAAI,iBAAiB,EAAE,CAAC"}

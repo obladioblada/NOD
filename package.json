@@ -2,8 +2,8 @@
   "name": "nod",
   "version": "0.0.0",
   "scripts": {
-    "start-backend": "cd backend & npm run startBuild",
-    "start-frontend": "cd frontend & ng serve",
+    "start-backend": "cd backend && npm run startBuild",
+    "start-frontend": "cd frontend && ng serve",
     "start": "npm run start-backend && npm run start-frontend",
     "postinstall": "",
     "build": "",

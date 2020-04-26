@@ -5,8 +5,8 @@
     "start-backend": "cd backend && npm run startBuild",
     "start-frontend": "cd frontend && ng serve",
     "start": "npm run start-backend & npm run start-frontend",
-    "postinstall": "ng build --output-path ./frontend/dist",
-    "build": "ng build",
+    "postinstall": "cd frontend && ng build --output-path dist",
+    "build": "cd frontend && ng build",
     "stop": "pkill --signal SIGINT nod-backend"
   },
   "dependencies": {

@@ -1,35 +1,67 @@
-import { SourceMapping } from "module";
+import {Parameter} from "./Parameter"
 
-export enum MESSAGE_TYPE {
-    CONNECT = "CONNECT",
-    DISCONECT = "DISCONECT",
-    JOIN = "JOIN",
-    ENTER_ROOM = "ENTER_ROOM",
-    LEAVE_ROOM = "LEAVE_ROOM",
-    PLAY = "PLAY",
-    PAUSE = "PAUSE",
-    PLAY_SONG = "PLAY_SONG"
+
+
+export interface MessageDto {
+    sender: string;
+    timestamp: number;
+    type: Message.TYPE
+    params: Array<Parameter>;
+
+    doAction():Message;
+
 }
 
-export interface Message {
-    id: string;
-    type: MESSAGE_TYPE;
+export class Message implements MessageDto {
+    sender: string;
+    timestamp: number;
+    type: Message.TYPE
+    params: Array<Parameter>
+
+
+    constructor(sender: string, ...params: Parameter[]) {
+        this.sender = sender;
+    }
+
+    execute() {
+    }
+
+    doAction(): Message {
+        return undefined;
+    }
+
 }
 
+export namespace Message {
+    export enum TYPE {
+        CONNECT = "CONNECT",
+        DISCONECT = "DISCONECT",
+        JOIN = "JOIN",
+        LEAVE_ROOM = "LEAVE_ROOM",
+        PLAY = "PLAY",
+        PAUSE = "PAUSE",
+        PLAY_SONG = "PLAY_SONG"
+    }
+}
+
+
+/*
 export class Song {
     time: string;
     uri: string;
+
+    xx
 }
 
  
-export class joinMessage implements Message {
+export class joinMessage extends Message {
     public userToJoin: string;
     public song: Song;
     public id: string;
     public type: MESSAGE_TYPE;
     
-    constructor(userToJoin, song) {
-        
+    constructor(id, type) {
+        super(id, type);
     }
 }
 
@@ -67,10 +99,11 @@ export namespace joinParamsDto {
         return new joinMessage(params.userToJoin, params.song);
     }
 }
+*/
 
 
-export namespace MessageDto {
-    export const unmarshal = (message: MessageDto): Message => {
+/*export namespace MessageDto {
+    export const unmarshal = (message: MessageDto): any=> {
         switch (message.type) {
             case MESSAGE_TYPE.JOIN:
                 return new joinMessage(
@@ -81,15 +114,14 @@ export namespace MessageDto {
             default:
                 break;
         }
-     
+
     }
     const unmarshalParams = (type: string, params) => {
         switch (type) {
             case MESSAGE_TYPE.JOIN:
-                return joinParamsDto.unmarshal(params)
-            break;
+                return joinParamsDto.unmarshal(params);
             default:
                 break;
         }
     }
-}
+}*/

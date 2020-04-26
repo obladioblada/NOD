@@ -2,7 +2,8 @@ import { userDBManager } from './DbManager'
 import * as WebSocket from "ws";
 import { server } from "./app"
 import {logger} from "./logging/Logger";
-import { MessageDto, MESSAGE_TYPE, joinMessage } from './models/sockets/Message';
+import {Message} from './models/sockets/Message';
+import {messageDispatcher} from "./models/sockets/MessageDispatcher";
 
 class SocketManager {
      ws : WebSocket.Server;
@@ -20,23 +21,10 @@ class SocketManager {
     
 
             //connection is up, let's add a simple simple event
-            socket.on('message', (m: string) => {
+            socket.on('message', (m: Message) => {
                 //log the received message and send it back to the client
                 logger.info('received: %s', m);
-                let  message = MessageDto.unmarshal(JSON.parse(m));
-                
-
-                switch (message.type) {
-                    case MESSAGE_TYPE.JOIN:
-                        message= message as joinMessage;
-                        
-                        break;
-                        
-                        default:
-                            break;
-                            
-                        }
-            
+                //messageDispatcher.execute(m);
             });
 
             //send immediatly a feedback to the incoming connection

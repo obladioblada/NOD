@@ -2,11 +2,12 @@
   "name": "nod",
   "version": "0.0.0",
   "scripts": {
-    "start-backend": "cd backend && npm run start",
+    "start-backend": "cd backend && npm run startBuild",
     "start-frontend": "cd frontend && ng serve",
-    "start": "npm run start-frontend & npm run start-backend",
+    "start": "npm run start-backend & npm run start-frontend",
     "postinstall": "ng build --output-path ./frontend/dist",
-    "build": "ng build"
+    "build": "ng build",
+    "stop": "pkill --signal SIGINT nod-backend"
   },
   "dependencies": {
     "heroku": "^7.39.5"

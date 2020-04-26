@@ -1,4 +1,3 @@
-import {Parameter} from "./Parameter"
 
 
 
@@ -6,7 +5,6 @@ export interface MessageDto {
     sender: string;
     timestamp: number;
     type: Message.TYPE
-    params: Array<Parameter>;
 
     doAction():Message;
 
@@ -16,10 +14,10 @@ export class Message implements MessageDto {
     sender: string;
     timestamp: number;
     type: Message.TYPE
-    params: Array<Parameter>
 
 
-    constructor(sender: string, ...params: Parameter[]) {
+
+    constructor(sender: string) {
         this.sender = sender;
     }
 

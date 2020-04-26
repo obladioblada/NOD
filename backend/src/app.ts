@@ -21,8 +21,11 @@ server.listen(PORT, () => {
     }
 );
 
+process.title = "nod-backend";
+
 process.on("SIGTERM", () => {
     logger.info("SIGTERM signal received.");
+    server.close();
 });
 
 

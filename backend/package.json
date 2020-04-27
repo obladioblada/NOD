@@ -2,9 +2,7 @@
   "name": "nod-server",
   "version": "0.0.0",
   "scripts": {
-    "prestartBuild": "npm run build",
     "start": "node --inspect=5858 -r ts-node/register ./src/app.ts",
-    "startBuild" : "pm2 start ./dist/app.js",
     "start:watch": "nodemon",
     "build": "tsc"
   },

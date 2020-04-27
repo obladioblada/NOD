@@ -16,6 +16,9 @@ app.get("", (_req, res) => {
     res.send("NOD server is ON");
 });
 
+let distDir = __dirname + "../../frontend/src/";
+app.use(express.static(distDir));
+
 server.listen(PORT, () => {
         logger.info(`Server is listening on ${PORT}`);
     }

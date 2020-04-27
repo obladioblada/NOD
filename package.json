@@ -4,7 +4,7 @@
   "scripts": {
     "start-frontend": "cd frontend && ng serve",
     "prestart": "cd backend && npm run build",
-    "start": "npm run start-frontend & pm2-runtime start ecosystem.config.js --env production",
+    "start": "npm run start-frontend & pm2 start ecosystem.config.js --env production",
     "postinstall": "",
     "build": ""
   },

@@ -28,6 +28,12 @@ process.on("SIGTERM", () => {
     server.close();
 });
 
+process.on('SIGINT', () => {
+    logger.info("SIGINT signal received.");
+    server.close();
+});
+
+
 
 // handling CORS
 app.use((_req, res, next) => {

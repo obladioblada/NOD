@@ -10,7 +10,7 @@ import {spotifyService} from "./spotifyService";
 class RoomManager {
 
     constructor() {
-        mongoose.connect('mongodb://localhost:27017/room', {
+        mongoose.connect('mongodb://heroku_jlvwfpk0:p5c2nqamrkc05e9uoku11rb4dm@ds117164.mlab.com:17164/heroku_jlvwfpk0', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false

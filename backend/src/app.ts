@@ -8,15 +8,22 @@ import {User} from "./models/User";
 import * as http from 'http';
 import {logger} from "./logging/Logger";
 import path from "path";
+var bodyParser = require('body-parser');
+var routes = require("./routes");
+
 
 const PORT: any = ( process.env.PORT || 3000 );
 let app = express();
 export const server = http.createServer(app);
 
 
-let frontDistDir = path.join(__dirname, '/../../frontend/dist/nod');
+let frontDistDir = path.join(__dirname, '/../../frontend/dist');
 
 app.use(express.static(frontDistDir));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use("/api",routes);
 
 app.get("/", (_req, res) => {
     res.sendFile(frontDistDir + "index.html");

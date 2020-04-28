@@ -1,6 +1,6 @@
 const request = require('request');
 import {logger} from "./logging/Logger";
-import { User } from "./models/User";
+import {User} from "./models/User";
 
 export class SpotifyService {
 
@@ -8,7 +8,7 @@ export class SpotifyService {
     private _secretClient: string;
     redirectUrl: string;
 
-    constructor(clientId: string, secretClientId: string ) {
+    constructor(clientId: string, secretClientId: string) {
         this._clientId = clientId;
         this._secretClient = secretClientId;
     }
@@ -38,7 +38,7 @@ export class SpotifyService {
         let authOptions;
         authOptions = {
             url: 'https://accounts.spotify.com/api/token',
-            headers: {'Authorization': 'Basic ' + ( Buffer.from(this._clientId + ':' + this._secretClient).toString('base64'))},
+            headers: {'Authorization': 'Basic ' + (Buffer.from(this._clientId + ':' + this._secretClient).toString('base64'))},
             form: {
                 grant_type: 'refresh_token',
                 refresh_token: _refreshToken
@@ -46,21 +46,21 @@ export class SpotifyService {
             json: true
         };
         return new Promise((resolve, reject) => {
-                request.post(authOptions, (error, response, body) => {
-                    logger.info("Post for token");
-                    if (!error && response.statusCode === 200) {
-                        resolve({
-                            access_token: body.accessToken,
-                        });
-                    } else {
-                        reject({
+            request.post(authOptions, (error, response, body) => {
+                logger.info("Post for token");
+                if (!error && response.statusCode === 200) {
+                    resolve({
+                        access_token: body.accessToken,
+                    });
+                } else {
+                    reject({
                         error: body.error
                     });
                 }
             });
-    
+
         });
-      
+
     }
 
     authenticate(_authCode: string) {
@@ -83,7 +83,7 @@ export class SpotifyService {
                 logger.info("I got a token, lets get my info");
                 logger.info(body.access_token);
                 if (!error && response.statusCode === 200) {
-                        this.me(body.access_token)
+                    this.me(body.access_token)
                         .then((user: any) => {
                             resolve({
                                 ...body,
@@ -92,7 +92,7 @@ export class SpotifyService {
                                 pictureUrl: user.images[0].url,
                                 status: response.statusCode
                             });
-                        })                    
+                        })
                 } else {
                     reject({
                         status: response.statusCode,
@@ -111,7 +111,7 @@ export class SpotifyService {
         return new Date().getTime() > _expirationDate
     };
 
-    me(_accessToken:string) {
+    me(_accessToken: string) {
         logger.info(_accessToken);
         return new Promise((resolve, reject) => {
             const options = {
@@ -121,10 +121,10 @@ export class SpotifyService {
             };
             // use the access token to access the Spotify Web API
             request.get(options, function (error, response, body) {
-             if(body.status === 401 || !body){
-                logger.error("error user");
-                reject(body);
-             }
+                if (body.status === 401 || !body) {
+                    logger.error("error user");
+                    reject(body);
+                }
                 logger.info('user: ');
                 logger.info(body);
                 resolve(body)
@@ -133,7 +133,7 @@ export class SpotifyService {
         });
     }
 
-    CurrentlyPlaying(_accessToken:string) {
+    CurrentlyPlaying(_accessToken: string) {
         logger.info(_accessToken);
         return new Promise((resolve, reject) => {
             const options = {
@@ -163,26 +163,26 @@ export class SpotifyService {
 
     syncUsers(userToJoin: User, joiner: User) {
         return spotifyService.CurrentlyPlaying(userToJoin.accessToken)
-                .then((song: any) => {
-                    logger.info("playing song: " + song.name);
-                   const uriSong = song.uri;
-                   const progressMs = song.progress_ms;
-                   return spotifyService.playSame(joiner.accessToken, uriSong, progressMs)
-                        .then((response) => {
-                            logger.info(response);
-                            logger.info(joiner.name +  " joined!");
-                            return {response, song};
-                        })
-                        .catch((error) => {
-                            logger.info(joiner.name +  " failed to join!!");
-                            logger.error(error);
-                            return error;
-                        });
-                });
+            .then((song: any) => {
+                logger.info("playing song: " + song.name);
+                const uriSong = song.uri;
+                const progressMs = song.progress_ms;
+                return spotifyService.playSame(joiner.accessToken, uriSong, progressMs)
+                    .then((response) => {
+                        logger.info(response);
+                        logger.info(joiner.name + " joined!");
+                        return {response, song};
+                    })
+                    .catch((error) => {
+                        logger.info(joiner.name + " failed to join!!");
+                        logger.error(error);
+                        return error;
+                    });
+            });
 
     }
 
-    play(_accessToken:string) {
+    play(_accessToken: string) {
         return new Promise((resolve, reject) => {
             const options = {
                 url: 'https://api.spotify.com/v1/me/player/play',
@@ -192,7 +192,7 @@ export class SpotifyService {
             };
 
             // use the access token to access the Spotify Web API
-            request(options,(error, response, body) => {
+            request(options, (error, response, body) => {
                 if (error) {
                     reject(error);
                 }
@@ -216,7 +216,7 @@ export class SpotifyService {
             };
 
             // use the access token to access the Spotify Web API
-            request(options,(error, response, body) => {
+            request(options, (error, response, body) => {
                 if (error) {
                     reject(error);
                 }
@@ -232,8 +232,8 @@ export class SpotifyService {
                 url: 'https://api.spotify.com/v1/me/player',
                 headers: {'Authorization': 'Bearer ' + _accessToken},
                 json: true,
-                body:{
-                    device_ids:[id],
+                body: {
+                    device_ids: [id],
                     play: play
                 }
             };
@@ -249,7 +249,7 @@ export class SpotifyService {
     }
 
 
-    devices(_accessToken:string) {
+    devices(_accessToken: string) {
         return new Promise((resolve, reject) => {
             const options = {
                 url: 'https://api.spotify.com/v1/me/player/devices',
@@ -267,7 +267,7 @@ export class SpotifyService {
         });
     }
 
-    activeDevices(_accessToken:string) {
+    activeDevices(_accessToken: string) {
         return new Promise((resolve, reject) => {
             const options = {
                 url: 'https://api.spotify.com/v1/me/player/devices',
@@ -280,9 +280,9 @@ export class SpotifyService {
                     reject(error);
                 }
                 let devices = body["devices"];
-                for(let i = 0; i < devices.length; i++) {
+                for (let i = 0; i < devices.length; i++) {
                     let device = devices[i];
-                    if(device.is_active) {
+                    if (device.is_active) {
                         logger.info("active devices is " + device.id);
                         resolve(device.id);
                     }
@@ -296,7 +296,7 @@ export class SpotifyService {
 
 }
 
-export let spotifyService : SpotifyService = new SpotifyService(
+export let spotifyService: SpotifyService = new SpotifyService(
     "9dc9612b49ac4e9bba44e1ecc936b188",
     "ff2c9b01d6c941819d4ec3a1af126e82"
 );

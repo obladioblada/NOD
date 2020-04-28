@@ -1,1 +1,0 @@
-{"version":3,"file":"Song.js","sourceRoot":"","sources":["../../../src/models/sockets/Song.ts"],"names":[],"mappings":";;AAAA,MAAa,IAAI;IAMb,YAAY,GAAW,EAAE,IAAY,EAAE,SAAiB;QACpD,IAAI,CAAC,GAAG,GAAG,GAAG,CAAC;QACf,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC;QACjB,IAAI,CAAC,SAAS,GAAG,SAAS,CAAC;IAC/B,CAAC;CACJ;AAXD,oBAWC"}

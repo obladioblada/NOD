@@ -51,7 +51,7 @@ app.use((_req, res, next) => {
 
 
 const scopes = "user-read-private user-read-email user-follow-read streaming app-remote-control user-modify-playback-state playlist-read-collaborative user-read-playback-state user-modify-playback-state";
-spotifyService.redirectUrl = "http://localhost:4200/callback";
+spotifyService.redirectUrl = "https://nod2.herokuapp.com/callback";
 
 
 app.get("/authenticate", (req, res) => {

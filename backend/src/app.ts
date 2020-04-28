@@ -9,7 +9,7 @@ import * as http from 'http';
 import {logger} from "./logging/Logger";
 import path from "path";
 
-const PORT: any = 3000;
+const PORT: any = ( process.env.PORT || 3000 );
 let app = express();
 export const server = http.createServer(app);
 

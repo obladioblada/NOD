@@ -14,7 +14,7 @@ import * as moment from 'moment';
 })
 export class AuthService {
   // TODO: use env var here
-    private apiEndpoint = 'https://nod2.herokuapp.com/';
+    private apiEndpoint = 'https://nod2.herokuapp.com/api';
     private isloggedIn: boolean;
 
     private redirectUrl: string;

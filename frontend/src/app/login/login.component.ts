@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   invalidCredentialMsg: string;
   username: string;
   password: string;
-  retUrl='home';
+  retUrl = 'home';
   code: string;
   constructor(@Inject(DOCUMENT) private document: Document,
               private authService: AuthService,

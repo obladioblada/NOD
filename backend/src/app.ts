@@ -54,7 +54,7 @@ const scopes = "user-read-private user-read-email user-follow-read streaming app
 spotifyService.redirectUrl = "https://nod2.herokuapp.com/callback";
 
 
-app.get("/authenticate", (req, res) => {
+app.get("/api/authenticate", (req, res) => {
     const authCode = req.query.code || null;
     spotifyService.authenticate(authCode as string)
         .then((authResponse: any) => {
@@ -87,7 +87,7 @@ app.get("/authenticate", (req, res) => {
 });
 
 
-app.get("/updateToken", (_req, res) => {
+app.get("/api/updateToken", (_req, res) => {
     logger.info("no access token or token is exprired, rinnovo");
     logger.info("ricevuto code " + _req.query.code);
     userDBManager.getUserById(_req.query.id as string).subscribe((_user: User) => {
@@ -111,7 +111,7 @@ app.get("/updateToken", (_req, res) => {
     });
 });
 
-app.get("/login", (_req, res) => {
+app.get("/api/login", (_req, res) => {
     logger.info("CALLBACK to LOGIN");
     // creo sessione anonima aka addSessions() => entry = uuid, ''
     res.send({
@@ -124,7 +124,7 @@ app.get("/login", (_req, res) => {
     });
 });
 
-app.get("/me", (_req, res) => {
+app.get("/api/me", (_req, res) => {
     spotifyService.me(_req.query.access_token as string)
         .then((response) => {
             res.send(response);
@@ -135,7 +135,7 @@ app.get("/me", (_req, res) => {
         });
 });
 
-app.get("/users", (_req, res) => {
+app.get("/api/users", (_req, res) => {
     logger.info("ricevuto tokn " + _req.query.access_token);
     userDBManager.getUsers()
         .subscribe((loeggedUsers) => {
@@ -149,7 +149,7 @@ app.get("/users", (_req, res) => {
             });
 });
 
-app.get("/friends", (_req, res) => {
+app.get("/api/friends", (_req, res) => {
     logger.info("ricevuto tokn " + _req.query.access_token);
     userDBManager.getUsers()
         .subscribe((loggedUsers) => {
@@ -175,7 +175,7 @@ app.get("/friends", (_req, res) => {
 });
 
 
-app.get("/join", (_req, res) => {
+app.get("/api/join", (_req, res) => {
     join(_req.query.access_token as string, _req.query.user_id_to_join as string)
         .subscribe((val) => {
             res.send(val);
@@ -242,7 +242,7 @@ function join(userAccessToken: string, userIdToJoin: string): Observable<any> {
     logger.info("end joining");
 }
 
-app.get("/currently-playing", (_req, res) => {
+app.get("/api/currently-playing", (_req, res) => {
     spotifyService.CurrentlyPlaying(_req.query.access_token as string)
         .then((response) => {
             res.send(response);
@@ -253,7 +253,7 @@ app.get("/currently-playing", (_req, res) => {
         });
 });
 
-app.get("/play", (_req, res) => {
+app.get("/api/play", (_req, res) => {
     spotifyService.play(_req.query.access_token as string)
         .then((response) => {
             res.send(response);
@@ -264,7 +264,7 @@ app.get("/play", (_req, res) => {
         });
 });
 
-app.get("/player", (_req: any, res) => {
+app.get("/api/player", (_req: any, res) => {
     let play;
     if (_req.query.play === "true" || _req.query.play === "false") {
         play = JSON.parse(_req.query.play);
@@ -281,7 +281,7 @@ app.get("/player", (_req: any, res) => {
         });
 });
 
-app.get("/player/devices", (_req, res) => {
+app.get("/api/player/devices", (_req, res) => {
     spotifyService.devices(_req.query.access_token as string)
         .then((response) => {
             logger.info(response);

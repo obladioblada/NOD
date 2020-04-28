@@ -3,23 +3,23 @@ import * as WebSocket from 'ws';
 
 export class User {
 
-    _id: String;
-    name: String;
-    accessToken: String;
-    refreshToken: String;
-    expirationDate: String;
-    pictureUrl: String;
-    roomId: String;
+    _id: string;
+    name: string;
+    accessToken: string;
+    refreshToken: string;
+    expirationDate: string;
+    pictureUrl: string;
+    roomId: string;
     socket: WebSocket;
-    uuuiD: String;
+    uuuiD: string;
 
     constructor(data: {
-        _id: String,
-        name: String,
-        accessToken: String,
-        refreshToken: String,
-        expirationDate: String,
-        pictureUrl: String,
+        _id: string,
+        name: string,
+        accessToken: string,
+        refreshToken: string,
+        expirationDate: string,
+        pictureUrl: string,
     }) {
         this._id = data._id;
         this.name = data.name;

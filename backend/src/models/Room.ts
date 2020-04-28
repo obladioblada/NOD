@@ -2,11 +2,11 @@ import { Document, Schema, model } from "mongoose";
 import { User } from "./User";
 
 export class Room {
-    _id: String;
-    users: String[];
-    queue: String[];
+    _id: string;
+    users: string[];
+    queue: string[];
 
-    constructor(users: String[]) {
+    constructor(users: string[]) {
         this.users = users;
     }
 }

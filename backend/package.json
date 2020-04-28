@@ -1,6 +1,9 @@
 {
   "name": "nod-server",
   "version": "0.0.0",
+  "engines": {
+    "node": "10.16.3"
+  },
   "scripts": {
     "start": "node --inspect=5858 -r ts-node/register ./src/app.ts",
     "start:watch": "nodemon",

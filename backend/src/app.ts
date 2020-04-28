@@ -7,20 +7,23 @@ import { take, map, switchMap } from "rxjs/operators";
 import { User} from "./models/User";
 import * as http from 'http';
 import {logger} from "./logging/Logger";
+import path from "path";
 const PORT: any = 3000;
 let app = express();
 export const server = http.createServer(app);
 
 
-app.get("", (_req, res) => {
-    res.send("NOD server is ON");
-});
+let frontDistDir = path.join(__dirname, '/../../frontend/dist/nod');
 
-let distDir = __dirname + "../../frontend/src/";
-app.use(express.static(distDir));
+app.use(express.static(frontDistDir));
+
+app.get("/", (_req, res) => {
+    res.sendFile(frontDistDir + "index.html");
+});
 
 server.listen(PORT, () => {
         logger.info(`Server is listening on ${PORT}`);
+        logger.info(frontDistDir);
     }
 );
 

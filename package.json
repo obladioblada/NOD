@@ -2,11 +2,13 @@
   "name": "nod",
   "version": "0.0.0",
   "scripts": {
-    "start-frontend": "cd frontend && ng serve",
-    "prestart": "cd backend && npm run build",
-    "start": "npm run start-frontend & pm2-runtime start ecosystem.config.js --env production",
-    "postinstall": "",
-    "build": ""
+    "start-dev-frontend": "cd frontend && ng serve",
+    "start-dev-backend": "cd backend && npm run start:watch",
+    "start-dev": "npm run start-dev-frontend & npm run start-dev-backend",
+    "build-backend": "cd backend && npm run build",
+    "build-frontend":"cd frontend && ng build --prod",
+    "build": "npm run build-frontend && npm run build-backend",
+    "start": "pm2-runtime start ecosystem.config.js --env production"
   },
   "dependencies": {
     "@types/ws": "^7.2.4",

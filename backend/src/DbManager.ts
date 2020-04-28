@@ -46,7 +46,7 @@ class DB {
     }
 
 
-    getUserById(id: String): Observable<User> {
+    getUserById(id: string): Observable<User> {
         return from(
             Users.findById(id, function (err: any, document: IUserDocument) {
                 if (err) {

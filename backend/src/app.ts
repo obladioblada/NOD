@@ -176,7 +176,7 @@ app.get("/friends", (_req, res) => {
 
 
 app.get("/join", (_req, res) => {
-    join(_req.query.access_token, _req.query.user_id_to_join)
+    join(_req.query.access_token as string, _req.query.user_id_to_join as string)
         .subscribe((val) => {
             res.send(val);
         });

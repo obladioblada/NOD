@@ -14,7 +14,7 @@ import * as moment from 'moment';
 })
 export class AuthService {
   // TODO: use env var here
-    private apiEndpoint = 'http://localhost:3000';
+    private apiEndpoint = 'https://nod2.herokuapp.com/';
     private isloggedIn: boolean;
 
     private redirectUrl: string;
@@ -41,7 +41,7 @@ export class AuthService {
 
   login(code: string) {
     const body = {
-      code: code
+      code
     };
     return this.http.get<any>((Location.joinWithSlash(this.apiEndpoint, 'authenticate?code=' + code)))
     .pipe(map((res => this.setSession(res))), shareReplay());

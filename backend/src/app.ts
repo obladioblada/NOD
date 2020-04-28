@@ -56,7 +56,7 @@ spotifyService.redirectUrl = "http://localhost:4200/callback";
 
 app.get("/authenticate", (req, res) => {
     const authCode = req.query.code || null;
-    spotifyService.authenticate(authCode)
+    spotifyService.authenticate(authCode as string)
         .then((authResponse: any) => {
             logger.info("risposta da auth:");
             logger.info(authResponse);
@@ -90,7 +90,7 @@ app.get("/authenticate", (req, res) => {
 app.get("/updateToken", (_req, res) => {
     logger.info("no access token or token is exprired, rinnovo");
     logger.info("ricevuto code " + _req.query.code);
-    userDBManager.getUserById(_req.query.id).subscribe((_user: User) => {
+    userDBManager.getUserById(_req.query.id as string).subscribe((_user: User) => {
         logger.info(_user);
         if (!_user) {
             spotifyService.updateToken(_user.refreshToken)
@@ -125,7 +125,7 @@ app.get("/login", (_req, res) => {
 });
 
 app.get("/me", (_req, res) => {
-    spotifyService.me(_req.query.access_token)
+    spotifyService.me(_req.query.access_token as string)
         .then((response) => {
             res.send(response);
         })
@@ -243,7 +243,7 @@ function join(userAccessToken: string, userIdToJoin: string): Observable<any> {
 }
 
 app.get("/currently-playing", (_req, res) => {
-    spotifyService.CurrentlyPlaying(_req.query.access_token)
+    spotifyService.CurrentlyPlaying(_req.query.access_token as string)
         .then((response) => {
             res.send(response);
         })
@@ -254,7 +254,7 @@ app.get("/currently-playing", (_req, res) => {
 });
 
 app.get("/play", (_req, res) => {
-    spotifyService.play(_req.query.access_token)
+    spotifyService.play(_req.query.access_token as string)
         .then((response) => {
             res.send(response);
         })
@@ -265,7 +265,13 @@ app.get("/play", (_req, res) => {
 });
 
 app.get("/player", (_req: any, res) => {
-    spotifyService.player(_req.query.access_token, _req.query.id, _req.query.play)
+    let play;
+    if (_req.query.play === "true" || _req.query.play === "false") {
+        play = JSON.parse(_req.query.play);
+    } else {
+        res.sendStatus(400);
+    }
+    spotifyService.player(_req.query.access_token as string, _req.query.id as string, play === true as boolean)
         .then((response) => {
             res.send(response);
         })
@@ -276,7 +282,7 @@ app.get("/player", (_req: any, res) => {
 });
 
 app.get("/player/devices", (_req, res) => {
-    spotifyService.devices(_req.query.access_token)
+    spotifyService.devices(_req.query.access_token as string)
         .then((response) => {
             logger.info(response);
             res.send(response);

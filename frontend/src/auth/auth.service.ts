@@ -1,12 +1,13 @@
 
 import { Injectable, Inject } from '@angular/core';
-import { of, throwError } from 'rxjs';
+import { of, throwError, from } from 'rxjs';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Location, DOCUMENT } from '@angular/common';
 import { Router } from '@angular/router';
 import { map, shareReplay, catchError } from 'rxjs/operators';
 import { ButtonState } from 'src/app/main-button/button';
 import { MainButtonService } from 'src/app/main-button/main-button.service';
+import {environment } from '../environments/environment';
 import * as moment from 'moment';
 
 @Injectable({
@@ -14,7 +15,7 @@ import * as moment from 'moment';
 })
 export class AuthService {
   // TODO: use env var here
-    private apiEndpoint = 'https://nod2.herokuapp.com/api';
+    private apiEndpoint = environment.apiEndpoint;
     private isloggedIn: boolean;
 
     private redirectUrl: string;

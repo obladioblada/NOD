@@ -1,6 +1,7 @@
 const request = require('request');
 import {logger} from "./logging/Logger";
-import {User} from "./models/User";
+import { IUserDocument } from "./models/User";
+
 
 export class SpotifyService {
 
@@ -161,7 +162,7 @@ export class SpotifyService {
     }
 
 
-    syncUsers(userToJoin: User, joiner: User) {
+    syncUsers(userToJoin: IUserDocument, joiner: IUserDocument) {
         return spotifyService.CurrentlyPlaying(userToJoin.accessToken)
             .then((song: any) => {
                 logger.info("playing song: " + song.name);

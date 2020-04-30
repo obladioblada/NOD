@@ -1,5 +1,5 @@
-import { Document, Schema, model } from "mongoose";
-import { User } from "./User";
+import { dbConnection} from "../DbManager";
+import { Schema , Document, Model} from "mongoose";
 
 export class Room {
     _id: string;
@@ -17,6 +17,10 @@ export const RoomSchema: Schema = new Schema({
 });
 
 // 2) Document
-export interface IRoomDocument extends Room, Document {}
+export interface IRoomDocument extends Document {
+    _id: string;
+    users: string[];
+    queue: string[];
+}
 // 3) MODEL
-export const Rooms: model<IRoomDocument> = model<IRoomDocument>("Room", RoomSchema);
+export const Rooms: Model<IRoomDocument> = dbConnection.model<IRoomDocument>("Room", RoomSchema);

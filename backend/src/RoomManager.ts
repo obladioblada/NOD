@@ -10,7 +10,7 @@ import {spotifyService} from "./spotifyService";
 class RoomManager {
 
     constructor() {
-        mongoose.connect('mongodb://heroku_jlvwfpk0:p5c2nqamrkc05e9uoku11rb4dm@ds117164.mlab.com:17164/heroku_jlvwfpk0', {
+        mongoose.connect(process.env.MONGODB_URI  || 'mongodb://localhost:27017/room', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false
@@ -19,7 +19,7 @@ class RoomManager {
         });
     }
 
-    createRoom(userToJoin: User, joiner: User) {
+    createRoom(userToJoin: IUserDocument, joiner: IUserDocument) {
         const newRoom = new Room([userToJoin._id, joiner._id]);
         const newRoom$ = from(Rooms.create(newRoom)).pipe(shareReplay()) as Observable<Room>;
         return newRoom$;
@@ -37,7 +37,7 @@ class RoomManager {
         return room$  as Observable<Room>;
     }
 
-    joinRoom(userToJoin: User, joiner: User): Observable<Room> {
+    joinRoom(userToJoin: IUserDocument, joiner: IUserDocument): Observable<Room> {
         let room$: Observable<Room>;
         if (!userToJoin.roomId) {
             room$  = this.createRoom(userToJoin, joiner);

@@ -1,6 +1,6 @@
 
 import { Injectable, Inject } from '@angular/core';
-import { of } from 'rxjs';
+import { environment } from '../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Location, DOCUMENT } from '@angular/common';
 import { Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators';
 export class HttpAuthService {
 
   // TODO: use env var here
-    private apiEndpoint = 'http://localhost:3000';
+    private apiEndpoint = environment.apiEndpoint;
     private isloggedIn: boolean;
     private accessToken: string;
     private expirationDate: string;

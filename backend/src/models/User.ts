@@ -1,35 +1,7 @@
-import { Document, Schema, model } from "mongoose";
+import { Schema, Model , Document} from "mongoose";
 import * as WebSocket from 'ws';
+import { dbConnection } from "../DbManager";
 
-export class User {
-
-    _id: string;
-    name: string;
-    accessToken: string;
-    refreshToken: string;
-    expirationDate: string;
-    pictureUrl: string;
-    roomId: string;
-    socket: WebSocket;
-    uuuiD: string;
-
-    constructor(data: {
-        _id: string,
-        name: string,
-        accessToken: string,
-        refreshToken: string,
-        expirationDate: string,
-        pictureUrl: string,
-    }) {
-        this._id = data._id;
-        this.name = data.name;
-        this.accessToken = data.accessToken;
-        this.refreshToken = data.refreshToken;
-        this.expirationDate = data.expirationDate;
-        this.pictureUrl = data.pictureUrl;
-    }
-
-}
 
 
 export const UserSchema: Schema = new Schema({
@@ -43,7 +15,17 @@ export const UserSchema: Schema = new Schema({
 });
 
 // 2) Document
-export interface IUserDocument extends User, Document {}
+export interface IUserDocument extends Document {
+    _id: string;
+    name: string;
+    accessToken: string;
+    refreshToken: string;
+    expirationDate: string;
+    pictureUrl: string;
+    roomId: string;
+    socket: WebSocket;
+    uuuiD: string;
+}
 // 3) MODEL
-export const Users: model<IUserDocument> = model<IUserDocument>("User", UserSchema);
+export const Users: Model<IUserDocument> = dbConnection.model<IUserDocument>("User", UserSchema);
 

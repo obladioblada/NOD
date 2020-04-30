@@ -1,13 +1,13 @@
 import express = require("express");
 import {spotifyService} from "./spotifyService";
-import {userDBManager} from "./DbManager";
+import {userDBManager} from "./UserManager";
 import {roomManager} from "./RoomManager";
 import {combineLatest, Observable} from "rxjs";
 import {take, map, switchMap} from "rxjs/operators";
-import {User} from "./models/User";
 import * as http from 'http';
 import {logger} from "./logging/Logger";
 import path from "path";
+import { IUserDocument } from "./models/User";
 var bodyParser = require('body-parser');
 
 
@@ -66,14 +66,14 @@ app.get("/api/authenticate", (req, res) => {
             logger.info("risposta da auth:");
             logger.info(authResponse);
             if (authResponse.id) {
-                userDBManager.addOrUpdateUser(new User({
+                userDBManager.addOrUpdateUser({
                     _id: authResponse.id,
                     name: authResponse.name,
                     accessToken: authResponse.access_token,
                     refreshToken: authResponse.refresh_token,
                     expirationDate: authResponse.expires_in,
                     pictureUrl: authResponse.pictureUrl
-                })).subscribe((user) => {
+                } as IUserDocument).subscribe((user) => {
                     if (user !== null) {
                         res.send(user);
                     } else {
@@ -95,7 +95,7 @@ app.get("/api/authenticate", (req, res) => {
 app.get("/api/updateToken", (_req, res) => {
     logger.info("no access token or token is exprired, rinnovo");
     logger.info("ricevuto code " + _req.query.code);
-    userDBManager.getUserById(_req.query.id as string).subscribe((_user: User) => {
+    userDBManager.getUserById(_req.query.id as string).subscribe((_user: IUserDocument) => {
         logger.info(_user);
         if (!_user) {
             spotifyService.updateToken(_user.refreshToken)
@@ -169,7 +169,7 @@ app.get("/api/friends", (_req, res) => {
                     return user.accessToken !== _req.query.access_token
                 }).map(user => {
                     return {
-                        name: user.name, pictureUrl: user.pictureUrl, _id: user._id, roomId: user.rooomId
+                        name: user.name, pictureUrl: user.pictureUrl, _id: user._id, roomId: user.roomId
                     }
                 }));
             },
@@ -193,8 +193,8 @@ function join(userAccessToken: string, userIdToJoin: string): Observable<any> {
     let progressMs: string;
     let i = 0;
 
-    const userToJoin$: Observable<User> = userDBManager.getUserById(userIdToJoin).pipe(take(1));
-    const userJoiner$: Observable<User> = userDBManager.getUserByAccessToken(userAccessToken).pipe(take(1));
+    const userToJoin$: Observable<IUserDocument> = userDBManager.getUserById(userIdToJoin).pipe(take(1));
+    const userJoiner$: Observable<IUserDocument> = userDBManager.getUserByAccessToken(userAccessToken).pipe(take(1));
 
 
     //TODO: replace with http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-zip

@@ -1,6 +1,6 @@
 import { Schema, Model , Document} from "mongoose";
 import * as WebSocket from 'ws';
-import { dbConnection } from "../DbManager";
+import * as mongoose from "mongoose";
 
 
 
@@ -27,5 +27,5 @@ export interface IUserDocument extends Document {
     uuuiD: string;
 }
 // 3) MODEL
-export const Users: Model<IUserDocument> = dbConnection.model<IUserDocument>("User", UserSchema);
+export const Users: Model<IUserDocument> = mongoose.model<IUserDocument>("User", UserSchema);
 

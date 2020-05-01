@@ -16,7 +16,7 @@ export class LoginSevice {
   constructor( private http: HttpClient, private authService: AuthService){
 
   }
-  login(code:string, redirectUrl: string) {
+  login(code: string, redirectUrl: string) {
       //this.isloggedIn=true;
       this.authService.authenticate(code, redirectUrl).subscribe((data) => {
         console.log(data);

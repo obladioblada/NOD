@@ -3,29 +3,7 @@ import { logger } from "./logging/Logger";
 import { from, Observable } from "rxjs";
 import { IUserDocument, Users } from "./models/User";
 
-let dbManager = mongoose.connection;
-dbManager.on("error", console.error.bind(console, "connection error:"));
-dbManager.once("open", function () {
-    logger.info("coonected to dbManager");
-});
-
-class DB {
-
-    constructor() {
-        DB.connect();
-    }
-
-    private static connect(): any {
-        logger.info(process.env.MONGODB_URI);
-        mongoose.connect(process.env.MONGODB_URI  || "mongodb://localhost:27017/user", {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useFindAndModify: false
-        }).catch(function (reason) {
-            logger.error("Unable to connect to the mongodb instance. Error: ", reason);
-        });
-    }
-
+class UserDbManager {
 
     addOrUpdateUser(user: IUserDocument): Observable<IUserDocument> {
         return from(
@@ -75,7 +53,7 @@ class DB {
         );
     }
 
-     getUserByAccessToken(accessToken: String): Observable<IUserDocument> {
+     getUserByAccessToken(accessToken: string): Observable<IUserDocument> {
         return from(
             Users.findOne({accessToken: accessToken}, function (err: any, document: IUserDocument) {
                 if (err) {
@@ -93,4 +71,4 @@ class DB {
 
 }
 
-export const userDBManager : DB = new DB();
+export const userDBManager : UserDbManager = new UserDbManager();

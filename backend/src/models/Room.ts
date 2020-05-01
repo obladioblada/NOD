@@ -1,5 +1,5 @@
-import { dbConnection} from "../DbManager";
 import { Schema , Document, Model} from "mongoose";
+import * as mongoose from "mongoose";
 
 export class Room {
     _id: string;
@@ -23,4 +23,4 @@ export interface IRoomDocument extends Document {
     queue: string[];
 }
 // 3) MODEL
-export const Rooms: Model<IRoomDocument> = dbConnection.model<IRoomDocument>("Room", RoomSchema);
+export const Rooms: Model<IRoomDocument> = mongoose.model<IRoomDocument>("Room", RoomSchema);

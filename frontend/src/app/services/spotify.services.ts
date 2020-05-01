@@ -1,6 +1,5 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 
 @Injectable()
@@ -9,12 +8,13 @@ export class SpotifyService {
   private artistUrl: string;
   private albumsUrl: string;
   private albumUrl: string;
- // private clientId: string = environment.clientId;
- // private clientSecret: string = environment.clientSecret;
+  // private clientId: string = environment.clientId;
+  // private clientSecret: string = environment.clientSecret;
   private body: any;
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   // Get search results for a query
   searchMusic(query: string, type, authToken: string) {
@@ -29,7 +29,7 @@ export class SpotifyService {
     console.log(this.searchUrl);
     console.log(headers);
 
-    return this.http.get(this.searchUrl, headers );
+    return this.http.get(this.searchUrl, headers);
   }
 
   // Get data about artist that has been chosen to view
@@ -39,7 +39,7 @@ export class SpotifyService {
 
     this.artistUrl = 'https://api.spotify.com/v1/artists/' + id;
 
-    return this.http.get(this.artistUrl, { headers });
+    return this.http.get(this.artistUrl, {headers});
   }
 
   // Get the albums about the artist that has been chosen
@@ -49,16 +49,16 @@ export class SpotifyService {
 
     this.albumsUrl = 'https://api.spotify.com/v1/artists/' + id + '/albums?market=from_token&album_type=single';
 
-    return this.http.get(this.albumsUrl, { headers });
+    return this.http.get(this.albumsUrl, {headers});
   }
 
   // Get Tracks in ablum selected
-   getAlbum(id: string, authToken: string) {
-    const headers= new HttpHeaders();
+  getAlbum(id: string, authToken: string) {
+    const headers = new HttpHeaders();
     headers.append('Authorization', 'Bearer ' + authToken);
 
     this.albumUrl = 'https://api.spotify.com/v1/albums/' + id;
 
-    return this.http.get(this.albumUrl, { headers });
+    return this.http.get(this.albumUrl, {headers});
   }
 }

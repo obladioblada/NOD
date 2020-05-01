@@ -1,28 +1,16 @@
-import mongoose = require("mongoose");
 import {Room, Rooms} from "./models/Room";
 import {logger} from "./logging/Logger";
-import {User, Users} from "./models/User";
+import {IUserDocument, Users} from "./models/User";
 import {from, Observable} from "rxjs";
 import {shareReplay} from "rxjs/operators";
 import {spotifyService} from "./spotifyService";
 
 
-class RoomManager {
-
-    constructor() {
-        mongoose.connect(process.env.MONGODB_URI  || 'mongodb://localhost:27017/room', {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useFindAndModify: false
-        }).catch(function (reason) {
-            logger.error('Unable to connect to the mongodb instance. Error: ', reason);
-        });
-    }
+class RoomDbManager {
 
     createRoom(userToJoin: IUserDocument, joiner: IUserDocument) {
         const newRoom = new Room([userToJoin._id, joiner._id]);
-        const newRoom$ = from(Rooms.create(newRoom)).pipe(shareReplay()) as Observable<Room>;
-        return newRoom$;
+        return from(Rooms.create(newRoom)).pipe(shareReplay()) as Observable<Room>;
     }
 
     updateRoom(roomId: String, joiner) {
@@ -58,4 +46,4 @@ class RoomManager {
     }
 }
 
-export const roomManager: RoomManager = new RoomManager();
+export const roomDbManager: RoomDbManager = new RoomDbManager();

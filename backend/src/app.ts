@@ -1,7 +1,7 @@
 import express = require("express");
 import {spotifyService} from "./spotifyService";
-import {userDBManager} from "./UserManager";
-import {roomManager} from "./RoomManager";
+import {userDBManager} from "./UserDbManager";
+import {roomDbManager} from "./RoomDbManager";
 import {combineLatest, Observable} from "rxjs";
 import {take, map, switchMap} from "rxjs/operators";
 import * as http from 'http';
@@ -10,28 +10,20 @@ import path from "path";
 import { IUserDocument } from "./models/User";
 var bodyParser = require('body-parser');
 
+import {db} from "./DbManager"
+db.init();
+
 
 const PORT: any = ( process.env.PORT || 3000 );
 let app = express();
 export const server = http.createServer(app);
-
-
-let frontDistDir = path.join(__dirname, '/../../frontend/dist');
-
-app.use(express.static(frontDistDir));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-
-
-app.get("/", (_req, res) => {
-    res.sendFile(frontDistDir + "index.html");
-});
-
 server.listen(PORT, () => {
         logger.info(`Server is listening on ${PORT}`);
-        logger.info(frontDistDir);
     }
 );
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 process.title = "nod-backend";
 
@@ -56,7 +48,7 @@ app.use((_req, res, next) => {
 
 
 const scopes = "user-read-private user-read-email user-follow-read streaming app-remote-control user-modify-playback-state playlist-read-collaborative user-read-playback-state user-modify-playback-state";
-spotifyService.redirectUrl = "https://nod2.herokuapp.com/callback";
+spotifyService.redirectUrl = "http://localhost:4200/callback";
 
 
 app.get("/api/authenticate", (req, res) => {
@@ -207,7 +199,7 @@ function join(userAccessToken: string, userIdToJoin: string): Observable<any> {
             logger.info(result.userToJoin);
             logger.info("userToJoiner");
             logger.info(result.userJoiner);
-            return roomManager.joinRoom(result.userToJoin, result.userJoiner);
+            return roomDbManager.joinRoom(result.userToJoin, result.userJoiner);
         })
     );
 
@@ -244,7 +236,6 @@ function join(userAccessToken: string, userIdToJoin: string): Observable<any> {
         });
     });
     */
-    logger.info("end joining");
 }
 
 app.get("/api/currently-playing", (_req, res) => {

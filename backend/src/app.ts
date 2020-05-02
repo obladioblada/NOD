@@ -35,9 +35,6 @@ if (process.env.NODE_ENV === "production") {
     logger.info(" production binding angular");
     let frontDistDir = path.join(__dirname, '/../../dist/');
     app.use(express.static(frontDistDir));
-    app.get("*", (_req, res) => {
-        res.sendFile(frontDistDir + "index.html");
-    });
 }
 
 process.title = "nod-backend";

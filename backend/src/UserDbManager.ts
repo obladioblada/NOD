@@ -21,7 +21,7 @@ class UserDbManager {
                     return document;
                 }
             })
-        );
+        ) as Observable<IUserDocument>;
     }
 
 
@@ -36,7 +36,7 @@ class UserDbManager {
                     return document;
                 }
             })
-        );
+        ) as Observable<IUserDocument>;
     }
 
     getUsers(): Observable<IUserDocument[]> {
@@ -50,7 +50,7 @@ class UserDbManager {
                     return document;
                 }
             }) 
-        );
+        ) as Observable<IUserDocument[]>;
     }
 
      getUserByAccessToken(accessToken: string): Observable<IUserDocument> {
@@ -66,7 +66,7 @@ class UserDbManager {
                 logger.info("userByAccessToken :");
                 logger.info(document);
             })
-        );
+        ) as Observable<IUserDocument>;
     }
 
 }

@@ -30,11 +30,8 @@ server.listen(PORT, () => {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-console.log(process.env.NODE_ENV);
-logger.info(process.env.NODE_ENV);
 logger.info(path.join(__dirname, '/../../dist/'));
 if (process.env.NODE_ENV === "production") {
-    console.log(" production binding angular");
     logger.info(" production binding angular");
     let frontDistDir = path.join(__dirname, '/../../dist/');
     app.use(express.static(frontDistDir));
@@ -72,6 +69,7 @@ app.get("/api/authenticate", (req, res) => {
     const authCode = req.query.code || null;
     spotifyService.authenticate(authCode as string)
         .then((authResponse: any) => {
+            console.log(authResponse);
             logger.info("risposta da auth:");
             logger.info(authResponse);
             if (authResponse.id) {
@@ -83,7 +81,8 @@ app.get("/api/authenticate", (req, res) => {
                     expirationDate: authResponse.expires_in,
                     pictureUrl: authResponse.pictureUrl
                 } as IUserDocument).subscribe((user) => {
-                    logger.info(user);
+                    logger.info(JSON.stringify(user));
+                    console.log(user);
                     if (user !== null) {
                         res.send(user);
                     } else {

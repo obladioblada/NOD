@@ -30,11 +30,15 @@ server.listen(PORT, () => {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+console.log(process.env.NODE_ENV);
 logger.info(process.env.NODE_ENV);
+logger.info(path.join(__dirname, '/../../dist/'));
 if (process.env.NODE_ENV === "production") {
+    console.log(" production binding angular");
+    logger.info(" production binding angular");
     let frontDistDir = path.join(__dirname, '/../../dist/');
     app.use(express.static(frontDistDir));
-    app.get("/", (_req, res) => {
+    app.get("*", (_req, res) => {
         res.sendFile(frontDistDir + "index.html");
     });
 }

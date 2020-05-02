@@ -11,6 +11,7 @@ import { socketManager} from "./SocketManager";
 let bodyParser = require('body-parser');
 
 import {db} from "./DbManager"
+import path from "path";
 db.init();
 
 
@@ -25,6 +26,15 @@ server.listen(PORT, () => {
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+
+if (process.env.NODE_ENV === "prod") {
+    let frontDistDir = path.join(__dirname, '/../../frontend/dist/');
+    app.use(express.static(frontDistDir));
+    app.get("/", (_req, res) => {
+        res.sendFile(frontDistDir + "index.html");
+    });
+}
 
 process.title = "nod-backend";
 

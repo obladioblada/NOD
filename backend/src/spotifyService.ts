@@ -299,6 +299,6 @@ export class SpotifyService {
 }
 
 export let spotifyService: SpotifyService = new SpotifyService(
-    "9dc9612b49ac4e9bba44e1ecc936b188",
-    "ff2c9b01d6c941819d4ec3a1af126e82"
+    "480d513bb4094cbdaee6d781f5ea0a7b",
+    "ccf74b5773d044b4ae1940408234c8f3"
 );

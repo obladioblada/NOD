@@ -14,6 +14,9 @@ import {db} from "./DbManager"
 import path from "path";
 db.init();
 
+const scopes = "user-read-private user-read-email user-follow-read streaming app-remote-control user-modify-playback-state playlist-read-collaborative user-read-playback-state user-modify-playback-state";
+spotifyService.redirectUrl = (process.env.SPOTIFY_CALLBACK || "http://localhost:4200/callback");
+
 
 const PORT: any = ( process.env.PORT || 3000 );
 let app = express();
@@ -27,9 +30,9 @@ server.listen(PORT, () => {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-
-if (process.env.NODE_ENV === "prod") {
-    let frontDistDir = path.join(__dirname, '/../../frontend/dist/');
+logger.info(process.env.NODE_ENV);
+if (process.env.NODE_ENV === "production") {
+    let frontDistDir = path.join(__dirname, '/../../dist/');
     app.use(express.static(frontDistDir));
     app.get("/", (_req, res) => {
         res.sendFile(frontDistDir + "index.html");
@@ -58,8 +61,7 @@ app.use((_req, res, next) => {
 });
 
 
-const scopes = "user-read-private user-read-email user-follow-read streaming app-remote-control user-modify-playback-state playlist-read-collaborative user-read-playback-state user-modify-playback-state";
-spotifyService.redirectUrl = "http://localhost:4200/callback";
+
 
 
 app.get("/api/authenticate", (req, res) => {

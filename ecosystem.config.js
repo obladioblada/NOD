@@ -10,6 +10,7 @@ module.exports = {
     },
     env_production: {
       NODE_ENV: "production",
+      SPOTIFY_CALLBACK: "https://nod2.herokuapp.com/callback"
     }
   }]
 };

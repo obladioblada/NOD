@@ -7,14 +7,12 @@ class DB {
     private dbConnection: mongoose.Connection;
 
     init() {
-        mongoose.createConnection(process.env.MONGODB_URI || "mongodb://localhost:27017/nod", {
+        mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/nod", {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false
         }).then((connection => {
-            logger.info("successfully connected to " + connection.host);
-
-            this.dbConnection = connection
+            logger.info("successfully connected to");
         }))
             .catch(function (reason) {
                 logger.error("Unable to connect to the mongodb instance. Error: ", reason);

@@ -18,11 +18,11 @@ export class SpotifyService {
 
   // Get search results for a query
   searchMusic(query: string, type, authToken: string) {
-    //const headers = new HttpHeaders();
-    //headers.set('Authorization', 'Bearer ' + authToken);
+    // const headers = new HttpHeaders();
+    // headers.set('Authorization', 'Bearer ' + authToken);
 
     const headers = {
-      headers: {'Authorization': 'Bearer ' + authToken}
+      headers: {Authorization: 'Bearer ' + authToken}
     };
 
     this.searchUrl = 'https://api.spotify.com/v1/search?q=' + query + '&offset=0&limit=20&type=' + type + '&market=from_token';

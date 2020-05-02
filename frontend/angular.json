@@ -29,9 +29,6 @@
             ],
             "styles": [
               "src/styles.scss"
-            ],
-            "scripts": [
-              "https://sdk.scdn.co/spotify-player.js"
             ]
           },
           "configurations": {

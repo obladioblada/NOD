@@ -1,24 +1,23 @@
-
 import * as WebSocket from "ws";
-import { server } from "./app"
+import {server} from "./app"
 import {logger} from "./logging/Logger";
 import {Message} from './models/sockets/Message';
 
 
 class SocketManager {
-     ws : WebSocket.Server;
+    ws: WebSocket.Server;
 
-    constructor(server) {
-        this.ws  = new WebSocket.Server({ server });
+    init(server) {
+        this.ws = new WebSocket.Server({server});
         this.listen();
     }
 
     listen() {
         // When a connection is established
-        this.ws.on('connection', function(socket: WebSocket) {
+        this.ws.on('connection', function (socket: WebSocket) {
             logger.info('Opened connection ');
             logger.info('broadcasting!');
-    
+
 
             //connection is up, let's add a simple simple event
             socket.on('message', (m: Message) => {
@@ -31,7 +30,7 @@ class SocketManager {
             socket.send(JSON.stringify({message: 'Hi there, I am a WebSocket server'}));
 
             // The connection was closed
-            socket.on('close', function() {
+            socket.on('close', function () {
                 logger.info('Closed Connection ');
             });
 
@@ -44,8 +43,9 @@ class SocketManager {
 
     }
 
-    join(){};
+    join() {
+    };
 
 }
 
-export const socketManager : SocketManager = new SocketManager(server);
+export const socketManager: SocketManager = new SocketManager();

@@ -17,19 +17,19 @@ export class LoginSevice {
 
   }
   login(code: string, redirectUrl: string) {
-      //this.isloggedIn=true;
-      this.authService.authenticate(code, redirectUrl).subscribe((data) => {
-        console.log(data);
-        if(data["status"] !== 500){
-            this.isloggedIn=true;
-            /*
-            if (redirectUrl) {
-                  this.router.navigate( [redirectUrl]);
-             } else {
-                  this.router.navigate( ['']);
-             }
-             */
-          }
-      })
+      // this.isloggedIn=true;
+      // this.authService.authenticate(code, redirectUrl).subscribe((data) => {
+      //   console.log(data);
+      //   if(data["status"] !== 500){
+      //       this.isloggedIn=true;
+      //       /*
+      //       if (redirectUrl) {
+      //             this.router.navigate( [redirectUrl]);
+      //        } else {
+      //             this.router.navigate( ['']);
+      //        }
+      //        */
+      //     }
+      // });
     }
 }

@@ -6,9 +6,9 @@ import {combineLatest, Observable} from "rxjs";
 import {take, map, switchMap} from "rxjs/operators";
 import * as http from 'http';
 import {logger} from "./logging/Logger";
-import path from "path";
 import { IUserDocument } from "./models/User";
-var bodyParser = require('body-parser');
+import { socketManager} from "./SocketManager";
+let bodyParser = require('body-parser');
 
 import {db} from "./DbManager"
 db.init();
@@ -17,6 +17,7 @@ db.init();
 const PORT: any = ( process.env.PORT || 3000 );
 let app = express();
 export const server = http.createServer(app);
+socketManager.init(server);
 server.listen(PORT, () => {
         logger.info(`Server is listening on ${PORT}`);
     }
@@ -66,6 +67,7 @@ app.get("/api/authenticate", (req, res) => {
                     expirationDate: authResponse.expires_in,
                     pictureUrl: authResponse.pictureUrl
                 } as IUserDocument).subscribe((user) => {
+                    logger.info(user);
                     if (user !== null) {
                         res.send(user);
                     } else {

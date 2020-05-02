@@ -1,14 +1,15 @@
 import {Injectable} from '@angular/core';
 import {SpotifyService} from './spotify.services';
 import {webSocket, WebSocketSubject} from 'rxjs/webSocket';
-import {environment} from  '../../environments/environment'
+import {environment} from '../../environments/environment';
+
 @Injectable()
 export class SocketServices {
 
   private socket$: WebSocketSubject<any>;
 
   constructor(spotifyService: SpotifyService) {
-    this.socket$ = webSocket('ws://' + environment.apiEndpoint);
+    this.socket$ = webSocket('ws://localhost:3000');
     this.socket$.subscribe(
       msg => {
         console.log('message received: ');

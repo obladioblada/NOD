@@ -95,6 +95,7 @@ export class SpotifyService {
                             });
                         })
                 } else {
+                    logger.error("reject" + response.statusCode);
                     reject({
                         status: response.statusCode,
                         access_token: body.accessToken,

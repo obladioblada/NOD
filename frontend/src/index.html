@@ -17,7 +17,7 @@ window.onSpotifyWebPlaybackSDKReady = () => {
   if(localStorage.getItem('id_token')){
     const token = localStorage.getItem('id_token');
         const player = new Spotify.Player({
-          name: 'Nod Player',
+          name: 'Nod',
           getOAuthToken: cb => { cb(token); }
         });
 

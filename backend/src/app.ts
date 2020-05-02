@@ -67,6 +67,7 @@ app.use((_req, res, next) => {
 
 app.get("/api/authenticate", (req, res) => {
     const authCode = req.query.code || null;
+    console.log(authCode);
     spotifyService.authenticate(authCode as string)
         .then((authResponse: any) => {
             console.log(authResponse);
@@ -127,6 +128,7 @@ app.get("/api/updateToken", (_req, res) => {
 
 app.get("/api/login", (_req, res) => {
     logger.info("CALLBACK to LOGIN");
+    console.log("CALLBACK to LOGIN");
     // creo sessione anonima aka addSessions() => entry = uuid, ''
     res.send({
         redirectUrl: "https://accounts.spotify.com/authorize" +

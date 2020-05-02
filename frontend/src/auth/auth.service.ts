@@ -44,6 +44,7 @@ export class AuthService {
     const body = {
       code
     };
+    console.log('going to authenticate');
     return this.http.get<any>((Location.joinWithSlash(this.apiEndpoint, 'authenticate?code=' + code)))
     .pipe(map((res => this.setSession(res))), shareReplay());
 

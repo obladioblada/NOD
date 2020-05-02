@@ -37,7 +37,7 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static(frontDistDir));
     app.get("/*", (_req, res) => {
         console.log("sending" + frontDistDir + "/index.html");
-        res.sendFile(frontDistDir + "index.html");
+        res.sendFile(frontDistDir + "/index.html");
     });
 }
 

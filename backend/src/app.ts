@@ -30,13 +30,6 @@ server.listen(PORT, () => {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-logger.info(path.join(__dirname, '/../../dist'));
-if (process.env.NODE_ENV === "production") {
-    logger.info(" production binding angular");
-    let frontDistDir = path.join(__dirname, '/../../dist');
-    app.use(express.static(frontDistDir));
-}
-
 process.title = "nod-backend";
 
 process.on("SIGTERM", () => {
@@ -304,3 +297,16 @@ app.get("/api/player/devices", (_req, res) => {
             res.send(error);
         });
 });
+
+
+logger.info(path.join(__dirname, '/../../dist'));
+if (process.env.NODE_ENV === "production") {
+    logger.info(" production binding angular");
+    let frontDistDir = path.join(__dirname, '/../../dist');
+    app.use(express.static(frontDistDir));
+
+    app.get("/*", (_req, res) => {
+        console.log("sending" + frontDistDir + "/index.html");
+        res.sendFile(frontDistDir + "/index.html");
+    });
+}

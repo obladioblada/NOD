@@ -18,7 +18,7 @@ const scopes = "user-read-private user-read-email user-follow-read streaming app
 spotifyService.redirectUrl = (process.env.SPOTIFY_CALLBACK || "http://localhost:4200/callback");
 
 
-const PORT: any = ( process.env.PORT || 3000 );
+const PORT: any = ( process.env.PORT );
 let app = express();
 export const server = http.createServer(app);
 socketManager.init(server);
@@ -26,6 +26,7 @@ server.listen(PORT, () => {
         logger.info(`Server is listening on ${PORT}`);
     }
 );
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

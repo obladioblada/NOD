@@ -7,6 +7,7 @@ module.exports = {
     exec_mode : "cluster",
     env: {
       NODE_ENV: "development",
+      SPOTIFY_CALLBACK: "http://localhost/callback"
     },
     env_production: {
       NODE_ENV: "production",

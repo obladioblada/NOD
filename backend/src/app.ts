@@ -18,7 +18,7 @@ const scopes = "user-read-private user-read-email user-follow-read streaming app
 spotifyService.redirectUrl = (process.env.SPOTIFY_CALLBACK || "http://localhost:4200/callback");
 
 
-const PORT: any = ( process.env.PORT );
+const PORT: any = ( process.env.PORT || 3000 );
 let app = express();
 export const server = http.createServer(app);
 socketManager.init(server);

@@ -6,12 +6,11 @@ module.exports = {
     instances: "max",
     exec_mode : "cluster",
     env: {
-      NODE_ENV: "development",
-      SPOTIFY_CALLBACK: "http://localhost/callback"
+      NODE_ENV: "development"
     },
     env_production: {
       NODE_ENV: "production",
-      SPOTIFY_CALLBACK: "http://localhost/callback"
+      SPOTIFY_CALLBACK: "https://"+ process.env.HEROKU_APP_NAME+".herokuapp.com/callback"
     }
   }]
 };

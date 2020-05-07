@@ -70,7 +70,7 @@ export class HttpAuthService {
 
   users() {
     console.log(this.accessToken);
-    console.log("get users");
+    console.log('get users');
     return this.http.get(Location.joinWithSlash(this.apiEndpoint, 'users?access_token=' + this.accessToken))
       .pipe(map((data: any) => data.users));
   }

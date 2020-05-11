@@ -9,6 +9,7 @@ import { ButtonState } from 'src/app/main-button/button';
 import { MainButtonService } from 'src/app/main-button/main-button.service';
 import {environment } from '../environments/environment';
 import * as moment from 'moment';
+import {SpotifyConnectorService} from "../app/services/spotify-connector.service";
 
 @Injectable({
   providedIn: 'root'

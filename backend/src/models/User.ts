@@ -23,8 +23,6 @@ export interface IUserDocument extends Document {
     expirationDate: string;
     pictureUrl: string;
     roomId: string;
-    socket: WebSocket;
-    uuuiD: string;
 }
 // 3) MODEL
 export const Users: Model<IUserDocument> = mongoose.model<IUserDocument>("User", UserSchema);

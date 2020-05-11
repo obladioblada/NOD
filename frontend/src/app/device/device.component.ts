@@ -2,6 +2,7 @@ import { Component, Input, HostBinding, EventEmitter, Output } from '@angular/co
 import { AuthService } from 'src/auth/auth.service';
 import { MainButtonService } from '../main-button/main-button.service';
 import { ButtonState} from '../main-button/button';
+import {SocketService} from '../services/socket.service';
 
 @Component({
   selector: 'nod-device',
@@ -21,11 +22,13 @@ export class DeviceComponent {
   @Output()
   onPlayPause: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  isPlaying=false;
+  isPlaying = false;
 
   @HostBinding('class.is-active') isActive: boolean;
 
-  constructor(private authService: AuthService, private mainButtonService: MainButtonService) {  }
+  constructor(private authService: AuthService,
+              private mainButtonService: MainButtonService,
+              private socketServices: SocketService) {  }
 
   play() {
     this.mainButtonService.setButtonState(ButtonState.LOADING);
@@ -34,7 +37,11 @@ export class DeviceComponent {
       this.onPlayPause.emit(this.isPlaying);
       this.mainButtonService.setButtonState(ButtonState.SUCCESS);
       console.log(val);
+      if (this.isPlaying) {
+        this.socketServices.sendPlay('I am playing a song');
+      }
     });
+
 
   }
 

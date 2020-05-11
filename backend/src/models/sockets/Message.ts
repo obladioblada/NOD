@@ -4,7 +4,6 @@
 export interface MessageDto {
     sender: string;
     timestamp: number;
-    type: Message.TYPE
 
     doAction():Message;
 
@@ -13,8 +12,6 @@ export interface MessageDto {
 export class Message implements MessageDto {
     sender: string;
     timestamp: number;
-    type: Message.TYPE
-
 
 
     constructor(sender: string) {
@@ -28,18 +25,6 @@ export class Message implements MessageDto {
         return undefined;
     }
 
-}
-
-export namespace Message {
-    export enum TYPE {
-        CONNECT = "CONNECT",
-        DISCONECT = "DISCONECT",
-        JOIN = "JOIN",
-        LEAVE_ROOM = "LEAVE_ROOM",
-        PLAY = "PLAY",
-        PAUSE = "PAUSE",
-        PLAY_SONG = "PLAY_SONG"
-    }
 }
 
 

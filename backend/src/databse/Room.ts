@@ -1,5 +1,6 @@
-import { Schema , Document, Model} from "mongoose";
+import { Schema , Model} from "mongoose";
 import * as mongoose from "mongoose";
+import {IRoomDocument} from "../../../shared/RoomDto";
 
 export class Room {
     _id: string;
@@ -16,11 +17,5 @@ export const RoomSchema: Schema = new Schema({
     queue: [{type: String}]
 });
 
-// 2) Document
-export interface IRoomDocument extends Document {
-    _id: string;
-    users: string[];
-    queue: string[];
-}
 // 3) MODEL
 export const Rooms: Model<IRoomDocument> = mongoose.model<IRoomDocument>("Room", RoomSchema);

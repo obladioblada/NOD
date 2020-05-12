@@ -1,7 +1,5 @@
 import * as WebSocket from "ws";
-import {server} from "./app"
 import {logger} from "./logging/Logger";
-import {Message} from './models/sockets/Message';
 
 
 class SocketManager {
@@ -20,7 +18,7 @@ class SocketManager {
 
 
             //connection is up, let's add a simple simple event
-            socket.on('message', (m: Message) => {
+            socket.on('message', (m: any) => {
                 //log the received message and send it back to the client
                 logger.info('received: %s', m);
                 //messageDispatcher.execute(m);

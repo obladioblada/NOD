@@ -1,6 +1,8 @@
+import {IUserDocument} from "../../shared/UserDto";
+
 const request = require('request');
 import {logger} from "./logging/Logger";
-import { IUserDocument } from "./models/User";
+
 
 
 export class SpotifyService {

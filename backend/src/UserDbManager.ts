@@ -1,7 +1,7 @@
 import mongoose = require("mongoose");
 import { logger } from "./logging/Logger";
 import { from, Observable } from "rxjs";
-import { IUserDocument, Users } from "./models/User";
+import { IUserDocument, Users } from "./databse/User";
 
 class UserDbManager {
 

@@ -1,4 +1,4 @@
-export class Device {
+export class DeviceDto {
     id: string;
     isActive: boolean;
     name: string;
@@ -11,4 +11,12 @@ export class Device {
         this.name = name;
         this.type = type;
     }
+}
+
+export interface DeviceDto {
+    id: string;
+    isActive: boolean;
+    name: string;
+    type: string;
+    volue: number;
 }

@@ -1,9 +1,10 @@
-import {Room, Rooms} from "./models/Room";
+import {Room, Rooms} from "./databse/Room";
 import {logger} from "./logging/Logger";
-import {IUserDocument, Users} from "./models/User";
+import {Users} from "./databse/User";
 import {from, Observable} from "rxjs";
 import {shareReplay} from "rxjs/operators";
 import {spotifyService} from "./spotifyService";
+import {IUserDocument} from "../../shared/UserDto";
 
 
 class RoomDbManager {

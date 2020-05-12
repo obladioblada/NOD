@@ -6,7 +6,7 @@ import {combineLatest, Observable} from "rxjs";
 import {take, map, switchMap} from "rxjs/operators";
 import * as http from 'http';
 import {logger} from "./logging/Logger";
-import { IUserDocument } from "./models/User";
+import { IUserDocument } from "./databse/User";
 import { socketManager} from "./SocketManager";
 let bodyParser = require('body-parser');
 

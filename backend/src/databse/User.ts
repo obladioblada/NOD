@@ -1,6 +1,6 @@
 import { Schema, Model } from "mongoose";
 import * as mongoose from "mongoose";
-import {IUserDocument} from "../../../shared/UserDto";
+export { IUserDocument } from "../../../shared/UserDto";
 
 export const UserSchema: Schema = new Schema({
     _id: String,

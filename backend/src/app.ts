@@ -299,10 +299,9 @@ app.get("/api/player/devices", (_req, res) => {
 });
 
 
-logger.info(path.join(__dirname, '/../../dist'));
 if (process.env.NODE_ENV === "production") {
     logger.info(" production binding angular");
-    let frontDistDir = path.join(__dirname, '/../../dist');
+    let frontDistDir = path.join(__dirname, '/../../../../dist');
     app.use(express.static(frontDistDir));
 
     app.get("/*", (_req, res) => {

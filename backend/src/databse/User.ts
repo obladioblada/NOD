@@ -1,8 +1,16 @@
 import { Schema, Model } from "mongoose";
 import * as mongoose from "mongoose";
-import { IUserDocument } from "../../../shared/UserDto";
+import { IUserDocument as IuserD } from "../../../shared/UserDto";
 
-export IUserDocument as IUserDocument;
+export interface IUserDocument extends IuserD {
+    _id: string;
+    name: string;
+    accessToken: string;
+    refreshToken: string;
+    expirationDate: string;
+    pictureUrl: string;
+    roomId: string;
+}
 
 export const UserSchema: Schema = new Schema({
     _id: String,

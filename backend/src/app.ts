@@ -299,12 +299,11 @@ app.get("/api/player/devices", (_req, res) => {
 });
 
 
-logger.info(path.join(__dirname));
 if (process.env.NODE_ENV === "production") {
-    logger.info(" production binding angular");
+    logger.info(" binding angular");
     app.use(express.static(__dirname));
     app.get("/*", (_req, res) => {
-        console.log("sending/index.html");
-        res.sendFile("./index.html");
+        console.log("sending " + path.join(__dirname,"index.html"));
+        res.sendFile(path.join(__dirname,"index.html"));
     });
 }

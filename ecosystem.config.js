@@ -10,8 +10,8 @@ module.exports = {
     },
     env_production: {
       NODE_ENV: "production",
-      SPOTIFY_CALLBACK: "https://" + (process.env.HEROKU_APP_NAME !== undefined ?
-          process.env.HEROKU_APP_NAME + ".herokuapp.com" : "localhost:3000" ) + "/callback"
+      SPOTIFY_CALLBACK: process.env.HEROKU_APP_NAME !== undefined ? "https://" +  process.env.HEROKU_APP_NAME + ".herokuapp.com/callback":
+          "http://localhost:3000/callback"
     }
   }]
 };

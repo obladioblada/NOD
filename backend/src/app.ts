@@ -299,14 +299,11 @@ app.get("/api/player/devices", (_req, res) => {
 });
 
 
-logger.info(path.join(__dirname, '/../../../../dist'));
 if (process.env.NODE_ENV === "production") {
-    logger.info(" production binding angular");
-    let frontDistDir = path.join(__dirname, '/../../../../dist');
-    app.use(express.static(frontDistDir));
-
+    logger.info(" binding angular");
+    app.use(express.static(__dirname));
     app.get("/*", (_req, res) => {
-        console.log("sending" + frontDistDir + "/index.html");
-        res.sendFile(frontDistDir + "/index.html");
+        console.log("sending " + path.join(__dirname,"index.html"));
+        res.sendFile(path.join(__dirname,"index.html"));
     });
 }

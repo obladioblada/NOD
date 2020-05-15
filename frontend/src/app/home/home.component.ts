@@ -4,7 +4,8 @@ import { MainButtonService } from '../main-button/main-button.service';
 import { ButtonState, ButtonPosition } from '../main-button/button';
 import { Observable, Subject, Subscription, merge } from 'rxjs';
 import { switchMap, shareReplay } from 'rxjs/operators';
-import {SocketServices} from '../services/socket.services';
+import {SocketService} from '../services/socket.service';
+import {SpotifyConnectorService} from '../services/spotify-connector.service';
 
 @Component({
   selector: 'nod-home',
@@ -18,8 +19,10 @@ export class HomeComponent implements AfterViewInit {
   joinSucceded: boolean;
   mainButton$: Subscription;
 
-  constructor(private authService: AuthService, private mainButtonService: MainButtonService, socketServices: SocketServices) {
-    socketServices.sendMessage({message: 'heyyyy amico'});
+  constructor(private authService: AuthService,
+              private mainButtonService: MainButtonService,
+              private spotifyConnectorService: SpotifyConnectorService) {
+    this.spotifyConnectorService.connectNodPlayer();
     this.mainButtonService.setButtonState(ButtonState.LOADING);
     this.devices$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.devices()), shareReplay(1));
     this.users$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.friends()), shareReplay(1));

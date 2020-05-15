@@ -13,11 +13,15 @@ import { AuthService } from 'src/auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MainButtonService } from './main-button/main-button.service';
 import { DeviceComponent } from './device/device.component';
-import { SpotifyService } from './services/spotify.services';
+import { SpotifyService } from './services/spotify.service';
 import { SearchComponent } from './components/Search/search.component';
 import { TileComponent } from './components/tile/tile.component';
 import { UserComponent } from './user/user.component';
-import {SocketServices} from './services/socket.services';
+import {SocketService} from './services/socket.service';
+
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import {SpotifyConnectorService} from "./services/spotify-connector.service";
+const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
 @NgModule({
   declarations: [
@@ -35,9 +39,10 @@ import {SocketServices} from './services/socket.services';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SocketIoModule.forRoot(config)
   ],
-  providers: [AuthGuardService, AuthService, SpotifyService, MainButtonService, SocketServices, WindowRef ],
+  providers: [AuthGuardService, AuthService, SpotifyService, MainButtonService, SocketService, WindowRef, SpotifyConnectorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

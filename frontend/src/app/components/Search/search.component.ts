@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SpotifyService } from '../../services/spotify.services';
+import { SpotifyService } from '../../services/spotify.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
 
@@ -37,9 +37,9 @@ export class SearchComponent {
     ).subscribe((queryForm: any) => {
       this.spotifyService.searchMusic(queryForm.query, this.type_$.getValue(), this.authService.getAccessToken())
         .subscribe( (res) => {
-          console.log(res[this.type_$.getValue()+'s'].items)
-          this.results = res[this.type_$.getValue()+'s'].items
-        })
+          console.log(res[this.type_$.getValue()+'s'].items);
+          this.results = res[this.type_$.getValue()+'s'].items;
+        });
     });
   }
 

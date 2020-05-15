@@ -1,51 +1,33 @@
-import * as WebSocket from "ws";
-import {server} from "./app"
+import * as socketIo from 'socket.io'
 import {logger} from "./logging/Logger";
-import {Message} from './models/sockets/Message';
+import {SocketEvent} from "../../shared/socket/socketEvent";
 
 
 class SocketManager {
-    ws: WebSocket.Server;
+    io: socketIo.Server;
 
     init(server) {
-        this.ws = new WebSocket.Server({server});
-        this.listen();
-    }
+        logger.info("initialising socket Manager");
+        this.io =  socketIo.listen(server, { origins: '*:*'});
+        this.io.on("connection", function (socket: socketIo.Socket) {
+            console.log("a user connected");
+            console.log(socket.id);
+            socket.broadcast.emit(socket.id + 'connected');
 
-    listen() {
-        // When a connection is established
-        this.ws.on('connection', function (socket: WebSocket) {
-            logger.info('Opened connection ');
-            logger.info('broadcasting!');
-
-
-            //connection is up, let's add a simple simple event
-            socket.on('message', (m: Message) => {
-                //log the received message and send it back to the client
-                logger.info('received: %s', m);
-                //messageDispatcher.execute(m);
+            socket.on(SocketEvent.PLAY, (message) => {
+                console.log(message);
+                console.log("broadcasting");
+                socket.broadcast.emit(message);
+            });
+            socket.on('JOIN', (message) => {
+                console.log(message);
             });
 
-            //send immediatly a feedback to the incoming connection
-            socket.send(JSON.stringify({message: 'Hi there, I am a WebSocket server'}));
-
-            // The connection was closed
-            socket.on('close', function () {
-                logger.info('Closed Connection ');
+            socket.on('disconnect', () => {
+                console.log('user disconnected');
             });
-
         });
-
     }
-
-    public connectUser(uuid: string) {
-        // save uuuid into user
-
-    }
-
-    join() {
-    };
-
 }
 
 export const socketManager: SocketManager = new SocketManager();

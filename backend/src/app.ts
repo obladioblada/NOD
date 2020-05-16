@@ -168,11 +168,7 @@ app.get("/api/friends", (_req, res) => {
                     logger.info(_req.query.access_token);
                     logger.info(user.accessToken !== _req.query.access_token);
                     return user.accessToken !== _req.query.access_token
-                }).map(user => {
-                    return {
-                        name: user.name, pictureUrl: user.pictureUrl, _id: user._id, roomId: user.roomId
-                    }
-                }));
+                }).map((user: IUserDocument) =>  IUserDocument.marshal(user)));
             },
             (err) => {
                 logger.info(err);

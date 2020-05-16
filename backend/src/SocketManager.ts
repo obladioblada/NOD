@@ -12,6 +12,10 @@ class SocketManager {
         this.io.on("connection", function (socket: socketIo.Socket) {
             console.log("a user connected");
             console.log(socket.id);
+            socket.emit("connection", "welcome", (responseData) => {
+                console.log(responseData);
+            });
+
             socket.broadcast.emit(socket.id + 'connected');
 
             socket.on(SocketEvent.PLAY, (message) => {
@@ -19,12 +23,14 @@ class SocketManager {
                 console.log("broadcasting");
                 socket.broadcast.emit(message);
             });
-            socket.on('JOIN', (message) => {
+
+            socket.on(SocketEvent.JOIN_ROOM, (message) => {
                 console.log(message);
             });
 
-            socket.on('disconnect', () => {
+            socket.on('disconnect', (user) => {
                 console.log('user disconnected');
+                socket.broadcast.emit(user);
             });
         });
     }

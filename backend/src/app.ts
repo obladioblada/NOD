@@ -297,9 +297,10 @@ app.get("/api/player/devices", (_req, res) => {
 
 if (process.env.NODE_ENV === "production") {
     logger.info(" binding angular");
-    app.use(express.static(__dirname));
+    let dist = path.join(__dirname, './../../');
+    app.use(express.static(dist));
     app.get("/*", (_req, res) => {
-        console.log("sending " + path.join(__dirname,"index.html"));
-        res.sendFile(path.join(__dirname,"index.html"));
+        console.log("sending " + path.join(dist,"index.html"));
+        res.sendFile(path.join(dist,"index.html"));
     });
 }

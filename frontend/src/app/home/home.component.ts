@@ -19,6 +19,7 @@ export class HomeComponent implements AfterViewInit {
   refreshOccurs$: Subject<any> = new Subject();
   joinSucceded: boolean;
   mainButton$: Subscription;
+  showPlayer:boolean;
 
   constructor(private authService: AuthService,
               private mainButtonService: MainButtonService,
@@ -30,6 +31,7 @@ export class HomeComponent implements AfterViewInit {
     this.mainButton$ = merge(this.devices$, this.users$).subscribe(val => {
       this.mainButtonService.setButtonPosition(ButtonPosition.BOTTOM);
       this.mainButtonService.setButtonState(ButtonState.SUCCESS);
+      this.showPlayer = true;
     },
     (error) => {
       this.mainButtonService.setButtonPosition(ButtonPosition.CENTER);

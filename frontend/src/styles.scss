@@ -24,6 +24,7 @@ body {
   color: white;
   font-size: 14px;
   margin: 0;
+  overflow-x: hidden;
 }
 
 img {
@@ -75,15 +76,15 @@ a {
   cursor: pointer;
   &:focus, &:hover {
     &::-webkit-slider-thumb {
-      background: #1ed760;
-      box-shadow: 0 0 0 3px #f7fdff6e, 0 0 0 6px #1ed7606e;
+      background: #2db18f;
+      box-shadow: 0 0 0 3px #f7fdff6e, 0 0 0 6px #2db18f6e;
       transition: $ui-elements-transition;
    }
   }
   &:active {
     &::-webkit-slider-thumb {
-      background: #1ed760;
-      box-shadow: 0 0 0 2px #f7fdff6e, 0 0 0 4px #1ed7606e;
+      background: #2db18f;
+      box-shadow: 0 0 0 2px #f7fdff6e, 0 0 0 4px #2db18f6e;
       transition: $ui-elements-transition;
    }
   }

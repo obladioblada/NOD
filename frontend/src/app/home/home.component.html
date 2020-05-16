@@ -2,6 +2,9 @@
 <div class="devices">
 <nod-device *ngFor="let device of devices$ | async; trackBy: trackById" [device]="device"></nod-device>
 </div>
-<nod-main-button (click)="refresh()"></nod-main-button>
+
+<nod-main-button #button>
+  <nod-player *ngIf="showPlayer" ></nod-player>
+</nod-main-button>
 <div class="join" [ngClass]="{'success': joinSucceded}" (click)="join()"></div>
 

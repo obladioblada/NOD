@@ -28,8 +28,8 @@ input {
   transform: translateX(-50%);
   text-align: center;
   top: 0em;
-  border: 0.1em solid #1ed760;
-  border-top: 0.2em solid #1ed760;
+  border: 0.1em solid #2db18f;
+  border-top: 0.2em solid #2db18f;
   border-radius: 0 0 1em 1em;
   padding: .1em 0.7em;
   color: white;
@@ -41,7 +41,7 @@ input {
 input.focus {
   outline: none;
   top: -.1em;
-  border: 0.1em solid #1ed760;
+  border: 0.1em solid #2db18f;
   border-radius: 0 0 38px 38px;
   padding: 0.8em 3em;
   color: white;
@@ -87,7 +87,7 @@ ul.filters {
     width: 100vw;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    background: #1ed760;
+    background: #2db18f;
 
     transform: translateY(calc(-100% + 0.2em));
     transition: $faster-transition;
@@ -119,7 +119,7 @@ ul.filters {
 
     li {
       position: relative;
-       // background: #1ed760;
+       // background: #2db18f;
         font-size: .8em;
         padding: 1em;
         margin: 1em;
@@ -167,7 +167,7 @@ ul.filters {
 
 
 .spotify{
-  background: #1ed760;
+  background: #2db18f;
   position: fixed;
   width: 25vh;
   z-index: 100;

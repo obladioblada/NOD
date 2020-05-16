@@ -22,17 +22,18 @@ import {SocketService} from './services/socket.service';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import {SpotifyConnectorService} from "./services/spotify-connector.service";
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
-
+import { PlayerComponent } from './components/player/player.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
+    PlayerComponent,
     MainButtonComponent,
     DeviceComponent,
     SearchComponent,
     TileComponent,
-    UserComponent
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,4 +46,5 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
   providers: [AuthGuardService, AuthService, SpotifyService, MainButtonService, SocketService, WindowRef, SpotifyConnectorService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+ }

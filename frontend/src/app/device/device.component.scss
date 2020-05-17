@@ -1,7 +1,7 @@
 
 :host(.is-active){
   .icon {
-    background: #69d58e ;
+    //background: #69d58e ;
   }
 }
 :host {
@@ -14,10 +14,9 @@
     }
   }
 
-
   .icon {
     display: grid;
-    background: #a4bead;
+    background: #a4bead33;
     align-content: center;
     border-radius: 1em;
     height: 100%;

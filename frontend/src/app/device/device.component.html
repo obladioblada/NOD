@@ -1,4 +1,4 @@
-<nod-tile>
+<nod-tile [ngClass]="{'is-active' : device.is_active}">
   <div class="title tile-title" (click)="play()">
     <span class="name">{{device.name}} </span>
   </div>

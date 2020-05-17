@@ -11,6 +11,8 @@ import {environment } from '../environments/environment';
 import * as moment from 'moment';
 import { User } from 'src/app/models/User';
 import { UserDto } from './userDto';
+import { BackgroundService } from 'src/app/background/background.service';
+import { BackgroundAnimationState, BackgroundState } from 'src/app/background/background';
 
 // import {SpotifyConnectorService} from "../app/services/spotify-connector.service";
 
@@ -28,6 +30,7 @@ export class AuthService {
     constructor(
       @Inject(DOCUMENT) private document: Document,
       private mainButtonService: MainButtonService,
+      private backgroundService: BackgroundService,
       private http: HttpClient,
       private router: Router) {
     }
@@ -99,7 +102,7 @@ export class AuthService {
     console.log(localStorage.getItem('id_token'));
     return this.http.get<UserDto[]>(Location.joinWithSlash(this.apiEndpoint, 'friends?access_token=' + localStorage.getItem('id_token')))
     // 3. so now this guy here is still waiting for a any object, we want this to be the UserDto interface
-    // and we want to be sure the we can access a UserDto namespace that knows how to convert a UserDto to User 
+    // and we want to be sure the we can access a UserDto namespace that knows how to convert a UserDto to User
     // so next step is to convert UserDto to User instance
       .pipe(map((data: UserDto[]) => data.map(userDto => UserDto.unmarshal(userDto))));
   }
@@ -136,6 +139,7 @@ export class AuthService {
 
     errorHandler(error: HttpErrorResponse) {
       this.mainButtonService.setButtonState(ButtonState.ERROR);
+      this.backgroundService.setBackgroundState(BackgroundState.ERROR);
       if (error.error instanceof ErrorEvent) {
         // A client-side or network error occurred. Handle it accordingly.
         console.error('An error occurred:', error.error.message);

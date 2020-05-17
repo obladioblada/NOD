@@ -96,14 +96,18 @@
 
   .main-button.bottom {
     top: calc(100vh - #{$buttonSize} / 2);
+    @media screen and (max-width: 600px) {
+      top: calc(100vh - #{$buttonSize} / 2 - 100px);
+    }
+
     left: -#{$buttonSize};
     width: 100vw;
     border-radius: 50% 50% 50% 50% / 0% 0% 100% 100%;
     border-right: #{$buttonSize} solid #434343;
     border-left: #{$buttonSize} solid #434343;
     background: #434343;
-    &:before{
-     transform: scale(0);
+    &:before, &:after {
+      content:none;
     }
     &:hover {
       cursor: auto;
@@ -111,6 +115,11 @@
       transform: scale(1);
     }
   }
+
+
+.loop.main-button.bottom:after {
+  content:none;
+}
 
   .main-button.error {
     box-shadow: 0 4px 19px 6px rgba(244, 67, 54, 0.45);
@@ -148,7 +157,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  @include styling($buttonSize: 25vw);
+  @include styling($buttonSize: 35vw);
 }
 @media screen and (min-width: 601px) {
   @include styling($buttonSize: 25vh);

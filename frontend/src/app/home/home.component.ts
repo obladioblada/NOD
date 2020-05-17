@@ -7,6 +7,8 @@ import { switchMap, shareReplay } from 'rxjs/operators';
 import {SocketService} from '../services/socket.service';
 import {SpotifyConnectorService} from '../services/spotify-connector.service';
 import { User } from '../models/User';
+import { BackgroundService } from '../background/background.service';
+import { BackgroundState, BackgroundAnimationState } from '../background/background';
 
 @Component({
   selector: 'nod-home',
@@ -23,9 +25,11 @@ export class HomeComponent implements AfterViewInit {
 
   constructor(private authService: AuthService,
               private mainButtonService: MainButtonService,
+              private backgroundService: BackgroundService,
               private spotifyConnectorService: SpotifyConnectorService) {
     this.spotifyConnectorService.connectNodPlayer();
     this.mainButtonService.setButtonState(ButtonState.LOADING);
+    this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PAUSE);
     this.devices$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.devices()), shareReplay(1));
     this.users$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.friends()), shareReplay(1));
     this.mainButton$ = merge(this.devices$, this.users$).subscribe(val => {

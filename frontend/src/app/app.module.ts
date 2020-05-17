@@ -23,9 +23,11 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import {SpotifyConnectorService} from "./services/spotify-connector.service";
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 import { PlayerComponent } from './components/player/player.component';
+import { BackgroundComponent } from './background/background.component';
 @NgModule({
   declarations: [
     AppComponent,
+    BackgroundComponent,
     LoginComponent,
     HomeComponent,
     PlayerComponent,

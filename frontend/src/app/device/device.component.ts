@@ -3,6 +3,8 @@ import { AuthService } from 'src/auth/auth.service';
 import { MainButtonService } from '../main-button/main-button.service';
 import { ButtonState} from '../main-button/button';
 import {SocketService} from '../services/socket.service';
+import { BackgroundService } from '../background/background.service';
+import { BackgroundAnimationState, BackgroundState } from '../background/background';
 
 @Component({
   selector: 'nod-device',
@@ -28,17 +30,23 @@ export class DeviceComponent {
 
   constructor(private authService: AuthService,
               private mainButtonService: MainButtonService,
+              private backgroundService: BackgroundService,
               private socketServices: SocketService) {  }
 
   play() {
     this.mainButtonService.setButtonState(ButtonState.LOADING);
+
     this.authService.player(this.device.id, !this.isPlaying).subscribe(val => {
       this.isPlaying = !this.isPlaying;
       this.onPlayPause.emit(this.isPlaying);
       this.mainButtonService.setButtonState(ButtonState.SUCCESS);
+      this.backgroundService.setBackgroundState(BackgroundState.SUCCESS);
       console.log(val);
       if (this.isPlaying) {
+        this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PLAY);
         this.socketServices.sendPlay('I am playing a song');
+      } else {
+        this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PAUSE);
       }
     });
 

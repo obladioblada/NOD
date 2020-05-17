@@ -99,8 +99,9 @@
     left: -#{$buttonSize};
     width: 100vw;
     border-radius: 50% 50% 50% 50% / 0% 0% 100% 100%;
-    border-right: #{$buttonSize} solid #2db18f;
-    border-left: #{$buttonSize} solid #2db18f;
+    border-right: #{$buttonSize} solid #434343;
+    border-left: #{$buttonSize} solid #434343;
+    background: #434343;
     &:before{
      transform: scale(0);
     }

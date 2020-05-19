@@ -20,10 +20,12 @@ import { UserComponent } from './user/user.component';
 import {SocketService} from './services/socket.service';
 
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
-import {SpotifyConnectorService} from "./services/spotify-connector.service";
+import {SpotifyConnectorService} from './services/spotify-connector.service';
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 import { PlayerComponent } from './components/player/player.component';
 import { BackgroundComponent } from './background/background.component';
+import {SvgIconComponent} from './svg-icon.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +38,7 @@ import { BackgroundComponent } from './background/background.component';
     SearchComponent,
     TileComponent,
     UserComponent,
+    SvgIconComponent
   ],
   imports: [
     BrowserModule,

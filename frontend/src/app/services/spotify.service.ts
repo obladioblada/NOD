@@ -61,4 +61,13 @@ export class SpotifyService {
 
     return this.http.get(this.albumUrl, {headers});
   }
+
+  // Get current track playing
+  getCurrentPlaying(authToken: string) {
+    const headers = {
+      headers: {Authorization: 'Bearer ' + authToken}
+    };
+
+    return this.http.get('https://api.spotify.com/v1/me/player/currently-playing', headers);
+  }
 }

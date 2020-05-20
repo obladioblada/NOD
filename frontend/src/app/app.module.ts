@@ -13,6 +13,7 @@ import { AuthService } from 'src/auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MainButtonService } from './main-button/main-button.service';
 import { DeviceComponent } from './device/device.component';
+import { DevicesComponent } from './devices/devices.component';
 import { SpotifyService } from './services/spotify.service';
 import { SearchComponent } from './components/Search/search.component';
 import { TileComponent } from './components/tile/tile.component';
@@ -33,6 +34,7 @@ import { BackgroundComponent } from './background/background.component';
     PlayerComponent,
     MainButtonComponent,
     DeviceComponent,
+    DevicesComponent,
     SearchComponent,
     TileComponent,
     UserComponent,

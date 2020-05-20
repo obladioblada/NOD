@@ -1,0 +1,4 @@
+<div class="devices">
+  <div (click)="refresh()">Os</div>
+    <nod-device *ngFor="let device of devices; trackBy: trackById" [device]="device" [isPlaying]="device.is_active && isPlaying" (onPlayPause)="refresh()"></nod-device>
+</div>

@@ -1,5 +1,4 @@
 import { Component, Input, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { List } from 'Immutable';
 
 @Component({
   selector: 'nod-devices',
@@ -10,7 +9,7 @@ import { List } from 'Immutable';
 export class DevicesComponent implements OnInit {
 
   @Input()
-  devices: List<any>;
+  devices: any;
 
   @Input()
   isPlaying: boolean;

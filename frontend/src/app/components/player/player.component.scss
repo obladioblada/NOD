@@ -1,8 +1,66 @@
-.player-container {
-  width: 300px;
+.player-wrapper{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr min-content;
+  grid-template-columns:200px 1fr;
+  margin: auto;
+  height: 90px;
+}
+
+.current-song-info-wrapper{
+  display: grid;
+  grid-template-columns: 80px 140px;
+  grid-template-rows: 1fr 1fr;
+  text-align: left;
+  margin: auto;
+  padding-left: 12px;
+  padding-top: 12px;
+}
+
+.player-container {
+  width: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   margin: auto;
   vertical-align: middle;
-  height: 50%;
+  height: 90px;
+}
+
+.current-playing-artist{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  font-size: 0.85em;
+  padding-top: 10px
+}
+
+.current-playing-song{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  font-size: 0.85em;
+}
+.current-playing-img{
+  width: 64px;
+  height: 64px;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+button{
+  border: none;
+  size: 1em;
+  background: none;
+  transition: none;
+}
+button:focus {
+   outline: none;
+   box-shadow: none;
+ }
+
+button:hover {
+  background: #222222;
 }

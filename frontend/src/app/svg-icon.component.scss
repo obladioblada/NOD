@@ -1,7 +1,16 @@
 :host {
   display: inline-block;
+  transition: none;
+
   svg {
     display: inline-block;
+    all: inherit;
+    fill: #2db18f;
+    transition: none;
+  }
+
+  svg:active {
+    fill: #153b36;
     all: inherit;
   }
 }

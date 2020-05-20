@@ -1,13 +1,22 @@
 import {WindowRef} from '../WindowRef';
-import {Injectable} from '@angular/core';
+import {EventEmitter, Injectable, Output} from '@angular/core';
 
 declare var Spotify: any;
 
 @Injectable()
 export class SpotifyConnectorService {
 
+  private deviceId: string;
+  @Output()
+  onPlaySong: EventEmitter<any> = new EventEmitter<any>();
+
   constructor(private winRef: WindowRef) {
 
+  }
+
+
+  getDeviceId(): string {
+    return this.deviceId;
   }
 
   connectNodPlayer() {
@@ -37,13 +46,13 @@ export class SpotifyConnectorService {
 
         // Playback status updates
         player.addListener('player_state_changed', state => {
-          console.log(state);
+          this.onPlaySong.emit(state.track_window.current_track);
         });
 
         // Ready
         player.addListener('ready', ({device_id}) => {
           console.log('Ready with Device ID', device_id);
-
+          this.deviceId = device_id;
         });
 
         // Not Ready

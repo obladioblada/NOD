@@ -49,8 +49,6 @@ export class DeviceComponent {
         this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PAUSE);
       }
     });
-
-
   }
 
   setVolume(event) {

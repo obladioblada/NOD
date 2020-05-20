@@ -8,7 +8,7 @@ import {
   styleUrls: ['./svg-icon.component.scss'],
   template: `
     <svg>
-      <use fill="#2db18f" attr.xlink:href="/assets/icons/symbol-defs.svg#{{icon}}"></use>
+      <use attr.xlink:href="/assets/icons/symbol-defs.svg#{{icon}}"></use>
     </svg>    `
 })
 export class SvgIconComponent {

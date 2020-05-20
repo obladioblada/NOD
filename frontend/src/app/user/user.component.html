@@ -1,10 +1,11 @@
-<nod-tile>
-  <div class="title tile-title" (click)="join(user.id)">
+<nod-tile class="expand">
+  <div class="title" (click)="join(user.id)">
     <span class="name">{{user.name}} </span>
   </div>
-  <div calss="tile-footer">
+  <div class="footer">
+    <span class="name">Some Song</span>
   </div>
-  <div class="tile-image">
+  <div class="image">
     <img src="{{user.pictureUrl}}" alt="{{user.name}}">
   </div>
 </nod-tile>

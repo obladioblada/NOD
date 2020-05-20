@@ -1,19 +1,21 @@
 import {WindowRef} from '../WindowRef';
 import {Injectable} from '@angular/core';
+import { AuthService } from 'src/auth/auth.service';
+import { Subject, Observable } from 'rxjs';
 
 declare var Spotify: any;
 
 @Injectable()
 export class SpotifyConnectorService {
-
-  constructor(private winRef: WindowRef) {
+  connected: Subject<boolean> = new Subject<boolean>();
+  constructor(private winRef: WindowRef, private authService: AuthService) {
 
   }
 
-  connectNodPlayer() {
+  connectNodPlayer(): Observable<boolean>{
     this.winRef.nativeWindow.onSpotifyWebPlaybackSDKReady = () => {
-      if (localStorage.getItem('id_token')) {
-        const token = localStorage.getItem('id_token');
+      const token = this.authService.getAccessToken();
+      if (token) {
         const player = new Spotify.Player({
           name: 'Nod',
           getOAuthToken: cb => {
@@ -43,7 +45,7 @@ export class SpotifyConnectorService {
         // Ready
         player.addListener('ready', ({device_id}) => {
           console.log('Ready with Device ID', device_id);
-
+          this.connected.next(true);
         });
 
         // Not Ready
@@ -55,5 +57,12 @@ export class SpotifyConnectorService {
         player.connect();
       }
     };
+
+    return this.getSdkReady();
   }
+
+  getSdkReady(): Observable<boolean> {
+    return this.connected.asObservable();
+  }
+
 }

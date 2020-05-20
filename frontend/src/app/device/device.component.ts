@@ -24,13 +24,15 @@ export class DeviceComponent {
   @Output()
   onPlayPause: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  isPlaying = false;
+  @Input()
+  isPlaying : boolean;
 
   @HostBinding('class.is-active') isActive: boolean;
 
   constructor(private authService: AuthService,
               private mainButtonService: MainButtonService,
               private backgroundService: BackgroundService,
+
               private socketServices: SocketService) {  }
 
   play() {

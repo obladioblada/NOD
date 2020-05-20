@@ -1,5 +1,12 @@
-.player-container {
-display: grid;
-grid-row: 1;
-grid-column: 3;
+:host {
+  width: 300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-content: center;
+  justify-items: center;
+  height: 50%;
+  .icon {
+    width: 4em;
+    height: 4em;
+  }
 }

@@ -1,8 +1,5 @@
-import { Component, Input, EventEmitter, Output, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { List } from 'immutable';
-import { Observable, Subscription } from 'rxjs';
-import { AuthService } from 'src/auth/auth.service';
-import { SpotifyConnectorService } from '../services/spotify-connector.service';
+import { Component, Input, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { List } from 'Immutable';
 
 @Component({
   selector: 'nod-devices',

@@ -1,8 +1,12 @@
-.player-container {
+:host {
   width: 300px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin: auto;
-  vertical-align: middle;
+  align-content: center;
+  justify-items: center;
   height: 50%;
+  .icon {
+    width: 4em;
+    height: 4em;
+  }
 }

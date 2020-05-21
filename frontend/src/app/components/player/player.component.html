@@ -6,17 +6,18 @@
   </div>
   <div class="player-container">
     <button>
-      <nod-svg-icon icon="icon-previous2" class="icon"></nod-svg-icon>
+      <nod-svg-icon icon="icon-previous2" class="icon player-icon"></nod-svg-icon>
     </button>
     <button (click)="play()">
-      <nod-svg-icon *ngIf="!isPlaying" icon="icon-play3" class="icon"></nod-svg-icon>
-      <nod-svg-icon *ngIf="isPlaying" icon="icon-pause2" class="icon"></nod-svg-icon>
+      <nod-svg-icon *ngIf="!isPlaying" icon="icon-play3" class="icon player-icon"></nod-svg-icon>
+      <nod-svg-icon *ngIf="isPlaying" icon="icon-pause2" class="icon player-icon"></nod-svg-icon>
     </button>
     <button>
-      <nod-svg-icon icon="icon-next2" class="icon"></nod-svg-icon>
+      <nod-svg-icon icon="icon-next2" class="icon player-icon"></nod-svg-icon>
     </button>
     <button>
-      <nod-svg-icon icon="icon-queue_music" class="icon"></nod-svg-icon>
+      <nod-svg-icon icon="icon-device" class="icon player-icon"></nod-svg-icon>
     </button>
   </div>
+  <div></div>
 </div>

@@ -40,7 +40,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
     this.currentPlaying$ = this.refreshOccurs$.asObservable()
       .pipe(switchMap(() => this.spotifyService.getCurrentPlaying(authService.getAccessToken())), shareReplay());
     this.sdkReady$ =  this.spotifyConnectorService.connectNodPlayer();
-
+    this.devices$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.devices()));
     this.users$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.friends()));
    }
 
@@ -50,7 +50,6 @@ export class HomeComponent implements AfterViewInit, OnInit {
      this.mainButton$ = combineLatest([this.devices$, this.users$, this.currentPlaying$]).pipe(
          map(([devices, users, currentPlaying]) => ({devices, users, currentPlaying}))
        ).subscribe(({devices, users, currentPlaying}) => {
-
           this.mainButtonService.setButtonPosition(ButtonPosition.BOTTOM);
           this.mainButtonService.setButtonState(ButtonState.SUCCESS);
           this.backgroundService.setBackgroundState(BackgroundState.SUCCESS);

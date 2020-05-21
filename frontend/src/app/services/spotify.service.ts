@@ -4,6 +4,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable()
 export class SpotifyService {
+  selectedDevice: string;
   private searchUrl: string;
   private artistUrl: string;
   private albumsUrl: string;
@@ -62,7 +63,7 @@ export class SpotifyService {
     return this.http.get(this.albumUrl, {headers});
   }
   // Get current track playing
-  getCurrentPlaying(authToken: string): any{
+  getCurrentPlaying(authToken: string): any {
     const headers = {
       headers: {Authorization: 'Bearer ' + authToken}
     };

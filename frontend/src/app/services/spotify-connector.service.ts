@@ -9,7 +9,6 @@ declare var Spotify: any;
 export class SpotifyConnectorService {
 
   private deviceId: string;
-  @Output()
   onPlaySong: Subject<any> = new Subject<any>();
   connected: Subject<boolean> = new Subject<boolean>();
 
@@ -50,6 +49,7 @@ export class SpotifyConnectorService {
 
         // Playback status updates
         player.addListener('player_state_changed', state => {
+          console.log(state);
           this.onPlaySong.next(state.track_window.current_track);
         });
 

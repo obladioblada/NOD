@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import {Component, AfterViewInit, ChangeDetectionStrategy, OnInit, NgZone} from '@angular/core';
 import { AuthService } from 'src/auth/auth.service';
 import { MainButtonService } from '../main-button/main-button.service';
 import { ButtonState, ButtonPosition } from '../main-button/button';
@@ -34,7 +34,8 @@ export class HomeComponent implements AfterViewInit, OnInit {
               private mainButtonService: MainButtonService,
               private backgroundService: BackgroundService,
               private spotifyService: SpotifyService,
-              private spotifyConnectorService: SpotifyConnectorService) {
+              private spotifyConnectorService: SpotifyConnectorService,
+              private ngZone: NgZone) {
     this.mainButtonService.setButtonState(ButtonState.LOADING);
     this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PAUSE);
     this.currentPlaying$ = this.refreshOccurs$.asObservable()
@@ -45,8 +46,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
    }
 
    ngOnInit() {
-     this.sdkReady$.subscribe(() => this.refresh());
-
+     this.sdkReady$.subscribe(() => this.ngZone.run(() => this.refresh()));
      this.mainButton$ = combineLatest([this.devices$, this.users$, this.currentPlaying$]).pipe(
          map(([devices, users, currentPlaying]) => ({devices, users, currentPlaying}))
        ).subscribe(({devices, users, currentPlaying}) => {

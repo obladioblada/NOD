@@ -1,7 +1,6 @@
-.player-wrapper{
+:host{
   display: grid;
   grid-template-columns:1fr 1fr 1fr;
-  margin: auto;
   width: 100vw;
 }
 
@@ -9,18 +8,7 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 1fr;
-  text-align: left;
-}
-
-.player-container {
-  display: grid;
-  grid-template-columns:1fr 1fr 1fr;
-
-}
-
-.player-icon {
-  width: 4em;
-  height: 4em;
+  align-items: center;
 }
 
 .current-playing-artist{
@@ -29,7 +17,7 @@
   grid-row-start: 2;
   grid-row-end: 2;
   font-size: 0.85em;
-  padding-top: 10px
+  cursor: pointer;
 }
 
 .current-playing-song{
@@ -37,7 +25,8 @@
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 1;
-  padding-top: 25px;
+  align-self: self-end;
+  cursor: pointer;
 }
 .current-playing-img{
   width: 64px;
@@ -46,7 +35,20 @@
   grid-column-end: 1;
   grid-row-start: 1;
   grid-row-end: 3;
-  margin: auto;
+  justify-self: center;
+}
+
+.player-container {
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.player-icon {
+  width: 4em;
+  height: 4em;
 }
 
 button{

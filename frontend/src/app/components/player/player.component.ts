@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, NgZone, OnInit, Output} from '@angular/core';
 import {ButtonState} from '../../main-button/button';
 import {BackgroundAnimationState, BackgroundState} from '../../background/background';
 import {AuthService} from '../../../auth/auth.service';
@@ -26,11 +26,8 @@ export class PlayerComponent implements OnInit {
               private backgroundService: BackgroundService,
               private socketServices: SocketService,
               private spotifyConnectorService: SpotifyConnectorService,
-              private spotifyService: SpotifyService) {
-    this.isPlaying = false;
-  }
-
-  ngOnInit(): void {
+              private spotifyService: SpotifyService,
+              private ngZone: NgZone) {
     this.spotifyConnectorService.onPlaySong.subscribe(currentTrack => {
       console.log(currentTrack);
       console.log(currentTrack.name);
@@ -39,26 +36,30 @@ export class PlayerComponent implements OnInit {
       this.currentArtist = currentTrack.artists[0].name;
     });
     this.spotifyService.getCurrentPlaying(this.authService.getAccessToken()).subscribe(currentTrack => {
-        console.log(currentTrack);
+      console.log(currentTrack);
     });
+  }
+
+  ngOnInit(): void {
+
   }
 
 
   play() {
     this.mainButtonService.setButtonState(ButtonState.LOADING);
-    this.authService.player(this.spotifyConnectorService.getDeviceId(), !this.isPlaying).subscribe(val => {
-      this.isPlaying = !this.isPlaying;
-      this.onPlayPause.emit(this.isPlaying);
-      this.mainButtonService.setButtonState(ButtonState.SUCCESS);
-      this.backgroundService.setBackgroundState(BackgroundState.SUCCESS);
-      console.log(val);
-      if (this.isPlaying) {
-        this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PLAY);
-        this.socketServices.sendPlay('I am playing a song');
-      } else {
-        this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PAUSE);
-      }
-    });
+    this.authService.player(this.spotifyService.selectedDevice || this.spotifyConnectorService.getDeviceId(), !this.isPlaying)
+      .subscribe((val) => this.ngZone.run((val) => {
+        this.isPlaying = !this.isPlaying;
+        this.onPlayPause.emit(this.isPlaying);
+        this.mainButtonService.setButtonState(ButtonState.SUCCESS);
+        console.log(val);
+        if (this.isPlaying) {
+          this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PLAY);
+          this.socketServices.sendPlay('I am playing a song');
+        } else {
+          this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PAUSE);
+        }
+      }));
   }
 
 

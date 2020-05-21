@@ -5,14 +5,14 @@
     <div class="current-playing-artist">{{currentArtist}}</div>
   </div>
   <div class="player-container">
-    <button (click)="previous()">
+    <button>
       <nod-svg-icon icon="icon-previous2" class="icon"></nod-svg-icon>
     </button>
     <button (click)="play()">
       <nod-svg-icon *ngIf="!isPlaying" icon="icon-play3" class="icon"></nod-svg-icon>
       <nod-svg-icon *ngIf="isPlaying" icon="icon-pause2" class="icon"></nod-svg-icon>
     </button>
-    <button (click)="next()">
+    <button>
       <nod-svg-icon icon="icon-next2" class="icon"></nod-svg-icon>
     </button>
     <button>

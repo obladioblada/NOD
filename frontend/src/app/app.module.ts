@@ -24,13 +24,14 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import {SpotifyConnectorService} from './services/spotify-connector.service';
 
 const config: SocketIoConfig = {
-  url: 'http://localhost:3000', options: {
+  url: environment.socketEndpoint, options: {
     transport: ['websocket']
   }
 };
 import { PlayerComponent } from './components/player/player.component';
 import { BackgroundComponent } from './background/background.component';
 import {SvgIconComponent} from './svg-icon.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [

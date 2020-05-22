@@ -1,5 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { List } from 'immutable';
+import {SpotifyService} from '../services/spotify.service';
 
 @Component({
   selector: 'nod-devices',
@@ -10,7 +10,7 @@ import { List } from 'immutable';
 export class DevicesComponent implements OnInit {
 
   @Input()
-  devices: List<any>;
+  devices: any;
 
   @Input()
   isPlaying: boolean;

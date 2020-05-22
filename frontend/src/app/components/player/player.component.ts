@@ -1,12 +1,12 @@
-import {Component, EventEmitter, NgZone, OnInit, Output} from '@angular/core';
+import {Component, NgZone, OnInit} from '@angular/core';
 import {ButtonState} from '../../main-button/button';
-import {BackgroundAnimationState, BackgroundState} from '../../background/background';
+import {BackgroundAnimationState} from '../../background/background';
 import {AuthService} from '../../../auth/auth.service';
 import {MainButtonService} from '../../main-button/main-button.service';
 import {BackgroundService} from '../../background/background.service';
 import {SocketService} from '../../services/socket.service';
 import {SpotifyConnectorService} from '../../services/spotify-connector.service';
-import {SpotifyService} from "../../services/spotify.service";
+import {SpotifyService} from '../../services/spotify.service';
 
 @Component({
   selector: 'nod-player',
@@ -14,8 +14,6 @@ import {SpotifyService} from "../../services/spotify.service";
   styleUrls: ['./player.component.scss']
 })
 export class PlayerComponent implements OnInit {
-  @Output()
-  onPlayPause: EventEmitter<boolean> = new EventEmitter<boolean>();
   isPlaying: boolean;
   currentSong: string;
   currentImgUrl: string;
@@ -28,6 +26,11 @@ export class PlayerComponent implements OnInit {
               private spotifyConnectorService: SpotifyConnectorService,
               private spotifyService: SpotifyService,
               private ngZone: NgZone) {
+    this.isPlaying = false;
+  }
+
+  ngOnInit(): void {
+    // TODO fix current son  when listen from other devices;
     this.spotifyConnectorService.onPlaySong.subscribe(currentTrack => {
       console.log(currentTrack);
       console.log(currentTrack.name);
@@ -36,30 +39,31 @@ export class PlayerComponent implements OnInit {
       this.currentArtist = currentTrack.artists[0].name;
     });
     this.spotifyService.getCurrentPlaying(this.authService.getAccessToken()).subscribe(currentTrack => {
-      console.log(currentTrack);
+      if (!currentTrack) {
+        this.isPlaying = false;
+      } else {
+        console.log(currentTrack);
+      }
     });
   }
 
-  ngOnInit(): void {
-
-  }
-
-
   play() {
     this.mainButtonService.setButtonState(ButtonState.LOADING);
-    this.authService.player(this.spotifyService.selectedDevice || this.spotifyConnectorService.getDeviceId(), !this.isPlaying)
-      .subscribe((val) => this.ngZone.run((val) => {
-        this.isPlaying = !this.isPlaying;
-        this.onPlayPause.emit(this.isPlaying);
-        this.mainButtonService.setButtonState(ButtonState.SUCCESS);
-        console.log(val);
-        if (this.isPlaying) {
-          this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PLAY);
-          this.socketServices.sendPlay('I am playing a song');
-        } else {
-          this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PAUSE);
-        }
-      }));
+    this.authService.player(this.spotifyConnectorService.getDeviceId(), !this.isPlaying)
+      .subscribe(val => {
+        this.ngZone.run(() => {
+          console.log(!this.isPlaying);
+          this.isPlaying = !this.isPlaying;
+          this.mainButtonService.setButtonState(ButtonState.SUCCESS);
+          console.log(val);
+          if (this.isPlaying) {
+            this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PLAY);
+            this.socketServices.sendPlay('I am playing a song');
+          } else {
+            this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PAUSE);
+          }
+        });
+      });
   }
 
 

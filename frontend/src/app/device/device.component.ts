@@ -5,7 +5,7 @@ import { ButtonState} from '../main-button/button';
 import {SocketService} from '../services/socket.service';
 import { BackgroundService } from '../background/background.service';
 import { BackgroundAnimationState, BackgroundState } from '../background/background';
-import {SpotifyService} from "../services/spotify.service";
+import {SpotifyService} from '../services/spotify.service';
 
 @Component({
   selector: 'nod-device',
@@ -26,7 +26,7 @@ export class DeviceComponent {
   onPlayPause: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @Input()
-  isPlaying : boolean;
+  isPlaying: boolean;
 
   @HostBinding('class.is-active') isActive: boolean;
 

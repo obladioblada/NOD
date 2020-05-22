@@ -4,6 +4,13 @@
   width: 100vw;
 }
 
+.devices-icon-container{
+  justify-self: end;
+  width: 9em;
+  display: grid;
+  height: inherit;
+}
+
 .current-song-info-wrapper{
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -49,6 +56,10 @@
 .player-icon {
   width: 4em;
   height: 4em;
+}
+
+.devices-icon {
+
 }
 
 button{

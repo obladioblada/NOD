@@ -22,7 +22,12 @@ import {SocketService} from './services/socket.service';
 
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import {SpotifyConnectorService} from './services/spotify-connector.service';
-const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
+
+const config: SocketIoConfig = {
+  url: 'http://localhost:3000', options: {
+    transport: ['websocket']
+  }
+};
 import { PlayerComponent } from './components/player/player.component';
 import { BackgroundComponent } from './background/background.component';
 import {SvgIconComponent} from './svg-icon.component';

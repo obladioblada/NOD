@@ -19,13 +19,18 @@ import { SearchComponent } from './components/Search/search.component';
 import { TileComponent } from './components/tile/tile.component';
 import { UserComponent } from './user/user.component';
 import {SocketService} from './services/socket.service';
-
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import {SpotifyConnectorService} from './services/spotify-connector.service';
-const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 import { PlayerComponent } from './components/player/player.component';
 import { BackgroundComponent } from './background/background.component';
 import {SvgIconComponent} from './svg-icon.component';
+import { environment } from 'src/environments/environment';
+
+const config: SocketIoConfig = {
+  url: environment.socketEndpoint, options: {
+    transport: ['websocket']
+  }
+};
 
 @NgModule({
   declarations: [

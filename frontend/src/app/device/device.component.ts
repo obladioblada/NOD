@@ -5,6 +5,7 @@ import { ButtonState} from '../main-button/button';
 import {SocketService} from '../services/socket.service';
 import { BackgroundService } from '../background/background.service';
 import { BackgroundAnimationState, BackgroundState } from '../background/background';
+import {SpotifyService} from '../services/spotify.service';
 
 @Component({
   selector: 'nod-device',
@@ -25,19 +26,19 @@ export class DeviceComponent {
   onPlayPause: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @Input()
-  isPlaying : boolean;
+  isPlaying: boolean;
 
   @HostBinding('class.is-active') isActive: boolean;
 
   constructor(private authService: AuthService,
               private mainButtonService: MainButtonService,
               private backgroundService: BackgroundService,
-
+              private spotifyService: SpotifyService,
               private socketServices: SocketService) {  }
 
   play() {
     this.mainButtonService.setButtonState(ButtonState.LOADING);
-
+    this.spotifyService.selectedDevice = this.device.id;
     this.authService.player(this.device.id, !this.isPlaying).subscribe(val => {
       this.isPlaying = !this.isPlaying;
       this.onPlayPause.emit(this.isPlaying);
@@ -51,8 +52,6 @@ export class DeviceComponent {
         this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PAUSE);
       }
     });
-
-
   }
 
   setVolume(event) {

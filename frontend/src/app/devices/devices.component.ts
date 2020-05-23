@@ -1,4 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import {SpotifyService} from '../services/spotify.service';
 
 @Component({
   selector: 'nod-devices',

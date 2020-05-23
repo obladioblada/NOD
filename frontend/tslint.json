@@ -74,6 +74,7 @@
       true,
       "as-needed"
     ],
+    "no-namespace": false,
     "object-literal-sort-keys": false,
     "ordered-imports": false,
     "quotemark": [

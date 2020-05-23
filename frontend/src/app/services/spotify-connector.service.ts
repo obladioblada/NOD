@@ -1,7 +1,7 @@
 import {WindowRef} from '../WindowRef';
 import {Injectable, Output} from '@angular/core';
-import { AuthService } from 'src/auth/auth.service';
-import { Subject, Observable } from 'rxjs';
+import {AuthService} from 'src/auth/auth.service';
+import {Subject, Observable} from 'rxjs';
 
 declare var Spotify: any;
 
@@ -50,7 +50,9 @@ export class SpotifyConnectorService {
         // Playback status updates
         player.addListener('player_state_changed', state => {
           console.log(state);
-          this.onPlaySong.next(state.track_window.current_track);
+          if (state) {
+            this.onPlaySong.next({track: state.track_window.current_track, paused: state.paused });
+          }
         });
 
         // Ready

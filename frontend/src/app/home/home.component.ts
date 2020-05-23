@@ -47,7 +47,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit() {
-    this.sdkReady$.subscribe(() => this.ngZone.run(() => this.refresh()));
+    this.sdkReady$.subscribe(() => this.refresh());
     this.mainButton$ = combineLatest([this.devices$, this.users$, this.currentPlaying$]).pipe(
       map(([devices, users, currentPlaying]) => ({devices, users, currentPlaying}))
     ).subscribe(({devices, users, currentPlaying}) => {

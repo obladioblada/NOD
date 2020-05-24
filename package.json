@@ -10,6 +10,7 @@
     "start-dev": "npm run start-dev-frontend & npm run start-dev-backend",
     "build-backend": "cd backend && npm run build",
     "build-frontend": "cd frontend && ng build --aot --prod",
+    "build-frontend-no-prod": "cd frontend && ng build --aot",
     "build": "npm run build-frontend && npm run build-backend",
     "start": "pm2-runtime start ecosystem.config.js --env production"
   },

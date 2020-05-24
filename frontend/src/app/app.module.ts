@@ -27,9 +27,7 @@ import {SvgIconComponent} from './svg-icon.component';
 import { environment } from 'src/environments/environment';
 
 const config: SocketIoConfig = {
-  url: environment.socketEndpoint, options: {
-    transport: ['websocket']
-  }
+  url: (environment.socketEndpoint || window.location.hostname), options: {}
 };
 
 @NgModule({

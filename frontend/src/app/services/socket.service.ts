@@ -7,7 +7,6 @@ import {SocketEvent} from '../../../../shared/socket/socketEvent';
 export class SocketService {
 
   constructor(spotifyService: SpotifyService, private socket: Socket) {
-
     this.socket.on('connection', (message, callback) => {
       console.log(message);
       callback(' ciaooo ');

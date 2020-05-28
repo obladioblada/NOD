@@ -37,8 +37,8 @@ export class SearchComponent {
     ).subscribe((queryForm: any) => {
       this.spotifyService.searchMusic(queryForm.query, this.type_$.getValue(), this.authService.getAccessToken())
         .subscribe( (res) => {
-          console.log(res[this.type_$.getValue()+'s'].items);
-          this.results = res[this.type_$.getValue()+'s'].items;
+          console.log(res[this.type_$.getValue() + 's'].items);
+          this.results = res[this.type_$.getValue() + 's'].items;
         });
     });
   }

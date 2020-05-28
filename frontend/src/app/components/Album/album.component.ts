@@ -15,17 +15,17 @@ export class AlbumComponent implements OnInit {
   id: string;
   album: Album[];
   constructor(private _spotifyService: SpotifyService,
-    private _route: ActivatedRoute) { }
+              private _route: ActivatedRoute) { }
 
   ngOnInit() {
     this._route.params
-      .map(params => params['id'])
+      .map(params => params.id)
       .subscribe((id) => {
         this._spotifyService.getAuth()
           .subscribe(res => {
             this._spotifyService.getAlbum(id, res.access_token)
               .subscribe(album => {
-                console.log(album)
+                console.log(album);
                 this.album = album;
               });
           });

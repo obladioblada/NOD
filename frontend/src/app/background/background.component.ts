@@ -31,10 +31,10 @@ export class BackgroundComponent {
       this.animationState = value;
     }
     setBackgroundState(value: BackgroundState) {
-      console.log("received state")
-      console.log(value)
+      console.log('received state');
+      console.log(value);
       this.state = value;
-      if(value === BackgroundState.SUCCESS){
+      if (value === BackgroundState.SUCCESS) {
         setTimeout(() => {
           this.state = BackgroundState.IDLE;
         }, 300);

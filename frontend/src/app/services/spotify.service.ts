@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Location} from "@angular/common";
+import {Location} from '@angular/common';
 
 
 @Injectable()
@@ -31,15 +31,15 @@ export class SpotifyService {
 
 
   previousSong(authToken: string) {
-    let headers = new HttpHeaders({Authorization : 'Bearer ' + authToken});
+    const headers = new HttpHeaders({Authorization : 'Bearer ' + authToken});
     this.previousUrl = 'https://api.spotify.com/v1/me/player/previous';
-    return this.http.post( this.previousUrl, null, { headers: headers});
+    return this.http.post( this.previousUrl, null, { headers});
   }
 
   nextSong(authToken: string) {
-    let headers = new HttpHeaders({Authorization : 'Bearer ' + authToken});
+    const headers = new HttpHeaders({Authorization : 'Bearer ' + authToken});
     this.nextUrl = 'https://api.spotify.com/v1/me/player/next';
-    return this.http.post( this.nextUrl, null, { headers: headers});
+    return this.http.post( this.nextUrl, null, { headers});
   }
 
   // Get search results for a query

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SpotifyService } from '../../services/spotify.service';
+import { SpotifyApiService } from '../../services/spotify-api.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
 
@@ -12,7 +12,7 @@ import { BehaviorSubject, combineLatest } from 'rxjs';
   selector: 'nod-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
-  providers: [SpotifyService]
+  providers: [SpotifyApiService]
 })
 export class SearchComponent {
   searchStr: string;
@@ -21,7 +21,7 @@ export class SearchComponent {
   query: FormControl = new FormControl();
   type_$: BehaviorSubject<SearchType> = new BehaviorSubject(SearchType.artists);
 
-  constructor(private spotifyService: SpotifyService, private authService: AuthService) {
+  constructor(private spotifyService: SpotifyApiService, private authService: AuthService) {
     this.formGroup =  new FormGroup({
       query: this.query
     });

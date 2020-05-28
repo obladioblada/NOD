@@ -1,10 +1,14 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Location} from '@angular/common';
+import {Observable} from "rxjs";
+import { Device } from '../models/Device';
+import { List } from 'immutable';
+import { map } from 'rxjs/operators';
+
 
 
 @Injectable()
-export class SpotifyService {
+export class SpotifyApiService {
   selectedDevice: string;
   private searchUrl: string;
   private artistUrl: string;
@@ -93,5 +97,12 @@ export class SpotifyService {
       headers: {Authorization: 'Bearer ' + authToken}
     };
     return this.http.get('https://api.spotify.com/v1/me/player/currently-playing', headers);
+  }
+
+  devices(authToken: string) {
+    const headers = {
+      headers: {Authorization: 'Bearer ' + authToken}
+    };
+    return this.http.get('https://api.spotify.com/v1/me/player/devices', headers);
   }
 }

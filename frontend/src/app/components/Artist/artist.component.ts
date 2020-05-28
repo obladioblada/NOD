@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SpotifyService } from '../../services/spotify.service';
+import { SpotifyApiService } from '../../services/spotify-api.service';
 
 import { ActivatedRoute } from '@angular/router';
 
@@ -16,7 +16,7 @@ export class ArtistComponent implements OnInit {
   id: string;
   artist: Artist[];
   albums: Album[];
-  constructor(private _spotifyService: SpotifyService,
+  constructor(private _spotifyService: SpotifyApiService,
               private _route: ActivatedRoute) { }
 
   ngOnInit() {

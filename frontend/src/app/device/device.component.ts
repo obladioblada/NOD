@@ -5,7 +5,7 @@ import { ButtonState} from '../main-button/button';
 import {SocketService} from '../services/socket.service';
 import { BackgroundService } from '../background/background.service';
 import { BackgroundAnimationState, BackgroundState } from '../background/background';
-import {SpotifyService} from '../services/spotify.service';
+import {SpotifyApiService} from '../services/spotify-api.service';
 
 @Component({
   selector: 'nod-device',
@@ -33,7 +33,7 @@ export class DeviceComponent {
   constructor(private authService: AuthService,
               private mainButtonService: MainButtonService,
               private backgroundService: BackgroundService,
-              private spotifyService: SpotifyService,
+              private spotifyService: SpotifyApiService,
               private socketServices: SocketService) {  }
 
   play() {

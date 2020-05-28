@@ -6,7 +6,9 @@ import {MainButtonService} from '../../main-button/main-button.service';
 import {BackgroundService} from '../../background/background.service';
 import {SocketService} from '../../services/socket.service';
 import {SpotifyConnectorService} from '../../services/spotify-connector.service';
-import {SpotifyService} from '../../services/spotify.service';
+import {SpotifyApiService} from '../../services/spotify-api.service';
+import {Observable, BehaviorSubject} from "rxjs";
+import {List} from "immutable";
 
 @Component({
   selector: 'nod-player',
@@ -19,18 +21,24 @@ export class PlayerComponent implements OnInit {
   currentSong: string;
   currentImgUrl: string;
   currentArtist: string;
+  devices: [];
 
   constructor(private authService: AuthService,
               private mainButtonService: MainButtonService,
               private backgroundService: BackgroundService,
               private socketServices: SocketService,
               private spotifyConnectorService: SpotifyConnectorService,
-              private spotifyService: SpotifyService,
+              private spotifyService: SpotifyApiService,
               private cd: ChangeDetectorRef) {
     this.isPlaying = false;
   }
 
   ngOnInit(): void {
+    this.spotifyService.devices(this.authService.getAccessToken()).subscribe(data => {
+      this.devices = data.devices;
+      console.log(this.devices);
+      this.cd.detectChanges();
+    });
     this.spotifyConnectorService.onPlaySong.subscribe(data => {
       console.log(data.track);
       console.log(data.track.name);

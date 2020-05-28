@@ -1,5 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import {SpotifyService} from '../services/spotify.service';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'nod-devices',
@@ -10,11 +10,10 @@ import {SpotifyService} from '../services/spotify.service';
 export class DevicesComponent implements OnInit {
 
   @Input()
-  devices: any;
+  devices: [];
 
   @Input()
   isPlaying: boolean;
-
 
   constructor() {
   }

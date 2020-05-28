@@ -1,7 +1,5 @@
 <nod-search></nod-search>
 <nod-user *ngFor="let user of users$ | async" [user]="user"></nod-user>
-<nod-devices class="devices" [isPlaying]="isPlaying" [devices]="devices$ | async">
-</nod-devices>
 <nod-main-button #button>
   <nod-player *ngIf="showPlayer" ></nod-player>
 </nod-main-button>

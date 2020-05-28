@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
-import {SpotifyService} from './spotify.service';
+import {SpotifyApiService} from './spotify-api.service';
 import {Socket} from 'ngx-socket-io';
 import {SocketEvent} from '../../../../shared/socket/socketEvent';
 
 @Injectable()
 export class SocketService {
 
-  constructor(spotifyService: SpotifyService, private socket: Socket) {
+  constructor(spotifyService: SpotifyApiService, private socket: Socket) {
     this.socket.on('connection', (message, callback) => {
       console.log(message);
       callback(' ciaooo ');

@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MainButtonService } from './main-button/main-button.service';
 import { DeviceComponent } from './device/device.component';
 import { DevicesComponent } from './devices/devices.component';
-import { SpotifyService } from './services/spotify.service';
+import { SpotifyApiService } from './services/spotify-api.service';
 import { SearchComponent } from './components/Search/search.component';
 import { TileComponent } from './components/tile/tile.component';
 import { UserComponent } from './user/user.component';
@@ -56,7 +56,7 @@ const config: SocketIoConfig = {
     ReactiveFormsModule,
     SocketIoModule.forRoot(config)
   ],
-  providers: [AuthGuardService, AuthService, SpotifyService, MainButtonService, SocketService, WindowRef, SpotifyConnectorService],
+  providers: [AuthGuardService, AuthService, SpotifyApiService, MainButtonService, SocketService, WindowRef, SpotifyConnectorService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

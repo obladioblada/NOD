@@ -8,7 +8,7 @@ import {SpotifyConnectorService} from '../services/spotify-connector.service';
 import {User} from '../models/User';
 import {BackgroundService} from '../background/background.service';
 import {BackgroundState, BackgroundAnimationState} from '../background/background';
-import {SpotifyService} from '../services/spotify.service';
+import {SpotifyApiService} from '../services/spotify-api.service';
 import {List} from 'immutable';
 
 @Component({
@@ -20,7 +20,6 @@ import {List} from 'immutable';
 export class HomeComponent implements AfterViewInit, OnInit {
   sdkReady$: Observable<any>;
   currentPlaying$: Observable<any>;
-  devices$: Observable<List<any>>;
   isPlaying$: Observable<boolean>;
   isPlaying: boolean;
   users$: Observable<User[]>;
@@ -34,7 +33,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
     private authService: AuthService,
     private mainButtonService: MainButtonService,
     private backgroundService: BackgroundService,
-    private spotifyService: SpotifyService,
+    private spotifyService: SpotifyApiService,
     private spotifyConnectorService: SpotifyConnectorService,
     private ngZone: NgZone) {
     this.mainButtonService.setButtonState(ButtonState.LOADING);
@@ -42,24 +41,21 @@ export class HomeComponent implements AfterViewInit, OnInit {
     this.currentPlaying$ = this.refreshOccurs$.asObservable()
       .pipe(switchMap(() => this.spotifyService.getCurrentPlaying(authService.getAccessToken())), shareReplay());
     this.sdkReady$ = this.spotifyConnectorService.connectNodPlayer();
-    this.devices$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.devices()));
     this.users$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.friends()));
   }
 
   ngOnInit() {
     this.sdkReady$.subscribe(() => this.refresh());
-    this.mainButton$ = combineLatest([this.devices$, this.users$, this.currentPlaying$]).pipe(
-      map(([devices, users, currentPlaying]) => ({devices, users, currentPlaying}))
-    ).subscribe(({devices, users, currentPlaying}) => {
+    this.mainButton$ = combineLatest([this.users$, this.currentPlaying$]).pipe(
+      map(([users, currentPlaying]) => ({users, currentPlaying}))
+    ).subscribe(({users, currentPlaying}) => {
         this.mainButtonService.setButtonPosition(ButtonPosition.BOTTOM);
         this.mainButtonService.setButtonState(ButtonState.SUCCESS);
         this.backgroundService.setBackgroundState(BackgroundState.SUCCESS);
         this.showPlayer = true;
-        console.log(devices);
         console.log(users);
         console.log(currentPlaying);
         this.isPlaying = currentPlaying ? currentPlaying.is_playing : false;
-        this.devices = devices;
       },
       () => {
         this.mainButtonService.setButtonPosition(ButtonPosition.CENTER);

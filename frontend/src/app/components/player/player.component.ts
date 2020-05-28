@@ -64,5 +64,22 @@ export class PlayerComponent implements OnInit {
       });
   }
 
+  previous() {
+    this.spotifyService.previousSong(this.authService.getAccessToken()).subscribe(data => {
+      console.log('previous called');
+      console.log(data);
+    });
+  }
+
+  next() {
+    this.spotifyService.nextSong(this.authService.getAccessToken()).subscribe(data => {
+      console.log('next called');
+      console.log(data);
+      this.spotifyService.player(this.authService.getAccessToken()).subscribe(d => {
+        console.log(d);
+      });
+    },
+      error => {console.log(error)});
+  }
 
 }

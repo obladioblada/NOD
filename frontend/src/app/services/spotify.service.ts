@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Location} from "@angular/common";
 
 
 @Injectable()
@@ -9,12 +10,36 @@ export class SpotifyService {
   private artistUrl: string;
   private albumsUrl: string;
   private albumUrl: string;
+  private previousUrl: string;
+  private nextUrl: string;
+  private playerUrl: string;
   // private clientId: string = environment.clientId;
   // private clientSecret: string = environment.clientSecret;
   private body: any;
 
 
   constructor(private http: HttpClient) {
+  }
+
+  player(authToken: string) {
+    const headers = {
+      headers: {Authorization: 'Bearer ' + authToken}
+    };
+    this.playerUrl = `https://api.spotify.com/v1/me/player`;
+    return this.http.get(this.playerUrl, headers);
+  }
+
+
+  previousSong(authToken: string) {
+    let headers = new HttpHeaders({Authorization : 'Bearer ' + authToken});
+    this.previousUrl = 'https://api.spotify.com/v1/me/player/previous';
+    return this.http.post( this.previousUrl, null, { headers: headers});
+  }
+
+  nextSong(authToken: string) {
+    let headers = new HttpHeaders({Authorization : 'Bearer ' + authToken});
+    this.nextUrl = 'https://api.spotify.com/v1/me/player/next';
+    return this.http.post( this.nextUrl, null, { headers: headers});
   }
 
   // Get search results for a query
@@ -26,7 +51,7 @@ export class SpotifyService {
       headers: {Authorization: 'Bearer ' + authToken}
     };
 
-    this.searchUrl = 'https://api.spotify.com/v1/search?q=' + query + '&offset=0&limit=20&type=' + type + '&market=from_token';
+    this.searchUrl = `https://api.spotify.com/v1/search?q=${query}&offset=0&limit=20&type=${type}&market=from_token`;
     console.log(this.searchUrl);
     console.log(headers);
 
@@ -36,7 +61,7 @@ export class SpotifyService {
   // Get data about artist that has been chosen to view
   getArtist(id: string, authToken: string) {
     const headers = new HttpHeaders();
-    headers.append('Authorization', 'Bearer ' + authToken);
+    headers.append('Authorization', `Bearer ${authToken}`);
 
     this.artistUrl = 'https://api.spotify.com/v1/artists/' + id;
 

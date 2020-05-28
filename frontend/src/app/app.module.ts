@@ -26,9 +26,10 @@ import { BackgroundComponent } from './background/background.component';
 import {SvgIconComponent} from './svg-icon.component';
 import { environment } from 'src/environments/environment';
 
+const socketUrl = environment.socketEndpoint !== "heroku" ? environment.socketEndpoint : window.location.hostname;
 const config: SocketIoConfig = {
-  url: environment.socketEndpoint, options: {
-    transport: ['websocket']
+  url: socketUrl, options: {
+    transports: ['websocket']
   }
 };
 

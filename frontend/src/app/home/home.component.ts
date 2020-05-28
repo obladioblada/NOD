@@ -6,6 +6,7 @@ import { Observable, Subject, Subscription, merge } from 'rxjs';
 import { switchMap, shareReplay } from 'rxjs/operators';
 import {SocketService} from '../services/socket.service';
 import {SpotifyConnectorService} from '../services/spotify-connector.service';
+import { User } from '../models/User';
 
 @Component({
   selector: 'nod-home',
@@ -14,7 +15,7 @@ import {SpotifyConnectorService} from '../services/spotify-connector.service';
 })
 export class HomeComponent implements AfterViewInit {
   devices$: Observable<any>;
-  users$: Observable<any>;
+  users$: Observable<User[]>;
   refreshOccurs$: Subject<any> = new Subject();
   joinSucceded: boolean;
   mainButton$: Subscription;

@@ -7,8 +7,15 @@ import {SocketEvent} from '../../../../shared/socket/socketEvent';
 export class SocketService {
 
   constructor(spotifyService: SpotifyService, private socket: Socket) {
-    this.socket.on(SocketEvent.JOIN, (message) => {
+
+    this.socket.on('connection', (message, callback) => {
+      console.log(message);
+      callback(' ciaooo ');
     });
+
+    this.socket.on(SocketEvent.JOIN_ROOM, (message) => {
+    });
+
     this.socket.on(SocketEvent.PLAY, (playMessage) => {
       console.log(playMessage);
     });
@@ -17,8 +24,14 @@ export class SocketService {
     });
   }
 
-  sendJoin(message) {
-    this.socket.emit(SocketEvent.JOIN, message);
+  sendJoinRoom(message) {
+    this.socket.emit(SocketEvent.JOIN_ROOM, message, (response) => {
+      console.log(response);
+    });
+  }
+
+  sendLeaveRoom(message) {
+    this.socket.emit(SocketEvent.LEAVE_ROOM, message);
   }
 
   sendPlay(message) {

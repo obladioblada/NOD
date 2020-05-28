@@ -79,7 +79,7 @@ export class PlayerComponent implements OnInit {
         console.log(d);
       });
     },
-      error => {console.log(error)});
+      error => {console.log(error);});
   }
 
 }

@@ -33,6 +33,10 @@ export class SpotifyApiService {
     return this.http.get(this.playerUrl, headers);
   }
 
+  setDevice(play: boolean) {
+    
+  }
+
 
   previousSong(authToken: string) {
     const headers = new HttpHeaders({Authorization : 'Bearer ' + authToken});
@@ -99,10 +103,10 @@ export class SpotifyApiService {
     return this.http.get('https://api.spotify.com/v1/me/player/currently-playing', headers);
   }
 
-  devices(authToken: string) {
+  devices(authToken: string): Observable<Device[]> {
     const headers = {
       headers: {Authorization: 'Bearer ' + authToken}
     };
-    return this.http.get('https://api.spotify.com/v1/me/player/devices', headers);
+    return this.http.get<Device[]>('https://api.spotify.com/v1/me/player/devices', headers);
   }
 }

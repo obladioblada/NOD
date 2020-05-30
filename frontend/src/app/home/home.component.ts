@@ -18,7 +18,6 @@ import {List} from 'immutable';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements AfterViewInit, OnInit {
-  sdkReady$: Observable<any>;
   currentPlaying$: Observable<any>;
   isPlaying$: Observable<boolean>;
   isPlaying: boolean;
@@ -40,12 +39,10 @@ export class HomeComponent implements AfterViewInit, OnInit {
     this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PAUSE);
     this.currentPlaying$ = this.refreshOccurs$.asObservable()
       .pipe(switchMap(() => this.spotifyService.getCurrentPlaying(authService.getAccessToken())), shareReplay());
-    this.sdkReady$ = this.spotifyConnectorService.connectNodPlayer();
     this.users$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.friends()));
   }
 
   ngOnInit() {
-    this.sdkReady$.subscribe(() => this.refresh());
     this.mainButton$ = combineLatest([this.users$, this.currentPlaying$]).pipe(
       map(([users, currentPlaying]) => ({users, currentPlaying}))
     ).subscribe(({users, currentPlaying}) => {

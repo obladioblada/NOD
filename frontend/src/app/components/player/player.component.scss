@@ -1,7 +1,15 @@
-:host{
+.player-buttons-container {
   display: grid;
   grid-template-columns:1fr 1fr 1fr;
-  width: 100vw;
+  grid-template-rows: 1fr;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.devices-container {
+  position: fixed;
+  bottom: 90px;
+  right: 0;
 }
 
 .devices-icon-container{
@@ -48,9 +56,10 @@
 .player-container {
   display: grid;
   grid-template-columns:1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-column: 2;
-  grid-row: 1;
+  width: 100vw;
+  height: 90px;
+  bottom: 0;
+  position: fixed;
 }
 
 .player-icon {

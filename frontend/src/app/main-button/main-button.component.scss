@@ -99,9 +99,6 @@
   .main-button.bottom {
     $bottom-bar-heigth: 90px;
     top: calc(100vh - #{$bottom-bar-heigth});
-    @media screen and (max-width: 600px) {
-      top: calc(100vh - #{$bottom-bar-heigth} - 100px);
-    }
     transform: translateX(-50%);
     left: 50vw;
     box-shadow: none;

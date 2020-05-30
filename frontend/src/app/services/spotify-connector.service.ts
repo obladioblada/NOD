@@ -10,19 +10,10 @@ export class SpotifyConnectorService {
 
   private deviceId: string;
   onPlaySong: Subject<any> = new Subject<any>();
-  connected: Subject<boolean> = new Subject<boolean>();
+  onConnected: Subject<boolean> = new Subject<boolean>();
 
 
   constructor(private winRef: WindowRef, private authService: AuthService) {
-
-  }
-
-
-  getDeviceId(): string {
-    return this.deviceId;
-  }
-
-  connectNodPlayer(): Observable<boolean> {
     this.winRef.nativeWindow.onSpotifyWebPlaybackSDKReady = () => {
       const token = this.authService.getAccessToken();
       if (token) {
@@ -59,7 +50,7 @@ export class SpotifyConnectorService {
         player.addListener('ready', ({device_id}) => {
           console.log('Ready with Device ID', device_id);
           this.deviceId = device_id;
-          this.connected.next(true);
+          this.onConnected.next(true);
         });
 
         // Not Ready
@@ -75,12 +66,11 @@ export class SpotifyConnectorService {
         });
       }
     };
-
-    return this.getSdkReady();
   }
 
-  getSdkReady(): Observable<boolean> {
-    return this.connected.asObservable();
+
+  getDeviceId(): string {
+    return this.deviceId;
   }
 
 }

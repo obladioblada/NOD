@@ -1,14 +1,14 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, NgZone, OnInit} from '@angular/core';
-import {ButtonState} from '../../main-button/button';
 import {BackgroundAnimationState} from '../../background/background';
 import {AuthService} from '../../../auth/auth.service';
-import {MainButtonService} from '../../main-button/main-button.service';
 import {BackgroundService} from '../../background/background.service';
 import {SocketService} from '../../services/socket.service';
 import {SpotifyConnectorService} from '../../services/spotify-connector.service';
 import {SpotifyApiService} from '../../services/spotify-api.service';
-import {Observable, BehaviorSubject} from "rxjs";
-import {List} from "immutable";
+import {switchMap, map} from 'rxjs/operators';
+import {PlayerService} from "../../services/player.service";
+import { from } from 'rxjs';
+import { Device } from 'src/app/models/Device';
 
 @Component({
   selector: 'nod-player',
@@ -21,23 +21,31 @@ export class PlayerComponent implements OnInit {
   currentSong: string;
   currentImgUrl: string;
   currentArtist: string;
-  devices: [];
+  devices: Device[];
+  showDevices: boolean;
 
   constructor(private authService: AuthService,
-              private mainButtonService: MainButtonService,
               private backgroundService: BackgroundService,
               private socketServices: SocketService,
               private spotifyConnectorService: SpotifyConnectorService,
               private spotifyService: SpotifyApiService,
+              private playerService: PlayerService,
               private cd: ChangeDetectorRef) {
     this.isPlaying = false;
+    this.showDevices = false;
   }
 
   ngOnInit(): void {
-    this.spotifyService.devices(this.authService.getAccessToken()).subscribe(data => {
-      this.devices = data.devices;
-      console.log(this.devices);
-      this.cd.detectChanges();
+    this.playerService.onSDKReady().pipe(
+        switchMap((ready) => {
+          return this.spotifyService.devices(this.authService.getAccessToken());
+        })
+      )
+      .subscribe((data) => {
+        console.log(data);
+        console.log(data.devices);
+        this.devices = data.devices;
+        this.cd.detectChanges();
     });
     this.spotifyConnectorService.onPlaySong.subscribe(data => {
       console.log(data.track);
@@ -55,13 +63,11 @@ export class PlayerComponent implements OnInit {
   }
 
   play() {
-    this.mainButtonService.setButtonState(ButtonState.LOADING);
     console.log('Play --> ' + !this.isPlaying);
     this.authService.player(this.spotifyConnectorService.getDeviceId(), !this.isPlaying)
       .subscribe(val => {
         console.log(!this.isPlaying);
         this.isPlaying = !this.isPlaying;
-        this.mainButtonService.setButtonState(ButtonState.SUCCESS);
         console.log(val);
         if (this.isPlaying) {
           this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PLAY);
@@ -90,4 +96,7 @@ export class PlayerComponent implements OnInit {
       error => {console.log(error);});
   }
 
+  toggleDevices() {
+    this.showDevices = !this.showDevices;
+  }
 }

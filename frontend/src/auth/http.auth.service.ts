@@ -62,11 +62,6 @@ export class HttpAuthService {
       Location.joinWithSlash(this.apiEndpoint, 'player?access_token=' + this.accessToken + '&id=' + id + '&play=' + play));
   }
 
-  devices() {
-    console.log(this.accessToken);
-    return this.http.get(Location.joinWithSlash(this.apiEndpoint, 'player/devices?access_token=' + this.accessToken))
-      .pipe(map((data: any) => data.devices));
-  }
 
   users() {
     console.log(this.accessToken);

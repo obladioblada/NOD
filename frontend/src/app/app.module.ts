@@ -58,13 +58,13 @@ const config: SocketIoConfig = {
     SocketIoModule.forRoot(config)
   ],
   providers: [
+    SpotifyConnectorService,
     AuthGuardService,
     AuthService,
     SpotifyApiService,
     MainButtonService,
     SocketService,
     WindowRef,
-    SpotifyConnectorService,
     PlayerService],
   bootstrap: [AppComponent]
 })

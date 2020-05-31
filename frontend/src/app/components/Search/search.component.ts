@@ -35,7 +35,7 @@ export class SearchComponent {
       map(val => val[0]),
       filter(val => val.query.length > 0)
     ).subscribe((queryForm: any) => {
-      this.spotifyService.searchMusic(queryForm.query, this.type_$.getValue(), this.authService.getAccessToken())
+      this.spotifyService.searchMusic(queryForm.query, this.type_$.getValue())
         .subscribe( (res) => {
           console.log(res[this.type_$.getValue() + 's'].items);
           this.results = res[this.type_$.getValue() + 's'].items;

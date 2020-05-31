@@ -109,7 +109,7 @@ a {
     content: "";
     height: 5px;
     position: absolute;
-    background: #20d75f;
+    background: #2db18f;
     transition: none;
     border-radius: 10px 0 0 10px;
     box-shadow: 0 1px 4px 0 rgba(51, 51, 51, 0), 0 8px 24px 0 rgba(51, 51, 51, 0), 0 0 0 1px rgba(51, 51, 51, 0), inset 0 -1px 10px 4px rgba(51, 51, 51, 0.1);
@@ -376,7 +376,7 @@ $vw-context: 100vw * 1px;
 }
 
 .is-active .screenWrapper {
-  background: #20d75f;
+  background: #2db18f;
 }
 
 .screenWrapper{

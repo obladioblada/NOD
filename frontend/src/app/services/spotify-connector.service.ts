@@ -1,20 +1,18 @@
 import {WindowRef} from '../WindowRef';
 import {Injectable, Output} from '@angular/core';
 import {AuthService} from 'src/auth/auth.service';
-import {Subject, Observable} from 'rxjs';
+import {Subject} from 'rxjs';
 
 declare var Spotify: any;
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class SpotifyConnectorService {
 
-  private deviceId: string;
   onPlaySong: Subject<any> = new Subject<any>();
-  onConnected: Subject<boolean> = new Subject<boolean>();
-
+  onConnected: Subject<string> = new Subject<string>();
 
   constructor(private winRef: WindowRef, private authService: AuthService) {
-    this.winRef.nativeWindow.onSpotifyWebPlaybackSDKReady = () => {
+    this.winRef.nativeWindow.waitForSpotify.then(() =>{
       const token = this.authService.getAccessToken();
       if (token) {
         const player = new Spotify.Player({
@@ -42,15 +40,14 @@ export class SpotifyConnectorService {
         player.addListener('player_state_changed', state => {
           console.log(state);
           if (state) {
-            this.onPlaySong.next({track: state.track_window.current_track, paused: state.paused });
+            this.onPlaySong.next({track: state.track_window.current_track, paused: state.paused});
           }
         });
 
         // Ready
         player.addListener('ready', ({device_id}) => {
           console.log('Ready with Device ID', device_id);
-          this.deviceId = device_id;
-          this.onConnected.next(true);
+          this.onConnected.next(device_id);
         });
 
         // Not Ready
@@ -65,12 +62,8 @@ export class SpotifyConnectorService {
           }
         });
       }
-    };
-  }
+    });
 
-
-  getDeviceId(): string {
-    return this.deviceId;
   }
 
 }

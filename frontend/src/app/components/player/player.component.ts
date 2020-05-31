@@ -1,14 +1,13 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, NgZone, OnInit} from '@angular/core';
-import {BackgroundAnimationState} from '../../background/background';
 import {AuthService} from '../../../auth/auth.service';
 import {BackgroundService} from '../../background/background.service';
 import {SocketService} from '../../services/socket.service';
-import {SpotifyConnectorService} from '../../services/spotify-connector.service';
 import {SpotifyApiService} from '../../services/spotify-api.service';
-import {switchMap, map} from 'rxjs/operators';
+import {switchMap, mapTo, map, concatMap} from 'rxjs/operators';
 import {PlayerService} from "../../services/player.service";
-import { from } from 'rxjs';
-import { Device } from 'src/app/models/Device';
+import {device, Device, DeviceDto} from 'src/app/models/Device';
+import {DevicesDto, Devices} from 'src/app/models/Devices';
+import {combineLatest} from 'rxjs';
 
 @Component({
   selector: 'nod-player',
@@ -21,13 +20,12 @@ export class PlayerComponent implements OnInit {
   currentSong: string;
   currentImgUrl: string;
   currentArtist: string;
-  devices: Device[];
+  devices: Devices;
   showDevices: boolean;
 
   constructor(private authService: AuthService,
               private backgroundService: BackgroundService,
               private socketServices: SocketService,
-              private spotifyConnectorService: SpotifyConnectorService,
               private spotifyService: SpotifyApiService,
               private playerService: PlayerService,
               private cd: ChangeDetectorRef) {
@@ -37,63 +35,72 @@ export class PlayerComponent implements OnInit {
 
   ngOnInit(): void {
     this.playerService.onSDKReady().pipe(
-        switchMap((ready) => {
-          return this.spotifyService.devices(this.authService.getAccessToken());
-        })
-      )
-      .subscribe((data) => {
-        console.log(data);
-        console.log(data.devices);
-        this.devices = data.devices;
-        this.cd.detectChanges();
+      switchMap((NodId) => this.playerService.setDevice(NodId).pipe(map(() => NodId))),
+      switchMap(data => this.playerService.getDevices())
+    ).subscribe((devicesDto) => {
+      this.devices = Devices.parseFromDto(devicesDto);
     });
-    this.spotifyConnectorService.onPlaySong.subscribe(data => {
-      console.log(data.track);
-      console.log(data.track.name);
+    this.playerService.onPlaySong().subscribe(data => {
       this.currentSong = data.track.name;
       this.currentImgUrl = data.track.album.images[1].url;
       this.currentArtist = data.track.artists[0].name;
-      console.log(data.paused);
       this.isPlaying = !data.paused;
       this.cd.detectChanges();
     });
-    this.spotifyService.getCurrentPlaying(this.authService.getAccessToken()).subscribe(currentTrack => {
+    this.spotifyService.getCurrentPlaying().subscribe(currentTrack => {
+      if (currentTrack != null) {
+        this.isPlaying = currentTrack.is_playing;
+      } else {
         this.isPlaying = false;
+      }
     });
+    this.playerService.onCurrentDeviceChanged.subscribe(id => {
+      this.devices.asArray().filter(device => device.id !== id).forEach(device => {
+        console.log(device);
+        device.isActive = false
+      });
+
+    })
   }
 
+
   play() {
-    console.log('Play --> ' + !this.isPlaying);
-    this.authService.player(this.spotifyConnectorService.getDeviceId(), !this.isPlaying)
-      .subscribe(val => {
-        console.log(!this.isPlaying);
-        this.isPlaying = !this.isPlaying;
-        console.log(val);
-        if (this.isPlaying) {
-          this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PLAY);
-          this.socketServices.sendPlay('I am playing a song');
-        } else {
-          this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PAUSE);
-        }
+    if (this.isPlaying || this.isPlaying === undefined) {
+      this.playerService.pause().subscribe(data => {
+        console.log('pause');
+        console.log(data);
+        this.isPlaying = false;
+        this.cd.detectChanges();
       });
+    } else {
+      this.playerService.play().subscribe(data => {
+        console.log('play');
+        console.log(data);
+        this.isPlaying = true;
+        this.cd.detectChanges();
+      });
+    }
+    console.log(this.isPlaying);
   }
 
   previous() {
-    this.spotifyService.previousSong(this.authService.getAccessToken()).subscribe(data => {
+    this.spotifyService.previousSong().subscribe(data => {
       console.log('previous called');
       console.log(data);
     });
   }
 
   next() {
-    this.spotifyService.nextSong(this.authService.getAccessToken()).subscribe(data => {
-      console.log('next called');
-      console.log(data);
-      this.spotifyService.player(this.authService.getAccessToken()).subscribe(d => {
-        console.log(d);
+    this.spotifyService.nextSong().subscribe(data => {
+        console.log('next called');
+        console.log(data);
+        this.spotifyService.player().subscribe(d => {
+          console.log(d);
+        });
+      },
+      error => {
+        console.log(error);
       });
-    },
-      error => {console.log(error);});
   }
 
   toggleDevices() {

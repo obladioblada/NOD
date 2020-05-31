@@ -1,2 +1,1 @@
-<nod-device *ngFor="let device of devices ; trackBy: trackById" [device]="device" [isPlaying]="device.is_active && isPlaying" (onPlayPause)="refresh()"></nod-device>
-
+<nod-device *ngFor="let device of devices.asArray(); trackBy: trackById" [device]="device"></nod-device>

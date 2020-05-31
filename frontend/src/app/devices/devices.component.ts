@@ -1,4 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Device } from '../models/Device';
+import {Devices} from "../models/Devices";
 import {Observable} from "rxjs";
 
 @Component({
@@ -10,10 +12,7 @@ import {Observable} from "rxjs";
 export class DevicesComponent implements OnInit {
 
   @Input()
-  devices: [];
-
-  @Input()
-  isPlaying: boolean;
+  devices: Devices;
 
   constructor() {
   }
@@ -22,11 +21,7 @@ export class DevicesComponent implements OnInit {
   }
 
 
-  refresh() {
-
-  }
-
-  trackById(index, device) {
+  trackById(index, device: Device) {
     return device.id;
   }
 }

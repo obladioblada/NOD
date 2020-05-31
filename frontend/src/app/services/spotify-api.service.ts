@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from "rxjs";
-import { Device } from '../models/Device';
-import { List } from 'immutable';
-import { map } from 'rxjs/operators';
+import { Device, DeviceDto } from '../models/Device';
+import { DevicesDto } from '../models/Devices';
+import {AuthService} from "../../auth/auth.service";
 
 
 
@@ -22,41 +22,57 @@ export class SpotifyApiService {
   private body: any;
 
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private authService: AuthService) {
   }
 
-  player(authToken: string) {
-    const headers = {
-      headers: {Authorization: 'Bearer ' + authToken}
-    };
+  getHeaders(): HttpHeaders {
+    return new HttpHeaders({
+        Authorization : 'Bearer ' + this.authService.getAccessToken()
+      });
+  }
+
+  player() {
+    const headers: HttpHeaders = this.getHeaders();
     this.playerUrl = `https://api.spotify.com/v1/me/player`;
-    return this.http.get(this.playerUrl, headers);
+    return this.http.get(this.playerUrl, {headers});
   }
 
-  setDevice(play: boolean) {
-    
+  play() {
+    const headers: HttpHeaders = this.getHeaders();
+    return this.http.put(" https://api.spotify.com/v1/me/player/play", {},{ headers });
+  }
+
+  pause() {
+    const headers: HttpHeaders = this.getHeaders();
+    return this.http.put(" https://api.spotify.com/v1/me/player/pause", {},{ headers });
+  }
+
+  setDevice(deviceId: string) {
+    const headers: HttpHeaders = this.getHeaders();
+    this.playerUrl = `https://api.spotify.com/v1/me/player`;
+    return this.http.put(this.playerUrl,{device_ids:[deviceId]} ,{ headers });
   }
 
 
-  previousSong(authToken: string) {
-    const headers = new HttpHeaders({Authorization : 'Bearer ' + authToken});
+  previousSong() {
+    const headers: HttpHeaders = this.getHeaders();
     this.previousUrl = 'https://api.spotify.com/v1/me/player/previous';
-    return this.http.post( this.previousUrl, null, { headers});
+    return this.http.post( this.previousUrl, null, { headers });
   }
 
-  nextSong(authToken: string) {
-    const headers = new HttpHeaders({Authorization : 'Bearer ' + authToken});
+  nextSong() {
+    const headers: HttpHeaders = this.getHeaders();
     this.nextUrl = 'https://api.spotify.com/v1/me/player/next';
     return this.http.post( this.nextUrl, null, { headers});
   }
 
   // Get search results for a query
-  searchMusic(query: string, type, authToken: string) {
+  searchMusic(query: string, type) {
     // const headers = new HttpHeaders();
     // headers.set('Authorization', 'Bearer ' + authToken);
 
     const headers = {
-      headers: {Authorization: 'Bearer ' + authToken}
+      headers: {Authorization: 'Bearer ' + this.authService.getAccessToken()}
     };
 
     this.searchUrl = `https://api.spotify.com/v1/search?q=${query}&offset=0&limit=20&type=${type}&market=from_token`;
@@ -67,46 +83,33 @@ export class SpotifyApiService {
   }
 
   // Get data about artist that has been chosen to view
-  getArtist(id: string, authToken: string) {
-    const headers = new HttpHeaders();
-    headers.append('Authorization', `Bearer ${authToken}`);
-
+  getArtist(id: string) {
+    const headers = this.getHeaders();
     this.artistUrl = 'https://api.spotify.com/v1/artists/' + id;
-
     return this.http.get(this.artistUrl, {headers});
   }
 
   // Get the albums about the artist that has been chosen
-  getAlbums(id: string, authToken: string) {
-    const headers = new HttpHeaders();
-    headers.append('Authorization', 'Bearer ' + authToken);
-
+  getAlbums(id: string) {
+    const headers = this.getHeaders();
     this.albumsUrl = 'https://api.spotify.com/v1/artists/' + id + '/albums?market=from_token&album_type=single';
-
     return this.http.get(this.albumsUrl, {headers});
   }
 
   // Get Tracks in ablum selected
-  getAlbum(id: string, authToken: string) {
-    const headers = new HttpHeaders();
-    headers.append('Authorization', 'Bearer ' + authToken);
-
+  getAlbum(id: string) {
+    const headers = this.getHeaders();
     this.albumUrl = 'https://api.spotify.com/v1/albums/' + id;
-
     return this.http.get(this.albumUrl, {headers});
   }
   // Get current track playing
-  getCurrentPlaying(authToken: string) {
-    const headers = {
-      headers: {Authorization: 'Bearer ' + authToken}
-    };
-    return this.http.get('https://api.spotify.com/v1/me/player/currently-playing', headers);
+  getCurrentPlaying() {
+    const headers = this.getHeaders();
+    return this.http.get('https://api.spotify.com/v1/me/player/currently-playing', {headers});
   }
 
-  devices(authToken: string): Observable<Device[]> {
-    const headers = {
-      headers: {Authorization: 'Bearer ' + authToken}
-    };
-    return this.http.get<Device[]>('https://api.spotify.com/v1/me/player/devices', headers);
+  devices(): Observable<DevicesDto> {
+    const headers = this.getHeaders();
+    return this.http.get<DevicesDto>('https://api.spotify.com/v1/me/player/devices', { headers });
   }
 }

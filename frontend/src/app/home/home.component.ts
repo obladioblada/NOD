@@ -4,12 +4,10 @@ import {MainButtonService} from '../main-button/main-button.service';
 import {ButtonState, ButtonPosition} from '../main-button/button';
 import {Observable, Subject, Subscription, combineLatest} from 'rxjs';
 import {switchMap, shareReplay, map} from 'rxjs/operators';
-import {SpotifyConnectorService} from '../services/spotify-connector.service';
 import {User} from '../models/User';
 import {BackgroundService} from '../background/background.service';
 import {BackgroundState, BackgroundAnimationState} from '../background/background';
 import {SpotifyApiService} from '../services/spotify-api.service';
-import {List} from 'immutable';
 
 @Component({
   selector: 'nod-home',
@@ -19,11 +17,9 @@ import {List} from 'immutable';
 })
 export class HomeComponent implements AfterViewInit, OnInit {
   currentPlaying$: Observable<any>;
-  isPlaying$: Observable<boolean>;
   isPlaying: boolean;
   users$: Observable<User[]>;
   refreshOccurs$: Subject<any> = new Subject();
-  joinSucceded: boolean;
   mainButton$: Subscription;
   showPlayer: boolean;
   devices;
@@ -32,13 +28,11 @@ export class HomeComponent implements AfterViewInit, OnInit {
     private authService: AuthService,
     private mainButtonService: MainButtonService,
     private backgroundService: BackgroundService,
-    private spotifyService: SpotifyApiService,
-    private spotifyConnectorService: SpotifyConnectorService,
-    private ngZone: NgZone) {
+    private spotifyService: SpotifyApiService) {
     this.mainButtonService.setButtonState(ButtonState.LOADING);
     this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PAUSE);
     this.currentPlaying$ = this.refreshOccurs$.asObservable()
-      .pipe(switchMap(() => this.spotifyService.getCurrentPlaying(authService.getAccessToken())), shareReplay());
+      .pipe(switchMap(() => this.spotifyService.getCurrentPlaying()), shareReplay());
     this.users$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.friends()));
   }
 
@@ -64,30 +58,11 @@ export class HomeComponent implements AfterViewInit, OnInit {
     this.refresh();
   }
 
-  updateFriends() {
-    this.refresh();
-  }
-
-  play(id, play) {
-    this.mainButtonService.setButtonState(ButtonState.LOADING);
-    this.authService.player(id, play).subscribe(val => {
-      console.log(val);
-      this.refresh();
-    });
-  }
-
 
   refresh() {
     console.log('refresh');
     this.refreshOccurs$.next();
   }
 
-  join() {
-    // this.authService.join().subscribe(val => {
-    //   console.log(val);
-    //   this.joinSucceded = true;
-    //   this.refresh();
-    // });
-  }
 
 }

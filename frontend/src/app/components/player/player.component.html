@@ -22,4 +22,6 @@
     </button>
   </div>
 </div>
-<nod-devices *ngIf="showDevices" class="devices-container" [isPlaying]="isPlaying" [devices]="devices"></nod-devices>
+<div *ngIf="devices">
+<nod-devices *ngIf="showDevices" class="devices-container" [devices]="devices"></nod-devices>
+</div>

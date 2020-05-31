@@ -9,6 +9,13 @@
 </head>
 <body>
   <nod-root></nod-root>
-  <script src="https://sdk.scdn.co/spotify-player.js"></script>
+  <script id="spotifySDK" src="https://sdk.scdn.co/spotify-player.js"></script>
 </body>
 </html>
+<script>
+  window.waitForSpotify = new Promise((resolve, reject) => {
+    window.onSpotifyWebPlaybackSDKReady = () => {
+      resolve();
+    }
+  });
+</script>

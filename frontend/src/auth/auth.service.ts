@@ -92,12 +92,6 @@ export class AuthService {
       Location.joinWithSlash(this.apiEndpoint, 'player?access_token=' + localStorage.getItem('id_token') + '&id=' + id + '&play=' + play));
   }
 
-  devices() {
-    console.log(localStorage.getItem('id_token'));
-    return this.http.get(Location.joinWithSlash(this.apiEndpoint, 'player/devices?access_token=' + localStorage.getItem('id_token')))
-      .pipe(map((data: any) => data.devices));
-  }
-
   friends(): Observable<User[]> {
     console.log(localStorage.getItem('id_token'));
     return this.http.get<UserDto[]>(Location.joinWithSlash(this.apiEndpoint, 'friends?access_token=' + localStorage.getItem('id_token')))

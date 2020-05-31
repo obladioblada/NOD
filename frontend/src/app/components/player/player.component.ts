@@ -1,13 +1,11 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, NgZone, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {AuthService} from '../../../auth/auth.service';
 import {BackgroundService} from '../../background/background.service';
 import {SocketService} from '../../services/socket.service';
 import {SpotifyApiService} from '../../services/spotify-api.service';
-import {switchMap, mapTo, map, concatMap} from 'rxjs/operators';
+import {map, switchMap} from 'rxjs/operators';
 import {PlayerService} from "../../services/player.service";
-import {device, Device, DeviceDto} from 'src/app/models/Device';
-import {DevicesDto, Devices} from 'src/app/models/Devices';
-import {combineLatest} from 'rxjs';
+import {Devices} from 'src/app/models/Devices';
 
 @Component({
   selector: 'nod-player',
@@ -47,7 +45,7 @@ export class PlayerComponent implements OnInit {
       this.isPlaying = !data.paused;
       this.cd.detectChanges();
     });
-    this.spotifyService.getCurrentPlaying().subscribe(currentTrack => {
+    this.spotifyService.getCurrentPlaying().subscribe((currentTrack) => {
       if (currentTrack != null) {
         this.isPlaying = currentTrack.is_playing;
       } else {

@@ -1,10 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from "rxjs";
-import { Device, DeviceDto } from '../models/Device';
-import { DevicesDto } from '../models/Devices';
+import {DevicesDto} from '../models/Devices';
 import {AuthService} from "../../auth/auth.service";
-
 
 
 @Injectable()
@@ -103,9 +101,9 @@ export class SpotifyApiService {
     return this.http.get(this.albumUrl, {headers});
   }
   // Get current track playing
-  getCurrentPlaying() {
+  getCurrentPlaying(): Observable<any>{
     const headers = this.getHeaders();
-    return this.http.get('https://api.spotify.com/v1/me/player/currently-playing', {headers});
+    return this.http.get<any>('https://api.spotify.com/v1/me/player/currently-playing', {headers});
   }
 
   devices(): Observable<DevicesDto> {

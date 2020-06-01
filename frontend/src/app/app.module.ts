@@ -13,19 +13,18 @@ import {AuthService} from 'src/auth/auth.service';
 import {HttpClientModule} from '@angular/common/http';
 import {MainButtonService} from './main-button/main-button.service';
 import {DeviceComponent} from './device/device.component';
-import {DevicesComponent} from './devices/devices.component';
 import {SpotifyApiService} from './services/spotify-api.service';
 import {SearchComponent} from './components/Search/search.component';
 import {TileComponent} from './components/tile/tile.component';
 import {UserComponent} from './user/user.component';
 import {SocketService} from './services/socket.service';
-import {SocketIoModule, SocketIoConfig} from 'ngx-socket-io';
+import {SocketIoConfig, SocketIoModule} from 'ngx-socket-io';
 import {SpotifyConnectorService} from './services/spotify-connector.service';
 import {PlayerComponent} from './components/player/player.component';
 import {BackgroundComponent} from './background/background.component';
 import {SvgIconComponent} from './svg-icon.component';
 import {environment} from 'src/environments/environment';
-import { PlayerService } from './services/player.service';
+import {PlayerService} from './services/player.service';
 
 const socketUrl = environment.socketEndpoint !== 'heroku' ? environment.socketEndpoint : window.location.hostname;
 const config: SocketIoConfig = {
@@ -43,7 +42,6 @@ const config: SocketIoConfig = {
     PlayerComponent,
     MainButtonComponent,
     DeviceComponent,
-    DevicesComponent,
     SearchComponent,
     TileComponent,
     UserComponent,

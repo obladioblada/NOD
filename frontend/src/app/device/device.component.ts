@@ -1,12 +1,4 @@
-import {
-    Component,
-    Input,
-    HostBinding,
-    EventEmitter,
-    Output,
-    ChangeDetectionStrategy,
-    ChangeDetectorRef
-} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Input} from '@angular/core';
 import {AuthService} from 'src/auth/auth.service';
 import {MainButtonService} from '../main-button/main-button.service';
 import {SocketService} from '../services/socket.service';
@@ -22,10 +14,17 @@ import {PlayerService} from "../services/player.service";
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DeviceComponent {
+
     private _device: Device;
+    private _isActive: boolean;
     @Input()
     set device(device) {
         this._device = device;
+    }
+
+    @Input()
+    set active(active: boolean) {
+        this._isActive = active;
     }
 
     get device() {

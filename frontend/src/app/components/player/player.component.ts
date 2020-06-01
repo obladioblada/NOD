@@ -5,7 +5,7 @@ import {SocketService} from '../../services/socket.service';
 import {SpotifyApiService} from '../../services/spotify-api.service';
 import {map, switchMap} from 'rxjs/operators';
 import {PlayerService} from "../../services/player.service";
-import {Devices} from 'src/app/models/Devices';
+import {Device} from 'src/app/models/Device';
 
 @Component({
   selector: 'nod-player',
@@ -18,7 +18,7 @@ export class PlayerComponent implements OnInit {
   currentSong: string;
   currentImgUrl: string;
   currentArtist: string;
-  devices: Devices;
+  devices: Device[];
   showDevices: boolean;
 
   constructor(private authService: AuthService,
@@ -36,7 +36,8 @@ export class PlayerComponent implements OnInit {
       switchMap((NodId) => this.playerService.setDevice(NodId).pipe(map(() => NodId))),
       switchMap(data => this.playerService.getDevices())
     ).subscribe((devicesDto) => {
-      this.devices = Devices.parseFromDto(devicesDto);
+      console.log(devicesDto);
+      this.devices = devicesDto.devices.map(devicesDto => Device.parseFromDto(devicesDto));
     });
     this.playerService.onPlaySong().subscribe(data => {
       this.currentSong = data.track.name;
@@ -53,11 +54,14 @@ export class PlayerComponent implements OnInit {
       }
     });
     this.playerService.onCurrentDeviceChanged.subscribe(id => {
-      this.devices.asArray().filter(device => device.id !== id).forEach(device => {
-        console.log(device);
-        device.isActive = false
+    this.devices = this.devices.map(device => {
+        if(device.id !== id) {
+        device.isActive = false;
+        }
+        return device
       });
-
+      console.log(this.devices);
+      this.cd.detectChanges();
     })
   }
 

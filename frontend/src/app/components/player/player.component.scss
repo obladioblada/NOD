@@ -21,7 +21,7 @@
 
 .current-song-info-wrapper{
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 88px 2fr;
   grid-template-rows: 1fr 1fr;
   align-items: center;
 }
@@ -63,8 +63,8 @@
 }
 
 .player-icon {
-  width: 4em;
-  height: 4em;
+  width: 2.5em;
+  height: 2.5em;
 }
 
 .devices-icon {
@@ -85,3 +85,16 @@ button:focus {
 button:hover {
   background: #222222;
 }
+
+@media screen and (max-width: 600px) {
+  .player-container {
+    grid-template-columns:1fr 1fr;
+  }
+  .devices-icon-container {
+    display: none;
+  }
+}
+@media screen and (min-width: 601px) {
+
+}
+

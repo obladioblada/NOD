@@ -22,6 +22,6 @@
     </button>
   </div>
 </div>
-<div *ngIf="devices">
-<nod-devices *ngIf="showDevices" class="devices-container" [devices]="devices"></nod-devices>
+<div *ngIf="devices && showDevices" class="devices-container">
+  <nod-device *ngFor="let device of devices" [device]="device" [active]="device.isActive"></nod-device>
 </div>

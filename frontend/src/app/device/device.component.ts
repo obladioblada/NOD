@@ -15,8 +15,10 @@ import {PlayerService} from "../services/player.service";
 })
 export class DeviceComponent {
 
-    private _device: Device;
-    private _isActive: boolean;
+    _device: Device;
+    _isActive: boolean;
+
+
     @Input()
     set device(device) {
         this._device = device;

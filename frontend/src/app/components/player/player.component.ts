@@ -6,7 +6,7 @@ import {SpotifyApiService} from '../../services/spotify-api.service';
 import {map, switchMap} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {PlayerService} from "../../services/player.service";
-import {Device, DeviceDto} from 'src/app/models/Device';
+import {Device} from 'src/app/models/Device';
 
 @Component({
   selector: 'nod-player',
@@ -112,7 +112,8 @@ export class PlayerComponent implements OnInit {
       });
   }
 
-  toggleDevices() {
+  toggleDevices(par) {
+    console.log(par);
     this.showDevices = !this.showDevices;
   }
 }

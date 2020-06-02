@@ -16,14 +16,12 @@
       <nod-svg-icon icon="icon-next2" class="icon player-icon"></nod-svg-icon>
     </button>
   </div>
-  <div class="devices-icon-container">
-    <button (click)="toggleDevices()">
+  <div class="devices-icon-container" *ngIf="devices$ | async as d">
+    <button (click)="toggleDevices(d)">
       <nod-svg-icon icon="icon-devices" class="icon player-icon"></nod-svg-icon>
     </button>
   </div>
 </div>
-<div *ngIf="devices && showDevices" class="devices-container">
-  <ng-container *ngFor="let device of devices | async">
-    <nod-device [device]="device" [active]="device.isActive"></nod-device>
-  </ng-container>
+<div *ngIf="showDevices" class="devices-container">
+    <nod-device *ngFor="let device of devices$ | async" [device]="device" [active]="device.isActive"></nod-device>
 </div>

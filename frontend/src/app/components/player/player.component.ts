@@ -4,8 +4,9 @@ import {BackgroundService} from '../../background/background.service';
 import {SocketService} from '../../services/socket.service';
 import {SpotifyApiService} from '../../services/spotify-api.service';
 import {map, switchMap} from 'rxjs/operators';
+import {Observable} from 'rxjs';
 import {PlayerService} from "../../services/player.service";
-import {Device} from 'src/app/models/Device';
+import {Device, DeviceDto} from 'src/app/models/Device';
 
 @Component({
   selector: 'nod-player',
@@ -19,6 +20,7 @@ export class PlayerComponent implements OnInit {
   currentImgUrl: string;
   currentArtist: string;
   devices: Device[];
+  devices$: Observable<Device[]>;
   showDevices: boolean;
 
   constructor(private authService: AuthService,
@@ -32,12 +34,17 @@ export class PlayerComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.devices$ = this.playerService.onSDKReady().pipe(
+      switchMap((NodId) => this.playerService.setDevice(NodId).pipe(map(() => NodId))),
+      switchMap(data => this.playerService.getDevices())
+    );
+
     this.playerService.onSDKReady().pipe(
       switchMap((NodId) => this.playerService.setDevice(NodId).pipe(map(() => NodId))),
       switchMap(data => this.playerService.getDevices())
     ).subscribe((devicesDto) => {
       console.log(devicesDto);
-      this.devices = devicesDto.devices.map(devicesDto => Device.parseFromDto(devicesDto));
+      this.devices = devicesDto;
     });
     this.playerService.onPlaySong().subscribe(data => {
       this.currentSong = data.track.name;

@@ -3,6 +3,9 @@ import {SpotifyConnectorService} from "./spotify-connector.service";
 import {SpotifyApiService} from "./spotify-api.service";
 import {AuthService} from "../../auth/auth.service";
 import {Subject} from "rxjs";
+import {map} from "rxjs/operators";
+import { DeviceDto, Device } from '../models/Device';
+import { DevicesDto } from '../models/Devices';
 
 @Injectable({ providedIn: 'root'})
 export class PlayerService {
@@ -20,7 +23,9 @@ export class PlayerService {
   }
 
   getDevices() {
-    return this.spotifyApiService.devices();
+    return this.spotifyApiService.devices().pipe(map((devicesDto:DevicesDto) => 
+      devicesDto.devices.map((devicesDto: DeviceDto) => Device.parseFromDto(devicesDto)))
+    );
   }
 
   onPlaySong() {

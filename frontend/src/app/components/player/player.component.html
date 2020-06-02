@@ -23,5 +23,7 @@
   </div>
 </div>
 <div *ngIf="devices && showDevices" class="devices-container">
-  <nod-device *ngFor="let device of devices" [device]="device" [active]="device.isActive"></nod-device>
+  <ng-container *ngFor="let device of devices | async">
+    <nod-device [device]="device" [active]="device.isActive"></nod-device>
+  </ng-container>
 </div>

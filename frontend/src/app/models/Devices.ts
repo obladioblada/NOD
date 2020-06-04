@@ -1,4 +1,5 @@
 import { Device, DeviceDto } from './Device';
+import { List } from 'immutable';
 
 export interface DevicesDto {
   devices: DeviceDto[];
@@ -12,8 +13,8 @@ export class Devices {
     this.devices = devices;
   }
 
-  static parseFromDto(devicesDto: DevicesDto): Devices {
-    return new Devices(devicesDto.devices.map(devicesDto => Device.parseFromDto(devicesDto)));
+  static parseFromDto(devicesDto: DevicesDto): List<Device> {
+    return List(devicesDto.devices.map((deviceDto: DeviceDto) => Device.parseFromDto(deviceDto)));
   }
 
   asArray(): Device[] {

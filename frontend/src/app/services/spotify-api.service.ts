@@ -3,6 +3,10 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from "rxjs";
 import {DevicesDto} from '../models/Devices';
 import {AuthService} from "../../auth/auth.service";
+import { List } from 'immutable';
+import { Device } from '../models/Device';
+import { Devices } from '../models/Devices';
+import { map } from 'rxjs/operators';
 
 
 @Injectable()
@@ -106,8 +110,10 @@ export class SpotifyApiService {
     return this.http.get<any>('https://api.spotify.com/v1/me/player/currently-playing', {headers});
   }
 
-  devices(): Observable<DevicesDto> {
+  devices(): Observable<List<Device>> {
     const headers = this.getHeaders();
-    return this.http.get<DevicesDto>('https://api.spotify.com/v1/me/player/devices', { headers });
+    return this.http.get<DevicesDto>('https://api.spotify.com/v1/me/player/devices', { headers }).pipe(map((devicesDto: DevicesDto) => 
+      Devices.parseFromDto(devicesDto)
+      ));
   }
 }

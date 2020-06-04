@@ -7,6 +7,7 @@ import {map, switchMap} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {PlayerService} from "../../services/player.service";
 import {Device} from 'src/app/models/Device';
+import {List} from 'immutable';
 
 @Component({
   selector: 'nod-player',
@@ -20,7 +21,7 @@ export class PlayerComponent implements OnInit {
   currentImgUrl: string;
   currentArtist: string;
   devices: Device[];
-  devices$: Observable<Device[]>;
+  devices$: Observable<List<Device>>;
   showDevices: boolean;
 
   constructor(private authService: AuthService,
@@ -36,7 +37,7 @@ export class PlayerComponent implements OnInit {
   ngOnInit(): void {
     this.devices$ = this.playerService.onSDKReady().pipe(
       switchMap((NodId) => this.playerService.setDevice(NodId).pipe(map(() => NodId))),
-      switchMap(data => this.playerService.getDevices())
+      switchMap(() => this.playerService.getDevices())
     );
 
     this.playerService.onSDKReady().pipe(

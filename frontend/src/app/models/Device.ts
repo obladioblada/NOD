@@ -24,6 +24,6 @@ export class Device {
   }
 
   static parseFromDto(deviceDto: DeviceDto): Device {
-    return new Device(deviceDto.id, deviceDto.is_active, deviceDto.name, deviceDto.volume_percent, deviceDto.type)
+    return new Device(deviceDto.id, deviceDto.is_active, deviceDto.name, deviceDto.volume_percent, deviceDto.type);
   }
 }

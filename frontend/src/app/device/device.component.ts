@@ -43,7 +43,8 @@ export class DeviceComponent {
 
     setDevice() {
         this.playerService.setDevice(this.device.id).subscribe((data) => {
-            this.device.isActive = true;
+            // this info should come from spotify
+            // this.device.isActive = true;
             this.playerService.onCurrentDeviceChanged.next(this.device.id);
             this.cd.detectChanges();
         });

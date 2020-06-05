@@ -20,7 +20,6 @@ export class PlayerComponent implements OnInit {
   currentSong: string;
   currentImgUrl: string;
   currentArtist: string;
-  devices: Device[];
   devices$: Observable<List<Device>>;
   showDevices: boolean;
 
@@ -39,14 +38,6 @@ export class PlayerComponent implements OnInit {
       switchMap((NodId) => this.playerService.setDevice(NodId).pipe(map(() => NodId))),
       switchMap(() => this.playerService.getDevices())
     );
-
-    this.playerService.onSDKReady().pipe(
-      switchMap((NodId) => this.playerService.setDevice(NodId).pipe(map(() => NodId))),
-      switchMap(data => this.playerService.getDevices())
-    ).subscribe((devicesDto) => {
-      console.log(devicesDto);
-      this.devices = devicesDto;
-    });
     this.playerService.onPlaySong().subscribe(data => {
       this.currentSong = data.track.name;
       this.currentImgUrl = data.track.album.images[1].url;
@@ -61,6 +52,8 @@ export class PlayerComponent implements OnInit {
         this.isPlaying = false;
       }
     });
+    /*
+    TODO merge this with device observable
     this.playerService.onCurrentDeviceChanged.subscribe(id => {
     this.devices = this.devices.map(device => {
         if(device.id !== id) {
@@ -71,6 +64,7 @@ export class PlayerComponent implements OnInit {
       console.log(this.devices);
       this.cd.detectChanges();
     })
+    */
   }
 
 

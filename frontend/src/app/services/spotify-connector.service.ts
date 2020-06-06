@@ -1,5 +1,5 @@
 import {WindowRef} from '../WindowRef';
-import {Injectable, Output} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {AuthService} from 'src/auth/auth.service';
 import {Subject} from 'rxjs';
 
@@ -9,7 +9,7 @@ declare var Spotify: any;
 export class SpotifyConnectorService {
 
   onPlaySong: Subject<any> = new Subject<any>();
-  onConnected: Subject<string> = new Subject<string>();
+  onSdkReady$: Subject<string> = new Subject<string>();
 
   constructor(private winRef: WindowRef, private authService: AuthService) {
     this.winRef.nativeWindow.waitForSpotify.then(() =>{
@@ -47,7 +47,7 @@ export class SpotifyConnectorService {
         // Ready
         player.addListener('ready', ({device_id}) => {
           console.log('Ready with Device ID', device_id);
-          this.onConnected.next(device_id);
+          this.onSdkReady$.next(device_id);
         });
 
         // Not Ready

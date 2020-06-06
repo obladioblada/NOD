@@ -2,13 +2,12 @@ import {Injectable} from "@angular/core";
 import {SpotifyConnectorService} from "./spotify-connector.service";
 import {SpotifyApiService} from "./spotify-api.service";
 import {AuthService} from "../../auth/auth.service";
-import {Subject, Observable} from "rxjs";
-import {map} from "rxjs/operators";
-import { DeviceDto, Device } from '../models/Device';
-import { DevicesDto } from '../models/Devices';
-import { List } from 'immutable';
+import {Observable, Subject} from "rxjs";
+import {switchMap} from "rxjs/operators";
+import {Device} from '../models/Device';
+import {List} from 'immutable';
 
-@Injectable({ providedIn: 'root'})
+@Injectable({providedIn: 'root'})
 export class PlayerService {
 
   currentDevices: string;
@@ -17,10 +16,11 @@ export class PlayerService {
   constructor(private spotifyApiService: SpotifyApiService,
               private authService: AuthService,
               private spotifyConnectorService: SpotifyConnectorService
-  ) {}
+  ) {
+  }
 
   onSDKReady() {
-    return this.spotifyConnectorService.onConnected;
+    return this.spotifyConnectorService.onSdkReady$.asObservable();
   }
 
   getDevices(): Observable<List<Device>> {
@@ -31,9 +31,9 @@ export class PlayerService {
     return this.spotifyConnectorService.onPlaySong;
   }
 
-  setDevice(deviceId: string)  {
-    this.currentDevices = deviceId;
-    return this.spotifyApiService.setDevice(deviceId);
+  setDevice(deviceId: string) {
+      this.currentDevices = deviceId;
+      return this.spotifyApiService.setDevice(deviceId).pipe(switchMap(() => this.getDevices()));
   }
 
   play() {

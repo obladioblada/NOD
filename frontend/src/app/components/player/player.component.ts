@@ -1,10 +1,10 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from '../../../auth/auth.service';
 import {BackgroundService} from '../../background/background.service';
 import {SocketService} from '../../services/socket.service';
 import {SpotifyApiService} from '../../services/spotify-api.service';
-import {map, switchMap} from 'rxjs/operators';
-import {Observable} from 'rxjs';
+import {switchMap, takeUntil} from 'rxjs/operators';
+import {Observable, Subject} from 'rxjs';
 import {PlayerService} from "../../services/player.service";
 import {Device} from 'src/app/models/Device';
 import {List} from 'immutable';
@@ -15,13 +15,16 @@ import {List} from 'immutable';
   styleUrls: ['./player.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PlayerComponent implements OnInit {
+export class PlayerComponent implements OnInit, OnDestroy {
   isPlaying: boolean;
   currentSong: string;
   currentImgUrl: string;
   currentArtist: string;
   devices$: Observable<List<Device>>;
   showDevices: boolean;
+  refreshOccurs$: Subject<any> = new Subject();
+  destroy$: Subject<boolean> = new Subject<boolean>();
+
 
   constructor(private authService: AuthService,
               private backgroundService: BackgroundService,
@@ -31,13 +34,16 @@ export class PlayerComponent implements OnInit {
               private cd: ChangeDetectorRef) {
     this.isPlaying = false;
     this.showDevices = false;
+    this.devices$ =  this.refreshOccurs$.asObservable().pipe(switchMap(() => this.playerService.getDevices()))
+    this.playerService.onSDKReady().pipe(
+      switchMap((NodId) =>   this.playerService.setDevice(NodId)),
+      takeUntil(this.destroy$))
+    .subscribe(() => {
+      this.refreshDevices();
+    })
   }
 
   ngOnInit(): void {
-    this.devices$ = this.playerService.onSDKReady().pipe(
-      switchMap((NodId) => this.playerService.setDevice(NodId).pipe(map(() => NodId))),
-      switchMap(() => this.playerService.getDevices())
-    );
     this.playerService.onPlaySong().subscribe(data => {
       this.currentSong = data.track.name;
       this.currentImgUrl = data.track.album.images[1].url;
@@ -52,19 +58,6 @@ export class PlayerComponent implements OnInit {
         this.isPlaying = false;
       }
     });
-    /*
-    TODO merge this with device observable
-    this.playerService.onCurrentDeviceChanged.subscribe(id => {
-    this.devices = this.devices.map(device => {
-        if(device.id !== id) {
-        device.isActive = false;
-        }
-        return device
-      });
-      console.log(this.devices);
-      this.cd.detectChanges();
-    })
-    */
   }
 
 
@@ -107,8 +100,21 @@ export class PlayerComponent implements OnInit {
       });
   }
 
-  toggleDevices(par) {
-    console.log(par);
+  toggleDevices() {
+    this.refreshDevices();
     this.showDevices = !this.showDevices;
+  }
+
+  refreshDevices() {
+    this.refreshOccurs$.next();
+  }
+
+  trackDeviceId(index: number, device: Device): string {
+    return device.id;
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
   }
 }

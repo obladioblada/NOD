@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output} from '@angular/core';
 import {AuthService} from 'src/auth/auth.service';
 import {MainButtonService} from '../main-button/main-button.service';
 import {SocketService} from '../services/socket.service';
@@ -8,46 +8,38 @@ import {Device} from '../models/Device';
 import {PlayerService} from "../services/player.service";
 
 @Component({
-    selector: 'nod-device',
-    templateUrl: './device.component.html',
-    styleUrls: ['./device.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'nod-device',
+  templateUrl: './device.component.html',
+  styleUrls: ['./device.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DeviceComponent {
 
-    _device: Device;
-    _isActive: boolean;
+  _device: Device;
+  @Output() onDeviceSelected = new EventEmitter<string>();
 
-    @Input()
-    set device(device) {
-        this._device = device;
-    }
+  @Input()
+  set device(device) {
+    this._device = device;
+  }
 
-    @Input()
-    set active(active: boolean) {
-        this._isActive = active;
-    }
+  get device() {
+    return this._device;
+  }
 
-    get device() {
-        return this._device;
-    }
+  constructor(private authService: AuthService,
+              private mainButtonService: MainButtonService,
+              private backgroundService: BackgroundService,
+              private spotifyService: SpotifyApiService,
+              private socketServices: SocketService,
+              private playerService: PlayerService,
+              private cd: ChangeDetectorRef) {
+  }
 
-    constructor(private authService: AuthService,
-                private mainButtonService: MainButtonService,
-                private backgroundService: BackgroundService,
-                private spotifyService: SpotifyApiService,
-                private socketServices: SocketService,
-                private playerService: PlayerService,
-                private cd: ChangeDetectorRef) {
-    }
-
-    setDevice() {
-        this.playerService.setDevice(this.device.id).subscribe((data) => {
-            // this info should come from spotify
-            // this.device.isActive = true;
-            this.playerService.onCurrentDeviceChanged.next(this.device.id);
-            this.cd.detectChanges();
-        });
-    }
-
+  setDevice() {
+    this.playerService.setDevice(this.device.id).subscribe((data) => {
+      console.log(data);
+      this.onDeviceSelected.emit(this.device.id);
+    });
+  }
 }

@@ -1,9 +1,9 @@
-<nod-tile [ngClass]="{'is-active' : _isActive}" (click)="setDevice()">
+<nod-tile [ngClass]="{'is-active' : device.isActive}" (click)="setDevice()">
   <div class="title">
     <span class="name">{{device.name}} </span>
   </div>
   <div class="icon image">
-    <div [class]="'device '+ device.type | lowercase" [ngClass]="{'is-active' : _isActive}">
+    <div [class]="'device '+ device.type | lowercase" [ngClass]="{'is-active' : device.isActive}">
       <div class="screenWrapper x2">
       </div>
     </div>

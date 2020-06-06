@@ -17,11 +17,11 @@
     </button>
   </div>
   <div class="devices-icon-container">
-    <button>
+    <button (click)="toggleDevices()">
       <nod-svg-icon icon="icon-devices" class="icon player-icon"></nod-svg-icon>
     </button>
   </div>
 </div>
-<div *ngIf="showDevices && devices$ | async as devices" class="devices-container">
-    <nod-device *ngFor="let device of devices" [device]="device" [active]="device.isActive"></nod-device>
+<div *ngIf="showDevices && (devices$ | async ) as deviceList" class="devices-container">
+    <nod-device *ngFor="let device of deviceList ; trackBy: trackDeviceId" [device]="device" (onDeviceSelected)="refreshDevices()"></nod-device>
 </div>

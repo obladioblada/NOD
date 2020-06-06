@@ -34,16 +34,17 @@ export class PlayerComponent implements OnInit, OnDestroy {
               private cd: ChangeDetectorRef) {
     this.isPlaying = false;
     this.showDevices = false;
-    this.devices$ =  this.refreshOccurs$.asObservable().pipe(switchMap(() => this.playerService.getDevices()))
-    this.playerService.onSDKReady().pipe(
-      switchMap((NodId) =>   this.playerService.setDevice(NodId)),
-      takeUntil(this.destroy$))
-    .subscribe(() => {
-      this.refreshDevices();
-    })
+
   }
 
   ngOnInit(): void {
+    this.devices$ =  this.refreshOccurs$.asObservable().pipe(switchMap(() => this.playerService.getDevices()));
+    this.playerService.onSDKReady().pipe(
+      switchMap((NodId) =>   this.playerService.setDevice(NodId)),
+      takeUntil(this.destroy$))
+      .subscribe(() => {
+        this.refreshDevices();
+      });
     this.playerService.onPlaySong().subscribe(data => {
       this.currentSong = data.track.name;
       this.currentImgUrl = data.track.album.images[1].url;
@@ -109,9 +110,6 @@ export class PlayerComponent implements OnInit, OnDestroy {
     this.refreshOccurs$.next();
   }
 
-  trackDeviceId(index: number, device: Device): string {
-    return device.id;
-  }
 
   ngOnDestroy(): void {
     this.destroy$.next(true);

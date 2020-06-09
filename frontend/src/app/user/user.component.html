@@ -1,5 +1,5 @@
 <nod-tile class="expand">
-  <div class="title" (click)="join(user.id)">
+  <div class="title">
     <span class="name">{{user.name}} </span>
   </div>
   <div class="footer">
@@ -8,4 +8,5 @@
   <div class="image">
     <img src="{{user.pictureUrl}}" alt="{{user.name}}">
   </div>
+    <nod-svg-icon (click)="join(user.id)" icon="icon-headphones" class="icon lateral"></nod-svg-icon>
 </nod-tile>

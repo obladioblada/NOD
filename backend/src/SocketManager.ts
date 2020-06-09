@@ -2,7 +2,6 @@ import * as socketIo from 'socket.io'
 import {logger} from "./logging/Logger";
 import {SocketEvent} from "../../shared/socket/socketEvent";
 
-
 class SocketManager {
     io: socketIo.Server;
 
@@ -17,7 +16,6 @@ class SocketManager {
             });
 
             socket.broadcast.emit(socket.id + 'connected');
-
             socket.on(SocketEvent.PLAY, (message) => {
                 console.log(message);
                 console.log("broadcasting");

@@ -1,0 +1,30 @@
+<div class="player-container">
+  <div class="current-song-info-wrapper">
+    <img class="current-playing-img" [src]="currentImgUrl" alt="">
+    <div class="current-playing-song">{{currentSong}}</div>
+    <div class="current-playing-artist">{{currentArtist}}</div>
+  </div>
+  <div class="player-buttons-container">
+    <button (click)="previous()">
+      <nod-svg-icon icon="icon-previous2" class="icon player-icon"></nod-svg-icon>
+    </button>
+    <button (click)="play()">
+      <nod-svg-icon *ngIf="!isPlaying" icon="icon-play3" class="icon player-icon"></nod-svg-icon>
+      <nod-svg-icon *ngIf="isPlaying" icon="icon-pause2" class="icon player-icon"></nod-svg-icon>
+    </button>
+    <button (click)="next()">
+      <nod-svg-icon icon="icon-next2" class="icon player-icon"></nod-svg-icon>
+    </button>
+  </div>
+  <div class="devices-icon-container">
+    <button (click)="toggleDevices()">
+      <nod-svg-icon icon="icon-devices" class="icon player-icon"></nod-svg-icon>
+    </button>
+  </div>
+</div>
+
+<div *ngIf="(devices$ | async ) as deviceList" class="devices-container">
+  <div *ngIf="showDevices">
+    <nod-device *ngFor="let device of deviceList" [device]="device" (onDeviceSelected)="refreshDevices()"></nod-device>
+  </div>
+</div>

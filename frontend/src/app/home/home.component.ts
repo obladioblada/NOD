@@ -1,72 +1,68 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { AuthService } from 'src/auth/auth.service';
-import { MainButtonService } from '../main-button/main-button.service';
-import { ButtonState, ButtonPosition } from '../main-button/button';
-import { Observable, Subject, Subscription, merge } from 'rxjs';
-import { switchMap, shareReplay } from 'rxjs/operators';
-import {SocketService} from '../services/socket.service';
-import {SpotifyConnectorService} from '../services/spotify-connector.service';
-import { User } from '../models/User';
+import {Component, AfterViewInit, ChangeDetectionStrategy, OnInit, NgZone} from '@angular/core';
+import {AuthService} from 'src/auth/auth.service';
+import {MainButtonService} from '../main-button/main-button.service';
+import {ButtonState, ButtonPosition} from '../main-button/button';
+import {Observable, Subject, Subscription, combineLatest} from 'rxjs';
+import {switchMap, shareReplay, map} from 'rxjs/operators';
+import {User} from '../models/User';
+import {BackgroundService} from '../background/background.service';
+import {BackgroundState, BackgroundAnimationState} from '../background/background';
+import {SpotifyApiService} from '../services/spotify-api.service';
 
 @Component({
   selector: 'nod-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent implements AfterViewInit {
-  devices$: Observable<any>;
+export class HomeComponent implements AfterViewInit, OnInit {
+  currentPlaying$: Observable<any>;
+  isPlaying: boolean;
   users$: Observable<User[]>;
   refreshOccurs$: Subject<any> = new Subject();
-  joinSucceded: boolean;
   mainButton$: Subscription;
+  showPlayer: boolean;
+  devices;
 
-  constructor(private authService: AuthService,
-              private mainButtonService: MainButtonService,
-              private spotifyConnectorService: SpotifyConnectorService) {
-    this.spotifyConnectorService.connectNodPlayer();
+  constructor(
+    private authService: AuthService,
+    private mainButtonService: MainButtonService,
+    private backgroundService: BackgroundService,
+    private spotifyService: SpotifyApiService) {
     this.mainButtonService.setButtonState(ButtonState.LOADING);
-    this.devices$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.devices()), shareReplay(1));
-    this.users$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.friends()), shareReplay(1));
-    this.mainButton$ = merge(this.devices$, this.users$).subscribe(val => {
-      this.mainButtonService.setButtonPosition(ButtonPosition.BOTTOM);
-      this.mainButtonService.setButtonState(ButtonState.SUCCESS);
-    },
-    (error) => {
-      this.mainButtonService.setButtonPosition(ButtonPosition.CENTER);
-      this.mainButtonService.setButtonState(ButtonState.ERROR);
-    });
-   }
+    this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PAUSE);
+    this.currentPlaying$ = this.refreshOccurs$.asObservable()
+      .pipe(switchMap(() => this.spotifyService.getCurrentPlaying()), shareReplay());
+    this.users$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.friends()));
+  }
 
-   ngAfterViewInit() {
+  ngOnInit() {
+    this.mainButton$ = combineLatest([this.users$, this.currentPlaying$]).pipe(
+      map(([users, currentPlaying]) => ({users, currentPlaying}))
+    ).subscribe(({users, currentPlaying}) => {
+        this.mainButtonService.setButtonPosition(ButtonPosition.BOTTOM);
+        this.mainButtonService.setButtonState(ButtonState.SUCCESS);
+        this.backgroundService.setBackgroundState(BackgroundState.SUCCESS);
+        this.showPlayer = true;
+        console.log(users);
+        console.log(currentPlaying);
+        this.isPlaying = currentPlaying ? currentPlaying.is_playing : false;
+      },
+      () => {
+        this.mainButtonService.setButtonPosition(ButtonPosition.CENTER);
+        this.mainButtonService.setButtonState(ButtonState.ERROR);
+      });
+  }
+
+  ngAfterViewInit() {
     this.refresh();
-   }
-
-   updateFriends() {
-     this.users$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.friends()), shareReplay(1));
-   }
-
-  play(id, play) {
-    this.mainButtonService.setButtonState(ButtonState.LOADING);
-    this.authService.player(id, play).subscribe(val => {
-      console.log(val);
-      this.refresh();
-    });
   }
 
 
   refresh() {
+    console.log('refresh');
     this.refreshOccurs$.next();
   }
 
-  join() {
-  // this.authService.join().subscribe(val => {
-  //   console.log(val);
-  //   this.joinSucceded = true;
-  //   this.refresh();
-  // });
-  }
 
-  trackById(index, device) {
-    return device.id;
-  }
 }

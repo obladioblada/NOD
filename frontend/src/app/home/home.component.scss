@@ -8,12 +8,12 @@
       top: 0;
       right: 0;
       &.success {
-        background: #1ed760;
+        background: #2db18f;
         animation: bit 0.6s ease infinite;
       }
   &:hover{
     background: #64c685;
-    box-shadow: 0 0 0 2px #f7fdff6e, 0 0 0 4px #1ed7606e;
+    box-shadow: 0 0 0 2px #f7fdff6e, 0 0 0 4px #2db18f6e;
     cursor: pointer;
     &:before{
       opacity: .4;
@@ -24,15 +24,11 @@
 
 @keyframes bit {
   0% {
-    box-shadow: 0 0 0 2px #f7fdff6e, 0 0 0 4px #1ed7606e;
+    box-shadow: 0 0 0 2px #f7fdff6e, 0 0 0 4px #2db18f6e;
   }
   100% {
     box-shadow: 0 0 0 4px #f7fdff1f, 0 0 064px #1ed75f1f;
   }
 }
 }
-.devices {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-}
+

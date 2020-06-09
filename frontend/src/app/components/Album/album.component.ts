@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SpotifyService } from '../../services/spotify.service';
+import { SpotifyApiService } from '../../services/spotify-api.service';
 
 import { ActivatedRoute } from '@angular/router';
 
@@ -9,23 +9,23 @@ import { Album } from '../../models/Album';
 @Component({
   selector: 'app-album',
   templateUrl: './album.component.html',
-  providers: [SpotifyService]
+  providers: [SpotifyApiService]
 })
 export class AlbumComponent implements OnInit {
   id: string;
   album: Album[];
-  constructor(private _spotifyService: SpotifyService,
-    private _route: ActivatedRoute) { }
+  constructor(private _spotifyService: SpotifyApiService,
+              private _route: ActivatedRoute) { }
 
   ngOnInit() {
     this._route.params
-      .map(params => params['id'])
+      .map(params => params.id)
       .subscribe((id) => {
         this._spotifyService.getAuth()
           .subscribe(res => {
-            this._spotifyService.getAlbum(id, res.access_token)
+            this._spotifyService.getAlbum(id)
               .subscribe(album => {
-                console.log(album)
+                console.log(album);
                 this.album = album;
               });
           });

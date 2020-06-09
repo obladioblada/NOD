@@ -21,45 +21,48 @@ $ui-elements-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55),  font-s
 
 body {
   background: #0f0f0f;
-  color: white;
-  font-size: 14px;
+  color: #bdbdbdb5;
+  font-size: 12px;
   margin: 0;
+  overflow: hidden;
+  height: 100vh;
 }
 
 img {
   width: 100%;
 }
 a {
-  color: whitesmoke;
+  color: #bdbdbdb5;
   text-decoration: none;
   font-weight: bold;
 }
 
-.play{
-  width: 1em;
-  height: 1em;
-  background: whitesmoke;
-  top: 13%;
-  display: block;
-  clip-path: polygon(33% 0, 33% 100%, 100% 50%, 33% 0);
+.icon{
+  cursor: pointer;
+  margin: auto;
+  width: 2.5em;
+  height: 2.5em;
+  &.play{
+    background: #bdbdbdb5;
+    top: 13%;
+    display: block;
+    clip-path: polygon(33% 0, 33% 100%, 100% 50%, 33% 0);
+  }
+
+  &.cross{
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+    background: #bdbdbdb5;
+  }
+
+  &.pause{
+    display:block;
+    background: #bdbdbdb5;
+    top: 13%;
+    clip-path:polygon(20% 100%, 20% 0%, 35% 0%, 35% 100%, 65% 100%, 65% 0%, 80% 0%, 80% 100%);
+
+  }
 }
 
-.cross{
-  width: 1em;
-  height: 1em;
-  clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
-  background: whitesmoke;
-}
-
-.pause{
-  display:block;
-  width: 1em;
-  height: 1em;
-  background: whitesmoke;
-  top: 13%;
-  clip-path:polygon(20% 100%, 20% 0%, 35% 0%, 35% 100%, 65% 100%, 65% 0%, 80% 0%, 80% 100%);
-
-}
 
 .slider {
   -webkit-appearance: none;
@@ -75,15 +78,15 @@ a {
   cursor: pointer;
   &:focus, &:hover {
     &::-webkit-slider-thumb {
-      background: #1ed760;
-      box-shadow: 0 0 0 3px #f7fdff6e, 0 0 0 6px #1ed7606e;
+      background: #2db18f;
+      box-shadow: 0 0 0 3px #f7fdff6e, 0 0 0 6px #2db18f6e;
       transition: $ui-elements-transition;
    }
   }
   &:active {
     &::-webkit-slider-thumb {
-      background: #1ed760;
-      box-shadow: 0 0 0 2px #f7fdff6e, 0 0 0 4px #1ed7606e;
+      background: #2db18f;
+      box-shadow: 0 0 0 2px #f7fdff6e, 0 0 0 4px #2db18f6e;
       transition: $ui-elements-transition;
    }
   }
@@ -108,7 +111,7 @@ a {
     content: "";
     height: 5px;
     position: absolute;
-    background: #20d75f;
+    background: #2db18f;
     transition: none;
     border-radius: 10px 0 0 10px;
     box-shadow: 0 1px 4px 0 rgba(51, 51, 51, 0), 0 8px 24px 0 rgba(51, 51, 51, 0), 0 0 0 1px rgba(51, 51, 51, 0), inset 0 -1px 10px 4px rgba(51, 51, 51, 0.1);
@@ -375,7 +378,7 @@ $vw-context: 100vw * 1px;
 }
 
 .is-active .screenWrapper {
-  background: #20d75f;
+  background: #2db18f;
 }
 
 .screenWrapper{
@@ -424,7 +427,7 @@ $vw-context: 100vw * 1px;
     position: absolute;
     background: #000000b3;
     top: 0;
-    color: white;
+    color: #bdbdbdb5;
     cursor: initial;
     font-size: -webkit-xxx-large;
   }

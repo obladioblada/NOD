@@ -14,10 +14,9 @@
     }
   }
 
-
   .icon {
     display: grid;
-    background: #a4bead;
+    background: #a4bead33;
     align-content: center;
     border-radius: 1em;
     height: 100%;
@@ -28,6 +27,14 @@
     }
   }
 
+.lateral {
+  align-items: center;
+  transform: translateY(4em) rotate(-90deg);
+  transform-origin: left;
+  width: 4em;
+  height: 1em;
+  display: block;
+}
 
   .volume {
     display: flex;

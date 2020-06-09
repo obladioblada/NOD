@@ -1,51 +1,45 @@
-import { Component, Input, HostBinding, EventEmitter, Output } from '@angular/core';
-import { AuthService } from 'src/auth/auth.service';
-import { MainButtonService } from '../main-button/main-button.service';
-import { ButtonState} from '../main-button/button';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output} from '@angular/core';
+import {AuthService} from 'src/auth/auth.service';
+import {MainButtonService} from '../main-button/main-button.service';
 import {SocketService} from '../services/socket.service';
+import {BackgroundService} from '../background/background.service';
+import {SpotifyApiService} from '../services/spotify-api.service';
+import {Device} from '../models/Device';
+import {PlayerService} from "../services/player.service";
 
 @Component({
   selector: 'nod-device',
   templateUrl: './device.component.html',
-  styleUrls: ['./device.component.scss']
+  styleUrls: ['./device.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DeviceComponent {
 
-  // tslint:disable-next-line: variable-name
-  private _device: any;
+  _device: Device;
+  @Output() onDeviceSelected = new EventEmitter<string>();
+
   @Input()
   set device(device) {
     this._device = device;
-    this.isActive = device.is_active; }
-  get device() {return this._device; }
+  }
 
-  @Output()
-  onPlayPause: EventEmitter<boolean> = new EventEmitter<boolean>();
-
-  isPlaying = false;
-
-  @HostBinding('class.is-active') isActive: boolean;
+  get device() {
+    return this._device;
+  }
 
   constructor(private authService: AuthService,
               private mainButtonService: MainButtonService,
-              private socketServices: SocketService) {  }
-
-  play() {
-    this.mainButtonService.setButtonState(ButtonState.LOADING);
-    this.authService.player(this.device.id, !this.isPlaying).subscribe(val => {
-      this.isPlaying = !this.isPlaying;
-      this.onPlayPause.emit(this.isPlaying);
-      this.mainButtonService.setButtonState(ButtonState.SUCCESS);
-      console.log(val);
-      if (this.isPlaying) {
-        this.socketServices.sendPlay('I am playing a song');
-      }
-    });
-
-
+              private backgroundService: BackgroundService,
+              private spotifyService: SpotifyApiService,
+              private socketServices: SocketService,
+              private playerService: PlayerService,
+              private cd: ChangeDetectorRef) {
   }
 
-  setVolume(event) {
-    this._device.volume_percent = event.target.value;
+  setDevice() {
+    this.playerService.setDevice(this.device.id).subscribe((data) => {
+      console.log(data);
+      this.onDeviceSelected.emit(this.device.id);
+    });
   }
 }

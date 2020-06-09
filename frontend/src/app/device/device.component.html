@@ -1,14 +1,9 @@
-<nod-tile>
-  <div class="title tile-title" (click)="play()">
+<nod-tile [ngClass]="{'is-active' : device.isActive}" (click)="setDevice()">
+  <div class="title">
     <span class="name">{{device.name}} </span>
   </div>
-  <div calss="tile-footer">
-    <div class="volume">
-      <input type="range" min="0" max="100" [ngClass]="'value-'+device.volume_percent" [value]="device.volume_percent" (change)="setVolume($event)" class="slider">
-    </div>
-  </div>
-  <div class="icon tile-image" (click)="play()">
-    <div [class]="'device '+device.type | lowercase " [ngClass]="{'is-active' : device.is_active}">
+  <div class="icon image">
+    <div [class]="'device '+ device.type | lowercase" [ngClass]="{'is-active' : device.isActive}">
       <div class="screenWrapper x2">
       </div>
     </div>

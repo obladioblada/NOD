@@ -1,0 +1,100 @@
+.player-buttons-container {
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.devices-container {
+  position: fixed;
+  bottom: 90px;
+  right: 0;
+}
+
+.devices-icon-container{
+  justify-self: end;
+  width: 9em;
+  display: grid;
+  height: inherit;
+}
+
+.current-song-info-wrapper{
+  display: grid;
+  grid-template-columns: 88px 2fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+}
+
+.current-playing-artist{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  font-size: 0.85em;
+  cursor: pointer;
+}
+
+.current-playing-song{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  align-self: self-end;
+  cursor: pointer;
+}
+.current-playing-img{
+  width: 64px;
+  height: 64px;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  justify-self: center;
+}
+
+.player-container {
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  width: 100vw;
+  height: 90px;
+  bottom: 0;
+  position: fixed;
+}
+
+.player-icon {
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.devices-icon {
+
+}
+
+button{
+  border: none;
+  size: 1em;
+  background: none;
+  transition: none;
+}
+button:focus {
+   outline: none;
+   box-shadow: none;
+ }
+
+button:hover {
+  background: #222222;
+}
+
+@media screen and (max-width: 600px) {
+  .player-container {
+    grid-template-columns:1fr 1fr;
+  }
+  .devices-icon-container {
+    display: none;
+  }
+}
+@media screen and (min-width: 601px) {
+
+}
+

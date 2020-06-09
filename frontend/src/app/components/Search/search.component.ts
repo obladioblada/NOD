@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { SpotifyService } from '../../services/spotify.service';
+import { Component } from '@angular/core';
+import { SpotifyApiService } from '../../services/spotify-api.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
 
 import { Artist } from '../../models/Artist';
 import {SearchType} from './model';
 import { AuthService } from 'src/auth/auth.service';
-import { Subject, merge, BehaviorSubject, combineLatest } from 'rxjs';
+import { BehaviorSubject, combineLatest } from 'rxjs';
 
 @Component({
   selector: 'nod-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
-  providers: [SpotifyService]
+  providers: [SpotifyApiService]
 })
 export class SearchComponent {
   searchStr: string;
@@ -21,7 +21,7 @@ export class SearchComponent {
   query: FormControl = new FormControl();
   type_$: BehaviorSubject<SearchType> = new BehaviorSubject(SearchType.artists);
 
-  constructor(private spotifyService: SpotifyService, private authService: AuthService) {
+  constructor(private spotifyService: SpotifyApiService, private authService: AuthService) {
     this.formGroup =  new FormGroup({
       query: this.query
     });
@@ -35,10 +35,10 @@ export class SearchComponent {
       map(val => val[0]),
       filter(val => val.query.length > 0)
     ).subscribe((queryForm: any) => {
-      this.spotifyService.searchMusic(queryForm.query, this.type_$.getValue(), this.authService.getAccessToken())
+      this.spotifyService.searchMusic(queryForm.query, this.type_$.getValue())
         .subscribe( (res) => {
-          console.log(res[this.type_$.getValue()+'s'].items);
-          this.results = res[this.type_$.getValue()+'s'].items;
+          console.log(res[this.type_$.getValue() + 's'].items);
+          this.results = res[this.type_$.getValue() + 's'].items;
         });
     });
   }

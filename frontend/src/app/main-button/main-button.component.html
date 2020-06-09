@@ -7,5 +7,5 @@
   [class.error]="state === ButtonState.ERROR"
   [class.play]="state === ButtonState.PLAY"
   [ngClass]="{'squeezeV': verticalTransition, 'squeezeH': horizontalTransition}">
-
+  <ng-content></ng-content>
 </div>

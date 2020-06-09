@@ -1,0 +1,145 @@
+.bubbels{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -20;
+  overflow: hidden;
+  top: 0;
+  pointer-events: none;
+  left: 0;
+  opacity: .1;
+  filter: url('#goo');
+}
+
+
+@media screen and (max-width: 600px) {
+  .bubbels{
+    opacity: .3;
+    filter: none;
+  }
+}
+
+.bubble{
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  background: #a4b3af;
+  border-radius: 40%;
+  transition-duration: .2s;
+  animation: flying 10s infinite cubic-bezier(0.4, 0, 1, 1);
+  animation-direction: alternate-reverse;
+}
+.pause {
+  .bubble {
+    animation-play-state: paused;
+  }
+}
+.play {
+  .bubble {
+    animation-play-state: running;
+  }
+}
+.joined {
+  .bubble {
+    background: #00ffbb;
+  }
+}
+
+.success {
+  .bubble {
+    background: #00ffbb;
+  }
+}
+.error {
+  .bubble {
+    background: #ba4759;
+  }
+}
+
+.bubble:nth-child(1){
+  width: 100px;
+  height: 100px;
+  left: 10%;
+  animation-duration: 8s;
+}
+.bubble:nth-child(2){
+  width: 70px;
+  height: 70px;
+  left: 20%;
+  animation-duration: 5s;
+  animation-delay: 1s;
+}
+.bubble:nth-child(3){
+  width: 160px;
+  height: 160px;
+  left: 35%;
+  animation-duration: 10s;
+  animation-delay: 2s;
+}
+
+.bubble:nth-child(4){
+  width: 250px;
+  height: 250px;
+  left: 50%;
+  animation-duration: 7s;
+  animation-delay: 0s;
+}
+
+.bubble:nth-child(5){
+  width: 205px;
+  height: 205px;
+  left: 55%;
+  animation-duration: 6s;
+  animation-delay: 1s;
+}
+.bubble:nth-child(6){
+  width: 450px;
+  height: 450px;
+  left: -15%;
+  animation-duration: 8s;
+  animation-delay: 5s;
+}
+.bubble:nth-child(7){
+  width: 155px;
+  height: 155px;
+  left: 75%;
+  animation-duration: 7s;
+  animation-delay: 2s;
+}
+.bubble:nth-child(8){
+  width: 80px;
+  height: 80px;
+  left: 80%;
+  animation-duration: 6s;
+  animation-delay: 1s;
+}
+
+.bubble:nth-child(9){
+  width: 15px;
+  height: 15px;
+  left: 70%;
+  animation-duration: 9s;
+  animation-delay: 0s;
+}
+
+.bubble:nth-child(10){
+  width: 50px;
+  height: 50px;
+  left: 85%;
+  animation-duration: 5s;
+  animation-delay: 3s;
+}
+
+@keyframes flying {
+  0%{
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  50%{
+    opacity: .5;
+  }
+  100%{
+    transform: translate(-110px, -100vh) rotate(360deg);
+    opacity: 0;
+  }
+}

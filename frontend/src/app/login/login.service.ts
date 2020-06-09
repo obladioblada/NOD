@@ -13,7 +13,7 @@ export class LoginSevice {
     private expirationDate: string;
     private refreshToken: string;
 
-  constructor( private http: HttpClient, private authService: AuthService){
+  constructor( private http: HttpClient, private authService: AuthService) {
 
   }
   login(code: string, redirectUrl: string) {

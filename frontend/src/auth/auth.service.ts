@@ -1,18 +1,17 @@
-
-import { Injectable, Inject } from '@angular/core';
-import { throwError, from, Observable } from 'rxjs';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Location, DOCUMENT } from '@angular/common';
-import { Router } from '@angular/router';
-import { map, shareReplay, catchError } from 'rxjs/operators';
-import { ButtonState } from 'src/app/main-button/button';
-import { MainButtonService } from 'src/app/main-button/main-button.service';
-import {environment } from '../environments/environment';
+import {Inject, Injectable} from '@angular/core';
+import {Observable, throwError} from 'rxjs';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {DOCUMENT, Location} from '@angular/common';
+import {Router} from '@angular/router';
+import {catchError, map, shareReplay} from 'rxjs/operators';
+import {ButtonState} from 'src/app/main-button/button';
+import {MainButtonService} from 'src/app/main-button/main-button.service';
+import {environment} from '../environments/environment';
 import * as moment from 'moment';
-import { User } from 'src/app/models/User';
-import { UserDto } from './userDto';
-import { BackgroundService } from 'src/app/background/background.service';
-import { BackgroundAnimationState, BackgroundState } from 'src/app/background/background';
+import {User} from 'src/app/models/User';
+import {UserDto} from './userDto';
+import {BackgroundService} from 'src/app/background/background.service';
+import {BackgroundState} from 'src/app/background/background';
 
 // import {SpotifyConnectorService} from "../app/services/spotify-connector.service";
 
@@ -95,9 +94,6 @@ export class AuthService {
   friends(): Observable<User[]> {
     console.log(localStorage.getItem('id_token'));
     return this.http.get<UserDto[]>(Location.joinWithSlash(this.apiEndpoint, 'friends?access_token=' + localStorage.getItem('id_token')))
-    // 3. so now this guy here is still waiting for a any object, we want this to be the UserDto interface
-    // and we want to be sure the we can access a UserDto namespace that knows how to convert a UserDto to User
-    // so next step is to convert UserDto to User instance
       .pipe(map((data: UserDto[]) => data.map(userDto => UserDto.unmarshal(userDto))));
   }
 

@@ -3,15 +3,16 @@ import {spotifyService} from "./spotifyService";
 import {userDBManager} from "./UserDbManager";
 import {roomDbManager} from "./RoomDbManager";
 import {combineLatest, Observable} from "rxjs";
-import {take, map, switchMap} from "rxjs/operators";
+import {map, switchMap, take} from "rxjs/operators";
 import * as http from 'http';
 import {logger} from "./logging/Logger";
-import { IUserDocument } from "./models/User";
-import { socketManager} from "./SocketManager";
-let bodyParser = require('body-parser');
-
+import {IUserDocument} from "./models/User";
+import {socketManager} from "./SocketManager";
 import {db} from "./DbManager"
 import path from "path";
+
+let bodyParser = require('body-parser');
+
 db.init();
 
 const scopes = "user-read-private user-read-email user-follow-read streaming app-remote-control user-modify-playback-state playlist-read-collaborative user-read-playback-state user-modify-playback-state";
@@ -57,10 +58,10 @@ app.use((_req, res, next) => {
 
 app.get("/api/authenticate", (req, res) => {
     const authCode = req.query.code || null;
-    console.log(authCode);
+    logger.info(authCode);
     spotifyService.authenticate(authCode as string)
         .then((authResponse: any) => {
-            console.log(authResponse);
+            logger.info(authResponse);
             logger.info("risposta da auth:");
             logger.info(authResponse);
             if (authResponse.id) {
@@ -72,8 +73,7 @@ app.get("/api/authenticate", (req, res) => {
                     expirationDate: authResponse.expires_in,
                     pictureUrl: authResponse.pictureUrl
                 } as IUserDocument).subscribe((user) => {
-                    logger.info(JSON.stringify(user));
-                    console.log(user);
+                    logger.info(user);
                     if (user !== null) {
                         res.send(user);
                     } else {
@@ -118,7 +118,7 @@ app.get("/api/updateToken", (_req, res) => {
 
 app.get("/api/login", (_req, res) => {
     logger.info("CALLBACK to LOGIN");
-    console.log("CALLBACK to LOGIN");
+    logger.info("CALLBACK to LOGIN");
     // creo sessione anonima aka addSessions() => entry = uuid, ''
     res.send({
         redirectUrl: "https://accounts.spotify.com/authorize" +
@@ -300,7 +300,7 @@ if (process.env.NODE_ENV === "production") {
     let dist = path.join(__dirname, './../../');
     app.use(express.static(dist));
     app.get("/*", (_req, res) => {
-        console.log("sending " + path.join(dist,"index.html"));
+        logger.info("sending " + path.join(dist,"index.html"));
         res.sendFile(path.join(dist,"index.html"));
     });
 }

@@ -2,14 +2,32 @@ import {Injectable} from '@angular/core';
 import {SpotifyApiService} from './spotify-api.service';
 import {Socket} from 'ngx-socket-io';
 import {SocketEvent} from '../../../../shared/socket/socketEvent';
+import {AuthService} from "../../auth/auth.service";
+import {Subject} from "rxjs";
 
 @Injectable()
 export class SocketService {
 
-  constructor(spotifyService: SpotifyApiService, private socket: Socket) {
+  refreshUser$: Subject<any> = new Subject();
+
+  constructor(spotifyService: SpotifyApiService,
+              private socket: Socket,
+              private  authService: AuthService
+
+  ) {
+
+    this.socket.on(SocketEvent.USER_TRACK_STATE_CHANGED, (message) => {
+      console.log(message);
+    });
+
     this.socket.on('connection', (message, callback) => {
       console.log(message);
-      callback(' ciaooo ');
+      callback(this.authService.getAccessToken());
+    });
+
+    this.socket.on("otherUserConnection", (message) => {
+      console.log(message);
+      this.refreshUser$.next();
     });
 
     this.socket.on(SocketEvent.JOIN_ROOM, (message) => {

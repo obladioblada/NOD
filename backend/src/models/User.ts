@@ -1,7 +1,6 @@
-import { Schema, Model , Document} from "mongoose";
-import * as WebSocket from 'ws';
 import * as mongoose from "mongoose";
-import { UserDto } from "../../../shared/UserDto"
+import {Document, Model, Schema} from "mongoose";
+import {UserDto} from "../../../shared/UserDto"
 
 
 export const UserSchema: Schema = new Schema({
@@ -11,7 +10,8 @@ export const UserSchema: Schema = new Schema({
     refreshToken: String,
     expirationDate: String,
     pictureUrl: String,
-    roomId: {type: Schema.Types.ObjectId, ref: "Room"}
+    roomId: {type: Schema.Types.ObjectId, ref: "Room"},
+    connected: Boolean
 });
 
 // 2) Document
@@ -23,6 +23,7 @@ export interface IUserDocument extends Document {
     expirationDate: string;
     pictureUrl: string;
     roomId: string;
+    connected: boolean
 } 
 
 // 1. Here we place a namespace exporting a marshal method that converts an Object from IUserDocument interface to UserDto interface

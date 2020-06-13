@@ -28,7 +28,7 @@ export class PlayerComponent implements OnInit, OnDestroy {
 
   constructor(private authService: AuthService,
               private backgroundService: BackgroundService,
-              private socketServices: SocketService,
+              private socketService: SocketService,
               private spotifyService: SpotifyApiService,
               private playerService: PlayerService,
               private cd: ChangeDetectorRef) {
@@ -38,9 +38,9 @@ export class PlayerComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.devices$ =  this.refreshOccurs$.asObservable().pipe(switchMap(() => this.playerService.getDevices()));
+    this.devices$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.playerService.getDevices()));
     this.playerService.onSDKReady().pipe(
-      switchMap((NodId) =>   this.playerService.setDevice(NodId)),
+      switchMap((NodId) => this.playerService.setDevice(NodId)),
       takeUntil(this.destroy$))
       .subscribe(() => {
         this.refreshDevices();
@@ -51,6 +51,9 @@ export class PlayerComponent implements OnInit, OnDestroy {
       this.currentArtist = data.track.artists[0].name;
       this.isPlaying = !data.paused;
       this.cd.detectChanges();
+      if (this.isPlaying) {
+        this.socketService.sendPlay({id: data.track.id, name: data.track.name, artist: data.track.artists[0].name})
+      }
     });
     this.spotifyService.getCurrentPlaying().subscribe((currentTrack) => {
       if (currentTrack != null) {

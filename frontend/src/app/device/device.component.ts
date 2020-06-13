@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 import {AuthService} from 'src/auth/auth.service';
 import {MainButtonService} from '../main-button/main-button.service';
 import {SocketService} from '../services/socket.service';
@@ -32,8 +32,7 @@ export class DeviceComponent {
               private backgroundService: BackgroundService,
               private spotifyService: SpotifyApiService,
               private socketServices: SocketService,
-              private playerService: PlayerService,
-              private cd: ChangeDetectorRef) {
+              private playerService: PlayerService) {
   }
 
   setDevice() {

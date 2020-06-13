@@ -1,13 +1,14 @@
-import {Component, AfterViewInit, ChangeDetectionStrategy, OnInit, NgZone} from '@angular/core';
+import {AfterViewInit, ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {AuthService} from 'src/auth/auth.service';
 import {MainButtonService} from '../main-button/main-button.service';
-import {ButtonState, ButtonPosition} from '../main-button/button';
-import {Observable, Subject, Subscription, combineLatest} from 'rxjs';
-import {switchMap, shareReplay, map} from 'rxjs/operators';
+import {ButtonPosition, ButtonState} from '../main-button/button';
+import {combineLatest, Observable, Subject, Subscription} from 'rxjs';
+import {map, shareReplay, switchMap, withLatestFrom} from 'rxjs/operators';
 import {User} from '../models/User';
 import {BackgroundService} from '../background/background.service';
-import {BackgroundState, BackgroundAnimationState} from '../background/background';
+import {BackgroundAnimationState, BackgroundState} from '../background/background';
 import {SpotifyApiService} from '../services/spotify-api.service';
+import {SocketService} from "../services/socket.service";
 
 @Component({
   selector: 'nod-home',
@@ -22,18 +23,21 @@ export class HomeComponent implements AfterViewInit, OnInit {
   refreshOccurs$: Subject<any> = new Subject();
   mainButton$: Subscription;
   showPlayer: boolean;
-  devices;
 
   constructor(
     private authService: AuthService,
     private mainButtonService: MainButtonService,
     private backgroundService: BackgroundService,
-    private spotifyService: SpotifyApiService) {
+    private spotifyService: SpotifyApiService,
+    private socketService: SocketService) {
     this.mainButtonService.setButtonState(ButtonState.LOADING);
     this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PAUSE);
     this.currentPlaying$ = this.refreshOccurs$.asObservable()
       .pipe(switchMap(() => this.spotifyService.getCurrentPlaying()), shareReplay());
-    this.users$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.authService.friends()));
+    this.users$ = this.refreshOccurs$.asObservable().pipe(
+        withLatestFrom( this.socketService.refreshUser$.asObservable),
+        switchMap(() => this.authService.friends()
+        ));
   }
 
   ngOnInit() {

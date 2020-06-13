@@ -1,3 +1,9 @@
+:host(.is-active){
+  .icon {
+    border-color: #69d58e ;
+  }
+}
+
 .player-buttons-container {
   display: grid;
   grid-template-columns:1fr 1fr 1fr;

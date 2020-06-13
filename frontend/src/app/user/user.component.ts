@@ -1,7 +1,6 @@
-import { Component, Input} from '@angular/core';
-import { AuthService } from 'src/auth/auth.service';
-import {SocketService} from '../services/socket.service';
-import { User } from '../models/User';
+import {Component, Input} from '@angular/core';
+import {AuthService} from 'src/auth/auth.service';
+import {User} from '../models/User';
 
 
 @Component({
@@ -11,11 +10,12 @@ import { User } from '../models/User';
 })
 export class UserComponent {
 
-
-  constructor(private authService: AuthService, private socketServices: SocketService) {
-  }
   @Input()
   user: User;
+  currentSong: string;
+
+  constructor(private authService: AuthService) {
+  }
 
 
   join(id: string) {

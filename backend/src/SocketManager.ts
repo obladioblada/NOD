@@ -4,7 +4,9 @@ import {SocketEvent} from "../../shared/socket/socketEvent";
 import {userDBManager} from "./UserDbManager";
 import {take} from 'rxjs/operators';
 
+
 class SocketManager {
+
     io: socketIo.Server;
 
     init(server) {
@@ -13,13 +15,16 @@ class SocketManager {
 
         this.io.on("connection", function (socket: socketIo.Socket) {
             logger.info("a user connected");
-            socket.emit("connection", "welcome", (clientId) => {
-                logger.info("responseData");
-                logger.info(clientId);
+            socket.emit("connection", "welcome", (accessToken) => {
+                logger.info("accessToken");
+                logger.info("accessToken");
                 //userDBManager.getConnectedUser().subscribe(users =>  socket.emit("users", {users: users}));
-                userDBManager.getUserByAccessTokenAndUpdate(clientId, {connected: true})
+                userDBManager.getUserByAccessTokenAndUpdate(accessToken, {connected: true, socketId: socket.id})
                     .pipe(take(1))
-                    .subscribe(user => socket.broadcast.emit("otherUserConnection", {user: user}) );
+                    .subscribe(user => {
+                        logger.info(`sending ${user.name}`);
+                        socket.broadcast.emit("otherUserConnection", {user: user})
+                    } );
                });
 
             socket.on("users connected", (message) => {
@@ -34,18 +39,17 @@ class SocketManager {
                 socket.broadcast.emit("user_track_state_changed", message);
             });
 
-
             socket.on(SocketEvent.JOIN_ROOM, (message) => {
                 logger.info(message);
             });
 
-
-            socket.on('disconnect', (user) => {
-                logger.info(`user disconnected ${ user }` );
-                socket.broadcast.emit(user);
+            socket.on('disconnect', () => {
+                userDBManager.getUserBySocketIDTokenAndUpdate(socket.id, {connected: false, socketId: null})
+                    .subscribe(() =>  socket.broadcast.emit("otherUserConnection", "please refresh users"));
             });
         });
     }
 }
+
 
 export const socketManager: SocketManager = new SocketManager();

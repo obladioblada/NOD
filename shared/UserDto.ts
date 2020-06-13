@@ -4,4 +4,6 @@ export interface UserDto {
     name: string;
     pictureUrl: string;
     roomId: string;
+    connected: boolean;
+    socketId: string;
 }

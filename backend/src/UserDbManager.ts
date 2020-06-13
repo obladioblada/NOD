@@ -71,7 +71,23 @@ class UserDbManager {
                     logger.info(" user with access token " + accessToken + " not found");
                     return document;
                 }
-                logger.info("User update successfully!");
+                logger.info(`BY TOKEN: User ${document.name} update successfully! ${document.socketId}`);
+                return document;
+            })) as Observable<IUserDocument>;
+    }
+
+    getUserBySocketIDTokenAndUpdate(socketId: string, update): Observable<IUserDocument> | any {
+        return from(
+             Users.findOneAndUpdate({socketId: socketId}, update, {new: true},function (err: any, document: IUserDocument) {
+                if (err) {
+                    return err;
+                }
+                if (document === null) {
+                    logger.info(" user with socket id" + socketId + " not found");
+                    return document;
+                }
+                logger.info(` BY SOCKET: User ${document.name} update successfully! ${document}`);
+                return document;
             })) as Observable<IUserDocument>;
     }
 

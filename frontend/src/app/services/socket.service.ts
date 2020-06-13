@@ -25,9 +25,12 @@ export class SocketService {
       callback(this.authService.getAccessToken());
     });
 
+    this.socket.on('disconnect', (reason) => {
+      console.log(`Disconnected: ${reason}`);
+    });
+
     this.socket.on("otherUserConnection", (message) => {
-      console.log(message);
-      this.refreshUser$.next();
+      this.refreshUser$.next(message);
     });
 
     this.socket.on(SocketEvent.JOIN_ROOM, (message) => {

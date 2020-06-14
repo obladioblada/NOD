@@ -20,8 +20,8 @@ export class SocketService {
   ) {
 
     this.socket.on(SocketEvent.USER_TRACK_STATE_CHANGED, (message) => {
-      console.log(message);
       this.userTrackStateChanged$.next(message);
+      this.refreshUsers$.next(message);
     });
 
     this.socket.on('connection', (message, callback) => {
@@ -58,12 +58,12 @@ export class SocketService {
     this.socket.emit(SocketEvent.LEAVE_ROOM, message);
   }
 
-  sendPlay(currentSong: CurrentSong) {
-    this.socket.emit(SocketEvent.PLAY, {song: currentSong, sender: this.userProfileService.userProfile.id});
+  sendPlay(currentSongPlayed: CurrentSong) {
+    this.socket.emit(SocketEvent.PLAY, {song: currentSongPlayed, sender: this.userProfileService.userProfile.id});
   }
 
-  sendPause(message) {
-    this.socket.emit(SocketEvent.PAUSE, message);
+  sendPause(currentSongStopped: CurrentSong) {
+    this.socket.emit(SocketEvent.PAUSE, {song: currentSongStopped, sender: this.userProfileService.userProfile.id});
   }
 }
 

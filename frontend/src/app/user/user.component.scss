@@ -38,7 +38,20 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-
       flex: auto;
+  }
+
+  .userSong {
+    grid-template-columns: 1fr 50px;
+    display: grid;
+    margin: -1.07em;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    margin-top: 0.1em;
+    background: #434343;
+  }
+
+  .playing-song{
+    background: #2db18f8c;
   }
 }

@@ -3,13 +3,14 @@ import {AuthService} from 'src/auth/auth.service';
 import {MainButtonService} from '../main-button/main-button.service';
 import {ButtonPosition, ButtonState} from '../main-button/button';
 import {combineLatest, merge, Observable, Subject, Subscription} from 'rxjs';
-import {switchMap} from 'rxjs/operators';
+import {map, switchMap} from 'rxjs/operators';
 import {User} from '../models/User';
 import {BackgroundService} from '../background/background.service';
 import {BackgroundAnimationState, BackgroundState} from '../background/background';
 import {SpotifyApiService} from '../services/spotify-api.service';
 import {SocketService} from "../services/socket.service";
 import {UserProfileService} from "../services/user-profile.service";
+import {CurrentSong} from "../models/CurrentSong";
 
 @Component({
   selector: 'nod-home',
@@ -33,13 +34,30 @@ export class HomeComponent implements AfterViewInit, OnInit {
     this.mainButtonService.setButtonState(ButtonState.LOADING);
     this.userProfileService.loadUserProfile();
     this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PAUSE);
-    this.users$ = merge(this.refreshOccurs$.asObservable(), this.socketService.refreshUsers$.asObservable()).pipe(
-      switchMap(() => this.authService.friends())
-    );
+    this.users$ = combineLatest(
+      [
+        merge(
+          this.refreshOccurs$.asObservable(), this.socketService.refreshUsers$.asObservable()
+        ).pipe(switchMap(() => this.authService.friends())),
+        this.socketService.userTrackStateChanged$.asObservable()]
+    ).pipe(
+      map(([users, currentSongMessage]) => {
+        if (currentSongMessage && users.find(user => user.id === currentSongMessage.sender)) {
+          const currentSong  = new CurrentSong(
+            currentSongMessage.song.id,
+            currentSongMessage.song.name,
+            currentSongMessage.song.imgUrl,
+            currentSongMessage.song.artist,
+            currentSongMessage.song.paused
+            );
+          users.find(user => user.id === currentSongMessage.sender).setCurrentSong(currentSong)
+        }
+        console.log(users)
+        return users;
+      }));
   }
 
   ngOnInit() {
-
     this.mainButton$ = combineLatest([this.users$]).subscribe(() => {
         this.mainButtonService.setButtonPosition(ButtonPosition.BOTTOM);
         this.mainButtonService.setButtonState(ButtonState.SUCCESS);

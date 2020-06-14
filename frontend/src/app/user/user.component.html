@@ -3,10 +3,14 @@
     <span class="name">{{user.name}} </span>
   </div>
   <div class="footer">
-    <span class="name">{{currentSong}}</span>
+    {{user.currentSong}}
+    <div *ngIf="user.currentSong">
+      <nod-current-song [song]= "user.currentSong"></nod-current-song>
+    </div>
   </div>
   <div class="image">
     <img src="{{user.pictureUrl}}" alt="{{user.name}}">
   </div>
     <nod-svg-icon (click)="join(user.id)" icon="icon-headphones" class="icon lateral"></nod-svg-icon>
 </nod-tile>
+

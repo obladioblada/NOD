@@ -25,6 +25,8 @@ import {BackgroundComponent} from './background/background.component';
 import {SvgIconComponent} from './svg-icon.component';
 import {environment} from 'src/environments/environment';
 import {PlayerService} from './services/player.service';
+import {CurrentSongComponent} from './components/current-song/current-song.component';
+import {UserProfileService} from './services/user-profile.service';
 
 const socketUrl = environment.socketEndpoint !== 'heroku' ? environment.socketEndpoint : window.location.hostname;
 const config: SocketIoConfig = {
@@ -45,7 +47,8 @@ const config: SocketIoConfig = {
     SearchComponent,
     TileComponent,
     UserComponent,
-    SvgIconComponent
+    SvgIconComponent,
+    CurrentSongComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +66,8 @@ const config: SocketIoConfig = {
     MainButtonService,
     SocketService,
     WindowRef,
-    PlayerService],
+    PlayerService,
+    UserProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

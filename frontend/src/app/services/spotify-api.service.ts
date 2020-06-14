@@ -35,7 +35,12 @@ export class SpotifyApiService {
   player() {
     const headers: HttpHeaders = this.getHeaders();
     this.playerUrl = `https://api.spotify.com/v1/me/player`;
-    return this.http.get(this.playerUrl, {headers});
+    return this.http.get(this.playerUrl, { headers });
+  }
+
+  me() {
+    const headers: HttpHeaders = this.getHeaders();
+    return this.http.get(" https://api.spotify.com/v1/me", { headers });
   }
 
   play() {

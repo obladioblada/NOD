@@ -3,11 +3,12 @@ import {AuthService} from '../../../auth/auth.service';
 import {BackgroundService} from '../../background/background.service';
 import {SocketService} from '../../services/socket.service';
 import {SpotifyApiService} from '../../services/spotify-api.service';
-import {switchMap, takeUntil} from 'rxjs/operators';
+import {map, switchMap, takeUntil, tap} from 'rxjs/operators';
 import {Observable, Subject} from 'rxjs';
 import {PlayerService} from "../../services/player.service";
 import {Device} from 'src/app/models/Device';
 import {List} from 'immutable';
+import {CurrentSong} from "../../models/CurrentSong";
 
 @Component({
   selector: 'nod-player',
@@ -17,13 +18,11 @@ import {List} from 'immutable';
 })
 export class PlayerComponent implements OnInit, OnDestroy {
   isPlaying: boolean;
-  currentSong: string;
-  currentImgUrl: string;
-  currentArtist: string;
   devices$: Observable<List<Device>>;
   showDevices: boolean;
   refreshOccurs$: Subject<any> = new Subject();
   destroy$: Subject<boolean> = new Subject<boolean>();
+  currentSong$: Observable<CurrentSong>;
 
 
   constructor(private authService: AuthService,
@@ -45,49 +44,44 @@ export class PlayerComponent implements OnInit, OnDestroy {
       .subscribe(() => {
         this.refreshDevices();
       });
-    this.playerService.onPlaySong().subscribe(data => {
-      this.currentSong = data.track.name;
-      this.currentImgUrl = data.track.album.images[1].url;
-      this.currentArtist = data.track.artists[0].name;
-      this.isPlaying = !data.paused;
-      this.cd.detectChanges();
-      if (this.isPlaying) {
-        this.socketService.sendPlay({id: data.track.id, name: data.track.name, artist: data.track.artists[0].name})
-      }
-    });
-    this.spotifyService.getCurrentPlaying().subscribe((currentTrack) => {
-      if (currentTrack != null) {
-        this.isPlaying = currentTrack.is_playing;
-      } else {
-        this.isPlaying = false;
-      }
-    });
+    this.currentSong$ = this.playerService.onPlaySong().pipe(
+      map((data) => new CurrentSong(
+        data.track.id,
+        data.track.name,
+        data.track.album.images[1].url,
+        data.track.artists[0].name,
+        data.paused)),
+      tap((currentSong) => {
+        this.isPlaying = !currentSong.paused;
+          if(!currentSong.paused){
+            this.socketService.sendPlay(currentSong);
+          } else {
+            this.socketService.sendPause(currentSong);
+          }
+        })
+    );
   }
 
 
   play() {
     if (this.isPlaying || this.isPlaying === undefined) {
+      this.isPlaying = false;
       this.playerService.pause().subscribe(data => {
         console.log('pause');
         console.log(data);
-        this.isPlaying = false;
-        this.cd.detectChanges();
       });
     } else {
       this.playerService.play().subscribe(data => {
         console.log('play');
         console.log(data);
         this.isPlaying = true;
-        this.cd.detectChanges();
       });
     }
-    console.log(this.isPlaying);
   }
 
   previous() {
     this.spotifyService.previousSong().subscribe(data => {
       console.log('previous called');
-      console.log(data);
     });
   }
 

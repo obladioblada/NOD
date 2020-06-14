@@ -3,21 +3,25 @@ import {SpotifyApiService} from './spotify-api.service';
 import {Socket} from 'ngx-socket-io';
 import {SocketEvent} from '../../../../shared/socket/socketEvent';
 import {AuthService} from "../../auth/auth.service";
-import {Subject} from "rxjs";
+import {BehaviorSubject, Subject} from "rxjs";
+import {CurrentSong} from "../models/CurrentSong";
+import {UserProfileService} from "./user-profile.service";
 
 @Injectable()
 export class SocketService {
 
-  refreshUser$: Subject<any> = new Subject();
+  refreshUsers$: Subject<any> = new Subject();
+  userTrackStateChanged$: BehaviorSubject<any> = new BehaviorSubject<any>(undefined);
 
   constructor(spotifyService: SpotifyApiService,
               private socket: Socket,
-              private  authService: AuthService
-
+              private authService: AuthService,
+              private userProfileService: UserProfileService
   ) {
 
     this.socket.on(SocketEvent.USER_TRACK_STATE_CHANGED, (message) => {
       console.log(message);
+      this.userTrackStateChanged$.next(message);
     });
 
     this.socket.on('connection', (message, callback) => {
@@ -30,7 +34,7 @@ export class SocketService {
     });
 
     this.socket.on("otherUserConnection", (message) => {
-      this.refreshUser$.next(message);
+      this.refreshUsers$.next(message);
     });
 
     this.socket.on(SocketEvent.JOIN_ROOM, (message) => {
@@ -54,8 +58,8 @@ export class SocketService {
     this.socket.emit(SocketEvent.LEAVE_ROOM, message);
   }
 
-  sendPlay(message) {
-    this.socket.emit(SocketEvent.PLAY, message);
+  sendPlay(currentSong: CurrentSong) {
+    this.socket.emit(SocketEvent.PLAY, {song: currentSong, sender: this.userProfileService.userProfile.id});
   }
 
   sendPause(message) {

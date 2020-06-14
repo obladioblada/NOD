@@ -44,7 +44,6 @@ export class PlayerService {
     return this.spotifyApiService.pause();
   }
 
-
   getCurrentPlaying() {
     return this.spotifyApiService.getCurrentPlaying();
   }

@@ -25,39 +25,6 @@
   height: inherit;
 }
 
-.current-song-info-wrapper{
-  display: grid;
-  grid-template-columns: 88px 2fr;
-  grid-template-rows: 1fr 1fr;
-  align-items: center;
-}
-
-.current-playing-artist{
-  grid-column-start: 2;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 2;
-  font-size: 0.85em;
-  cursor: pointer;
-}
-
-.current-playing-song{
-  grid-column-start: 2;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 1;
-  align-self: self-end;
-  cursor: pointer;
-}
-.current-playing-img{
-  width: 64px;
-  height: 64px;
-  grid-column-start: 1;
-  grid-column-end: 1;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  justify-self: center;
-}
 
 .player-container {
   display: grid;

@@ -5,6 +5,7 @@ export class User {
   roomId: string;
   pictureUrl: string;
   connected: boolean;
+  currentSong: any;
 
   constructor(id: string, name: string, pictureUrl: string, connected: boolean) {
     this.id = id;
@@ -15,5 +16,9 @@ export class User {
 
   setRoom(roomId: string) {
     this.roomId = roomId;
+  }
+
+  setCurrentSong(currentSong: any){
+    this.currentSong = currentSong;
   }
 }

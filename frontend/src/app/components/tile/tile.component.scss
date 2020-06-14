@@ -38,7 +38,7 @@
 }
 
 :host(.expand){
-  width: 15em;
+  width: inherit;
   .tile-title {
     grid-column: 2;
       grid-column-end: 3;

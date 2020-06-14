@@ -11,9 +11,10 @@ class SocketManager {
 
     init(server) {
         logger.info("initialising socket Manager");
-        this.io =  socketIo.listen(server);
+        this.io = socketIo.listen(server);
 
         this.io.on("connection", function (socket: socketIo.Socket) {
+            let lastMessage;
             logger.info("a user connected");
             socket.emit("connection", "welcome", (accessToken) => {
                 logger.info("accessToken");
@@ -24,8 +25,8 @@ class SocketManager {
                     .subscribe(user => {
                         logger.info(`sending ${user.name}`);
                         socket.broadcast.emit("otherUserConnection", {user: user})
-                    } );
-               });
+                    });
+            });
 
             socket.on("users connected", (message) => {
                 logger.info(message);
@@ -34,9 +35,20 @@ class SocketManager {
             });
 
             socket.on(SocketEvent.PLAY, (message) => {
+                if (lastMessage !== message) {
+                    lastMessage = message;
+                    logger.info(message);
+                    logger.info("broadcasting");
+                    socket.broadcast.emit(SocketEvent.USER_TRACK_STATE_CHANGED, message);
+                }
+            });
+
+            socket.on(SocketEvent.PAUSE, (message) => {
+                if (lastMessage !== message) {
                 logger.info(message);
                 logger.info("broadcasting");
-                socket.broadcast.emit("user_track_state_changed", message);
+                socket.broadcast.emit(SocketEvent.USER_TRACK_STATE_CHANGED, message);
+                }
             });
 
             socket.on(SocketEvent.JOIN_ROOM, (message) => {
@@ -45,7 +57,7 @@ class SocketManager {
 
             socket.on('disconnect', () => {
                 userDBManager.getUserBySocketIDTokenAndUpdate(socket.id, {connected: false, socketId: null})
-                    .subscribe(() =>  socket.broadcast.emit("otherUserConnection", "please refresh users"));
+                    .subscribe(() => socket.broadcast.emit("otherUserConnection", "please refresh users"));
             });
         });
     }

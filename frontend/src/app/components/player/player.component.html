@@ -1,8 +1,6 @@
 <div class="player-container">
-  <div class="current-song-info-wrapper">
-    <img class="current-playing-img" [src]="currentImgUrl" alt="">
-    <div class="current-playing-song">{{currentSong}}</div>
-    <div class="current-playing-artist">{{currentArtist}}</div>
+  <div *ngIf="(currentSong$ | async ) as currentSong">
+   <nod-current-song [song]=currentSong></nod-current-song>
   </div>
   <div class="player-buttons-container">
     <button (click)="previous()">

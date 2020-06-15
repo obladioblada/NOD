@@ -1,3 +1,11 @@
+.users-wrapper{
+  width: 32vw;
+  position: fixed;
+  top: 0;
+  bottom: 90px;
+  overflow-y: scroll;
+}
+
 .join {
       width: 2em;
       height: 2em;
@@ -32,3 +40,9 @@
 }
 }
 
+
+@media screen and (max-width: 600px) {
+  .users-wrapper{
+    width: 100vw;
+  }
+}

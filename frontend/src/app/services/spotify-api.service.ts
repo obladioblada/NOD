@@ -35,7 +35,12 @@ export class SpotifyApiService {
   player() {
     const headers: HttpHeaders = this.getHeaders();
     this.playerUrl = `https://api.spotify.com/v1/me/player`;
-    return this.http.get(this.playerUrl, {headers});
+    return this.http.get(this.playerUrl, { headers });
+  }
+
+  me() {
+    const headers: HttpHeaders = this.getHeaders();
+    return this.http.get(" https://api.spotify.com/v1/me", { headers });
   }
 
   play() {
@@ -51,7 +56,6 @@ export class SpotifyApiService {
   setDevice(deviceId: string): Observable<any |undefined> {
     const headers: HttpHeaders = this.getHeaders();
     this.playerUrl = `https://api.spotify.com/v1/me/player`;
-    console.log(deviceId);
     return this.http.put(this.playerUrl,{device_ids:[deviceId]} ,{ headers });
   }
 

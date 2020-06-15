@@ -1,6 +1,6 @@
 :host {
   display: grid;
-  grid-template-columns: 5em auto 1.4em;
+  grid-template-columns: 5em auto;
   grid-template-rows: 5em auto;
   width: 5em;
   padding: 1em;
@@ -13,7 +13,7 @@
     grid-column: 1;
     grid-column-end: 3;
     grid-row: 2;
-    padding-top: 1em;
+    justify-self: center;
   }
 
   .tile-image {
@@ -22,27 +22,28 @@
   }
 
   .tile-footer {
-    grid-column: 1;
+    grid-column-start: 1;
     grid-row: 2;
     grid-column-end: 3;
     padding-top: 1em;
   }
 
   .tile-lateral {
-    grid-column: 3;
-    grid-row: 2;
     justify-self: center;
   }
 
 }
 
 :host(.expand){
-  width: 15em;
+  width: inherit;
+  max-width: 350px;
   .tile-title {
     grid-column: 2;
       grid-column-end: 3;
       grid-row: 1;
       padding-left: 1em;
+      align-self: center;
+      justify-self: start;
   }
 }
 

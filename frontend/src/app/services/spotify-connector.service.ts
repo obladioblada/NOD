@@ -10,12 +10,13 @@ export class SpotifyConnectorService {
 
   onPlaySong: Subject<any> = new Subject<any>();
   onSdkReady$: Subject<string> = new Subject<string>();
-
+  paused: boolean;
+  player: any;
   constructor(private winRef: WindowRef, private authService: AuthService) {
     this.winRef.nativeWindow.waitForSpotify.then(() =>{
       const token = this.authService.getAccessToken();
-      if (token) {
-        const player = new Spotify.Player({
+      if (token && this.player === undefined) {
+         this.player = new Spotify.Player({
           name: 'Nod',
           getOAuthToken: cb => {
             cb(token);
@@ -23,47 +24,48 @@ export class SpotifyConnectorService {
         });
 
         // Error handling
-        player.addListener('initialization_error', ({message}) => {
+        this.player.addListener('initialization_error', ({message}) => {
           console.error(message);
         });
-        player.addListener('authentication_error', ({message}) => {
+        this.player.addListener('authentication_error', ({message}) => {
           console.error(message);
         });
-        player.addListener('account_error', ({message}) => {
+        this.player.addListener('account_error', ({message}) => {
           console.error(message);
         });
-        player.addListener('playback_error', ({message}) => {
+        this.player.addListener('playback_error', ({message}) => {
           console.error(message);
         });
 
-        // Playback status updates
-        player.addListener('player_state_changed', state => {
+        this.player.addListener('player_state_changed', state => {
           console.log(state);
-          if (state) {
+          if (state &&  this.paused != state.paused ) {
+            this.paused = state.paused;
             this.onPlaySong.next({track: state.track_window.current_track, paused: state.paused});
           }
         });
 
         // Ready
-        player.addListener('ready', ({device_id}) => {
+        this.player.addListener('ready', ({device_id}) => {
           console.log('Ready with Device ID', device_id);
           this.onSdkReady$.next(device_id);
         });
 
         // Not Ready
-        player.addListener('not_ready', ({device_id}) => {
+        this.player.addListener('not_ready', ({device_id}) => {
           console.log('Device ID has gone offline', device_id);
         });
 
         // Connect to the player!
-        player.connect().then(success => {
+        this.player.connect().then(success => {
           if (success) {
             console.log('The Web Playback SDK successfully connected to Spotify!');
           }
         });
       }
     });
-
   }
+
+
 
 }

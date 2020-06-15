@@ -1,7 +1,6 @@
-import mongoose = require("mongoose");
-import { logger } from "./logging/Logger";
-import { from, Observable } from "rxjs";
-import { IUserDocument, Users } from "./models/User";
+import {logger} from "./logging/Logger";
+import {from, Observable} from "rxjs";
+import {IUserDocument, Users} from "./models/User";
 
 class UserDbManager {
 
@@ -52,6 +51,46 @@ class UserDbManager {
             }) 
         ) as Observable<IUserDocument[]>;
     }
+
+    getConnectedUser() : Observable<IUserDocument[]>{
+        return from(
+         Users.find({connected: true}, function (err: any, documents: IUserDocument[]){
+            logger.info("array of Users Connected");
+            logger.info(documents);
+            return documents
+        })) as Observable<IUserDocument[]>
+    }
+
+    getUserByAccessTokenAndUpdate(accessToken: string, update): Observable<IUserDocument> | any {
+        return from(
+             Users.findOneAndUpdate({accessToken: accessToken}, update,{new: true},function (err: any, document: IUserDocument) {
+                if (err) {
+                    return err;
+                }
+                if (document === null) {
+                    logger.info(" user with access token " + accessToken + " not found");
+                    return document;
+                }
+                logger.info(`BY TOKEN: User ${document.name} update successfully! ${document.socketId}`);
+                return document;
+            })) as Observable<IUserDocument>;
+    }
+
+    getUserBySocketIDTokenAndUpdate(socketId: string, update): Observable<IUserDocument> | any {
+        return from(
+             Users.findOneAndUpdate({socketId: socketId}, update, {new: true},function (err: any, document: IUserDocument) {
+                if (err) {
+                    return err;
+                }
+                if (document === null) {
+                    logger.info(" user with socket id" + socketId + " not found");
+                    return document;
+                }
+                logger.info(` BY SOCKET: User ${document.name} update successfully! ${document}`);
+                return document;
+            })) as Observable<IUserDocument>;
+    }
+
 
      getUserByAccessToken(accessToken: string): Observable<IUserDocument> {
         return from(

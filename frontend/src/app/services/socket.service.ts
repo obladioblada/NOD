@@ -2,14 +2,39 @@ import {Injectable} from '@angular/core';
 import {SpotifyApiService} from './spotify-api.service';
 import {Socket} from 'ngx-socket-io';
 import {SocketEvent} from '../../../../shared/socket/socketEvent';
+import {AuthService} from "../../auth/auth.service";
+import {BehaviorSubject, Subject} from "rxjs";
+import {CurrentSong} from "../models/CurrentSong";
+import {UserProfileService} from "./user-profile.service";
 
 @Injectable()
 export class SocketService {
 
-  constructor(spotifyService: SpotifyApiService, private socket: Socket) {
+  refreshUsers$: Subject<any> = new Subject();
+  userTrackStateChanged$: BehaviorSubject<any> = new BehaviorSubject<any>(undefined);
+
+  constructor(spotifyService: SpotifyApiService,
+              private socket: Socket,
+              private authService: AuthService,
+              private userProfileService: UserProfileService
+  ) {
+
+    this.socket.on(SocketEvent.USER_TRACK_STATE_CHANGED, (message) => {
+      this.userTrackStateChanged$.next(message);
+      this.refreshUsers$.next(message);
+    });
+
     this.socket.on('connection', (message, callback) => {
       console.log(message);
-      callback(' ciaooo ');
+      callback(this.authService.getAccessToken());
+    });
+
+    this.socket.on('disconnect', (reason) => {
+      console.log(`Disconnected: ${reason}`);
+    });
+
+    this.socket.on("otherUserConnection", (message) => {
+      this.refreshUsers$.next(message);
     });
 
     this.socket.on(SocketEvent.JOIN_ROOM, (message) => {
@@ -33,12 +58,12 @@ export class SocketService {
     this.socket.emit(SocketEvent.LEAVE_ROOM, message);
   }
 
-  sendPlay(message) {
-    this.socket.emit(SocketEvent.PLAY, message);
+  sendPlay(currentSongPlayed: CurrentSong) {
+    this.socket.emit(SocketEvent.PLAY, {song: currentSongPlayed, sender: this.userProfileService.userProfile.id});
   }
 
-  sendPause(message) {
-    this.socket.emit(SocketEvent.PAUSE, message);
+  sendPause(currentSongStopped: CurrentSong) {
+    this.socket.emit(SocketEvent.PAUSE, {song: currentSongStopped, sender: this.userProfileService.userProfile.id});
   }
 }
 

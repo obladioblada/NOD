@@ -1,12 +1,15 @@
-<nod-tile class="expand">
+<nod-tile class="expand" [ngClass]="{'is-active' : user.connected}">
   <div class="title">
     <span class="name">{{user.name}} </span>
-  </div>
-  <div class="footer">
-    <span class="name">Some Song</span>
   </div>
   <div class="image">
     <img src="{{user.pictureUrl}}" alt="{{user.name}}">
   </div>
-    <nod-svg-icon (click)="join(user.id)" icon="icon-headphones" class="icon lateral"></nod-svg-icon>
+  <div class="footer userSong" *ngIf="user.currentSong" [ngClass]="{'playing-song': !user.currentSong.paused}">
+    <div>
+      <nod-current-song [song]= "user.currentSong"></nod-current-song>
+    </div>
+    <nod-svg-icon (click)="join(user.id)" icon="icon-headphones" class="icon"></nod-svg-icon>
+  </div>
 </nod-tile>
+

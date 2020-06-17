@@ -19,7 +19,7 @@ export class SocketService {
               private userProfileService: UserProfileService
   ) {
 
-    this.socket.on(SocketEvent.USER_TRACK_STATE_CHANGED, (message) => {
+    this.socket.on("user_track_state_changed", (message) => {
       console.log(message);
       this.userTrackStateChanged$.next(message);
       this.refreshUsers$.next(message);
@@ -41,10 +41,10 @@ export class SocketService {
     this.socket.on(SocketEvent.JOIN_ROOM, (message) => {
     });
 
-    this.socket.on(SocketEvent.PLAY, (playMessage) => {
+    this.socket.on("play", (playMessage) => {
       console.log(playMessage);
     });
-    this.socket.on(SocketEvent.PAUSE, (playMessage) => {
+    this.socket.on("pause", (playMessage) => {
       console.log(playMessage);
     });
   }
@@ -60,11 +60,11 @@ export class SocketService {
   }
 
   sendPlay(currentSongPlayed: CurrentSong) {
-    this.socket.emit(SocketEvent.PLAY, {song: currentSongPlayed, sender: this.userProfileService.userProfile.id});
+    this.socket.emit("play", {song: currentSongPlayed, sender: this.userProfileService.userProfile.id});
   }
 
   sendPause(currentSongStopped: CurrentSong) {
-    this.socket.emit(SocketEvent.PAUSE, {song: currentSongStopped, sender: this.userProfileService.userProfile.id});
+    this.socket.emit("pause", {song: currentSongStopped, sender: this.userProfileService.userProfile.id});
   }
 }
 

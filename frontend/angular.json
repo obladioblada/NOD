@@ -122,6 +122,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "nod"
+    }
+  },
+  "defaultProject": "nod",
+  "cli": {
+    "analytics": false
+  }
 }

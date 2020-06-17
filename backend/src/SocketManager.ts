@@ -11,18 +11,21 @@ class SocketManager {
 
     init(server) {
         logger.info("initialising socket Manager");
-        this.io = socketIo.listen(server);
+        this.io = socketIo.listen(server, {origins: '*:*'});
 
         this.io.on("connection", function (socket: socketIo.Socket) {
             logger.info("a user connected");
-            socket.emit("connection", "welcome", (accessToken) => {
+            socket.emit("connection", "please send me your AT", (accessToken) => {
                 //userDBManager.getConnectedUser().subscribe(users =>  socket.emit("users", {users: users}));
+                console.log(accessToken);
                 userDBManager.getUserByAccessTokenAndUpdate(accessToken, {connected: true, socketId: socket.id})
                     .pipe(take(1))
                     .subscribe(user => {
                         console.log(user);
-                        logger.info(`sending ${user.name}`);
-                        socket.broadcast.emit("otherUserConnection", {user: user})
+                        if (user != null) {
+                            logger.info(`sending ${user.name}`);
+                            socket.broadcast.emit("otherUserConnection", {user: user})
+                        }
                     });
             });
 
@@ -32,15 +35,18 @@ class SocketManager {
                 socket.broadcast.emit(message);
             });
 
-            socket.on(SocketEvent.PLAY, (message) => {
-                    logger.info("broadcasting");
-                    console.log(message);
-                    socket.broadcast.emit(SocketEvent.USER_TRACK_STATE_CHANGED, message);
+            socket.on("play", (message) => {
+                logger.info("broadcasting");
+                console.log("playing");
+                console.log(message);
+                socket.broadcast.emit("user_track_state_changed", message);
             });
 
-            socket.on(SocketEvent.PAUSE, (message) => {
+            socket.on("pause", (message) => {
                 logger.info("broadcasting");
-                socket.broadcast.emit(SocketEvent.USER_TRACK_STATE_CHANGED, message);
+                console.log("pausing");
+                console.log(message);
+                socket.broadcast.emit("user_track_state_changed", message);
             });
 
             socket.on(SocketEvent.JOIN_ROOM, (message) => {

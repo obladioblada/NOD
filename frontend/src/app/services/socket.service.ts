@@ -20,6 +20,7 @@ export class SocketService {
   ) {
 
     this.socket.on(SocketEvent.USER_TRACK_STATE_CHANGED, (message) => {
+      console.log(message);
       this.userTrackStateChanged$.next(message);
       this.refreshUsers$.next(message);
     });

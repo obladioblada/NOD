@@ -35,12 +35,11 @@ class SocketManager {
             });
 
             socket.on(SocketEvent.PLAY, (message) => {
-                if (lastMessage !== message) {
                     lastMessage = message;
                     logger.info(message);
                     logger.info("broadcasting");
+                    console.log()
                     socket.broadcast.emit(SocketEvent.USER_TRACK_STATE_CHANGED, message);
-                }
             });
 
             socket.on(SocketEvent.PAUSE, (message) => {

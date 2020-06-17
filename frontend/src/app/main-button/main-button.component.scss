@@ -97,15 +97,10 @@
   }
 
   .main-button.bottom {
-    $bottom-bar-heigth: 90px;
-    top: calc(100vh - #{$bottom-bar-heigth});
-    transform: translateX(-50%);
-    left: 50vw;
+    $bottom-bar-height: 90px;
     box-shadow: none;
-    border-radius: 50% 50% 50% 50% / 0% 0% 100% 100%;
-    border-right: #{$buttonSize} solid #434343;
-    border-left: #{$buttonSize} solid #434343;
-    padding-bottom: 30%;
+    bottom: 0;
+    border-radius: 0;
     background: #434343;
     &:before, &:after {
       content:none;
@@ -114,8 +109,8 @@
       cursor: auto;
       box-shadow: none;
     }
-    animation: .75s wiggle cubic-bezier(1, 3.07, 0.2, -2.25), 1s toFullWidth  cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-    height: #{$bottom-bar-heigth};
+    animation: .75s  cubic-bezier(1, 3.07, 0.2, -2.25), 1s toFullWidth  cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    height: #{$bottom-bar-height};
   }
 
 

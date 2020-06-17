@@ -14,15 +14,13 @@ class SocketManager {
         this.io = socketIo.listen(server);
 
         this.io.on("connection", function (socket: socketIo.Socket) {
-            let lastMessage;
             logger.info("a user connected");
             socket.emit("connection", "welcome", (accessToken) => {
-                logger.info("accessToken");
-                logger.info("accessToken");
                 //userDBManager.getConnectedUser().subscribe(users =>  socket.emit("users", {users: users}));
                 userDBManager.getUserByAccessTokenAndUpdate(accessToken, {connected: true, socketId: socket.id})
                     .pipe(take(1))
                     .subscribe(user => {
+                        console.log(user);
                         logger.info(`sending ${user.name}`);
                         socket.broadcast.emit("otherUserConnection", {user: user})
                     });
@@ -35,19 +33,14 @@ class SocketManager {
             });
 
             socket.on(SocketEvent.PLAY, (message) => {
-                    lastMessage = message;
-                    logger.info(message);
                     logger.info("broadcasting");
-                    console.log()
+                    console.log(message);
                     socket.broadcast.emit(SocketEvent.USER_TRACK_STATE_CHANGED, message);
             });
 
             socket.on(SocketEvent.PAUSE, (message) => {
-                if (lastMessage !== message) {
-                logger.info(message);
                 logger.info("broadcasting");
                 socket.broadcast.emit(SocketEvent.USER_TRACK_STATE_CHANGED, message);
-                }
             });
 
             socket.on(SocketEvent.JOIN_ROOM, (message) => {

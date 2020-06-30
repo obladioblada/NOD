@@ -10,7 +10,7 @@ import {HomeComponent} from './home/home.component';
 import {MainButtonComponent} from './main-button/main-button.component';
 import {AuthGuardService} from 'src/auth/auth-guard.service';
 import {AuthService} from 'src/auth/auth.service';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {MainButtonService} from './main-button/main-button.service';
 import {DeviceComponent} from './device/device.component';
 import {SpotifyApiService} from './services/spotify-api.service';
@@ -27,6 +27,7 @@ import {environment} from 'src/environments/environment';
 import {PlayerService} from './services/player.service';
 import {CurrentSongComponent} from './components/current-song/current-song.component';
 import {UserProfileService} from './services/user-profile.service';
+import {TokenInterceptor} from './services/token-interceptor';
 
 const socketUrl = environment.socketEndpoint !== 'heroku' ? environment.socketEndpoint : window.location.hostname;
 const config: SocketIoConfig = {
@@ -59,6 +60,11 @@ const config: SocketIoConfig = {
     SocketIoModule.forRoot(config)
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    },
     SpotifyConnectorService,
     AuthGuardService,
     AuthService,

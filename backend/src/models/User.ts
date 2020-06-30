@@ -8,7 +8,7 @@ export const UserSchema: Schema = new Schema({
     name: String,
     accessToken: String,
     refreshToken: String,
-    expirationDate: String,
+    expiresIn: String,
     pictureUrl: String,
     roomId: {type: Schema.Types.ObjectId, ref: "Room"},
     connected: Boolean,
@@ -21,7 +21,7 @@ export interface IUserDocument extends Document {
     name: string;
     accessToken: string;
     refreshToken: string;
-    expirationDate: string;
+    expiresIn: string;
     pictureUrl: string;
     roomId: string;
     connected: boolean,

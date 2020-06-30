@@ -43,7 +43,11 @@ export class AuthService {
   }
 
   getAccessToken() {
-    return localStorage.getItem('id_token');
+    return localStorage.getItem('access_token');
+  }
+
+  getRefreshtoken() {
+    return localStorage.getItem('refresh_token');
   }
 
   login(code: string) {
@@ -61,47 +65,58 @@ export class AuthService {
     return getRedirectUrlResult;
   }
 
-  private setSession(authResult: { expirationDate: moment.DurationInputArg1; accessToken: string; status: number; refreshToken: string; }) {
-
-    const expiresAt = moment().add(authResult.expirationDate, 'second');
-
-    localStorage.setItem('id_token', authResult.accessToken);
-    localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()) );
-
-
+  private setSession(authResult: { expiresIn: moment.DurationInputArg1; accessToken: string; status: number; refreshToken: string; }) {
+    console.log("setting session");
+    localStorage.setItem('access_token', authResult.accessToken);
+    const expiresAt = moment().add(authResult.expiresIn, 'seconds');
+    console.log(JSON.stringify(expiresAt.valueOf()));
+    console.log(JSON.stringify(expiresAt.format()));
+    localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
+    localStorage.setItem('gianpaolo', "gianpaolo");
+    localStorage.setItem('refresh_token', authResult.refreshToken);
     if (authResult.status !== 500) {
-      console.log(localStorage.getItem('id_token'));
+      console.log(localStorage.getItem('access_token'));
       this.isloggedIn = true;
     }
 }
 
+  refreshToken(){
+    return this.http.post(Location.joinWithSlash(this.apiEndpoint, 'updateToken'),
+      {
+        refresh_token: localStorage.getItem('refresh_token'),
+        access_token: this.getAccessToken()
+      });
+  }
+
   me() {
-    return this.http.get(Location.joinWithSlash(this.apiEndpoint, 'me?access_token=' + localStorage.getItem('id_token')));
+    return this.http.get(Location.joinWithSlash(this.apiEndpoint, 'me?access_token=' + localStorage.getItem('access_token')));
   }
 
   join(id: string) {
     return this.http.get(
-      Location.joinWithSlash(this.apiEndpoint, 'join?user_id_to_join=' + id + '&access_token=' + localStorage.getItem('id_token'))
+      Location.joinWithSlash(this.apiEndpoint, 'join?user_id_to_join=' + id + '&access_token=' + localStorage.getItem('access_token'))
     );
   }
 
   player(id: string, play: boolean) {
-    console.log(localStorage.getItem('id_token'));
+    console.log(localStorage.getItem('access_token'));
     return this.http.get(
-      Location.joinWithSlash(this.apiEndpoint, 'player?access_token=' + localStorage.getItem('id_token') + '&id=' + id + '&play=' + play));
+      Location.joinWithSlash(this.apiEndpoint, 'player?access_token=' + localStorage.getItem('access_token') + '&id=' + id + '&play=' + play));
   }
 
   friends(): Observable<User[]> {
-    console.log(localStorage.getItem('id_token'));
-    return this.http.get<UserDto[]>(Location.joinWithSlash(this.apiEndpoint, 'friends?access_token=' + localStorage.getItem('id_token')))
+    console.log(localStorage.getItem('access_token'));
+    return this.http.get<UserDto[]>(Location.joinWithSlash(this.apiEndpoint, 'friends?access_token=' + localStorage.getItem('access_token')))
       .pipe(map((data: UserDto[]) => data.map(userDto => UserDto.unmarshal(userDto))));
   }
 
 
-  public isLoggedIn() {
-    console.log(localStorage.getItem('id_token'));
+  public isLoggedIn(): boolean {
+    console.log(localStorage.getItem('access_token'));
+    const expiration = localStorage.getItem('expires_at');
+    const expiresAt = JSON.parse(expiration);
+    console.log(moment(expiresAt).format());
     console.log(moment().isBefore(this.getExpiration()));
-
     return moment().isBefore(this.getExpiration());
 }
 
@@ -112,14 +127,12 @@ export class AuthService {
     getExpiration() {
         const expiration = localStorage.getItem('expires_at');
         const expiresAt = JSON.parse(expiration);
+        console.log(moment(expiresAt));
         return moment(expiresAt);
     }
 
-    isAdminUser(): boolean {
-        if (this.userName === 'Admin') {
-            return true;
-        }
-        return false;
+    isAccessTokenExpired(): boolean {
+      return !moment().isBefore(this.getExpiration());
     }
 
     logoutUser(): void {
@@ -130,6 +143,7 @@ export class AuthService {
     errorHandler(error: HttpErrorResponse) {
       this.mainButtonService.setButtonState(ButtonState.ERROR);
       this.backgroundService.setBackgroundState(BackgroundState.ERROR);
+      console.log(error);
       if (error.error instanceof ErrorEvent) {
         // A client-side or network error occurred. Handle it accordingly.
         console.error('An error occurred:', error.error.message);

@@ -47,7 +47,7 @@ process.on('SIGINT', () => {
 // handling CORS
 app.use((_req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE, OPTIONS");
     next();
 });
@@ -70,7 +70,7 @@ app.get("/api/authenticate", (req, res) => {
                     name: authResponse.name,
                     accessToken: authResponse.access_token,
                     refreshToken: authResponse.refresh_token,
-                    expirationDate: authResponse.expires_in,
+                    expiresIn: authResponse.expires_in,
                     pictureUrl: authResponse.pictureUrl
                 } as IUserDocument).subscribe((user) => {
                     logger.info(user);
@@ -92,17 +92,18 @@ app.get("/api/authenticate", (req, res) => {
 });
 
 
-app.get("/api/updateToken", (_req, res) => {
-    logger.info("no access token or token is exprired, rinnovo");
-    logger.info("ricevuto code " + _req.query.code);
-    userDBManager.getUserById(_req.query.id as string).subscribe((_user: IUserDocument) => {
+app.post("/api/updateToken", (_req, res) => {
+   const accessToken =_req.body.access_token;
+   const refreshToken =_req.body.access_token;
+   console.log("update token with refresh token: " + refreshToken);
+    userDBManager.getUserByAccessToken(accessToken).subscribe((_user: IUserDocument) => {
         logger.info(_user);
         if (!_user) {
-            spotifyService.updateToken(_user.refreshToken)
+            spotifyService.updateToken(refreshToken)
                 .then((val: any) => {
                     _user.accessToken = val.access_token;
                     userDBManager.addOrUpdateUser(_user).subscribe(() => {
-                        res.send({accesst_token: val.access_token});
+                        res.send(val);
                     }, (err) => {
                         res.send(err);
                     });
@@ -117,9 +118,6 @@ app.get("/api/updateToken", (_req, res) => {
 });
 
 app.get("/api/login", (_req, res) => {
-    logger.info("CALLBACK to LOGIN");
-    logger.info("CALLBACK to LOGIN");
-    // creo sessione anonima aka addSessions() => entry = uuid, ''
     res.send({
         redirectUrl: "https://accounts.spotify.com/authorize" +
             "?response_type=code" +
@@ -162,11 +160,6 @@ app.get("/api/friends", (_req, res) => {
                 logger.info("logged users: ");
                 logger.info(loggedUsers);
                 res.send(loggedUsers.filter(user => {
-                    logger.info("Hi, for me this token");
-                    logger.info(user.accessToken);
-                    logger.info("ïs the same of ");
-                    logger.info(_req.query.access_token);
-                    logger.info(user.accessToken !== _req.query.access_token);
                     return user.accessToken !== _req.query.access_token
                 }).map((user: IUserDocument) =>  IUserDocument.marshal(user)));
             },

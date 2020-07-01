@@ -81,7 +81,7 @@ export class AuthService {
 }
 
   refreshToken(){
-    return this.http.post(Location.joinWithSlash(this.apiEndpoint, 'updateToken'),
+    return this.http.post(Location.joinWithSlash(this.apiEndpoint, 'refreshToken'),
       {
         refresh_token: localStorage.getItem('refresh_token'),
         access_token: this.getAccessToken()

@@ -92,14 +92,14 @@ app.get("/api/authenticate", (req, res) => {
 });
 
 
-app.post("/api/updateToken", (_req, res) => {
+app.post("/api/refreshToken", (_req, res) => {
    const accessToken =_req.body.access_token;
    const refreshToken =_req.body.access_token;
    console.log("update token with refresh token: " + refreshToken);
     userDBManager.getUserByAccessToken(accessToken).subscribe((_user: IUserDocument) => {
         logger.info(_user);
         if (!_user) {
-            spotifyService.updateToken(refreshToken)
+            spotifyService.refreshToken(refreshToken)
                 .then((val: any) => {
                     _user.accessToken = val.access_token;
                     userDBManager.addOrUpdateUser(_user).subscribe(() => {

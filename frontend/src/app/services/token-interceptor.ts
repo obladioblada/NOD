@@ -15,20 +15,16 @@ export class TokenInterceptor implements HttpInterceptor {
 
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const accessExpired = this.authService.isAccessTokenExpired();
-    console.log("now" + moment().format())
+    console.log("now" + moment().format());
     const expiration = localStorage.getItem('expires_at');
     const expiresAt = JSON.parse(expiration);
     console.log("expire At" + moment(expiresAt).format());
-    if (this.authService.getAccessToken() && !accessExpired) {
-      request = this.injectToken(request);
-      console.log(accessExpired);
-      console.log(this.authService.getAccessToken());
-    }
+    request = this.injectToken(request);
     return next.handle(request)
       .pipe(catchError(error => {
         console.log(error);
         console.log("ERROR OCCURRED");
+        console.log("handling " + error);
         if (error instanceof HttpErrorResponse && error.status === 401) {
           return this.handle401Error(request, next);
         } else {
@@ -45,6 +41,7 @@ export class TokenInterceptor implements HttpInterceptor {
       return this.authService.refreshToken().pipe(
         switchMap((authResult: any) => {
           this.refreshTokenInProgress = false;
+          console.log("got new access Token " + authResult.access_token);
           this.refreshTokenSubject.next(authResult.access_token);
           localStorage.setItem('access_token', authResult.access_token);
           const expiresAt = moment().add(authResult.expiresIn, 'seconds');

@@ -35,7 +35,7 @@ export class SpotifyService {
      *  chiamata principale per login e update refresh token.
      *
      */
-    updateToken(_refreshToken?: string, _accessToken?: string) {
+    refreshToken(_refreshToken?: string, _accessToken?: string) {
         let authOptions;
         authOptions = {
             url: 'https://accounts.spotify.com/api/token',

@@ -74,7 +74,6 @@ export class HomeComponent implements AfterViewInit, OnInit {
     this.refresh();
   }
 
-
   refresh() {
     console.log('refresh');
     this.refreshOccurs$.next();

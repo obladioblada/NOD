@@ -17,4 +17,6 @@ export class UserProfileService {
       this.userProfile = userProfile;
     })
   }
+
+
 }

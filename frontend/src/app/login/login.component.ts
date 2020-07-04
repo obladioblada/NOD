@@ -1,18 +1,18 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { AuthService } from 'src/auth/auth.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { DOCUMENT } from '@angular/common';
-import { MainButtonService } from '../main-button/main-button.service';
-import { ButtonState } from '../main-button/button';
-import { BackgroundService } from '../background/background.service';
-import { BackgroundAnimationState, BackgroundState } from '../background/background';
+import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
+import {AuthService} from 'src/auth/auth.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {DOCUMENT} from '@angular/common';
+import {MainButtonService} from '../main-button/main-button.service';
+import {ButtonState} from '../main-button/button';
+import {BackgroundService} from '../background/background.service';
+import {BackgroundAnimationState, BackgroundState} from '../background/background';
 
 @Component({
   selector: 'nod-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
 
   invalidCredentialMsg: string;
   username: string;
@@ -62,4 +62,10 @@ export class LoginComponent implements OnInit {
       this.authService.getRedirectUrl();
     }
   }
+
+  ngOnDestroy(): void {
+
+  }
+
+
 }

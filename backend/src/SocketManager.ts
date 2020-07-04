@@ -39,14 +39,14 @@ class SocketManager {
                 logger.info("broadcasting");
                 console.log("playing");
                 console.log(message);
-                socket.broadcast.emit("user_track_state_changed", message);
+                socket.broadcast.emit(SocketEvent.USER_TRACK_STATE_CHANGED, message);
             });
 
             socket.on("pause", (message) => {
                 logger.info("broadcasting");
                 console.log("pausing");
                 console.log(message);
-                socket.broadcast.emit("user_track_state_changed", message);
+                socket.broadcast.emit(SocketEvent.USER_TRACK_STATE_CHANGED, message);
             });
 
             socket.on(SocketEvent.JOIN_ROOM, (message) => {

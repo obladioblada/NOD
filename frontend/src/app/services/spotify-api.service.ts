@@ -27,49 +27,47 @@ export class SpotifyApiService {
   }
 
   getHeaders(): HttpHeaders {
-    return new HttpHeaders({
-        Authorization : 'Bearer ' + this.authService.getAccessToken()
-      });
+    return new HttpHeaders({});
   }
 
   player() {
     const headers: HttpHeaders = this.getHeaders();
     this.playerUrl = `https://api.spotify.com/v1/me/player`;
-    return this.http.get(this.playerUrl, { headers });
+    return this.http.get(this.playerUrl);
   }
 
   me() {
     const headers: HttpHeaders = this.getHeaders();
-    return this.http.get(" https://api.spotify.com/v1/me", { headers });
+    return this.http.get(" https://api.spotify.com/v1/me");
   }
 
   play() {
     const headers: HttpHeaders = this.getHeaders();
-    return this.http.put(" https://api.spotify.com/v1/me/player/play", {},{ headers });
+    return this.http.put(" https://api.spotify.com/v1/me/player/play", {});
   }
 
   pause() {
     const headers: HttpHeaders = this.getHeaders();
-    return this.http.put(" https://api.spotify.com/v1/me/player/pause", {},{ headers });
+    return this.http.put(" https://api.spotify.com/v1/me/player/pause", {});
   }
 
   setDevice(deviceId: string): Observable<any |undefined> {
     const headers: HttpHeaders = this.getHeaders();
     this.playerUrl = `https://api.spotify.com/v1/me/player`;
-    return this.http.put(this.playerUrl,{device_ids:[deviceId]} ,{ headers });
+    return this.http.put(this.playerUrl,{device_ids:[deviceId]});
   }
 
 
   previousSong() {
     const headers: HttpHeaders = this.getHeaders();
     this.previousUrl = 'https://api.spotify.com/v1/me/player/previous';
-    return this.http.post( this.previousUrl, null, { headers });
+    return this.http.post( this.previousUrl, null);
   }
 
   nextSong() {
     const headers: HttpHeaders = this.getHeaders();
     this.nextUrl = 'https://api.spotify.com/v1/me/player/next';
-    return this.http.post( this.nextUrl, null, { headers});
+    return this.http.post( this.nextUrl, null);
   }
 
   // Get search results for a query

@@ -94,13 +94,14 @@ app.get("/api/authenticate", (req, res) => {
 
 app.post("/api/refreshToken", (_req, res) => {
    const accessToken =_req.body.access_token;
-   const refreshToken =_req.body.access_token;
-   console.log("update token with refresh token: " + refreshToken);
+   const refreshToken =_req.body.refresh_token;
+   console.log("update user with accessToken : " + accessToken);
     userDBManager.getUserByAccessToken(accessToken).subscribe((_user: IUserDocument) => {
-        logger.info(_user);
-        if (!_user) {
-            spotifyService.refreshToken(refreshToken)
+        if (_user) {
+            console.log(refreshToken);
+            spotifyService.refreshToken(refreshToken, accessToken)
                 .then((val: any) => {
+                    console.log("got new access token" + val.access_token);
                     _user.accessToken = val.access_token;
                     userDBManager.addOrUpdateUser(_user).subscribe(() => {
                         res.send(val);
@@ -113,8 +114,17 @@ app.post("/api/refreshToken", (_req, res) => {
                     logger.info("rinnovo NOT successful - redirect to login");
                     res.send({status: 500});
                 });
+        } else {
+            console.log(_user);
+            console.log("user not found");
+            res.sendStatus(400);
         }
     });
+});
+
+
+app.get("/api/call401", (_req, res) => {
+    res.sendStatus(401);
 });
 
 app.get("/api/login", (_req, res) => {

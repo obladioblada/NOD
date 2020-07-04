@@ -19,7 +19,7 @@ export class SocketService {
               private userProfileService: UserProfileService
   ) {
 
-    this.socket.on("user_track_state_changed", (message) => {
+    this.socket.on(SocketEvent.USER_TRACK_STATE_CHANGED, (message) => {
       console.log(message);
       this.userTrackStateChanged$.next(message);
       this.refreshUsers$.next(message);

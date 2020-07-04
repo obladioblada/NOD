@@ -7,7 +7,8 @@ import * as moment from "moment";
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-  private refreshTokenInProgress = false;
+
+  private refreshTokenInProgress: boolean = false;
   private refreshTokenSubject: Subject<any> = new BehaviorSubject<any>(null);
 
   constructor(public authService: AuthService) {
@@ -19,14 +20,16 @@ export class TokenInterceptor implements HttpInterceptor {
     const expiration = localStorage.getItem('expires_at');
     const expiresAt = JSON.parse(expiration);
     console.log("expire At" + moment(expiresAt).format());
-    request = this.injectToken(request);
-    return next.handle(request)
+    return next.handle(this.injectToken(request))
       .pipe(catchError(error => {
         console.log(error);
         console.log("ERROR OCCURRED");
-        console.log("handling " + error);
-        if (error instanceof HttpErrorResponse && error.status === 401) {
-          return this.handle401Error(request, next);
+        if (error instanceof HttpErrorResponse) {
+          switch (error.status) {
+            case 401: return  this.handle401Error(request, next);
+            case 400: return  this.handle400Error(request);
+            default : return throwError(error);
+          }
         } else {
           return throwError(error);
         }
@@ -34,9 +37,15 @@ export class TokenInterceptor implements HttpInterceptor {
 
   }
 
+  handle400Error(error) {
+    if (error && error.status === 400 && error.error && error.error.error === 'invalid_grant') {
+      // If we get a 400 and the error message is 'invalid_grant', the token is no longer valid so logout.;
+    }
+    return throwError(error);
+  }
+
   private handle401Error(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (!this.refreshTokenInProgress) {
-      this.refreshTokenInProgress = true;
+    if(!this.refreshTokenInProgress) {
       this.refreshTokenSubject.next(null);
       return this.authService.refreshToken().pipe(
         switchMap((authResult: any) => {
@@ -52,9 +61,10 @@ export class TokenInterceptor implements HttpInterceptor {
       return this.refreshTokenSubject.pipe(
         filter(token => token != null),
         take(1),
-        switchMap(jwt => {
-          return next.handle(this.injectToken(request));
-        }));
+        switchMap( token => {
+          return next.handle(this.injectToken(request))
+        } )
+      )
     }
   }
 

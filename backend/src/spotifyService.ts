@@ -36,6 +36,8 @@ export class SpotifyService {
      *
      */
     refreshToken(_refreshToken?: string, _accessToken?: string) {
+        console.log(_refreshToken);
+        console.log(_accessToken);
         let authOptions;
         authOptions = {
             url: 'https://accounts.spotify.com/api/token',
@@ -48,13 +50,15 @@ export class SpotifyService {
         };
         return new Promise((resolve, reject) => {
             request.post(authOptions, (error, response, body) => {
-                logger.info("Post for token");
+                console.log("Post for token");
+                console.log(response.statusCode);
                 if (!error && response.statusCode === 200) {
                     resolve({
                         access_token: body.access_token,
                         expires_in: body.expires_in
                     });
                 } else {
+                    console.log(body.error);
                     reject({
                         error: body.error
                     });

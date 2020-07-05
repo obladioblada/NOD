@@ -28,6 +28,7 @@ import {PlayerService} from './services/player.service';
 import {CurrentSongComponent} from './components/current-song/current-song.component';
 import {UserProfileService} from './services/user-profile.service';
 import {TokenInterceptor} from './services/token-interceptor';
+import {ServiceWorkerModule} from '@angular/service-worker';
 
 const socketUrl = environment.socketEndpoint !== 'heroku' ? environment.socketEndpoint : window.location.hostname;
 const config: SocketIoConfig = {
@@ -57,7 +58,8 @@ const config: SocketIoConfig = {
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    SocketIoModule.forRoot(config)
+    SocketIoModule.forRoot(config),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     {

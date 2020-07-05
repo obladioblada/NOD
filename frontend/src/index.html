@@ -6,15 +6,19 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#2db18f">
 </head>
 <body>
   <nod-root></nod-root>
   <script id="spotifySDK" src="https://sdk.scdn.co/spotify-player.js"></script>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
 </html>
 <script>
   window.waitForSpotify = new Promise((resolve, reject) => {
     window.onSpotifyWebPlaybackSDKReady = () => {
+      console.log("sdk on window ready.. loading");
       resolve();
     }
   });

@@ -16,14 +16,11 @@ class SocketManager {
         this.io.on("connection", function (socket: socketIo.Socket) {
             logger.info("a user connected");
             socket.emit("connection", "please send me your AT", (accessToken) => {
-                //userDBManager.getConnectedUser().subscribe(users =>  socket.emit("users", {users: users}));
-                console.log(accessToken);
                 userDBManager.getUserByAccessTokenAndUpdate(accessToken, {connected: true, socketId: socket.id})
                     .pipe(take(1))
                     .subscribe(user => {
-                        console.log(user);
                         if (user != null) {
-                            logger.info(`sending ${user.name}`);
+                            logger.info(`sending ${user.name} just connected!`);
                             socket.broadcast.emit("otherUserConnection", {user: user})
                         }
                     });
@@ -36,6 +33,7 @@ class SocketManager {
             });
 
             socket.on("play", (message) => {
+                // save user's update
                 logger.info("broadcasting");
                 console.log("playing");
                 console.log(message);
@@ -43,6 +41,7 @@ class SocketManager {
             });
 
             socket.on("pause", (message) => {
+                // save user's update
                 logger.info("broadcasting");
                 console.log("pausing");
                 console.log(message);

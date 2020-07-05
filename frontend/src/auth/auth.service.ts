@@ -66,16 +66,12 @@ export class AuthService {
   }
 
   private setSession(authResult: { expiresIn: moment.DurationInputArg1; accessToken: string; status: number; refreshToken: string; }) {
-    console.log("setting session");
     localStorage.setItem('access_token', authResult.accessToken);
     const expiresAt = moment().add(authResult.expiresIn, 'seconds');
-    console.log(JSON.stringify(expiresAt.valueOf()));
-    console.log(JSON.stringify(expiresAt.format()));
     localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
     localStorage.setItem('gianpaolo', "gianpaolo");
     localStorage.setItem('refresh_token', authResult.refreshToken);
     if (authResult.status !== 500) {
-      console.log(localStorage.getItem('access_token'));
       this.isloggedIn = true;
     }
 }
@@ -112,11 +108,6 @@ export class AuthService {
 
 
   public isLoggedIn(): boolean {
-    console.log(localStorage.getItem('access_token'));
-    const expiration = localStorage.getItem('expires_at');
-    const expiresAt = JSON.parse(expiration);
-    console.log(moment(expiresAt).format());
-    console.log(moment().isBefore(this.getExpiration()));
     return moment().isBefore(this.getExpiration());
 }
 
@@ -127,7 +118,6 @@ export class AuthService {
     getExpiration() {
         const expiration = localStorage.getItem('expires_at');
         const expiresAt = JSON.parse(expiration);
-        console.log(moment(expiresAt));
         return moment(expiresAt);
     }
 

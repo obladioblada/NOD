@@ -6,6 +6,7 @@ import {AuthService} from "../../auth/auth.service";
 import {List} from 'immutable';
 import {Device} from '../models/Device';
 import {map} from 'rxjs/operators';
+import {SpotifyConnectorService} from "./spotify-connector.service";
 
 
 @Injectable()
@@ -23,7 +24,7 @@ export class SpotifyApiService {
   private body: any;
 
 
-  constructor(private http: HttpClient, private authService: AuthService) {
+  constructor(private http: HttpClient, private authService: AuthService, private spotifyConnectorService: SpotifyConnectorService) {
   }
 
   getHeaders(): HttpHeaders {
@@ -31,41 +32,38 @@ export class SpotifyApiService {
   }
 
   player() {
-    const headers: HttpHeaders = this.getHeaders();
     this.playerUrl = `https://api.spotify.com/v1/me/player`;
     return this.http.get(this.playerUrl);
   }
 
   me() {
-    const headers: HttpHeaders = this.getHeaders();
-    return this.http.get(" https://api.spotify.com/v1/me");
+    return this.http.get("https://api.spotify.com/v1/me");
   }
 
   play() {
-    const headers: HttpHeaders = this.getHeaders();
-    return this.http.put(" https://api.spotify.com/v1/me/player/play", {});
+    return this.http.put("https://api.spotify.com/v1/me/player/play", {});
   }
 
   pause() {
-    const headers: HttpHeaders = this.getHeaders();
-    return this.http.put(" https://api.spotify.com/v1/me/player/pause", {});
+    return this.http.put("https://api.spotify.com/v1/me/player/pause", {});
   }
 
   setDevice(deviceId: string): Observable<any |undefined> {
-    const headers: HttpHeaders = this.getHeaders();
     this.playerUrl = `https://api.spotify.com/v1/me/player`;
-    return this.http.put(this.playerUrl,{device_ids:[deviceId]});
+    let body = {
+      device_ids:[deviceId],
+      play: this.spotifyConnectorService.paused != undefined ? !this.spotifyConnectorService.paused: false
+    };
+    return this.http.put(this.playerUrl, body);
   }
 
 
   previousSong() {
-    const headers: HttpHeaders = this.getHeaders();
     this.previousUrl = 'https://api.spotify.com/v1/me/player/previous';
     return this.http.post( this.previousUrl, null);
   }
 
   nextSong() {
-    const headers: HttpHeaders = this.getHeaders();
     this.nextUrl = 'https://api.spotify.com/v1/me/player/next';
     return this.http.post( this.nextUrl, null);
   }
@@ -88,33 +86,28 @@ export class SpotifyApiService {
 
   // Get data about artist that has been chosen to view
   getArtist(id: string) {
-    const headers = this.getHeaders();
     this.artistUrl = 'https://api.spotify.com/v1/artists/' + id;
-    return this.http.get(this.artistUrl, {headers});
+    return this.http.get(this.artistUrl);
   }
 
   // Get the albums about the artist that has been chosen
   getAlbums(id: string) {
-    const headers = this.getHeaders();
     this.albumsUrl = 'https://api.spotify.com/v1/artists/' + id + '/albums?market=from_token&album_type=single';
-    return this.http.get(this.albumsUrl, {headers});
+    return this.http.get(this.albumsUrl);
   }
 
   // Get Tracks in ablum selected
   getAlbum(id: string) {
-    const headers = this.getHeaders();
     this.albumUrl = 'https://api.spotify.com/v1/albums/' + id;
-    return this.http.get(this.albumUrl, {headers});
+    return this.http.get(this.albumUrl);
   }
   // Get current track playing
   getCurrentPlaying(): Observable<any>{
-    const headers = this.getHeaders();
-    return this.http.get<any>('https://api.spotify.com/v1/me/player/currently-playing', {headers});
+    return this.http.get<any>('https://api.spotify.com/v1/me/player/currently-playing');
   }
 
   devices(): Observable<List<Device>> {
-    const headers = this.getHeaders();
-    return this.http.get<DevicesDto>('https://api.spotify.com/v1/me/player/devices', { headers }).pipe(map((devicesDto: DevicesDto) =>
+    return this.http.get<DevicesDto>('https://api.spotify.com/v1/me/player/devices').pipe(map((devicesDto: DevicesDto) =>
       Devices.parseFromDto(devicesDto)
       ));
   }

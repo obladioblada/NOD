@@ -8,13 +8,14 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#2db18f">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192x192.png">
 </head>
 <body>
   <nod-root></nod-root>
-  <script id="spotifySDK" src="https://sdk.scdn.co/spotify-player.js"></script>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
 </html>
+<script id="spotifySDK" src="https://sdk.scdn.co/spotify-player.js"></script>
 <script>
   window.waitForSpotify = new Promise((resolve, reject) => {
     window.onSpotifyWebPlaybackSDKReady = () => {

@@ -16,10 +16,6 @@ export class TokenInterceptor implements HttpInterceptor {
 
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log("now" + moment().format());
-    const expiration = localStorage.getItem('expires_at');
-    const expiresAt = JSON.parse(expiration);
-    console.log("expire At" + moment(expiresAt).format());
     return next.handle(this.injectToken(request))
       .pipe(catchError(error => {
         console.log(error);

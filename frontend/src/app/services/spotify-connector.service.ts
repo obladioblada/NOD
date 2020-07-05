@@ -13,7 +13,10 @@ export class SpotifyConnectorService {
   paused: boolean;
   player: any;
   constructor(private winRef: WindowRef, private authService: AuthService) {
-    this.winRef.nativeWindow.waitForSpotify.then(() =>{
+  }
+
+  initializeSdk(): any {
+    return  this.winRef.nativeWindow.waitForSpotify.then(() =>{
       const token = this.authService.getAccessToken();
       if (token && this.player === undefined) {
          this.player = new Spotify.Player({
@@ -38,10 +41,9 @@ export class SpotifyConnectorService {
         });
 
         this.player.addListener('player_state_changed', state => {
-          console.log(state);
-          if (state &&  this.paused != state.paused ) {
+          if (state) {
             this.paused = state.paused;
-            this.onPlaySong.next({track: state.track_window.current_track, paused: state.paused});
+            this.onPlaySong.next({track: state.track_window.current_track, paused: this.paused});
           }
         });
 
@@ -59,9 +61,10 @@ export class SpotifyConnectorService {
         // Connect to the player!
         this.player.connect().then(success => {
           if (success) {
-            console.log('The Web Playback SDK successfully connected to Spotify!');
+            console.log('The Web Playback SDK successfully connected to Spotify!')
           }
         });
+        return  this.player
       }
     });
   }

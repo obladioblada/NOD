@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from '../../../auth/auth.service';
 import {BackgroundService} from '../../background/background.service';
 import {SocketService} from '../../services/socket.service';
@@ -29,8 +29,7 @@ export class PlayerComponent implements OnInit, OnDestroy {
               private backgroundService: BackgroundService,
               private socketService: SocketService,
               private spotifyService: SpotifyApiService,
-              private playerService: PlayerService,
-              private cd: ChangeDetectorRef) {
+              private playerService: PlayerService) {
     this.isPlaying = false;
     this.showDevices = false;
 
@@ -66,33 +65,28 @@ export class PlayerComponent implements OnInit, OnDestroy {
   play() {
     if (this.isPlaying || this.isPlaying === undefined) {
       this.isPlaying = false;
-      this.playerService.pause().subscribe(data => {
+      this.playerService.pause().pipe(takeUntil(this.destroy$)).subscribe(data => {
         console.log('pause');
         console.log(data);
       });
     } else {
-      this.playerService.play().subscribe(data => {
+      this.playerService.play().pipe(takeUntil(this.destroy$)).subscribe(data => {
         console.log('play');
         console.log(data);
         this.isPlaying = true;
       });
     }
+
   }
 
   previous() {
-    this.spotifyService.previousSong().subscribe(data => {
+    this.spotifyService.previousSong().pipe(takeUntil(this.destroy$)).subscribe(data => {
       console.log('previous called');
     });
   }
 
   next() {
-    this.spotifyService.nextSong().subscribe(data => {
-        console.log('next called');
-        console.log(data);
-        this.spotifyService.player().subscribe(d => {
-          console.log(d);
-        });
-      },
+    this.spotifyService.nextSong().pipe(takeUntil(this.destroy$)).subscribe(data => {},
       error => {
         console.log(error);
       });

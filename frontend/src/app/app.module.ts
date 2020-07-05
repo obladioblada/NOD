@@ -59,7 +59,11 @@ const config: SocketIoConfig = {
     FormsModule,
     ReactiveFormsModule,
     SocketIoModule.forRoot(config),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', {
+        enabled: environment.production,
+        registrationStrategy: 'registerImmediately'
+      }
+    )
   ],
   providers: [
     {

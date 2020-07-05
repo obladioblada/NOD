@@ -3,7 +3,7 @@
   "short_name": "nod",
   "theme_color": "#2db18f",
   "background_color": "#0f0f0f",
-  "display": "standalone",
+  "display": "fullscreen",
   "scope": "./",
   "start_url": "./",
   "icons": [

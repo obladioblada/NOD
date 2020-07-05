@@ -1,5 +1,5 @@
 <div class="player-container">
-  <div *ngIf="(currentSong$ | async ) as currentSong">
+  <div *ngIf="(currentSong$ | async ) as currentSong; else empty_song">
    <nod-current-song [song]=currentSong></nod-current-song>
   </div>
   <div class="player-buttons-container">
@@ -26,3 +26,5 @@
     <nod-device *ngFor="let device of deviceList" [device]="device" (onDeviceSelected)="refreshDevices()"></nod-device>
   </div>
 </div>
+
+<ng-template #empty_song><div> no song being played..</div></ng-template>

@@ -1,12 +1,10 @@
-import { Component } from '@angular/core';
-import { SpotifyApiService } from '../../services/spotify-api.service';
-import { FormControl, FormGroup } from '@angular/forms';
-import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
-
-import { Artist } from '../../models/Artist';
+import {Component} from '@angular/core';
+import {SpotifyApiService} from '../../services/spotify-api.service';
+import {FormControl, FormGroup} from '@angular/forms';
+import {debounceTime, distinctUntilChanged, filter, map} from 'rxjs/operators';
 import {SearchType} from './model';
-import { AuthService } from 'src/auth/auth.service';
-import { BehaviorSubject, combineLatest } from 'rxjs';
+import {AuthService} from 'src/auth/auth.service';
+import {BehaviorSubject, combineLatest} from 'rxjs';
 
 @Component({
   selector: 'nod-search',
@@ -25,15 +23,15 @@ export class SearchComponent {
     this.formGroup =  new FormGroup({
       query: this.query
     });
-    combineLatest(
+    combineLatest([
       this.formGroup.valueChanges,
-      this.type_$.asObservable()
+      this.type_$.asObservable()]
     )
     .pipe(
       debounceTime(400),
       distinctUntilChanged(),
       map(val => val[0]),
-      filter(val => val.query.length > 0)
+      filter(val => val.query.length > 1)
     ).subscribe((queryForm: any) => {
       this.spotifyService.searchMusic(queryForm.query, this.type_$.getValue())
         .subscribe( (res) => {

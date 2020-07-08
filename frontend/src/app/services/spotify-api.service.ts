@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {Devices, DevicesDto} from '../models/Devices';
 import {AuthService} from "../../auth/auth.service";
 import {List} from 'immutable';
@@ -22,6 +22,9 @@ export class SpotifyApiService {
   // private clientId: string = environment.clientId;
   // private clientSecret: string = environment.clientSecret;
   private body: any;
+
+  searchInProgress$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
 
 
   constructor(private http: HttpClient, private authService: AuthService, private spotifyConnectorService: SpotifyConnectorService) {

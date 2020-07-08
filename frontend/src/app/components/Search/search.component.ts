@@ -1,9 +1,8 @@
 import {Component} from '@angular/core';
 import {SpotifyApiService} from '../../services/spotify-api.service';
 import {FormControl, FormGroup} from '@angular/forms';
-import {debounceTime, distinctUntilChanged, filter, map} from 'rxjs/operators';
+import {debounceTime, distinctUntilChanged, filter, map, tap} from 'rxjs/operators';
 import {SearchType} from './model';
-import {AuthService} from 'src/auth/auth.service';
 import {BehaviorSubject, combineLatest} from 'rxjs';
 
 @Component({
@@ -19,7 +18,7 @@ export class SearchComponent {
   query: FormControl = new FormControl();
   type_$: BehaviorSubject<SearchType> = new BehaviorSubject(SearchType.artists);
 
-  constructor(private spotifyService: SpotifyApiService, private authService: AuthService) {
+  constructor(private spotifyApiService: SpotifyApiService) {
     this.formGroup =  new FormGroup({
       query: this.query
     });
@@ -31,15 +30,23 @@ export class SearchComponent {
       debounceTime(400),
       distinctUntilChanged(),
       map(val => val[0]),
-      filter(val => val.query.length > 1)
+      filter(val => val.query.length > 1),
+      tap(() => this.spotifyApiService.searchInProgress$.next(!this.spotifyApiService.searchInProgress$.getValue()))
     ).subscribe((queryForm: any) => {
-      this.spotifyService.searchMusic(queryForm.query, this.type_$.getValue())
+
+      this.spotifyApiService.searchMusic(queryForm.query, this.type_$.getValue())
         .subscribe( (res) => {
           console.log(res[this.type_$.getValue() + 's'].items);
           this.results = res[this.type_$.getValue() + 's'].items;
         });
     });
   }
+
+  setOnFocus(value: boolean) {
+    console.log(value);
+    this.spotifyApiService.searchInProgress$.next(value);
+  }
+
 
   setType(type: string) {
     this.type_$.next(SearchType[type]);

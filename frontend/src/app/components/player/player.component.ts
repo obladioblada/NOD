@@ -1,6 +1,5 @@
 import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from '../../../auth/auth.service';
-import {BackgroundService} from '../../background/background.service';
 import {SocketService} from '../../services/socket.service';
 import {SpotifyApiService} from '../../services/spotify-api.service';
 import {map, switchMap, takeUntil, tap} from 'rxjs/operators';
@@ -24,11 +23,12 @@ export class PlayerComponent implements OnInit, OnDestroy {
   destroy$: Subject<boolean> = new Subject<boolean>();
   currentSong$: Observable<CurrentSong>;
 
+  togglePlayer: boolean;
+
 
   constructor(private authService: AuthService,
-              private backgroundService: BackgroundService,
               private socketService: SocketService,
-              private spotifyService: SpotifyApiService,
+              private spotifyApiService: SpotifyApiService,
               private playerService: PlayerService) {
     this.isPlaying = false;
     this.showDevices = false;
@@ -52,13 +52,18 @@ export class PlayerComponent implements OnInit, OnDestroy {
         data.paused)),
       tap((currentSong) => {
         this.isPlaying = !currentSong.paused;
-          if(!currentSong.paused){
-            this.socketService.sendPlay(currentSong);
-          } else {
-            this.socketService.sendPause(currentSong);
-          }
-        })
+        if (!currentSong.paused) {
+          this.socketService.sendPlay(currentSong);
+        } else {
+          this.socketService.sendPause(currentSong);
+        }
+      })
     );
+
+    this.spotifyApiService.searchInProgress$.pipe(
+      takeUntil(this.destroy$))
+      .subscribe(toggleValue => { console.log(toggleValue);this.togglePlayer = toggleValue});
+
   }
 
 
@@ -80,13 +85,14 @@ export class PlayerComponent implements OnInit, OnDestroy {
   }
 
   previous() {
-    this.spotifyService.previousSong().pipe(takeUntil(this.destroy$)).subscribe(data => {
+    this.spotifyApiService.previousSong().pipe(takeUntil(this.destroy$)).subscribe(data => {
       console.log('previous called');
     });
   }
 
   next() {
-    this.spotifyService.nextSong().pipe(takeUntil(this.destroy$)).subscribe(data => {},
+    this.spotifyApiService.nextSong().pipe(takeUntil(this.destroy$)).subscribe(data => {
+      },
       error => {
         console.log(error);
       });

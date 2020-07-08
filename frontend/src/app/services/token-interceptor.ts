@@ -4,6 +4,8 @@ import {BehaviorSubject, Observable, Subject, throwError} from 'rxjs';
 import {catchError, filter, switchMap, take} from 'rxjs/operators';
 import {AuthService} from 'src/auth/auth.service';
 import * as moment from "moment";
+import {SpotifyError} from "../../../../shared/spotifyError";
+import {PlayerService} from "./player.service";
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
@@ -11,7 +13,8 @@ export class TokenInterceptor implements HttpInterceptor {
   private refreshTokenInProgress: boolean = false;
   private refreshTokenSubject: Subject<any> = new BehaviorSubject<any>(null);
 
-  constructor(public authService: AuthService) {
+  constructor(public authService: AuthService,
+              public playerService: PlayerService) {
   }
 
 
@@ -22,9 +25,14 @@ export class TokenInterceptor implements HttpInterceptor {
         console.log("ERROR OCCURRED");
         if (error instanceof HttpErrorResponse) {
           switch (error.status) {
-            case 401: return  this.handle401Error(request, next);
-            case 400: return  this.handle400Error(request);
-            default : return throwError(error);
+            case 401:
+              return this.handle401Error(request, next);
+            case 400:
+              return this.handle400Error(request);
+            case 404:
+              return this.handle404Error(request);
+            default :
+              return throwError(error);
           }
         } else {
           return throwError(error);
@@ -40,8 +48,15 @@ export class TokenInterceptor implements HttpInterceptor {
     return throwError(error);
   }
 
+  handle404Error(error) {
+    if (error && error.status === 404 && error.reason === SpotifyError.NO_ACTIVE_DEVICE) {
+        this.playerService.setDevice(this.playerService.currentDevices)
+    }
+    return throwError(error);
+  }
+
   private handle401Error(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if(!this.refreshTokenInProgress) {
+    if (!this.refreshTokenInProgress) {
       this.refreshTokenSubject.next(null);
       return this.authService.refreshToken().pipe(
         switchMap((authResult: any) => {
@@ -57,9 +72,9 @@ export class TokenInterceptor implements HttpInterceptor {
       return this.refreshTokenSubject.pipe(
         filter(token => token != null),
         take(1),
-        switchMap( token => {
+        switchMap(token => {
           return next.handle(this.injectToken(request))
-        } )
+        })
       )
     }
   }

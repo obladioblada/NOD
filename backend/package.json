@@ -14,6 +14,7 @@
     "@types/mongoose": "^5.7.14",
     "@types/ws": "^7.2.4",
     "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
     "log4js": "^6.1.2",
     "mongoose": "^5.9.7",
     "request": "^2.88.0",

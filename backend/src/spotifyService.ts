@@ -1,6 +1,7 @@
-const request = require('request');
 import {logger} from "./logging/Logger";
 import {IUserDocument} from "./models/User";
+
+const request = require('request');
 
 
 export class SpotifyService {

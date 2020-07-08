@@ -10,8 +10,6 @@ import {environment} from '../environments/environment';
 import * as moment from 'moment';
 import {User} from 'src/app/models/User';
 import {UserDto} from './userDto';
-import {BackgroundService} from 'src/app/background/background.service';
-import {BackgroundState} from 'src/app/background/background';
 
 // import {SpotifyConnectorService} from "../app/services/spotify-connector.service";
 
@@ -29,7 +27,6 @@ export class AuthService {
     constructor(
       @Inject(DOCUMENT) private document: Document,
       private mainButtonService: MainButtonService,
-      private backgroundService: BackgroundService,
       private http: HttpClient,
       private router: Router) {
     }
@@ -132,7 +129,6 @@ export class AuthService {
 
     errorHandler(error: HttpErrorResponse) {
       this.mainButtonService.setButtonState(ButtonState.ERROR);
-      this.backgroundService.setBackgroundState(BackgroundState.ERROR);
       console.log(error);
       if (error.error instanceof ErrorEvent) {
         // A client-side or network error occurred. Handle it accordingly.

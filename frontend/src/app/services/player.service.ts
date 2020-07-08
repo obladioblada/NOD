@@ -3,7 +3,7 @@ import {SpotifyConnectorService} from "./spotify-connector.service";
 import {SpotifyApiService} from "./spotify-api.service";
 import {AuthService} from "../../auth/auth.service";
 import {Observable, Subject} from "rxjs";
-import {debounceTime, switchMap} from "rxjs/operators";
+import {debounceTime, switchMap, tap} from "rxjs/operators";
 import {Device} from '../models/Device';
 import {List} from 'immutable';
 
@@ -21,7 +21,9 @@ export class PlayerService {
   }
 
   onSDKReady() {
-    return this.spotifyConnectorService.onSdkReady$.asObservable();
+    return this.spotifyConnectorService.onSdkReady$.pipe(
+      tap()
+    );
   }
 
   getDevices(): Observable<List<Device>> {
@@ -47,5 +49,9 @@ export class PlayerService {
 
   getCurrentPlaying() {
     return this.spotifyApiService.getCurrentPlaying();
+  }
+
+  setMyself() {
+
   }
 }

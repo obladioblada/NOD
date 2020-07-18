@@ -39,10 +39,10 @@ export class SearchComponent {
   }
 
 
-  playSong(id) {
-    console.log(id);
+  playSong(uri) {
+    console.log(uri);
     const body = {
-      uris: [id]
+      uris: [uri]
     };
     this.spotifyApiService.play(body).subscribe(() => console.log("song changed"));
   }

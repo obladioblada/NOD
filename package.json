@@ -5,8 +5,8 @@
     "node": "10.16.3"
   },
   "scripts": {
-    "install-children-dependecies": "(cd backend && npm install) & (cd frontend && npm install)",
-    "install": "npm install & npm run install-children-dependecies",
+    "install": "npm install",
+    "postinstall": "(cd backend && npm install) && (cd frontend && npm install)",
     "start-dev-frontend": "cd frontend && ng serve",
     "start-dev-backend": "cd backend && npm run start:watch",
     "start-dev": "npm run start-dev-frontend & npm run start-dev-backend",

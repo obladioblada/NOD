@@ -67,18 +67,19 @@ input.whiteMe {
   justify-self: end;
 }
 
-
-.clearButton {
-  top: 2.7em;
-  background: white;
+.cross-icon {
   position: fixed;
-  z-index: 103;
-  transform: translateX(-100%) scale(2);
-  left: 81vw;
-  width: 1em;
-  opacity: 0;
-  font-size: 0.5em;
+  top: 1em;
+  right: 2em;
+  display: none;
 
+  &.show {
+    display: block;
+  }
+}
+
+
+.cross-icon {
   &.loop {
     opacity: 1;
     animation: .4s loop linear 1 !important;
@@ -97,7 +98,7 @@ ul.filters {
   top: 0;
   z-index: 103;
   margin: 0;
-  padding: 5.3em 0 0;
+  padding: 7em 0 0;
   width: 100vw;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -366,7 +367,6 @@ ul.filters {
 .play-button-wrapper{
   &:hover{
     cursor: pointer;
-    background: #222222;
   }
 }
 .results-wrapper{
@@ -394,9 +394,10 @@ ul.filters {
   font-size: 0;
 
   &.filters-on {
-    top: 10.5em;
-    padding-top: 1em;
-    max-height: calc(100vh - 13.5em);
+    top: 8.5em;
+    padding-top: 0;
+    max-height: calc(100vh - 17em);
+    background: #101010;
   }
 
   li {
@@ -405,6 +406,7 @@ ul.filters {
 
   &.show {
     font-size: 1em;
+    background: #101010;
   }
 
   li {
@@ -441,7 +443,7 @@ ul.filters {
       background: #ffffff3b;
       width: 100%;
       transform: scaleX(0);
-      transform-origin: center left;
+      transform-origin: center;
       height: 2.2em;
       border-radius: 1em;
       left: 0;
@@ -461,7 +463,6 @@ ul.filters {
   }
 
   .result {
-    pointer-events: none;
     display: flex;
     align-items: center;
     width: 100%;
@@ -572,7 +573,7 @@ ul.filters {
     background: #000000;
 
     &.filters-on {
-      top: 3em;
+      top: 4em;
       max-height: calc(100vh - 16em);
       height: 100vh;
     }
@@ -583,5 +584,18 @@ ul.filters {
     }
   }
 
+  .cross-icon {
+    position: fixed;
+    bottom: 9em;
+    right: 1em;
+    display: none;
+    top: auto;
+    z-index: 150;
+    height: 16px;
+
+    &.show {
+      display: block;
+    }
+  }
 
 }

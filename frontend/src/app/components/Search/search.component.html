@@ -2,15 +2,15 @@
      [ngClass]="{'has-results':results, 'focus': searchInput.isActive}"
      (blur)="resultModal.close=true; searchInput.isActive=false">
   <label>
-    <input type="text" formControlName="query" [ngClass]="{'focus': searchInput.isActive}" #searchInput
-           (focusin)="setOnFocus(searchInput.isActive)" (focusout)="setOnFocus(searchInput.isActive)"
+    <input type="text" formControlName="query" [ngClass]="{'focus': collapse}" #searchInput
+           (focusin)="setOnFocus()"
            (focus)="searchInput.isActive=true;resultModal.close = false;" placeholder="Search for Songs..."/>
   </label>
   <div class=" clearButton cross" [ngClass]="{'loop': searchInput.isActive}">
     <i class="icono-cross"></i>
   </div>
 
-  <ul class="filters search" [ngClass]="{'search': searchInput.isActive}">
+  <ul class="filters search" [ngClass]="{'search': searchInput.isActive && collapse}">
     <!--
     <div class="backButton">
       <i class="icono-leftArrow"></i> ou ahah mbar ma che stai a fa?? naah
@@ -31,7 +31,7 @@
 
   <div class="results-wrapper">
     <ul class="results" #resultModal
-        [ngClass]="{'filters-on': searchInput.isActive, 'show': !resultModal.close && results && results.length > 0}">
+        [ngClass]="{'filters-on': searchInput.isActive , 'show': collapse &&!resultModal.close && results && results.length > 0}">
       <li [ngClass]="{ 'show': results && results.length > 0}">
         <ul class="resultSet">
           <li *ngFor="let res of results">
@@ -62,8 +62,7 @@
                 <img *ngIf="res.album?.images[1]" src="{{res.album?.images[1].url}}" alt="">
               </div>
               <div *ngIf="getType()==='track'" class="lateral play-button-wrapper">
-
-                  <nod-svg-icon icon="icon-play3" (click)="playSong(res.id)" class="icon player-icon"></nod-svg-icon>
+                  <nod-svg-icon icon="icon-play3" (click)="playSong(res.uri)" class="icon player-icon"></nod-svg-icon>
               </div>
             </nod-tile>
           </li>
@@ -71,4 +70,6 @@
       </li>
     </ul>
   </div>
+  <nod-svg-icon icon="icon-cross" (click)="close()" [ngClass]="{'loop': searchInput.isActive}" [ngClass]="{'show': collapse}"
+                class="icon cross-icon"></nod-svg-icon>
 </div>

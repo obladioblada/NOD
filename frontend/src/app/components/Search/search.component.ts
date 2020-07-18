@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component} from '@angular/core';
 import {SpotifyApiService} from '../../services/spotify-api.service';
 import {FormControl, FormGroup} from '@angular/forms';
-import {filter, map, switchMap} from 'rxjs/operators';
+import {filter, map, switchMap, take} from 'rxjs/operators';
 import {SearchType} from './model';
 import {BehaviorSubject, combineLatest} from 'rxjs';
 
@@ -17,6 +17,7 @@ export class SearchComponent {
   formGroup: FormGroup;
   query: FormControl = new FormControl();
   type_$: BehaviorSubject<SearchType> = new BehaviorSubject(SearchType.artists);
+  collapse: boolean;
 
   constructor(private spotifyApiService: SpotifyApiService, private cdr: ChangeDetectorRef) {
     this.formGroup = new FormGroup({
@@ -28,26 +29,35 @@ export class SearchComponent {
     )
       .pipe(
         map(val => val[0]),
-        filter(val => val.query.length > 1),
+        filter(val => val.query && val.query.length > 1),
         switchMap(queryForm => this.spotifyApiService.searchMusic(queryForm.query, this.type_$.getValue()))
       ).subscribe((res: any) => {
-      console.log(res[this.type_$.getValue() + 's'].items);
       this.results = res[this.type_$.getValue() + 's'].items;
       this.cdr.detectChanges();
     });
+    this.collapse = false;
   }
 
 
   playSong(id) {
     console.log(id);
+    const body = {
+      uris: [id]
+    };
+    this.spotifyApiService.play(body).subscribe(() => console.log("song changed"));
   }
 
-  setOnFocus(value: boolean) {
-    console.log(value);
-    if (!value) {
+  close() {
+    if (this.results) {
       this.results.length = 0;
     }
-    this.spotifyApiService.toggleSearchInProgress(value);
+    this.query.reset();
+    this.collapse = false;
+  }
+
+  setOnFocus() {
+    this.collapse = !this.collapse;
+    this.spotifyApiService.toggleSearchInProgress(this.collapse);
   }
 
 

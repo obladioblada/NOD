@@ -38,7 +38,7 @@ export class PlayerService {
   }
 
   play() {
-    return this.spotifyApiService.play();
+    return this.spotifyApiService.play({});
   }
 
   pause() {

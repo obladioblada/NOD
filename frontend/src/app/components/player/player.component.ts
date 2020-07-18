@@ -23,7 +23,7 @@ export class PlayerComponent implements OnInit, OnDestroy {
   destroy$: Subject<boolean> = new Subject<boolean>();
   currentSong$: Observable<CurrentSong>;
 
-  togglePlayer: boolean;
+  togglePlayer$: Observable<boolean>;
 
 
   constructor(private authService: AuthService,
@@ -36,6 +36,8 @@ export class PlayerComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.togglePlayer$ = this.spotifyApiService.getSearchInProgress().pipe(takeUntil(this.destroy$));
+    this.togglePlayer$.subscribe(value => console.log(value), error => console.log(error));
     this.devices$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.playerService.getDevices()));
     this.playerService.onSDKReady().pipe(
       switchMap((NodId) => this.playerService.setDevice(NodId)),
@@ -59,11 +61,6 @@ export class PlayerComponent implements OnInit, OnDestroy {
         }
       })
     );
-
-    this.spotifyApiService.searchInProgress$.pipe(
-      takeUntil(this.destroy$))
-      .subscribe(toggleValue => { console.log(toggleValue);this.togglePlayer = toggleValue});
-
   }
 
 
@@ -86,12 +83,14 @@ export class PlayerComponent implements OnInit, OnDestroy {
 
   previous() {
     this.spotifyApiService.previousSong().pipe(takeUntil(this.destroy$)).subscribe(data => {
+      // handle current song if device isn't NOD
       console.log('previous called');
     });
   }
 
   next() {
     this.spotifyApiService.nextSong().pipe(takeUntil(this.destroy$)).subscribe(data => {
+        // handle current song if device isn't NOD
       },
       error => {
         console.log(error);

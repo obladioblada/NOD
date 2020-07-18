@@ -21,9 +21,7 @@ export class PlayerService {
   }
 
   onSDKReady() {
-    return this.spotifyConnectorService.onSdkReady$.pipe(
-      tap()
-    );
+    return this.spotifyConnectorService.onSdkReady$.asObservable();
   }
 
   getDevices(): Observable<List<Device>> {

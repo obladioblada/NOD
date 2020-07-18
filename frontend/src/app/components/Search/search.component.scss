@@ -1,7 +1,13 @@
 .title {
+  padding-left: 34px;
+  display: grid;
   a {
     font-size: 1.2em;
   }
+}
+
+.genre{
+  text-align: right;
 }
 
 ul, ol {
@@ -12,10 +18,11 @@ ul, ol {
 
 *, *:before, *:after {
   font-family: 'Varela Round', sans-serif;
-  transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55), font-size .2s ease-in-out;
+  transition: all .1s cubic-bezier(0.68, -0.55, 0.265, 1.55), font-size .2s ease-in-out;
 }
 
-$faster-transition: all 0.25s cubic-bezier(0.64, -0.58, 0.71, 1.35);
+$faster-transition: all 0.05s cubic-bezier(0.64, -0.58, 0.71, 1.35);
+
 
 input {
   background: #222222;
@@ -51,6 +58,13 @@ input.focus {
 input.whiteMe {
   background: white;
   font-size: 0;
+}
+
+.player-icon {
+  width: 2.5em;
+  height: 2.5em;
+  margin: 0;
+  justify-self: end;
 }
 
 
@@ -125,7 +139,7 @@ ul.filters {
     margin: 1em;
     border-radius: 1em;
     font-weight: bolder;
-    transition-duration: .2s;
+    transition-duration: 0.1s;
     color: #222;
   }
 
@@ -349,6 +363,18 @@ ul.filters {
 
 }
 
+.play-button-wrapper{
+  &:hover{
+    cursor: pointer;
+    background: #222222;
+  }
+}
+.results-wrapper{
+  position: absolute;
+  top: 0;
+  bottom: 12em;
+}
+
 .results {
   list-style: none;
   margin: 0;
@@ -358,14 +384,13 @@ ul.filters {
   max-height: calc(90vh - 4em);
   list-style: none;
 
-  transition-duration: .2s !important;
+  transition-duration: 0.1s !important;
   position: fixed;
   z-index: 103;
   background: #222;
   right: 18vw;
   overflow-y: auto;
   overflow-x: hidden;
-  border-radius: 0 0 1em 1em;
   font-size: 0;
 
   &.filters-on {
@@ -390,12 +415,13 @@ ul.filters {
       font-size: 1em;
     }
 
+
     &.close {
       height: 2em;
-      transition-duration: 0;
+      transition-duration: 0s;
 
       * {
-        transition-duration: 0;
+        transition-duration: 0s;
       }
     }
   }
@@ -406,6 +432,8 @@ ul.filters {
   li {
     display: flex;
     margin: .5em auto;
+    height: 10em;
+    max-height: 10em;
 
     &:after {
       content: ' ';
@@ -436,17 +464,23 @@ ul.filters {
     pointer-events: none;
     display: flex;
     align-items: center;
+    width: 100%;
+    padding: 1em;
+    margin: 0.3em;
+    min-height: 5em;
 
     * {
       transition: none !important;
     }
 
     img {
-      border-radius: 100%;
-      width: 2em;
-      height: 2em;
-      margin-right: 0.4em;
+      width: 4em;
+      height: 4em;
+      border-radius: 15px;
     }
+  &:hover{
+    background: #222222;
+  }
   }
 }
 
@@ -458,7 +492,6 @@ ul.filters {
 
 
   input {
-    background: #222222;
     color: #ffffff9c;
     position: fixed;
     height: 4em;
@@ -474,6 +507,8 @@ ul.filters {
     border-radius: 0;
     opacity: 1;
     bottom: 90px;
+    padding: 0;
+    background: #143a35;
   }
 
   input.focus {
@@ -484,7 +519,14 @@ ul.filters {
     left: 0;
     opacity: 1;
     border-radius: 0;
-    transform: translateY(90px);
+    transform: translateX(0);
+  }
+
+  .search-bar {
+
+    &.focus {
+      height: 100%;
+    }
   }
 
 
@@ -499,24 +541,46 @@ ul.filters {
     justify-content: space-evenly;
     background: #2db18f;
     transform: translateY(calc(-100% + 0.2em));
-    transition: all 0.25s cubic-bezier(0.64, -0.58, 0.71, 1.35);
+    transition: all 0.1s cubic-bezier(0.64, -0.58, 0.71, 1.35);
+
+    &.search {
+      height: 4em;
+      top: 0;
+      z-index: 110;
+      position: relative;
+      transform: translateY(0);
+      padding: 0;
+
+      &:before {
+        color: #222;
+        height: 100vh;
+      }
+    }
   }
 
   .results {
     list-style: none;
     margin: 0;
-    max-height: calc(90vh - 100px);
-    list-style: none;
-    transition-duration: 0.2s !important;
+    transition-duration: 0.1s !important;
     position: fixed;
     z-index: 103;
     right: 0;
     left: 0;
     overflow-y: auto;
     overflow-x: hidden;
-    border-radius: 0 0 1em 1em;
     font-size: 0;
-    background: #3c9f7a;
+    background: #000000;
+
+    &.filters-on {
+      top: 3em;
+      max-height: calc(100vh - 16em);
+      height: 100vh;
+    }
+
+    .image{
+      height: 100%;
+      font-size: 1.1em;
+    }
   }
 
 

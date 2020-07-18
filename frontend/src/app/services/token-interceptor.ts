@@ -49,7 +49,8 @@ export class TokenInterceptor implements HttpInterceptor {
   }
 
   handle404Error(error) {
-    if (error && error.status === 404 && error.reason === SpotifyError.NO_ACTIVE_DEVICE) {
+    if (error && error.error.status === 404 && error.error.reason === SpotifyError.NO_ACTIVE_DEVICE) {
+      console.log("resetting device..");
         this.playerService.setDevice(this.playerService.currentDevices)
     }
     return throwError(error);

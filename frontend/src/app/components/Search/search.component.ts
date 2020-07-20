@@ -56,6 +56,9 @@ export class SearchComponent {
   }
 
   setOnFocus() {
+    if (this.collapse) {
+      return;
+    }
     this.collapse = !this.collapse;
     this.spotifyApiService.toggleSearchInProgress(this.collapse);
   }

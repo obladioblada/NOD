@@ -28,6 +28,7 @@ import {CurrentSongComponent} from './components/current-song/current-song.compo
 import {UserProfileService} from './services/user-profile.service';
 import {TokenInterceptor} from './services/token-interceptor';
 import {ServiceWorkerModule} from '@angular/service-worker';
+import {DeviceDetectorModule} from 'ngx-device-detector';
 
 const socketUrl = environment.socketEndpoint !== 'heroku' ? environment.socketEndpoint : window.location.hostname;
 const config: SocketIoConfig = {
@@ -56,6 +57,7 @@ const config: SocketIoConfig = {
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    DeviceDetectorModule,
     SocketIoModule.forRoot(config),
     ServiceWorkerModule.register('ngsw-worker.js', {
         enabled: environment.production,

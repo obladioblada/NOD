@@ -12,8 +12,7 @@ class UserDbManager {
             function (err: any, document: IUserDocument) {
                 if (err) {
                     // handle error
-                    logger.error(err);
-                    return null;
+                    return err;
                 } else {
                     // handle document
                     logger.info("user added or updated", document);

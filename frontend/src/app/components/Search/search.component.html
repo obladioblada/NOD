@@ -31,7 +31,7 @@
 
   <div class="results-wrapper">
     <ul class="results" #resultModal
-        [ngClass]="{'filters-on': searchInput.isActive , 'show': collapse &&!resultModal.close && results && results.length > 0}">
+        [ngClass]="{'filters-on': collapse , 'show': collapse &&!resultModal.close && results && results.length > 0}">
       <li [ngClass]="{ 'show': results && results.length > 0}">
         <ul class="resultSet">
           <li *ngFor="let res of results">

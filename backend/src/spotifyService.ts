@@ -97,7 +97,7 @@ export class SpotifyService {
                                 ...body,
                                 id: user.id,
                                 name: user.display_name,
-                                pictureUrl: user.images[0].url,
+                                pictureUrl: user.images[0] ? user.images[0].url: null,
                                 status: response.statusCode
                             });
                         })

@@ -318,6 +318,7 @@ ul.filters {
 
   &.focus {
     height: 6.5em;
+    z-index: 1;
   }
 }
 
@@ -527,6 +528,7 @@ ul.filters {
 
     &.focus {
       height: 100%;
+      z-index: 1;
     }
   }
 

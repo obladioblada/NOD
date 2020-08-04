@@ -333,7 +333,8 @@ ul.filters {
 }
 
 .results, .results-header {
-  left: 18vw;
+  left: 0;
+  right: 0;
 }
 
 .results-header {
@@ -349,7 +350,6 @@ ul.filters {
 
   .button-action {
     grid-column: 2;
-
     z-index: 104;
   }
 
@@ -389,13 +389,12 @@ ul.filters {
   position: fixed;
   z-index: 103;
   background: #222;
-  right: 18vw;
   overflow-y: auto;
   overflow-x: hidden;
   font-size: 0;
 
   &.filters-on {
-    top: 8.5em;
+    top: 8em;
     padding-top: 0;
     max-height: calc(100vh - 17em);
     background: #101010;

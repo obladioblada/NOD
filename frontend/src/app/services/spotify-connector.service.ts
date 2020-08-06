@@ -22,7 +22,6 @@ export class SpotifyConnectorService {
   initializeSdk(): any {
     return  this.winRef.nativeWindow.waitForSpotify.then(() =>{
       const token = this.authService.getAccessToken();
-      console.log(this.deviceService.getDeviceInfo());
       if (token && this.player === undefined) {
          this.player = new Spotify.Player({
           name: 'Nod ' + this.deviceService.getDeviceInfo().browser + " " + this.deviceService.getDeviceInfo().os,
@@ -55,7 +54,6 @@ export class SpotifyConnectorService {
         // Ready
         this.player.addListener('ready', ({device_id}) => {
           console.log('Ready with Device ID', device_id);
-          this.de
           this.onSdkReady$.next(device_id);
         });
 

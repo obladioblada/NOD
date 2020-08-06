@@ -1,5 +1,5 @@
 import {Inject, Injectable} from '@angular/core';
-import {Observable, throwError} from 'rxjs';
+import {Observable, Subject, throwError} from 'rxjs';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {DOCUMENT, Location} from '@angular/common';
 import {Router} from '@angular/router';
@@ -19,10 +19,13 @@ import {UserDto} from './userDto';
 export class AuthService {
   // TODO: use env var here
     private apiEndpoint = environment.apiEndpoint;
-    private isloggedIn: boolean;
+    private _isloggedIn: boolean;
+    private _code: string;
 
     private redirectUrl: string;
     private userName: string;
+
+    loggedObservable$: Subject<boolean> = new Subject();
 
     constructor(
       @Inject(DOCUMENT) private document: Document,
@@ -39,6 +42,20 @@ export class AuthService {
     });
   }
 
+  getLoggedObservable(): Observable<boolean> {
+      return this.loggedObservable$.asObservable();
+  }
+
+
+  get isloggedIn(): boolean {
+    return this._isloggedIn;
+  }
+
+
+  get code(): string {
+    return this._code;
+  }
+
   getAccessToken() {
     return localStorage.getItem('access_token');
   }
@@ -51,10 +68,10 @@ export class AuthService {
     const body = {
       code
     };
+    this._code = code;
     console.log('going to authenticate');
     return this.http.get<any>((Location.joinWithSlash(this.apiEndpoint, 'authenticate?code=' + code)))
     .pipe(map((res => this.setSession(res))), shareReplay());
-
   }
 
   private setRedirectUrl(getRedirectUrlResult: { redirectUrl: any; }) {
@@ -69,7 +86,8 @@ export class AuthService {
     localStorage.setItem('gianpaolo', "gianpaolo");
     localStorage.setItem('refresh_token', authResult.refreshToken);
     if (authResult.status !== 500) {
-      this.isloggedIn = true;
+      this._isloggedIn = true;
+      this.loggedObservable$.next(true);
     }
 }
 
@@ -124,7 +142,7 @@ export class AuthService {
 
     logoutUser(): void {
         localStorage.clear();
-        this.isloggedIn = false;
+        this._isloggedIn = false;
     }
 
     errorHandler(error: HttpErrorResponse) {

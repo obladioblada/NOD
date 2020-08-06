@@ -48,15 +48,13 @@ export class HomeComponent implements AfterViewInit, OnInit {
             );
           users.find(user => user.id === currentSongMessage.sender).setCurrentSong(currentSong)
         }
-        console.log(users)
+        console.log(users);
         return users;
       }));
   }
 
   ngOnInit() {
     this.mainButton$ = combineLatest([this.users$]).subscribe(() => {
-        this.mainButtonService.setButtonPosition(ButtonPosition.BOTTOM);
-        this.mainButtonService.setButtonState(ButtonState.SUCCESS);
         this.showPlayer = true;
       },
       () => {

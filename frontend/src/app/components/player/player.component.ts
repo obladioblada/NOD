@@ -8,6 +8,8 @@ import {PlayerService} from "../../services/player.service";
 import {Device} from 'src/app/models/Device';
 import {List} from 'immutable';
 import {CurrentSong} from "../../models/CurrentSong";
+import {ButtonPosition, ButtonState} from "../../main-button/button";
+import {MainButtonService} from "../../main-button/main-button.service";
 
 @Component({
   selector: 'nod-player',
@@ -29,7 +31,8 @@ export class PlayerComponent implements OnInit, OnDestroy {
   constructor(private authService: AuthService,
               private socketService: SocketService,
               private spotifyApiService: SpotifyApiService,
-              private playerService: PlayerService) {
+              private playerService: PlayerService,
+              private mainButtonService: MainButtonService) {
     this.isPlaying = false;
     this.showDevices = false;
 
@@ -43,7 +46,10 @@ export class PlayerComponent implements OnInit, OnDestroy {
       switchMap((NodId) => this.playerService.setDevice(NodId)),
       takeUntil(this.destroy$))
       .subscribe(() => {
+        console.log("sdk readyyy");
         this.refreshDevices();
+        this.mainButtonService.setButtonPosition(ButtonPosition.BOTTOM);
+        this.mainButtonService.setButtonState(ButtonState.SUCCESS);
       });
     this.currentSong$ = this.playerService.onPlaySong().pipe(
       map((data) => new CurrentSong(

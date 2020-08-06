@@ -22,7 +22,8 @@ export class SpotifyConnectorService {
   initializeSdk(): any {
     return  this.winRef.nativeWindow.waitForSpotify.then(() =>{
       const token = this.authService.getAccessToken();
-      if (token && this.player === undefined) {
+      console.log(token);
+      if (token != null) {
          this.player = new Spotify.Player({
           name: 'Nod ' + this.deviceService.getDeviceInfo().browser + " " + this.deviceService.getDeviceInfo().os,
           getOAuthToken: cb => {
@@ -70,7 +71,10 @@ export class SpotifyConnectorService {
         });
         return  this.player
       } else {
-        this.onSdkReady$.next(this.deviceId);
+        this.authService.getLoggedObservable().subscribe((value) => {
+          console.log("logged ready to load sdk" + value);
+          this.initializeSdk();
+        })
       }
     });
   }

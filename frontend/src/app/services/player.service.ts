@@ -3,7 +3,7 @@ import {SpotifyConnectorService} from "./spotify-connector.service";
 import {SpotifyApiService} from "./spotify-api.service";
 import {AuthService} from "../../auth/auth.service";
 import {Observable, Subject} from "rxjs";
-import {debounceTime, switchMap, tap} from "rxjs/operators";
+import {debounceTime, switchMap} from "rxjs/operators";
 import {Device} from '../models/Device';
 import {List} from 'immutable';
 
@@ -17,7 +17,7 @@ export class PlayerService {
               private authService: AuthService,
               private spotifyConnectorService: SpotifyConnectorService
   ) {
-    const playerSdk = this.spotifyConnectorService.initializeSdk();
+    this.spotifyConnectorService.initializeSdk();
   }
 
   onSDKReady() {

@@ -13,7 +13,10 @@ export class SpotifyConnectorService {
   onSdkReady$: Subject<string> = new Subject<string>();
   paused: boolean;
   player: any;
+  deviceId: string;
+
   constructor(private winRef: WindowRef, private authService: AuthService, private deviceService: DeviceDetectorService) {
+    this.initializeSdk()
   }
 
   initializeSdk(): any {
@@ -52,6 +55,7 @@ export class SpotifyConnectorService {
         // Ready
         this.player.addListener('ready', ({device_id}) => {
           console.log('Ready with Device ID', device_id);
+          this.de
           this.onSdkReady$.next(device_id);
         });
 
@@ -67,6 +71,8 @@ export class SpotifyConnectorService {
           }
         });
         return  this.player
+      } else {
+        this.onSdkReady$.next(this.deviceId);
       }
     });
   }

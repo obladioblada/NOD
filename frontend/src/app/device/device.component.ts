@@ -2,7 +2,6 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@
 import {AuthService} from 'src/auth/auth.service';
 import {MainButtonService} from '../main-button/main-button.service';
 import {SocketService} from '../services/socket.service';
-import {BackgroundService} from '../background/background.service';
 import {SpotifyApiService} from '../services/spotify-api.service';
 import {Device} from '../models/Device';
 import {PlayerService} from "../services/player.service";
@@ -29,7 +28,6 @@ export class DeviceComponent {
 
   constructor(private authService: AuthService,
               private mainButtonService: MainButtonService,
-              private backgroundService: BackgroundService,
               private spotifyService: SpotifyApiService,
               private socketServices: SocketService,
               private playerService: PlayerService) {

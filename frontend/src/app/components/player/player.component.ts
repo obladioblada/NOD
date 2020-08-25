@@ -1,6 +1,5 @@
 import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from '../../../auth/auth.service';
-import {BackgroundService} from '../../background/background.service';
 import {SocketService} from '../../services/socket.service';
 import {SpotifyApiService} from '../../services/spotify-api.service';
 import {map, switchMap, takeUntil, tap} from 'rxjs/operators';
@@ -9,6 +8,8 @@ import {PlayerService} from "../../services/player.service";
 import {Device} from 'src/app/models/Device';
 import {List} from 'immutable';
 import {CurrentSong} from "../../models/CurrentSong";
+import {ButtonPosition, ButtonState} from "../../main-button/button";
+import {MainButtonService} from "../../main-button/main-button.service";
 
 @Component({
   selector: 'nod-player',
@@ -24,24 +25,31 @@ export class PlayerComponent implements OnInit, OnDestroy {
   destroy$: Subject<boolean> = new Subject<boolean>();
   currentSong$: Observable<CurrentSong>;
 
+  togglePlayer$: Observable<boolean>;
+
 
   constructor(private authService: AuthService,
-              private backgroundService: BackgroundService,
               private socketService: SocketService,
-              private spotifyService: SpotifyApiService,
-              private playerService: PlayerService) {
+              private spotifyApiService: SpotifyApiService,
+              private playerService: PlayerService,
+              private mainButtonService: MainButtonService) {
     this.isPlaying = false;
     this.showDevices = false;
 
   }
 
   ngOnInit(): void {
+    this.togglePlayer$ = this.spotifyApiService.getSearchInProgress().pipe(takeUntil(this.destroy$));
+    this.togglePlayer$.subscribe(value => console.log(value), error => console.log(error));
     this.devices$ = this.refreshOccurs$.asObservable().pipe(switchMap(() => this.playerService.getDevices()));
     this.playerService.onSDKReady().pipe(
       switchMap((NodId) => this.playerService.setDevice(NodId)),
       takeUntil(this.destroy$))
       .subscribe(() => {
+        console.log("sdk readyyy");
         this.refreshDevices();
+        this.mainButtonService.setButtonPosition(ButtonPosition.BOTTOM);
+        this.mainButtonService.setButtonState(ButtonState.SUCCESS);
       });
     this.currentSong$ = this.playerService.onPlaySong().pipe(
       map((data) => new CurrentSong(
@@ -52,12 +60,12 @@ export class PlayerComponent implements OnInit, OnDestroy {
         data.paused)),
       tap((currentSong) => {
         this.isPlaying = !currentSong.paused;
-          if(!currentSong.paused){
-            this.socketService.sendPlay(currentSong);
-          } else {
-            this.socketService.sendPause(currentSong);
-          }
-        })
+        if (!currentSong.paused) {
+          this.socketService.sendPlay(currentSong);
+        } else {
+          this.socketService.sendPause(currentSong);
+        }
+      })
     );
   }
 
@@ -80,13 +88,16 @@ export class PlayerComponent implements OnInit, OnDestroy {
   }
 
   previous() {
-    this.spotifyService.previousSong().pipe(takeUntil(this.destroy$)).subscribe(data => {
+    this.spotifyApiService.previousSong().pipe(takeUntil(this.destroy$)).subscribe(data => {
+      // handle current song if device isn't NOD
       console.log('previous called');
     });
   }
 
   next() {
-    this.spotifyService.nextSong().pipe(takeUntil(this.destroy$)).subscribe(data => {},
+    this.spotifyApiService.nextSong().pipe(takeUntil(this.destroy$)).subscribe(data => {
+        // handle current song if device isn't NOD
+      },
       error => {
         console.log(error);
       });

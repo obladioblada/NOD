@@ -1,6 +1,6 @@
-<nod-search style="visibility: hidden"></nod-search>
+<nod-search></nod-search>
 <div class="users-wrapper">
-  <div *ngIf="(users$ | async ) as usersList" class="devices-container">
+  <div *ngIf="(users$ | async ) as usersList">
       <nod-user *ngFor="let user of usersList" [user]="user"></nod-user>
   </div>
 </div>

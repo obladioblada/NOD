@@ -1,4 +1,4 @@
-<div class="player-container">
+<div class="player-container" [ngClass]="{'toggle': false  }">
   <div *ngIf="(currentSong$ | async ) as currentSong; else empty_song">
    <nod-current-song [song]=currentSong></nod-current-song>
   </div>

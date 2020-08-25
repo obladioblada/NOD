@@ -17,7 +17,7 @@ export class PlayerService {
               private authService: AuthService,
               private spotifyConnectorService: SpotifyConnectorService
   ) {
-    const playerSdk = this.spotifyConnectorService.initializeSdk();
+    this.spotifyConnectorService.initializeSdk();
   }
 
   onSDKReady() {
@@ -38,7 +38,7 @@ export class PlayerService {
   }
 
   play() {
-    return this.spotifyApiService.play();
+    return this.spotifyApiService.play({});
   }
 
   pause() {
@@ -47,5 +47,9 @@ export class PlayerService {
 
   getCurrentPlaying() {
     return this.spotifyApiService.getCurrentPlaying();
+  }
+
+  setMyself() {
+
   }
 }

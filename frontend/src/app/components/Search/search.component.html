@@ -1,65 +1,75 @@
-
-<div  class="search search-bar"  [formGroup]="formGroup" [ngClass]="{'has-results':results, 'focus': searchInput.isActive}" (blur)="resultModal.close=true; searchInput.isActive=false">
-<input type="text" formControlName="query"[ngClass]="{'focus': searchInput.isActive}"  #searchInput (focus)="searchInput.isActive=true;resultModal.close = false "  placeholder="Search for Songs..."/>
-<div class=" clearButton cross"  [ngClass]="{'loop': searchInput.isActive}">
-<i class="icono-cross" ></i>
-</div>
-
-<ul class="filters search" [ngClass]="{'search': searchInput.isActive}">
-  <!--
-  <div class="backButton">
-    <i class="icono-leftArrow"></i> ou ahah mbar ma che stai a fa?? naah
-    hangaout
-    cosi ti facico vedere
-    hai tipo finito il FE? no no mbare quale ahah ahha si comunque
+<div class="search search-bar" [formGroup]="formGroup"
+     [ngClass]="{'has-results':results, 'focus': searchInput.isActive}"
+     (blur)="resultModal.close=true; searchInput.isActive=false">
+  <label>
+    <input type="text" formControlName="query" [ngClass]="{'focus': collapse}" #searchInput
+           (focusin)="setOnFocus()"
+           (focus)="searchInput.isActive=true;resultModal.close = false;" placeholder="Search for Songs..."/>
+  </label>
+  <div class=" clearButton cross" [ngClass]="{'loop': searchInput.isActive}">
+    <i class="icono-cross"></i>
   </div>
-  -->
-  <li (click)="setType('tracks')">Tracks</li>
-  <li (click)="setType('artists')">Artists</li>
-  <li (click)="setType('albums')">Albums</li>
-  <li (click)="setType('playlists')">Playlists</li>
-  <li (click)="setType('friends')">Friends</li>
-  <div class="searchButton">
-    <i class="icono-search"></i>
-  </div>
-</ul>
-<div class="results-header" *ngIf="!resultModal.close && results" [ngClass]="{'filters-on': searchInput.isActive}">
-<span>{{getType()}}</span> <div class="button-action cross loop" (click)="resultModal.close=true; searchInput.isActive=false" *ngIf="!resultModal.close"></div>
-</div>
 
-<ul class="results" #resultModal [ngClass]="{'filters-on': searchInput.isActive, 'show': !resultModal.close && results && results.length > 0}">
-  <li [ngClass]="{ 'show': results && results.length > 0}">
-    <ul class="resultSet">
-      <li *ngFor="let res of results">
-        <nod-tile class="result" >
-          <div class="title tile-title">
-            <div class="content">
-              <a href="/{{getType()}}/{{res.id}}">{{res.name}}</a>
-              <div class="ui labels" *ngIf="getType()==='artist'">
-                <div *ngIf="res.followers" class="ui blue label">Followers: {{res.followers.total}}</div>
-                <div *ngIf="res.popularity" class="ui green label">Popularity: {{res.popularity}}</div>
-              </div>
-            </div>
-          </div>
-          <div calss="tile-footer">
-            {{res | json}}
-            <div class="ui horizontal list" *ngFor="let genre of res.genres">
-              <div class="item">
-                <div class="ui labels">
-                  <div class="ui label">{{genre}}</div>
+  <ul class="filters search" [ngClass]="{'search': searchInput.isActive && collapse}">
+    <!--
+    <div class="backButton">
+      <i class="icono-leftArrow"></i> ou ahah mbar ma che stai a fa?? naah
+      hangaout
+      cosi ti facico vedere
+      hai tipo finito il FE? no no mbare quale ahah ahha si comunque
+    </div>
+    -->
+    <li (click)="setType('tracks')">Tracks</li>
+    <li (click)="setType('artists')">Artists</li>
+    <li (click)="setType('albums')">Albums</li>
+    <li (click)="setType('playlists')">Playlists</li>
+    <li (click)="setType('friends')">Friends</li>
+    <div class="searchButton">
+      <i class="icono-search"></i>
+    </div>
+  </ul>
+
+  <div class="results-wrapper">
+    <ul class="results" #resultModal
+        [ngClass]="{'filters-on': collapse , 'show': collapse &&!resultModal.close && results && results.length > 0}">
+      <li [ngClass]="{ 'show': results && results.length > 0}">
+        <ul class="resultSet">
+          <li *ngFor="let res of results">
+            <nod-tile class="result">
+              <div class="title">
+                <div class="tile-title">
+                  <div>{{res.name}}</div>
+                  <div class="ui labels" *ngIf="getType()==='artist'">
+                    <div *ngIf="res.followers" class="ui blue label">Followers: {{res.followers.total}}</div>
+                    <div *ngIf="res.popularity" class="ui green label">Popularity: {{res.popularity}}</div>
+                  </div>
+                  <div class="ui labels" *ngIf="getType()==='track'">
+                    <div *ngIf="res.artists">{{res.artists[0].name}} </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-            <div class="icon tile-image"  >
-              <img *ngIf="res.images?.length > 0"  src="{{res.images[0].url}}" alt="">
-              <img  *ngIf="res.album?.images[1]" src="{{res.album?.images[1].url}}" alt="">
-            </div>
-        </nod-tile>
+              <div class="footer">
+                <!--<div class="ui horizontal list" *ngFor="let genre of res.genres?.slice(0,2)">
+                  <div class="item genre">
+                    <div class="ui labels">
+                      <div class="ui label">{{genre}}</div>
+                    </div>
+                  </div>
+                </div>-->
+              </div>
+              <div class="icon image">
+                <img *ngIf="res.images?.length > 0" src="{{res.images[0].url}}" alt="">
+                <img *ngIf="res.album?.images[1]" src="{{res.album?.images[1].url}}" alt="">
+              </div>
+              <div *ngIf="getType()==='track'" class="lateral play-button-wrapper">
+                  <nod-svg-icon icon="icon-play3" (click)="playSong(res.uri)" class="icon player-icon"></nod-svg-icon>
+              </div>
+            </nod-tile>
+          </li>
+        </ul>
       </li>
     </ul>
-  </li>
-  <li *ngIf="results"  [ngClass]="{ 'show': results.length === 0}">
-    No results, sorry!
-  </li>
- </ul>
+  </div>
+  <nod-svg-icon icon="icon-cross" (click)="close()"  [ngClass]="{'show': collapse}"
+                class="icon cross-icon"></nod-svg-icon>
+</div>

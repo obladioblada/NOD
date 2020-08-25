@@ -10,6 +10,7 @@ import {IUserDocument} from "./models/User";
 import {socketManager} from "./SocketManager";
 import {db} from "./DbManager"
 import path from "path";
+import compression from 'compression';
 
 let bodyParser = require('body-parser');
 
@@ -28,6 +29,8 @@ server.listen(PORT, () => {
     }
 );
 
+
+app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 

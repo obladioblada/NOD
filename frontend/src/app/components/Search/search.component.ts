@@ -1,49 +1,73 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component} from '@angular/core';
 import {SpotifyApiService} from '../../services/spotify-api.service';
 import {FormControl, FormGroup} from '@angular/forms';
-import {debounceTime, distinctUntilChanged, filter, map} from 'rxjs/operators';
+import {filter, map, switchMap, take} from 'rxjs/operators';
 import {SearchType} from './model';
-import {AuthService} from 'src/auth/auth.service';
 import {BehaviorSubject, combineLatest} from 'rxjs';
 
 @Component({
   selector: 'nod-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
-  providers: [SpotifyApiService]
+  providers: [SpotifyApiService],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchComponent {
-  searchStr: string;
   results: any[];
   formGroup: FormGroup;
   query: FormControl = new FormControl();
   type_$: BehaviorSubject<SearchType> = new BehaviorSubject(SearchType.artists);
+  collapse: boolean;
 
-  constructor(private spotifyService: SpotifyApiService, private authService: AuthService) {
-    this.formGroup =  new FormGroup({
+  constructor(private spotifyApiService: SpotifyApiService, private cdr: ChangeDetectorRef) {
+    this.formGroup = new FormGroup({
       query: this.query
     });
     combineLatest([
       this.formGroup.valueChanges,
       this.type_$.asObservable()]
     )
-    .pipe(
-      debounceTime(400),
-      distinctUntilChanged(),
-      map(val => val[0]),
-      filter(val => val.query.length > 1)
-    ).subscribe((queryForm: any) => {
-      this.spotifyService.searchMusic(queryForm.query, this.type_$.getValue())
-        .subscribe( (res) => {
-          console.log(res[this.type_$.getValue() + 's'].items);
-          this.results = res[this.type_$.getValue() + 's'].items;
-        });
+      .pipe(
+        map(val => val[0]),
+        filter(val => val.query && val.query.length > 1),
+        switchMap(queryForm => this.spotifyApiService.searchMusic(queryForm.query, this.type_$.getValue()))
+      ).subscribe((res: any) => {
+      this.results = res[this.type_$.getValue() + 's'].items;
+      this.cdr.detectChanges();
     });
+    this.collapse = false;
   }
+
+
+  playSong(uri) {
+    console.log(uri);
+    const body = {
+      uris: [uri]
+    };
+    this.spotifyApiService.play(body).subscribe(() => console.log("song changed"));
+  }
+
+  close() {
+    if (this.results) {
+      this.results.length = 0;
+    }
+    this.query.reset();
+    this.collapse = false;
+  }
+
+  setOnFocus() {
+    if (this.collapse) {
+      return;
+    }
+    this.collapse = !this.collapse;
+    this.spotifyApiService.toggleSearchInProgress(this.collapse);
+  }
+
 
   setType(type: string) {
     this.type_$.next(SearchType[type]);
   }
+
   getType() {
     return this.results && this.type_$.getValue();
   }

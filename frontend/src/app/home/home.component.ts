@@ -5,8 +5,6 @@ import {ButtonPosition, ButtonState} from '../main-button/button';
 import {combineLatest, merge, Observable, Subject, Subscription} from 'rxjs';
 import {map, switchMap} from 'rxjs/operators';
 import {User} from '../models/User';
-import {BackgroundService} from '../background/background.service';
-import {BackgroundAnimationState, BackgroundState} from '../background/background';
 import {SpotifyApiService} from '../services/spotify-api.service';
 import {SocketService} from "../services/socket.service";
 import {UserProfileService} from "../services/user-profile.service";
@@ -27,13 +25,11 @@ export class HomeComponent implements AfterViewInit, OnInit {
   constructor(
     private authService: AuthService,
     private mainButtonService: MainButtonService,
-    private backgroundService: BackgroundService,
     private spotifyService: SpotifyApiService,
     private socketService: SocketService,
     private userProfileService: UserProfileService) {
     this.mainButtonService.setButtonState(ButtonState.LOADING);
     this.userProfileService.loadUserProfile();
-    this.backgroundService.setBackgroundAnimationState(BackgroundAnimationState.PAUSE);
     this.users$ = combineLatest(
       [
         merge(
@@ -52,16 +48,13 @@ export class HomeComponent implements AfterViewInit, OnInit {
             );
           users.find(user => user.id === currentSongMessage.sender).setCurrentSong(currentSong)
         }
-        console.log(users)
+        console.log(users);
         return users;
       }));
   }
 
   ngOnInit() {
     this.mainButton$ = combineLatest([this.users$]).subscribe(() => {
-        this.mainButtonService.setButtonPosition(ButtonPosition.BOTTOM);
-        this.mainButtonService.setButtonState(ButtonState.SUCCESS);
-        this.backgroundService.setBackgroundState(BackgroundState.SUCCESS);
         this.showPlayer = true;
       },
       () => {

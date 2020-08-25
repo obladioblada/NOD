@@ -1,5 +1,5 @@
 import {Inject, Injectable} from '@angular/core';
-import {Observable, throwError} from 'rxjs';
+import {Observable, Subject, throwError} from 'rxjs';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {DOCUMENT, Location} from '@angular/common';
 import {Router} from '@angular/router';
@@ -10,8 +10,6 @@ import {environment} from '../environments/environment';
 import * as moment from 'moment';
 import {User} from 'src/app/models/User';
 import {UserDto} from './userDto';
-import {BackgroundService} from 'src/app/background/background.service';
-import {BackgroundState} from 'src/app/background/background';
 
 // import {SpotifyConnectorService} from "../app/services/spotify-connector.service";
 
@@ -21,15 +19,17 @@ import {BackgroundState} from 'src/app/background/background';
 export class AuthService {
   // TODO: use env var here
     private apiEndpoint = environment.apiEndpoint;
-    private isloggedIn: boolean;
+    private _isloggedIn: boolean;
+    private _code: string;
 
     private redirectUrl: string;
     private userName: string;
 
+    loggedObservable$: Subject<boolean> = new Subject();
+
     constructor(
       @Inject(DOCUMENT) private document: Document,
       private mainButtonService: MainButtonService,
-      private backgroundService: BackgroundService,
       private http: HttpClient,
       private router: Router) {
     }
@@ -40,6 +40,20 @@ export class AuthService {
       .pipe(map((res => this.setRedirectUrl(res)))).subscribe((data) => {
         this.document.location.href = this.redirectUrl;
     });
+  }
+
+  getLoggedObservable(): Observable<boolean> {
+      return this.loggedObservable$.asObservable();
+  }
+
+
+  get isloggedIn(): boolean {
+    return this._isloggedIn;
+  }
+
+
+  get code(): string {
+    return this._code;
   }
 
   getAccessToken() {
@@ -54,10 +68,10 @@ export class AuthService {
     const body = {
       code
     };
+    this._code = code;
     console.log('going to authenticate');
     return this.http.get<any>((Location.joinWithSlash(this.apiEndpoint, 'authenticate?code=' + code)))
     .pipe(map((res => this.setSession(res))), shareReplay());
-
   }
 
   private setRedirectUrl(getRedirectUrlResult: { redirectUrl: any; }) {
@@ -72,7 +86,8 @@ export class AuthService {
     localStorage.setItem('gianpaolo', "gianpaolo");
     localStorage.setItem('refresh_token', authResult.refreshToken);
     if (authResult.status !== 500) {
-      this.isloggedIn = true;
+      this._isloggedIn = true;
+      this.loggedObservable$.next(true);
     }
 }
 
@@ -127,12 +142,11 @@ export class AuthService {
 
     logoutUser(): void {
         localStorage.clear();
-        this.isloggedIn = false;
+        this._isloggedIn = false;
     }
 
     errorHandler(error: HttpErrorResponse) {
       this.mainButtonService.setButtonState(ButtonState.ERROR);
-      this.backgroundService.setBackgroundState(BackgroundState.ERROR);
       console.log(error);
       if (error.error instanceof ErrorEvent) {
         // A client-side or network error occurred. Handle it accordingly.

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
 $ui-elements-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55),  font-size .2s ease-in-out;
 
 *, *:before, *:after {
@@ -46,25 +46,6 @@ a {
   margin: auto;
   width: 2.5em;
   height: 2.5em;
-  &.play{
-    background: #bdbdbdb5;
-    top: 13%;
-    display: block;
-    clip-path: polygon(33% 0, 33% 100%, 100% 50%, 33% 0);
-  }
-
-  &.cross{
-    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
-    background: #bdbdbdb5;
-  }
-
-  &.pause{
-    display:block;
-    background: #bdbdbdb5;
-    top: 13%;
-    clip-path:polygon(20% 100%, 20% 0%, 35% 0%, 35% 100%, 65% 100%, 65% 0%, 80% 0%, 80% 100%);
-
-  }
 }
 
 

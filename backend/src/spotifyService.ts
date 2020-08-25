@@ -1,6 +1,7 @@
-const request = require('request');
 import {logger} from "./logging/Logger";
 import {IUserDocument} from "./models/User";
+
+const request = require('request');
 
 
 export class SpotifyService {
@@ -96,7 +97,7 @@ export class SpotifyService {
                                 ...body,
                                 id: user.id,
                                 name: user.display_name,
-                                pictureUrl: user.images[0].url,
+                                pictureUrl: user.images[0] ? user.images[0].url: null,
                                 status: response.statusCode
                             });
                         })

@@ -2,6 +2,7 @@ import {WindowRef} from '../WindowRef';
 import {Injectable} from '@angular/core';
 import {AuthService} from 'src/auth/auth.service';
 import {Subject} from 'rxjs';
+import {DeviceDetectorService} from 'ngx-device-detector';
 
 declare var Spotify: any;
 
@@ -12,15 +13,19 @@ export class SpotifyConnectorService {
   onSdkReady$: Subject<string> = new Subject<string>();
   paused: boolean;
   player: any;
-  constructor(private winRef: WindowRef, private authService: AuthService) {
+  deviceId: string;
+
+  constructor(private winRef: WindowRef, private authService: AuthService, private deviceService: DeviceDetectorService) {
+    this.initializeSdk()
   }
 
   initializeSdk(): any {
     return  this.winRef.nativeWindow.waitForSpotify.then(() =>{
       const token = this.authService.getAccessToken();
-      if (token && this.player === undefined) {
+      console.log(token);
+      if (token != null) {
          this.player = new Spotify.Player({
-          name: 'Nod',
+          name: 'Nod ' + this.deviceService.getDeviceInfo().browser + " " + this.deviceService.getDeviceInfo().os,
           getOAuthToken: cb => {
             cb(token);
           }
@@ -65,6 +70,11 @@ export class SpotifyConnectorService {
           }
         });
         return  this.player
+      } else {
+        this.authService.getLoggedObservable().subscribe((value) => {
+          console.log("logged ready to load sdk" + value);
+          this.initializeSdk();
+        })
       }
     });
   }
